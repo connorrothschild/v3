@@ -3,7 +3,7 @@
 		<!-- <NuxtLink to="/#" class="heading fixed-bottom-right"
 			>Back to top 👆</NuxtLink
 		> -->
-		<Nav />
+		<Nav color="is-primary" />
 		<Hero />
 		<Projects :projects="projects" />
 		<Awards :awards="awards" />
@@ -37,10 +37,14 @@ export default {
 };
 </script>
 
-<style>
+<style lang='scss'>
 .fixed-bottom-right {
 	position: fixed;
 	bottom: 0;
 	right: 0;
+}
+
+body {
+	color: $text;
 }
 </style>

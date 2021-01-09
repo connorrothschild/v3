@@ -1,10 +1,12 @@
 <template>
-	<section id="blog" class="hero is-white is-fullheight">
+	<section id="blog" class="hero is-primary is-primary-gradient is-fullheight">
 		<div class="hero-body">
 			<div class="container">
-				<h1 class="title is-size-1 is-size-3-mobile">Featured Blog Posts</h1>
+				<h1 class="title is-size-1 is-size-3-mobile mt-6">
+					Featured Blog Posts
+				</h1>
 				<NuxtLink
-					to="/project"
+					to="/blog"
 					class="subtitle heading has-text-weight-light is-size-5"
 					>See all posts 👉</NuxtLink
 				>

@@ -1,6 +1,6 @@
 <template>
 	<div style="position: relative">
-		<section class="hero is-black is-fullheight">
+		<section class="hero is-primary is-fullheight">
 			<div class="hero-body">
 				<div class="container">
 					<div
@@ -15,17 +15,19 @@
 								<button
 									@click="showAbout = !showAbout"
 									class="button"
-									:class="[showAbout ? 'is-black' : 'is-danger']"
+									:class="[showAbout ? 'is-primary' : 'is-white']"
 								>
 									About Me
 								</button>
-								<NuxtLink to="/#projects" class="button is-white">
+								<NuxtLink to="/#projects" class="button is-primary">
 									Projects
 								</NuxtLink>
-								<NuxtLink to="/#awards" class="button is-white">
+								<NuxtLink to="/#awards" class="button is-primary">
 									Awards
 								</NuxtLink>
-								<NuxtLink to="/#blog" class="button is-white"> Blog </NuxtLink>
+								<NuxtLink to="/#blog" class="button is-primary">
+									Blog
+								</NuxtLink>
 							</div>
 						</div>
 						<transition name="fade">
@@ -55,7 +57,7 @@
 										<span class="has-text-weight-bold">this</span>.)
 									</p>
 									<div
-										style="position: fixed; pointer-events: none"
+										style="position: fixed; pointer-events: none; z-index: 1000"
 										v-bind:style="{
 											top: yPos + 'px',
 											left: xPos + 'px',
@@ -130,5 +132,8 @@ export default {
 	max-width: 200px;
 	max-height: 200px;
 	border-radius: 50%;
+	box-shadow: 0 2px 1px rgba(0, 0, 0, 0.09), 0 4px 2px rgba(0, 0, 0, 0.09),
+		0 8px 4px rgba(0, 0, 0, 0.09), 0 16px 8px rgba(0, 0, 0, 0.09),
+		0 32px 16px rgba(0, 0, 0, 0.09);
 }
 </style>

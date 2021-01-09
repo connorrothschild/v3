@@ -1,45 +1,81 @@
 <template>
 	<div>
-		<Nav color="is-dark" />
-		<article class="section container is-max-desktop">
-			<h1 class="title mt-6 is-size-2">{{ project.title }}</h1>
+		<Nav color="is-primary" />
+		<article class="section container is-max-desktop mt-6">
+			<h1 class="title is-size-2">
+				{{ project.title }}
+			</h1>
 			<h2 class="subtitle is-size-4">{{ project.description }}</h2>
 
-			<div class="tile is-ancestor my-tiles">
-				<div class="tile is-parent">
-					<article
-						class="tile is-child notification is-light box is-flex is-flex-direction-column is-justify-content-space-evenly"
-					>
-						<p class="heading title is-size-4">Tech & Code</p>
-						<div>
-							<p>
-								<span class="has-text-weight-bold">Tools used</span>:
-								{{ project.techstack }}
+			<div class="columns">
+				<div class="column">
+					<article class="card">
+						<header class="card-header">
+							<p
+								class="card-header-title has-background-primary has-text-white"
+							>
+								Tech & Code
 							</p>
-							<a v-if="project.github" :href="project.github"
+						</header>
+						<div class="card-content">
+							<div class="content is-flex is-justify-content-space-evenly">
+								<div class="has-text-centered">
+									<p class="heading has-text-weight-bold title is-size-6">
+										Tools used
+									</p>
+									<p>{{ project.techstack }}</p>
+								</div>
+							</div>
+						</div>
+						<footer class="card-footer">
+							<a
+								class="card-footer-item"
+								v-if="project.github"
+								:href="project.github"
 								><span class="has-text-weight-bold">GitHub Repository</span></a
 							>
-						</div>
+							<p v-else class="card-footer-item">
+								Code is not publicly available 😢
+							</p>
+						</footer>
 					</article>
 				</div>
-				<div class="tile is-parent">
-					<article
-						class="tile is-child notification is-light box is-flex is-flex-direction-column is-justify-content-space-evenly"
-					>
-						<p class="heading title is-size-4">Project Details</p>
-						<div>
-							<p>
-								<span class="has-text-weight-bold">Published</span>:
-								{{ project.date }}
-							</p>
-							<p>
-								<span class="has-text-weight-bold">Built for</span>:
-								{{ project.audience }}
-							</p>
-							<a v-if="project.url" :href="project.url"
-								><span class="has-text-weight-bold">Live URL</span></a
+				<div class="column">
+					<article class="card">
+						<header class="card-header">
+							<p
+								class="card-header-title has-background-primary has-text-white"
 							>
+								Project Details
+							</p>
+						</header>
+						<div class="card-content">
+							<div class="content is-flex is-justify-content-space-evenly">
+								<div class="has-text-centered">
+									<p class="heading has-text-weight-bold title is-size-6">
+										Published
+									</p>
+									<p>{{ project.date }}</p>
+								</div>
+								<div class="has-text-centered">
+									<p class="heading has-text-weight-bold title is-size-6">
+										Audience
+									</p>
+									<p>{{ project.audience }}</p>
+								</div>
+							</div>
 						</div>
+						<footer class="card-footer">
+							<a
+								v-if="project.url"
+								class="card-footer-item has-text-weight-bold"
+								:href="project.url"
+								>Live URL</a
+							>
+							<p v-else class="card-footer-item">
+								Project is not publicly available 😢
+							</p>
+						</footer>
 					</article>
 				</div>
 			</div>
@@ -80,11 +116,6 @@ export default {
 	p,
 	figure {
 		margin-bottom: 1rem;
-		// font-size: 1rem;
-
-		.nuxt-content p:last-child {
-			margin-bottom: 0;
-		}
 	}
 	h1,
 	h2,
@@ -96,23 +127,27 @@ export default {
 	}
 }
 
+.nuxt-content p:last-child {
+	margin-bottom: 0;
+}
+
 .my-tiles {
 	p:not(:last-child) {
-		margin-bottom: 0.5rem !important;
+		margin-bottom: 0.35rem !important;
 	}
 
-	a[href] {
-		background-color: #f03a5f; // $danger;
-		color: white !important;
-		padding: 5px;
-		border-radius: 3px;
-		text-decoration: none !important;
-		transition: 200ms background-color;
+	// a[href] {
+	// 	background-color: #f03a5f;
+	// 	color: white !important;
+	// 	padding: 3px;
+	// 	border-radius: 3px;
+	// 	text-decoration: none !important;
+	// 	transition: 200ms background-color;
 
-		&:hover {
-			background-color: #363636;
-		}
-	}
+	// 	&:hover {
+	// 		background-color: #363636;
+	// 	}
+	// }
 }
 // HOVER ICON LINK
 .icon.icon-link {

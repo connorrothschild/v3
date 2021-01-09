@@ -1,8 +1,11 @@
 <template>
-	<section id="projects" class="hero is-white is-fullheight">
+	<section
+		id="projects"
+		class="hero is-primary is-primary-gradient is-fullheight"
+	>
 		<div class="hero-body">
 			<div class="container">
-				<h1 class="title is-size-1 is-size-3-mobile">Featured Projects</h1>
+				<h1 class="title is-size-1 is-size-3-mobile mt-6">Featured Projects</h1>
 				<NuxtLink
 					to="/project"
 					class="subtitle heading has-text-weight-light is-size-5"
@@ -37,5 +40,26 @@ export default {
 </script>
 
 
-<style>
+<style lang='scss'>
+.is-primary-gradient {
+	background-image: linear-gradient(
+		to bottom,
+		#03071e,
+		#0a0b1c,
+		#100f1a,
+		#131318,
+		#161616
+	);
+}
+
+.is-primary-gradient-rev {
+	background-image: linear-gradient(
+		to top,
+		#03071e,
+		#0a0b1c,
+		#100f1a,
+		#131318,
+		#161616
+	);
+}
 </style>

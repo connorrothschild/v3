@@ -1,6 +1,6 @@
 <template>
 	<nav
-		class="navbar"
+		class="navbar is-fixed-top"
 		:class="color"
 		role="navigation"
 		aria-label="main navigation"
@@ -36,7 +36,12 @@
 				<NuxtLink class="navbar-item" to="/#projects"> Projects </NuxtLink>
 				<NuxtLink class="navbar-item" to="/#awards"> Awards </NuxtLink>
 				<NuxtLink class="navbar-item" to="/#blog"> Blog </NuxtLink>
-				<a class="navbar-item" href="#" target="_blank" rel="noopener">
+				<a
+					class="navbar-item"
+					href="https://docs.google.com/document/d/1qBH-wNMe2nv9Xa4uzHZ5wBevohwKuB3h2i9M2yk4POk/edit?usp=sharing"
+					target="_blank"
+					rel="noopener"
+				>
 					Resume
 				</a>
 			</div>
@@ -44,7 +49,7 @@
 			<div class="navbar-end">
 				<div class="navbar-item">
 					<div class="buttons">
-						<a class="button is-danger">
+						<a class="button is-primary">
 							<strong>Get in touch</strong>
 						</a>
 					</div>

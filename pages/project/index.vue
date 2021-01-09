@@ -1,11 +1,15 @@
 <template>
-	<div>
-		<Nav color="is-dark" />
+	<div class="has-navbar-fixed-top">
+		<Nav color="is-primary" />
 		<article class="section container">
-			<h1 class="title is-size-1 is-size-3-mobile">Projects</h1>
+			<h1 class="title is-size-1 mt-6">Projects</h1>
 			<!-- CONTAINER FOR PROJECTS -->
-			<div class="columns">
-				<div v-for="(project, index) in projects" :key="index" class="column">
+			<div class="columns is-multiline">
+				<div
+					v-for="(project, index) in projects"
+					:key="index"
+					class="column is-3"
+				>
 					<ProjectCard
 						:name="project.title"
 						:description="project.description"

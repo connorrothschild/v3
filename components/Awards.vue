@@ -1,8 +1,11 @@
 <template>
-	<section id="awards" class="hero is-dark is-fullheight">
+	<section
+		id="awards"
+		class="hero is-primary is-primary-gradient-rev is-fullheight"
+	>
 		<div class="hero-body">
 			<div class="container">
-				<h1 class="title is-size-1 is-size-3-mobile">Featured Awards</h1>
+				<h1 class="title is-size-1 is-size-3-mobile mt-6">Featured Awards</h1>
 				<NuxtLink
 					to="/award"
 					class="subtitle heading has-text-weight-light is-size-5"

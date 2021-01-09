@@ -1,11 +1,11 @@
 ---
 title: How Much Does Kid Cudi Hum?
 description: An extensive analysis of music's most famous hum.
-date: 'January 2020'
+date: 'December 2020'
 audience: 'The world!'
 featured: true
 img: cudi-hums/header.png
-techstack: 'D3.js, Vue, JavaScript, HTML/CSS, Bulma, R, Genius API'
+techstack: 'D3.js, Vue.js, Bulma, R, Scrollama, Genius API'
 github: 'https://github.com/connorrothschild/cudi-hums'
 url: 'https://connorrothschild.github.io/cudi-hums/'
 ---

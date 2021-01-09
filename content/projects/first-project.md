@@ -1,11 +1,11 @@
 ---
 title: Quarantunes
 description: Explore your listening history during COVID-19.
-date: 'January 2020'
+date: 'October 2020'
 audience: 'The world (2000 users)'
 featured: true
 img: quarantunes/header.png
-techstack: 'D3.js, Vue, JavaScript, HTML/CSS, Bulma, R, Spotify API'
+techstack: 'D3.js, Vue.js, Bulma, R, Spotify API'
 github: 'https://github.com/connorrothschild/quarantunes'
 url: 'https://quarantune.netlify.app'
 ---

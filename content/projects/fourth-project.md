@@ -1,11 +1,11 @@
 ---
 title: How Many People Have Had COVID-19?
 description: A novel way to visualize COVID-19 case counts.
-date: 'February 2020'
+date: 'November 2020'
 audience: 'The world!'
 featured: false
 img: how-many-people/header.png
-techstack: 'D3.js, Vue, JavaScript, HTML/CSS, Bulma'
+techstack: 'D3.js, Vue.js, Bulma'
 github: 'https://github.com/connorrothschild/how-many-people'
 url: 'https://connorrothschild.github.io/how-many-people'
 ---

@@ -5,7 +5,7 @@ date: 'January 2021'
 audience: 'City of Houston'
 featured: true
 img: how-many-people/header.png
-techstack: 'D3.js, Vue, JavaScript, HTML/CSS, Bulma, Buefy, R'
+techstack: 'D3.js, Vue, Bulma, Buefy, R'
 # github: 'https://github.com/connorrothschild/cudi-hums'
 url: 'https://connorrothschild.github.io/cudi-hums/'
 ---
