@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="scroll-container">
 		<!-- <NuxtLink to="/#" class="heading fixed-bottom-right"
 			>Back to top 👆</NuxtLink
 		> -->
@@ -47,4 +47,9 @@ export default {
 body {
 	color: $text;
 }
+
+// ! FIXME - HTML makes global and that is bad...
+// html {
+// 	scroll-behavior: smooth;
+// }
 </style>

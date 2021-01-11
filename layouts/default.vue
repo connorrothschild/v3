@@ -24,13 +24,8 @@ html {
 	margin: 0;
 }
 
-html {
-	scroll-behavior: smooth;
-}
-
 .object-fit-scale {
 	object-fit: scale-down;
 }
-
 /* OTHER STYLES GO HERE */
 </style>

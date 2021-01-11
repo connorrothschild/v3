@@ -1,4 +1,4 @@
-<template>
+<template class='no-smooth-scroll'>
 	<div>
 		<Nav color="is-primary" />
 		<article class="section container is-max-desktop mt-6">
@@ -153,7 +153,6 @@ export default {
 .icon.icon-link {
 	width: 0;
 }
-
 // .nuxt-content h2 > a::before,
 // .nuxt-content h3 > a::before {
 // 	content: "#";

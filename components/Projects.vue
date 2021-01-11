@@ -36,9 +36,9 @@ export default {
 			type: Array,
 		},
 	},
+	scrollToTop: true,
 };
 </script>
-
 
 <style lang='scss'>
 .is-primary-gradient {
