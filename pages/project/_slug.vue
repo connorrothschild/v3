@@ -82,6 +82,7 @@
 
 			<nuxt-content :document="project" />
 		</article>
+		<Footer />
 	</div>
 </template>
 
@@ -93,7 +94,6 @@ export default {
 
 		return { project };
 	},
-	scrollToTop: true,
 };
 </script>
 
@@ -153,25 +153,5 @@ export default {
 .icon.icon-link {
 	width: 0;
 }
-// .nuxt-content h2 > a::before,
-// .nuxt-content h3 > a::before {
-// 	content: "#";
-// 	display: block;
-// 	float: left;
-// 	margin-left: -1.25rem;
-// 	color: black;
-// 	opacity: 0;
-// 	font-weight: 400;
-// 	font-size: 1.25rem;
-// 	line-height: 1.75rem;
-// 	line-height: 2rem;
-// 	padding-right: 0.5rem;
-// 	position: absolute;
-// }
-
-// .nuxt-content h2:hover > a::before,
-// .nuxt-content h3:hover > a::before {
-// 	opacity: 1;
-// }
 </style>
 

@@ -1,5 +1,5 @@
 ---
-title: Title of my first post
+title: Title of my second post
 description: Lorem ipsum
 ---
 

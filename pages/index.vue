@@ -1,13 +1,11 @@
 <template>
-	<div class="scroll-container">
-		<!-- <NuxtLink to="/#" class="heading fixed-bottom-right"
-			>Back to top 👆</NuxtLink
-		> -->
+	<div>
 		<Nav color="is-primary" />
 		<Hero />
 		<Projects :projects="projects" />
 		<Awards :awards="awards" />
 		<Blog :articles="articles" />
+		<Footer />
 	</div>
 </template>
 
@@ -16,11 +14,12 @@ export default {
 	async asyncData({ $content, params }) {
 		const projects = await $content("projects", params.slug)
 			.only(["title", "description", "img", "slug", "date"])
-			// .sortBy("createdAt", "asc")
 			.where({ featured: true })
 			.fetch();
 
-		const awards = await $content("awards", params.slug).fetch();
+		const awards = await $content("awards", params.slug)
+			.where({ featured: true })
+			.fetch();
 
 		const articles = await $content("articles", params.slug)
 			.only(["title", "description", "img", "slug", "author"])
@@ -38,12 +37,6 @@ export default {
 </script>
 
 <style lang='scss'>
-.fixed-bottom-right {
-	position: fixed;
-	bottom: 0;
-	right: 0;
-}
-
 body {
 	color: $text;
 }

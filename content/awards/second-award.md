@@ -1,8 +1,9 @@
 ---
-name: Title of my first project
+name: Honorable Mention, RStudio Table Contest
 description: Lorem ipsum
-organization: 'GJDNFSjkns'
+organization: RStudio, Inc.
 date: 'January 2020'
+featured: true
 ---
 
 ## What it is

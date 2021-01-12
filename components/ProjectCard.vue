@@ -12,7 +12,7 @@
 		<div class="card-content">
 			<div class="media">
 				<div class="media-content">
-					<p class="title is-4">{{ name }}</p>
+					<p class="title is-4">{{ title }}</p>
 					<p class="subtitle is-6">{{ date }}</p>
 				</div>
 			</div>
@@ -26,9 +26,12 @@
 
 <script>
 export default {
-	props: ["name", "description", "date", "img", "img_alt", "slug"],
+	props: ["title", "description", "date", "img", "img_alt", "slug"],
 };
 </script>
 
 <style scoped>
+.card {
+	height: 100%;
+}
 </style>

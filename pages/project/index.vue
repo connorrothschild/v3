@@ -2,6 +2,7 @@
 	<div class="has-navbar-fixed-top">
 		<Nav color="is-primary" />
 		<article class="section container">
+			<!-- TITLE -->
 			<h1 class="title is-size-1 mt-6">Projects</h1>
 			<!-- CONTAINER FOR PROJECTS -->
 			<div class="columns is-multiline">
@@ -10,14 +11,7 @@
 					:key="index"
 					class="column is-3"
 				>
-					<ProjectCard
-						:name="project.title"
-						:description="project.description"
-						:date="project.date"
-						:img="project.img"
-						:img_alt="project.image_alt"
-						:slug="project.slug"
-					/>
+					<ProjectCard v-bind="project" />
 				</div>
 			</div>
 		</article>
@@ -28,7 +22,7 @@
 export default {
 	async asyncData({ $content, params }) {
 		const projects = await $content("projects", params.slug)
-			.only(["title", "description", "img", "slug"])
+			.only(["title", "description", "img", "slug", "date"])
 			.sortBy("createdAt", "asc")
 			.fetch();
 

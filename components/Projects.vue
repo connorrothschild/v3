@@ -5,7 +5,9 @@
 	>
 		<div class="hero-body">
 			<div class="container">
+				<!-- TITLE -->
 				<h1 class="title is-size-1 is-size-3-mobile mt-6">Featured Projects</h1>
+				<!-- LINK TO ALL PROJECTS -->
 				<NuxtLink
 					to="/project"
 					class="subtitle heading has-text-weight-light is-size-5"
@@ -14,14 +16,7 @@
 				<!-- CONTAINER FOR PROJECTS -->
 				<div class="columns">
 					<div v-for="(project, index) in projects" :key="index" class="column">
-						<ProjectCard
-							:name="project.title"
-							:description="project.description"
-							:date="project.date"
-							:img="project.img"
-							:img_alt="project.image_alt"
-							:slug="project.slug"
-						/>
+						<ProjectCard v-bind="project" />
 					</div>
 				</div>
 			</div>
@@ -31,6 +26,9 @@
 
 <script>
 export default {
+	mounted() {
+		console.log(this.projects);
+	},
 	props: {
 		projects: {
 			type: Array,
@@ -61,5 +59,8 @@ export default {
 		#131318,
 		#161616
 	);
+}
+*:focus {
+	outline: 0.5px solid #cecece;
 }
 </style>

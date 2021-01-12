@@ -1,8 +1,9 @@
 ---
-name: How Much Does Kid Cudi Hum?
+name: Winner, The 2020 Pudding Cup
 description: An extensive analysis of music's most famous hum.
-organization: 'Google.com'
-date: 'January 2020'
+organization: The Pudding
+featured: true
+date: 'January 2021'
 url: 'https://google.com'
 ---
 

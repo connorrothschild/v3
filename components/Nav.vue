@@ -69,9 +69,4 @@ export default {
 
 
 <style>
-/* .navbar {
-	width: 100%;
-	position: fixed;
-	top: 0;
-} */
 </style>
