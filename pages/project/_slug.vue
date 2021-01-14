@@ -2,7 +2,7 @@
 	<div>
 		<Nav color="is-primary" />
 		<article class="section container is-max-desktop mt-6">
-			<h1 class="title is-size-2">
+			<h1 class="title has-text-weight-boldest is-size-2">
 				{{ project.title }}
 			</h1>
 			<h2 class="subtitle is-size-4">{{ project.description }}</h2>

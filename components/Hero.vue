@@ -7,7 +7,9 @@
 						class="is-flex is-justify-content-space-between is-align-items-center responsive-flex"
 					>
 						<div class="half-flex mb-mobile">
-							<h1 class="title is-size-1">Hi, I'm Connor Rothschild</h1>
+							<h1 class="title is-size-1 has-text-weight-boldest">
+								Hi, I'm Connor Rothschild
+							</h1>
 							<h2 class="subtitle heading is-size-5">
 								Data, design, and digital
 							</h2>

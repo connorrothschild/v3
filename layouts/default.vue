@@ -53,4 +53,12 @@ html {
 *:focus-visible {
 	outline: 1px dashed #cecece;
 }
+
+.has-text-weight-boldest {
+	font-weight: 800 !important;
+}
+
+.has-border-bottom-grey {
+	border-bottom: 1px solid #cecece;
+}
 </style>

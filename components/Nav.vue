@@ -30,7 +30,7 @@
 		<div id="navbarBasicExample" class="navbar-menu">
 			<div class="navbar-start">
 				<NuxtLink class="navbar-item" to="/">
-					<span class="has-text-weight-bold">Home</span>
+					<span class="has-text-weight-boldest">Home</span>
 				</NuxtLink>
 
 				<NuxtLink class="navbar-item" to="/#projects"> Projects </NuxtLink>

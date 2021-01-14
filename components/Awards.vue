@@ -6,7 +6,11 @@
 		<div class="hero-body">
 			<div class="container">
 				<!-- TITLE -->
-				<h1 class="title is-size-1 is-size-3-mobile mt-6">Featured Awards</h1>
+				<h1
+					class="title has-text-weight-boldest is-size-1 is-size-3-mobile mt-6"
+				>
+					Featured Awards
+				</h1>
 				<!-- LINK TO ALL AWARDS -->
 				<NuxtLink
 					to="/award"
@@ -20,7 +24,7 @@
 						:key="index"
 						class="column is-half"
 					>
-						<AwardCard v-bind="award" />
+						<AwardCard v-bind="award" background="has-background-light" />
 					</div>
 				</div>
 			</div>

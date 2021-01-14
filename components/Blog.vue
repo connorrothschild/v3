@@ -3,7 +3,9 @@
 		<div class="hero-body">
 			<div class="container">
 				<!-- TITLE -->
-				<h1 class="title is-size-1 is-size-3-mobile mt-6">
+				<h1
+					class="title has-text-weight-boldest is-size-1 is-size-3-mobile mt-6"
+				>
 					Featured Blog Posts
 				</h1>
 				<!-- LINK FOR ALL POSTS -->
@@ -15,7 +17,7 @@
 				<!-- CONTAINER FOR POSTS -->
 				<div class="columns">
 					<div v-for="(article, index) in articles" :key="index" class="column">
-						<BlogCard v-bind="article" />
+						<BlogCard v-bind="article" background="has-background-light" />
 					</div>
 				</div>
 			</div>

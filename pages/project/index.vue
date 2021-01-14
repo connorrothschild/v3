@@ -4,7 +4,11 @@
 		<div class="fullscreen has-background-light">
 			<article class="section container">
 				<!-- TITLE -->
-				<h1 class="title is-size-1 mt-6">Projects</h1>
+				<h1
+					class="title has-text-weight-boldest is-size-1 my-6 pb-4 has-border-bottom-grey"
+				>
+					Projects
+				</h1>
 				<!-- CONTAINER FOR PROJECTS -->
 				<div class="columns is-multiline">
 					<div
@@ -12,7 +16,7 @@
 						:key="index"
 						class="column is-3"
 					>
-						<ProjectCard v-bind="project" />
+						<ProjectCard v-bind="project" background="has-background-white" />
 					</div>
 				</div>
 			</article>

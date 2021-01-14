@@ -3,7 +3,7 @@
 		<Nav color="is-primary" />
 		<div style="min-height: 100vh">
 			<article class="section container is-max-desktop mt-6">
-				<h1 class="title is-size-2">
+				<h1 class="title has-text-weight-boldest is-size-2">
 					{{ award.name }}
 				</h1>
 				<p class="subtitle heading is-size-5">

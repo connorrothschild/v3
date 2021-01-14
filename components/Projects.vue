@@ -6,7 +6,11 @@
 		<div class="hero-body">
 			<div class="container">
 				<!-- TITLE -->
-				<h1 class="title is-size-1 is-size-3-mobile mt-6">Featured Projects</h1>
+				<h1
+					class="title has-text-weight-boldest is-size-1 is-size-3-mobile mt-6"
+				>
+					Featured Projects
+				</h1>
 				<!-- LINK TO ALL PROJECTS -->
 				<NuxtLink
 					to="/project"
@@ -15,12 +19,8 @@
 				>
 				<!-- CONTAINER FOR PROJECTS -->
 				<div class="columns">
-					<div
-						v-for="(project, index) in projects"
-						:key="index"
-						class="column column-fullheight"
-					>
-						<ProjectCard v-bind="project" />
+					<div v-for="(project, index) in projects" :key="index" class="column">
+						<ProjectCard v-bind="project" background="has-background-light" />
 					</div>
 				</div>
 			</div>

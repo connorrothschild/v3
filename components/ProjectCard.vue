@@ -1,7 +1,7 @@
 <template>
 	<HoverableCard :to="`project/${slug}`">
 		<template v-slot:default>
-			<div class="card card-fullheight">
+			<div class="card card-fullheight" :class="background">
 				<div class="card-image">
 					<figure class="image is-2by1">
 						<img
@@ -33,7 +33,15 @@ import HoverableCard from "./HoverableCard.vue";
 
 export default {
 	components: { HoverableCard },
-	props: ["title", "description", "date", "img", "img_alt", "slug"],
+	props: [
+		"title",
+		"description",
+		"date",
+		"img",
+		"img_alt",
+		"slug",
+		"background",
+	],
 };
 </script>
 
