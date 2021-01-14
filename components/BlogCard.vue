@@ -1,19 +1,37 @@
 <template>
-	<div class="card">
-		{{ title }}
-		{{ description }}
-		{{ date }}
-		<a target="_blank" rel="noopener noreferrer" :href="slug"
-			>More information</a
-		>
-	</div>
+	<HoverableCard :to="`post/${slug}`">
+		<template v-slot:default>
+			<div class="card card-fullheight">
+				<div class="card-image">
+					<figure class="image is-2by1">
+						<img
+							:src="require(`~/assets/images/post/${img}`)"
+							:alt="img_alt"
+							class="object-fit-scale"
+						/>
+					</figure>
+				</div>
+				<div class="card-content has-text-black">
+					<p class="title is-size-4">{{ title }}</p>
+					<p>{{ description }}</p>
+
+					<p class="subtitle heading is-size-6 has-text-dark">
+						{{ date }}
+					</p>
+				</div>
+			</div>
+		</template>
+	</HoverableCard>
 </template>
 
 <script>
+import HoverableCard from "./HoverableCard.vue";
+
 export default {
-	props: ["title", "description", "date", "image", "image_alt", "slug"],
+	components: { HoverableCard },
+	props: ["title", "description", "date", "img", "img_alt", "slug", "path"],
 };
 </script>
 
-<style>
+<style scoped>
 </style>

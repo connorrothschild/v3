@@ -1,35 +1,27 @@
 <template>
-	<div class="card">
-		<div class="card-content">
-					<p class="title is-4">{{ name }}</p>
-					<p class="subtitle heading is-6">{{ organization }} | {{ date }}</p>
+	<HoverableCard :to="`award/${slug}`">
+		<template v-slot:default>
+			<div class="card card card-fullheight">
+				<div class="card-content has-text-black">
+					<p class="title is-size-4">{{ name }}</p>
+					<p class="subtitle heading is-size-6 has-text-dark">
+						{{ organization }} | {{ date }}
+					</p>
 					<p>{{ description }}</p>
+				</div>
 			</div>
-			<!-- <footer class="card-footer">
-				<a
-					class="card-footer-item"
-					target="_blank"
-					rel="noopener noreferrer"
-					:href="url"
-					>More information</a
-				>
-			</footer> -->
-		</div>
-	</div>
+		</template>
+	</HoverableCard>
 </template>
 
 <script>
+import HoverableCard from "./HoverableCard.vue";
+
 export default {
-	props: ["name", "organization", "date", "description", "url"],
+	components: { HoverableCard },
+	props: ["name", "organization", "date", "description", "url", "slug"],
 };
 </script>
 
 <style scoped lang='scss'>
-p {
-	color: black !important;
-}
-
-.card {
-	height: 100%;
-}
 </style>

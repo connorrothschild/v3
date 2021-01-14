@@ -5,6 +5,7 @@ date: 'October 2020'
 audience: 'The world (2000 users)'
 featured: true
 img: quarantunes/header.png
+img_alt: "Quarantunes header, includes an image of a MacBook with the application open."
 techstack: 'D3.js, Vue.js, Bulma, R, Spotify API'
 github: 'https://github.com/connorrothschild/quarantunes'
 url: 'https://quarantune.netlify.app'

@@ -1,4 +1,4 @@
-<template class='no-smooth-scroll'>
+<template>
 	<div>
 		<Nav color="is-primary" />
 		<article class="section container is-max-desktop mt-6">

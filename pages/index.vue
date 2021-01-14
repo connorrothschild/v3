@@ -13,7 +13,7 @@
 export default {
 	async asyncData({ $content, params }) {
 		const projects = await $content("projects", params.slug)
-			.only(["title", "description", "img", "slug", "date"])
+			.only(["title", "description", "img", "img_alt", "slug", "date"])
 			.where({ featured: true })
 			.fetch();
 
@@ -22,7 +22,7 @@ export default {
 			.fetch();
 
 		const articles = await $content("articles", params.slug)
-			.only(["title", "description", "img", "slug", "author"])
+			.only(["title", "description", "img", "img_alt", "slug"])
 			.sortBy("createdAt", "asc")
 			.limit(3)
 			.fetch();

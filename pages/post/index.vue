@@ -4,15 +4,15 @@
 		<div class="fullscreen has-background-light">
 			<article class="section container">
 				<!-- TITLE -->
-				<h1 class="title is-size-1 mt-6">Projects</h1>
+				<h1 class="title is-size-1 mt-6">Blog Posts</h1>
 				<!-- CONTAINER FOR PROJECTS -->
 				<div class="columns is-multiline">
 					<div
-						v-for="(project, index) in projects"
+						v-for="(article, index) in articles"
 						:key="index"
 						class="column is-3"
 					>
-						<ProjectCard v-bind="project" />
+						<BlogCard v-bind="article" />
 					</div>
 				</div>
 			</article>
@@ -23,13 +23,13 @@
 <script>
 export default {
 	async asyncData({ $content, params }) {
-		const projects = await $content("projects", params.slug)
-			.only(["title", "description", "img", "img_alt", "slug", "date"])
+		const articles = await $content("articles", params.slug)
+			.only(["title", "description", "img", "slug"])
 			.sortBy("createdAt", "asc")
 			.fetch();
 
 		return {
-			projects,
+			articles,
 		};
 	},
 };

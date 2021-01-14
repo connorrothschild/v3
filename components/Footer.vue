@@ -40,12 +40,9 @@ export default {
 .site-footer {
 	background: $primary;
 	padding: 2rem 1.5rem 3rem;
-}
 
-/* .site-footer-content {
-	max-width: 80%;
-	padding-top: 1rem;
-	margin: 0 auto;
-	border-top: 1px solid #cecece;
-} */
+	a[href] {
+		color: #cecece;
+	}
+}
 </style>

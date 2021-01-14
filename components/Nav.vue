@@ -47,13 +47,7 @@
 			</div>
 
 			<div class="navbar-end">
-				<div class="navbar-item">
-					<div class="buttons">
-						<a class="button is-primary">
-							<strong>Get in touch</strong>
-						</a>
-					</div>
-				</div>
+				<NuxtLink class="navbar-item" to="/"> Get in touch</NuxtLink>
 			</div>
 		</div>
 	</nav>

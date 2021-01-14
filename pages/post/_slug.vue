@@ -1,25 +1,34 @@
 <template>
-	<article class="container is-max-desktop">
-		<h1 class="title">{{ article.title }}</h1>
-		<h2>{{ article.description }}</h2>
-		<img :src="article.img" :alt="article.alt" />
-		<p>Post last updated: {{ formatDate(article.updatedAt) }}</p>
+	<div>
+		<Nav color="is-primary" />
+		<article class="section container is-max-desktop mt-6">
+			<h1 class="title is-size-2">
+				{{ article.title }}
+			</h1>
+			<h2 class="subtitle heading is-size-5">{{ article.date }}</h2>
+			<!-- <img :src="article.img" :alt="article.alt" /> -->
+			<p>{{ article.description }}</p>
+			<hr />
 
-		<!-- TABLE OF CONTENTS -->
-		<nav>
-			<ul>
-				<li v-for="link of article.toc" :key="link.id">
-					<NuxtLink
-						:class="{ 'py-2': link.depth === 2, 'ml-2 pb-2': link.depth === 3 }"
-						:to="`#${link.id}`"
-						>{{ link.text }}</NuxtLink
-					>
-				</li>
-			</ul>
-		</nav>
+			<!-- IF YOU WANT A TOC UNCOMMENT -->
+			<!-- <nav>
+				<ul>
+					<li v-for="link of article.toc" :key="link.id">
+						<NuxtLink
+							:class="{
+								'py-2': link.depth === 2,
+								'ml-2 pb-2': link.depth === 3,
+							}"
+							:to="`#${link.id}`"
+							>{{ link.text }}</NuxtLink
+						>
+					</li>
+				</ul>
+			</nav> -->
 
-		<nuxt-content :document="article" />
-	</article>
+			<nuxt-content :document="article" />
+		</article>
+	</div>
 </template>
 
 

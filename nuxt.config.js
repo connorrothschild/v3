@@ -4,7 +4,7 @@ export default {
 
 	// Global page headers (https://go.nuxtjs.dev/config-head)
 	head           : {
-		title : 'www',
+		title : 'Connor Rothschild',
 		meta  : [
 			{ charset: 'utf-8' },
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -35,7 +35,7 @@ export default {
 		'@nuxtjs/bulma',
 		'@nuxt/content',
 		'@nuxt/image',
-		'nuxt-lazy-load',
+		// 'nuxt-lazy-load',
 		'@nuxtjs/style-resources'
 	],
 

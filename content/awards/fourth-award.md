@@ -1,7 +1,7 @@
 ---
-name: Title of my first project
-description: Lorem ipsum
-organization: 'GJDNFSjkns'
+name: First Place, Coronavirus Houston Response Projects
+description: Awarded first place out 
+organization: 'Rice Data To Knowledge Lab'
 date: 'January 2020'
 featured: true
 ---

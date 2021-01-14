@@ -5,6 +5,7 @@ date: 'December 2020'
 audience: 'The world!'
 featured: true
 img: cudi-hums/header.png
+img_alt: 'A header image that says "how much does Kid Cudi hum?"'
 techstack: 'D3.js, Vue.js, Bulma, R, Scrollama, Genius API'
 github: 'https://github.com/connorrothschild/cudi-hums'
 url: 'https://connorrothschild.github.io/cudi-hums/'

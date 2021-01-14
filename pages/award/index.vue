@@ -1,18 +1,18 @@
 <template>
 	<div class="has-navbar-fixed-top">
 		<Nav color="is-primary" />
-		<div class="fullscreen has-background-light">
+		<div class="has-background-light fullscreen">
 			<article class="section container">
 				<!-- TITLE -->
-				<h1 class="title is-size-1 mt-6">Projects</h1>
+				<h1 class="title is-size-1 mt-6">Awards</h1>
 				<!-- CONTAINER FOR PROJECTS -->
 				<div class="columns is-multiline">
 					<div
-						v-for="(project, index) in projects"
+						v-for="(award, index) in awards"
 						:key="index"
-						class="column is-3"
+						class="column is-one-third"
 					>
-						<ProjectCard v-bind="project" />
+						<AwardCard v-bind="award" />
 					</div>
 				</div>
 			</article>
@@ -23,13 +23,13 @@
 <script>
 export default {
 	async asyncData({ $content, params }) {
-		const projects = await $content("projects", params.slug)
-			.only(["title", "description", "img", "img_alt", "slug", "date"])
-			.sortBy("createdAt", "asc")
+		const awards = await $content("awards", params)
+			// .only(["title", "description", "img", "slug", "date"])
+			// .sortBy("createdAt", "asc")
 			.fetch();
 
 		return {
-			projects,
+			awards,
 		};
 	},
 };

@@ -4,7 +4,7 @@
 	</div>
 </template>
 
-<style>
+<style lang='scss'>
 html {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 		"Helvetica Neue", Arial, sans-serif;
@@ -27,5 +27,30 @@ html {
 .object-fit-scale {
 	object-fit: scale-down;
 }
-/* OTHER STYLES GO HERE */
+
+.object-fit-cover {
+	object-fit: cover;
+}
+
+.fullscreen {
+	min-height: 100vh;
+}
+
+.card-content.has-text-black {
+	p {
+		color: black !important;
+	}
+}
+
+.card.card-fullheight {
+	height: 100%;
+}
+
+*:focus {
+	outline: none;
+}
+
+*:focus-visible {
+	outline: 1px dashed #cecece;
+}
 </style>

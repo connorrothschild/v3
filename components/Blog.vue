@@ -8,7 +8,7 @@
 				</h1>
 				<!-- LINK FOR ALL POSTS -->
 				<NuxtLink
-					to="/blog"
+					to="/post"
 					class="subtitle heading has-text-weight-light is-size-5"
 					>See all posts 👉</NuxtLink
 				>
@@ -25,6 +25,9 @@
 
 <script>
 export default {
+	mounted() {
+		console.log(this.articles);
+	},
 	props: {
 		articles: {
 			type: Array,

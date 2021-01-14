@@ -15,7 +15,11 @@
 				>
 				<!-- CONTAINER FOR PROJECTS -->
 				<div class="columns">
-					<div v-for="(project, index) in projects" :key="index" class="column">
+					<div
+						v-for="(project, index) in projects"
+						:key="index"
+						class="column column-fullheight"
+					>
 						<ProjectCard v-bind="project" />
 					</div>
 				</div>
@@ -26,9 +30,7 @@
 
 <script>
 export default {
-	mounted() {
-		console.log(this.projects);
-	},
+	mounted() {},
 	props: {
 		projects: {
 			type: Array,
@@ -59,8 +61,5 @@ export default {
 		#131318,
 		#161616
 	);
-}
-*:focus {
-	outline: 0.5px solid #cecece;
 }
 </style>

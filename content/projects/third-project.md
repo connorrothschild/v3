@@ -5,6 +5,7 @@ date: 'January 2021'
 audience: 'City of Houston'
 featured: true
 img: how-many-people/header.png
+img_alt: "The Houston Rental Assistance Program dashboard in action."
 techstack: 'D3.js, Vue, Bulma, Buefy, R'
 # github: 'https://github.com/connorrothschild/cudi-hums'
 url: 'https://connorrothschild.github.io/cudi-hums/'

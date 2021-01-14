@@ -5,6 +5,7 @@ date: 'November 2020'
 audience: 'The world!'
 featured: false
 img: how-many-people/header.png
+img_alt: "An example screen of the 'How Many People' application"
 techstack: 'D3.js, Vue.js, Bulma'
 github: 'https://github.com/connorrothschild/how-many-people'
 url: 'https://connorrothschild.github.io/how-many-people'

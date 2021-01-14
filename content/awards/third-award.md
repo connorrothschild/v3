@@ -1,7 +1,7 @@
 ---
-name: Title of my first project
-description: Lorem ipsum
-organization: 'GJDNFSjkns'
+name: Bronze, 2020 Malofiej Awards
+description: Awarded the student bronze for my piece Mapping Missing Migrants.
+organization: 'Malofiej'
 date: 'January 2020'
 featured: true
 ---

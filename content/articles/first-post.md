@@ -1,6 +1,9 @@
 ---
 title: Title of my first post
 description: Lorem ipsum
+img: cudi-hums/header.png
+img_alt: 'Blog post header image'
+date: 'January 2021'
 ---
 
 ## This is a heading

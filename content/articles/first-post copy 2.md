@@ -1,12 +1,11 @@
 ---
-name: Honorable Mention, RStudio Table Contest
-description: Awarded honorable mention out of 80 entries for a tutorial to recreate a table by The Economist using R.
-organization: RStudio, Inc.
-date: 'January 2020'
-featured: true
+title: Title of my second post
+description: Lorem ipsum
+img: how-many-people/header.png
+img_alt: 'Blog post header image'
 ---
 
-## What it is
+## This is a heading
 
 This is some more info
 

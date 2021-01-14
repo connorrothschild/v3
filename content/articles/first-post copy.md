@@ -1,6 +1,9 @@
 ---
 title: Title of my second post
 description: Lorem ipsum
+img: quarantunes/header.png
+img_alt: 'Blog post header image'
+date: 'December 2019'
 ---
 
 ## This is a heading
