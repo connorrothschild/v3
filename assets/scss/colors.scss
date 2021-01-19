@@ -14,5 +14,24 @@ $text-strong: #000000;
 $primary: #03071e;
 $info: $red;
 
+// Resolve Prism/Bulma conflicts 
+// https://www.darraghoriordan.com/2019/01/20/bulma-prismjs-in-gatsby-css-conflicts/
+.token.tag,
+.token.content,
+.token.number {
+  display: inline;
+  padding: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  vertical-align: inherit;
+  border-radius: inherit;
+  font-weight: inherit;
+  white-space: inherit;
+  background: inherit;
+  margin: inherit;
+}
+
 /* Import the rest of Bulma */
 @import '~bulma';
+

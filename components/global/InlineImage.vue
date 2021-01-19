@@ -27,3 +27,10 @@ export default {
 	},
 };
 </script>
+
+<style scoped>
+img {
+	padding: 1rem 0;
+}
+</style>
+

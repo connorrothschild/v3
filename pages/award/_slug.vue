@@ -40,9 +40,13 @@ export default {
 		font-weight: bold;
 		font-size: 22px;
 	}
-	.h3 {
+	h3 {
 		font-weight: bold;
 		font-size: 18px;
+	}
+	h4 {
+		font-weight: bold;
+		font-size: 16px;
 	}
 
 	p,

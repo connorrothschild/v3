@@ -5,6 +5,7 @@
 </template>
 
 <style lang='scss'>
+// GLOBAL STYLES!
 html {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 		"Helvetica Neue", Arial, sans-serif;
@@ -61,4 +62,25 @@ html {
 .has-border-bottom-grey {
 	border-bottom: 1px solid #cecece;
 }
+
+.container.is-max-tablet {
+	max-width: 768px !important;
+}
+
+.page-enter-active,
+.page-leave-active {
+	transition-property: opacity;
+	transition-timing-function: ease-in-out;
+	transition-duration: 250ms;
+}
+
+.page-enter,
+.page-leave-to {
+	opacity: 0;
+}
+
+// ! FIXME - HTML makes global and that is bad...
+// html:focus-within {
+// 	scroll-behavior: smooth;
+// }
 </style>

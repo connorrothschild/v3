@@ -1,13 +1,12 @@
 <template>
 	<div>
 		<Nav color="is-primary" />
-		<article class="section container is-max-desktop mt-6">
+		<article class="section container is-max-tablet mt-6">
 			<h1 class="title has-text-weight-boldest is-size-2">
 				{{ article.title }}
 			</h1>
 			<h2 class="subtitle heading is-size-5">{{ article.date }}</h2>
-			<!-- <img :src="article.img" :alt="article.alt" /> -->
-			<p>{{ article.description }}</p>
+			<p class="subtitle">{{ article.description }}</p>
 			<hr />
 
 			<!-- IF YOU WANT A TOC UNCOMMENT -->
@@ -54,15 +53,25 @@ export default {
 	h1 {
 		font-weight: bold;
 		font-size: 28px;
+		margin: 0.5rem 0;
 	}
 	h2 {
 		font-weight: bold;
 		font-size: 22px;
+		margin: 0.5rem 0;
+		border-bottom: 2px solid whitesmoke;
 	}
-	.h3 {
+	h3 {
 		font-weight: bold;
 		font-size: 18px;
+		margin: 0.5rem 0;
 	}
+	h4 {
+		font-weight: bold;
+		font-size: 16px;
+		margin-bottom: 1rem;
+	}
+
 	p {
 		margin-bottom: 0.5rem;
 		font-size: 1rem;
@@ -72,7 +81,7 @@ export default {
 		}
 	}
 }
-// HOVER ICON LINK
+// Hover icon link
 .icon.icon-link {
 	width: 0;
 }
@@ -96,6 +105,11 @@ export default {
 .nuxt-content h2:hover > a::before,
 .nuxt-content h3:hover > a::before {
 	opacity: 1;
+}
+
+// Margin around code highlighting
+.nuxt-content-highlight {
+	margin: 1rem 0;
 }
 </style>
 

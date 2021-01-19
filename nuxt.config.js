@@ -39,6 +39,15 @@ export default {
 		'@nuxtjs/style-resources'
 	],
 
+	content        : {
+		markdown : {
+			prism : {
+				// https://github.com/PrismJS/prism-themes
+				theme : 'prism-themes/themes/prism-atom-dark.css'
+			}
+		}
+	},
+
 	styleResources : {
 		scss : [ './assets/scss/*.scss' ]
 	},

@@ -41,8 +41,10 @@ body {
 	color: $text;
 }
 
-// ! FIXME - HTML makes global and that is bad...
-// html {
-// 	scroll-behavior: smooth;
-// }
+h1 {
+	&::selection {
+		background: whitesmoke;
+		color: $primary;
+	}
+}
 </style>
