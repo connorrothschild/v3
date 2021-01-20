@@ -2,12 +2,17 @@
 	<div>
 		<Nav color="is-primary" />
 		<article class="section container is-max-desktop mt-6">
-			<h1 class="title has-text-weight-boldest is-size-2">
+			<h1 class="title has-text-weight-boldest is-size-2 is-size-4-mobile">
 				{{ project.title }}
 			</h1>
-			<h2 class="subtitle is-size-4">{{ project.description }}</h2>
+			<h2 class="subtitle is-size-4 is-size-6-mobile">
+				{{ project.description }}
+			</h2>
+			<hr />
 
-			<div class="columns">
+			<nuxt-content :document="project" />
+			<hr />
+			<div class="columns mt-3">
 				<div class="column">
 					<article class="card">
 						<header class="card-header">
@@ -79,8 +84,6 @@
 					</article>
 				</div>
 			</div>
-
-			<nuxt-content :document="project" />
 		</article>
 		<Footer />
 	</div>
@@ -102,19 +105,31 @@ export default {
 .nuxt-content-container {
 	h1 {
 		font-weight: bold;
-		font-size: 28px;
+		font-size: 1.8rem;
+		@media screen and (max-width: 768px) {
+			font-size: 1.4rem;
+		}
 	}
 	h2 {
 		font-weight: bold;
-		font-size: 22px;
+		font-size: 1.6rem;
+		@media screen and (max-width: 768px) {
+			font-size: 1.3rem;
+		}
 	}
 	h3 {
 		font-weight: bold;
-		font-size: 18px;
+		font-size: 1.4rem;
+		@media screen and (max-width: 768px) {
+			font-size: 1.2rem;
+		}
 	}
 	h4 {
 		font-weight: bold;
-		font-size: 16px;
+		font-size: 1.2rem;
+		@media screen and (max-width: 768px) {
+			font-size: 1.1rem;
+		}
 	}
 
 	p,

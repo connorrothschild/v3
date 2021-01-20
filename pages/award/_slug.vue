@@ -3,13 +3,15 @@
 		<Nav color="is-primary" />
 		<div style="min-height: 100vh">
 			<article class="section container is-max-desktop mt-6">
-				<h1 class="title has-text-weight-boldest is-size-2">
+				<h1 class="title has-text-weight-boldest is-size-2 is-size-4-mobile">
 					{{ award.name }}
 				</h1>
-				<p class="subtitle heading is-size-5">
+				<p class="subtitle heading is-size-5 is-size-6-mobile">
 					{{ award.organization }} | {{ award.date }}
 				</p>
-				<p>{{ award.description }}</p>
+				<p class="subtitle is-size-5 is-size-6-mobile">
+					{{ award.description }}
+				</p>
 				<hr />
 				<nuxt-content :document="award" />
 			</article>

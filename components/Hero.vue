@@ -32,50 +32,56 @@
 								</NuxtLink>
 							</div>
 						</div>
-						<transition name="fade">
-							<div v-if="showAbout" class="half-flex">
-								<p class="is-size-5 content">
-									I'm a data scientist, designer, and developer based in
-									Houston, Texas.
-								</p>
-								<p class="content">
-									I currently work at Moksha Data, and have worked for clients
-									such as the City of Houston, the US Special Operations
-									Command, and the Houston Food Bank. I'm passionate about data
-									visualization, presentation, and storytelling.
-								</p>
-								<div
-									v-on:mousemove="updateCoords"
-									@mouseover="showImg = true"
-									@mouseout="showImg = false"
-									style="
-										display: inline-block;
-										cursor: none;
-										padding: 0 10px 10px 0;
-									"
-								>
-									<p style="pointer-events: none">
-										(I look like
-										<span class="has-text-weight-bold">this</span>.)
+						<div class="half-flex">
+							<transition name="fade">
+								<div v-if="showAbout" class="half-flex">
+									<p class="is-size-5 content">
+										I'm a data scientist, designer, and developer based in
+										Houston, Texas.
+									</p>
+									<p class="content">
+										I currently work at Moksha Data, and have worked for clients
+										such as the City of Houston, the US Special Operations
+										Command, and the Houston Food Bank. I'm passionate about
+										data visualization, presentation, and storytelling.
 									</p>
 									<div
-										style="position: fixed; pointer-events: none; z-index: 1000"
-										v-bind:style="{
-											top: yPos + 'px',
-											left: xPos + 'px',
-										}"
+										v-on:mousemove="updateCoords"
+										@mouseover="showImg = true"
+										@mouseout="showImg = false"
+										style="
+											display: inline-block;
+											cursor: none;
+											padding: 0 10px 10px 0;
+										"
 									>
-										<transition name="fade">
-											<img
-												class="me"
-												v-if="showImg"
-												src="~/assets/images/me.jpg"
-											/>
-										</transition>
+										<p style="pointer-events: none">
+											(I look like
+											<span class="has-text-weight-bold">this</span>.)
+										</p>
+										<div
+											style="
+												position: fixed;
+												pointer-events: none;
+												z-index: 1000;
+											"
+											v-bind:style="{
+												top: yPos + 'px',
+												left: xPos + 'px',
+											}"
+										>
+											<transition name="fade">
+												<img
+													class="me"
+													v-if="showImg"
+													src="~/assets/images/me.jpg"
+												/>
+											</transition>
+										</div>
 									</div>
 								</div>
-							</div>
-						</transition>
+							</transition>
+						</div>
 					</div>
 				</div>
 			</div>

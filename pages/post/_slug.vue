@@ -2,11 +2,15 @@
 	<div>
 		<Nav color="is-primary" />
 		<article class="section container is-max-tablet mt-6">
-			<h1 class="title has-text-weight-boldest is-size-2">
+			<h1 class="title has-text-weight-boldest is-size-2 is-size-4-mobile">
 				{{ article.title }}
 			</h1>
-			<h2 class="subtitle heading is-size-5">{{ article.date }}</h2>
-			<p class="subtitle">{{ article.description }}</p>
+			<h2 class="subtitle heading is-size-5 is-size-6-mobile">
+				{{ article.date }}
+			</h2>
+			<p class="subtitle is-size-5 is-size-6-mobile">
+				{{ article.description }}
+			</p>
 			<hr />
 
 			<!-- IF YOU WANT A TOC UNCOMMENT -->
@@ -52,24 +56,35 @@ export default {
 .nuxt-content {
 	h1 {
 		font-weight: bold;
-		font-size: 28px;
+		font-size: 1.8rem;
 		margin: 0.5rem 0;
+		@media screen and (max-width: 768px) {
+			font-size: 1.4rem;
+		}
 	}
 	h2 {
 		font-weight: bold;
-		font-size: 22px;
+		font-size: 1.6rem;
 		margin: 0.5rem 0;
-		border-bottom: 2px solid whitesmoke;
+		@media screen and (max-width: 768px) {
+			font-size: 1.3rem;
+		}
 	}
 	h3 {
 		font-weight: bold;
-		font-size: 18px;
+		font-size: 1.4rem;
 		margin: 0.5rem 0;
+		@media screen and (max-width: 768px) {
+			font-size: 1.2rem;
+		}
 	}
 	h4 {
 		font-weight: bold;
-		font-size: 16px;
-		margin-bottom: 1rem;
+		font-size: 1.2rem;
+		margin: 0.5rem 0;
+		@media screen and (max-width: 768px) {
+			font-size: 1.1rem;
+		}
 	}
 
 	p {
