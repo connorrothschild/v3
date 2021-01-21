@@ -258,4 +258,4 @@ And finally, we hide the tooltip on mouseout:
 
 Thanks for reading! You can play around with the visualization and checkout the tooltip for yourself here (find the fullscreen version [here](https://connorrothschild.github.io/D3.js/map-overdoses/)):
 
-<iframe src="https://connorrothschild.github.io/D3.js/map-overdoses/" width='100%' height="1000px"></iframe>
+<iframe title="Map of opioid-related overdoses, by state, between 1999 and 2017." src="https://connorrothschild.github.io/D3.js/map-overdoses/" width='100%' height="1000px"></iframe>

@@ -95,6 +95,10 @@ export default {
 			margin-bottom: 0;
 		}
 	}
+
+	li {
+		list-style: inside !important;
+	}
 }
 // Hover icon link
 .icon.icon-link {

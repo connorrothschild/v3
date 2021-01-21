@@ -32,6 +32,13 @@ $info: $red;
   margin: inherit;
 }
 
+// Default prismJS comment highlighting doesn't pass accessibility checks (contrast is 2.7)
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdat {
+  color:#3D9970;
+}
 /* Import the rest of Bulma */
 @import '~bulma';
 

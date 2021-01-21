@@ -67,7 +67,7 @@ html {
 	max-width: 768px !important;
 }
 
-// ! For page transitions, uncomment
+// // ! For page transitions, uncomment
 // .page-enter-active,
 // .page-leave-active {
 // 	transition-property: opacity;
@@ -80,7 +80,7 @@ html {
 // 	opacity: 0;
 // }
 
-// ! FIXME - HTML makes global and that is bad...
+// // ! FIXME - HTML makes global and that is bad...
 // html:focus-within {
 // 	scroll-behavior: smooth;
 // }
