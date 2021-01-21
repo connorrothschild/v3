@@ -1,6 +1,6 @@
 ---
 title: "How to Scrollytell in R: Automation and Its Impact on Jobs"
-description: Because its easier than doing it in D3.
+description: Because its easier than doing it in D3
 img: automation-scrollytell/header.png
 img_alt: 'Blog post header image'
 date: October 2019

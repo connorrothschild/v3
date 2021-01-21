@@ -1,6 +1,6 @@
 ---
 title: "Animating Your Hugo Academic Site"
-description: "Make your Hugo Academic homepage more engaging with a few lines of code."
+description: Make your Hugo Academic homepage more engaging with a few lines of code
 img: animate-hugo-academic/header.png
 img_alt: 'Blog post header image'
 date: July 2020

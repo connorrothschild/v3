@@ -1,6 +1,6 @@
 ---
 title: "Bible Babies: Exploring Biblically-Inspired Baby Names over Time"
-description: Using {gganimate} for animated plots.
+description: Use {gganimate} to easily create animated plots
 img: bible-babies/header.png
 img_alt: 'Blog post header image'
 date: June 2019

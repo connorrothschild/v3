@@ -7,7 +7,7 @@
 						<img
 							:src="require(`~/assets/images/project/${img}`)"
 							:alt="img_alt"
-							class="object-fit-cover"
+							class="object-fit-scale"
 						/>
 					</figure>
 				</div>

@@ -3,7 +3,7 @@ title: "Create Dumbbell Plots to Visualize Group Differences in R"
 date: March 2020
 img: dumbbell-plots/header.png
 img_alt: Blog header image
-description: How to create dumbbell plots in R, using {ggalt}.
+description: How to create dumbbell plots in R, using {ggalt}
 ---
 
 <InlineImage alt="A dumbbell plot depicting in-group differences between Republicans and Democrats' worry about the Coronavirus. It shows that Republicans are less worried than Democrats. The question text survey respondents answered is 'How concerned are you that you or someone you know will be infected with the Coronavirus?'" src="post/dumbbell-plots/featured.jpg"></InlineImage>
