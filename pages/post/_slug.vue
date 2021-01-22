@@ -130,5 +130,12 @@ export default {
 .nuxt-content-highlight {
 	margin: 1rem 0;
 }
+
+// Markdown tables, by default, apply Bulma table styling https://bulma.io/documentation/elements/table/
+table {
+	@extend .table;
+	@extend .is-fullwidth;
+	@extend .is-hoverable;
+}
 </style>
 

@@ -23,7 +23,8 @@ export default {
 
 		const articles = await $content("articles", params.slug)
 			.only(["title", "description", "img", "img_alt", "slug"])
-			.sortBy("createdAt", "asc")
+			.where({ featured: true })
+			.sortBy("createdAt", "desc")
 			.limit(3)
 			.fetch();
 

@@ -4,6 +4,7 @@ description: A few lines of code can make your D3 tooltips significantly more in
 img: adding-a-chart-to-your-d3-tooltip/header.png
 img_alt: 'Blog post header image'
 date: October 2018
+featured: true
 ---
 
 I think tooltips are one of the most underrated parts of a visualization. When users are initially confused by a visualization, they often hover over a data point of interest to get more information.

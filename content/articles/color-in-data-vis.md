@@ -4,6 +4,7 @@ date: January 2020
 img: color-in-data-vis/header.png
 img_alt: 'Blog post header image'
 description: An overview of the use of color in data visualization
+featured: true
 ---
 
 If our use of color in visualizations follows the [Five Ws (and one H)](https://en.wikipedia.org/wiki/Five_Ws), we're spending too much time on *how*, and not enough time on *why*. Color is too often seen as a tool to make pretty pictures, when it should be used to inform our audiences.  
@@ -118,4 +119,4 @@ So, color can be used for exploratory purposes. That is to say, color doesn't ha
 
 ## Conclusion
 
-Color is tricky. While it can take your plot to the next level, it can also ruin it. The difference? The questions we ask. Are we questioning *how* you can use color; which of the many palettes to use, and how we can map them across variables? These are [important questions](https://socviz.co/refineplots.html#use-color-to-your-advantage), but they have to be preceded by the question of *why*  we use color in the first place. If color doesn't serve the purpose of informing, clarifying, or guiding our audience, what purpose does it serve? 
+Color is tricky. While it can take your plot to the next level, it can also ruin it. The difference? The questions we ask. Are we questioning *how* we can use color; which of the many palettes to use, and how we can map them across variables? These are [important questions](https://socviz.co/refineplots.html#use-color-to-your-advantage), but they have to be preceded by the question of *why*  we use color in the first place. If color doesn't serve the purpose of informing, clarifying, or guiding our audience, what purpose does it serve? 

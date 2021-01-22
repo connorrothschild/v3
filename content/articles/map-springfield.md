@@ -52,7 +52,7 @@ step.
 
 ```r
 right = -93.175
-left = -93.395r
+left = -93.395
 bottom = 37
 top = 37.275
 ```

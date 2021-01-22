@@ -117,7 +117,7 @@ But, it also depends on what level of *add* we are at; if *add* == 8
 “Okay, okay. But what is *add*???”
 
 Good question. *add* is the variable I constructed to correspond to the
-user’s input (in this case, the scroll\!). When we put it all together,
+user’s input (in this case, the scroll!). When we put it all together,
 we’re going to wrap our plot object into a rendering function *inside*
 the server function. Confusing? It looks like this:
 
@@ -147,9 +147,7 @@ server <- function(input, output, session) {
 What’s happening here? Within the server function, we’re doing two
 things:
 
-First, we’re creating the plot object. Because we have the command *add
-\<-
-input\(scr* **inside** the function `renderPlotly`, our plot object will be dynamically updated along with *input\)scr*.
+First, we’re creating the plot object. Because we have the command `add <- input$scr` **inside** the function `renderPlotly`, our plot object will be dynamically updated along with `input$scr`.
 
 This makes more sense when you connect it to the ui. In our ui function,
 we include a `scrolly_container` from the scrollytell package. Within
@@ -195,15 +193,13 @@ ui <- fluidPage(
 
 So, the simplest way to think about this so far is:
 
-Construct a plot object with some updating variable (in my case,
-*reveal*).
+Construct a plot object with some updating variable (in my case, `reveal`).
 
 ``` r
 filter(if (add != 8) add >= reveal else reveal %in% c(1:8))
 ```
 
-Make that variable correspond with some input variable (in my case
-*add*, which is created from the *input$scr*).
+Make that variable correspond with some input variable (in my case `add`, which is created from the `input$scr`).
 
 ``` r
 server <- function(input, output, session) {
@@ -252,7 +248,7 @@ server <- function(input, output, session) {
 
 That’s (most of) it for the plot section. You can play around with other
 customizations too (for example, the alphas for my circles correspond to
-an `ifelse` around *reveal*, so old circles are faded out compared to
+an `ifelse` around `reveal`, so old circles are faded out compared to
 new ones).
 
 ### Create a Series of Text Reveals
@@ -305,8 +301,8 @@ render_text <- function(num){
 }
 ```
 
-For all 8 of the above *text\_*s, we’ve created a switch function which
-calls them depnding on the number passed to `render_text`. Then, we
+For all 8 of the above `text`s, we’ve created a switch function which
+calls them depending on the number passed to `render_text`. Then, we
 apply paragraph format, put them in their own div, and apply the *text*
 class in our CSS sheet.
 
@@ -331,7 +327,7 @@ them all into the same format using `render_text`. This makes life a lot
 easier.
 
 So, on each scroll (or observation), the app will update 1) the plot
-object, by adding *add* and updating according to *reveal*, and 2) the
+object, by adding `add` and updating according to `reveal`, and 2) the
 text, by running `render_text` which calls `text` which beautifies our
 HTML text.
 

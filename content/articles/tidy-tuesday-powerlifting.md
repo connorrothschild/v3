@@ -94,7 +94,14 @@ max_lifts_final <- max_lifts %>%
 
 Not following along, or want to check your progress? Here's what our data looks like in its final form:
 
-<InlineImage src="post/tidy-tuesday-powerlifting/table.png" alt="A table showcasing our dataframe."></InlineImage>
+| year | lift             | male   | female | diff  |
+|:-----|:-----------------|:-------|:-------|:------|
+| 1980 | best3bench_kg    | 262.5  | 120    | 142.5 |
+| 1980 | best3deadlift_kg | 395    | 205    | 190   |
+| 1980 | best3squat_kg    | 417.5  | 230    | 187.5 |
+| 1981 | best3bench_kg    | 245    | 150    | 95    | 
+| 1981 | best3deadlift_kg | 367.5  | 230    | 137.5 |
+| 1981 | best3squat_kg    | 427.5  | 215    | 212.5 |
 
 ## Visualize! 
 
