@@ -1,5 +1,5 @@
 <template>
-	<div class="img">
+	<div class="img" :style="{ width: width }">
 		<img :src="imgSrc()" :alt="alt" />
 	</div>
 </template>
@@ -14,6 +14,11 @@ export default {
 		alt: {
 			type: String,
 			required: true,
+		},
+		width: {
+			type: String,
+			required: false,
+			default: "100%",
 		},
 	},
 	methods: {

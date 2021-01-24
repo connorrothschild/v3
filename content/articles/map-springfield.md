@@ -1,6 +1,6 @@
 ---
 title: "Create a Streetmap of Any City in R"
-date: November 2019
+date: "2019-11-21"
 img: map-springfield/header.png
 img_alt: Blog header image
 description: Creating a beautiful streetmap of my hometown, exclusively in R

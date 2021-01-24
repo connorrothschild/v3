@@ -1,6 +1,6 @@
 ---
 title: "My First Package! Introducing tpltheme"
-date: "July 2019"
+date: "2019-07-29"
 description: "Introducing {tpltheme}, a toolkit to create publication-ready plots in the style of the Texas Policy Lab."
 img: introducing-tpltheme/header.png
 img_alt: Blog post header image

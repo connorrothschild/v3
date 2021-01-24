@@ -2,35 +2,20 @@
 	<div>
 		<Nav color="is-primary" />
 		<article class="section container is-max-tablet mt-6">
-			<h1 class="title has-text-weight-boldest is-size-2 is-size-4-mobile">
+			<h1 class="title has-text-weight-boldest is-size-3 is-size-4-mobile">
 				{{ article.title }}
 			</h1>
 			<h2 class="subtitle heading is-size-5 is-size-6-mobile">
-				{{ article.date }}
+				{{ formatDate(article.date) }}
 			</h2>
 			<p class="subtitle is-size-5 is-size-6-mobile">
 				{{ article.description }}
 			</p>
 			<hr />
 
-			<!-- IF YOU WANT A TOC UNCOMMENT -->
-			<!-- <nav>
-				<ul>
-					<li v-for="link of article.toc" :key="link.id">
-						<NuxtLink
-							:class="{
-								'py-2': link.depth === 2,
-								'ml-2 pb-2': link.depth === 3,
-							}"
-							:to="`#${link.id}`"
-							>{{ link.text }}</NuxtLink
-						>
-					</li>
-				</ul>
-			</nav> -->
-
 			<nuxt-content :document="article" />
 		</article>
+		<Footer />
 	</div>
 </template>
 
@@ -44,7 +29,7 @@ export default {
 	},
 	methods: {
 		formatDate(date) {
-			const options = { year: "numeric", month: "long", day: "numeric" };
+			const options = { year: "numeric", month: "long" };
 			return new Date(date).toLocaleDateString("en", options);
 		},
 	},

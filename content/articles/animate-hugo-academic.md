@@ -3,7 +3,7 @@ title: "Animating Your Hugo Academic Site"
 description: Make your Hugo Academic homepage more engaging with a few lines of code
 img: animate-hugo-academic/header.png
 img_alt: 'Blog post header image'
-date: July 2020
+date: "2020-07-12"
 ---
 
 <InlineImage src="post/animate-hugo-academic/final.gif" alt="A GIF showcasing the final version of my animated homepage."></InlineImage>

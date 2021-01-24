@@ -15,16 +15,18 @@ export default {
 		const projects = await $content("projects", params.slug)
 			.only(["title", "description", "img", "img_alt", "slug", "date"])
 			.where({ featured: true })
+			.sortBy("date", "desc")
 			.fetch();
 
 		const awards = await $content("awards", params.slug)
 			.where({ featured: true })
+			.sortBy("date", "desc")
 			.fetch();
 
 		const articles = await $content("articles", params.slug)
-			.only(["title", "description", "img", "img_alt", "slug"])
+			.only(["title", "description", "img", "img_alt", "date", "slug"])
 			.where({ featured: true })
-			.sortBy("createdAt", "desc")
+			.sortBy("date", "desc")
 			.limit(3)
 			.fetch();
 

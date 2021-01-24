@@ -1,6 +1,6 @@
 ---
 title: "Recreating a Table by The Economist Using Reactable"
-date: May 2020
+date: "2020-05-22"
 img: economist-table-replication-using-reactable/header.png
 img_alt: Blog header image
 description: Recreating a table by The Economist entirely in R, using {reactable}

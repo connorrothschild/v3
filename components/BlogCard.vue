@@ -7,17 +7,18 @@
 						<img
 							:src="require(`~/assets/images/post/${img}`)"
 							:alt="img_alt"
-							class="object-fit-scale"
+							class="object-fit-cover"
 						/>
 					</figure>
 				</div>
 				<div class="card-content has-text-black">
 					<p class="title is-size-4">{{ title }}</p>
-					<p>{{ description }}</p>
-
-					<p class="subtitle heading is-size-6 has-text-dark">
-						{{ date }}
+					<p
+						class="subtitle heading is-size-6 has-text-dark has-text-weight-light"
+					>
+						{{ formatDate(date) }}
 					</p>
+					<p>{{ description }}</p>
 				</div>
 			</div>
 		</template>
@@ -39,6 +40,13 @@ export default {
 		"path",
 		"background",
 	],
+	methods: {
+		formatDate(date) {
+			console.log(date);
+			const options = { year: "numeric", month: "long" };
+			return new Date(date).toLocaleDateString("en", options);
+		},
+	},
 };
 </script>
 

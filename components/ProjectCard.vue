@@ -12,15 +12,15 @@
 					</figure>
 				</div>
 				<div class="card-content has-text-black">
-					<div class="media">
-						<div class="media-content">
-							<p class="title is-size-4">{{ title }}</p>
-							<p class="subtitle is-size-6">{{ date }}</p>
-						</div>
-					</div>
-
-					<div class="content">
-						{{ description }}
+					<div class="media"></div>
+					<div class="media-content">
+						<p class="title is-size-4">{{ title }}</p>
+						<p class="subtitle is-size-6 has-text-weight-light">
+							{{ formatDate(date) }}
+						</p>
+						<p class="">
+							{{ description }}
+						</p>
 					</div>
 				</div>
 			</div>
@@ -42,6 +42,12 @@ export default {
 		"slug",
 		"background",
 	],
+	methods: {
+		formatDate(date) {
+			const options = { year: "numeric", month: "long" };
+			return new Date(date).toLocaleDateString("en", options);
+		},
+	},
 };
 </script>
 

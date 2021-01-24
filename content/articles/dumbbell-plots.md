@@ -1,6 +1,6 @@
 ---
 title: "Create Dumbbell Plots to Visualize Group Differences in R"
-date: March 2020
+date: "2020-03-03"
 img: dumbbell-plots/header.png
 img_alt: Blog header image
 description: How to create dumbbell plots in R, using {ggalt}

@@ -1,6 +1,6 @@
 ---
 title: "Color in Data Visualization: Less How, More Why"
-date: January 2020
+date: "2020-01-22"
 img: color-in-data-vis/header.png
 img_alt: 'Blog post header image'
 description: An overview of the use of color in data visualization

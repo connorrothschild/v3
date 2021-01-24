@@ -7,13 +7,45 @@
 					{{ award.name }}
 				</h1>
 				<p class="subtitle heading is-size-5 is-size-6-mobile">
-					{{ award.organization }} | {{ award.date }}
+					{{ award.organization }} | {{ formatDate(award.date) }}
 				</p>
-				<p class="subtitle is-size-5 is-size-6-mobile">
+				<!-- <p class="subtitle is-size-5 is-size-6-mobile">
 					{{ award.description }}
-				</p>
+				</p> -->
 				<hr />
 				<nuxt-content :document="award" />
+				<hr />
+				<div class="columns mt-3">
+					<div class="column" v-if="award.project_url">
+						<HoverableCard :href="award.project_url">
+							<article class="card has-background-white">
+								<div class="card-content">
+									<div class="content is-flex is-justify-content-space-evenly">
+										<div class="has-text-centered">
+											<p class="has-text-weight-light title is-size-6">
+												Project Link
+											</p>
+										</div>
+									</div>
+								</div>
+							</article>
+						</HoverableCard>
+					</div>
+
+					<div class="column" v-if="award.media_url">
+						<HoverableCard :href="award.media_url">
+							<article class="card has-background-white">
+								<div class="card-content">
+									<div class="content is-flex is-justify-content-space-evenly">
+										<div class="has-text-centered">
+											<p class="has-text-weight-light title is-size-6">Media</p>
+										</div>
+									</div>
+								</div>
+							</article>
+						</HoverableCard>
+					</div>
+				</div>
 			</article>
 		</div>
 		<Footer />
@@ -27,6 +59,13 @@ export default {
 		const award = await $content("awards", params.slug).fetch();
 
 		return { award };
+	},
+	methods: {
+		formatDate(date) {
+			console.log(date);
+			const options = { year: "numeric", month: "long" };
+			return new Date(date).toLocaleDateString("en", options);
+		},
 	},
 };
 </script>

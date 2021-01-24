@@ -60,7 +60,7 @@
 									<p class="heading has-text-weight-bold title is-size-6">
 										Published
 									</p>
-									<p>{{ project.date }}</p>
+									<p>{{ formatDate(project.date) }}</p>
 								</div>
 								<div class="has-text-centered">
 									<p class="heading has-text-weight-bold title is-size-6">
@@ -96,6 +96,12 @@ export default {
 		const project = await $content("projects", params.slug).fetch();
 
 		return { project };
+	},
+	methods: {
+		formatDate(date) {
+			const options = { year: "numeric", month: "long" };
+			return new Date(date).toLocaleDateString("en", options);
+		},
 	},
 };
 </script>

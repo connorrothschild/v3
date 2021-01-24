@@ -3,7 +3,7 @@ title: "How (and Why) to Add a Chart to Your D3.js Tooltip"
 description: A few lines of code can make your D3 tooltips significantly more informative
 img: adding-a-chart-to-your-d3-tooltip/header.png
 img_alt: 'Blog post header image'
-date: October 2018
+date: "2020-06-22"
 featured: true
 ---
 

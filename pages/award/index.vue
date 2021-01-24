@@ -28,8 +28,7 @@
 export default {
 	async asyncData({ $content, params }) {
 		const awards = await $content("awards", params)
-			// .only(["title", "description", "img", "slug", "date"])
-			// .sortBy("createdAt", "asc")
+			.sortBy("date", "desc")
 			.fetch();
 
 		return {

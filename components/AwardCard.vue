@@ -2,12 +2,13 @@
 	<HoverableCard :to="`award/${slug}`">
 		<template v-slot:default>
 			<div class="card card-fullheight" :class="background">
-				<div class="card-content has-text-black">
+				<div class="card-content has-text-black flex-bounds">
 					<p class="title is-size-4">{{ name }}</p>
-					<p class="subtitle heading is-size-6 has-text-dark">
-						{{ organization }} | {{ date }}
+					<p
+						class="subtitle heading is-size-6 has-text-dark has-text-weight-light"
+					>
+						{{ organization }} | {{ formatDate(date) }}
 					</p>
-					<p>{{ description }}</p>
 				</div>
 			</div>
 		</template>
@@ -28,8 +29,21 @@ export default {
 		"slug",
 		"background",
 	],
+	methods: {
+		formatDate(date) {
+			console.log(date);
+			const options = { year: "numeric", month: "long" };
+			return new Date(date).toLocaleDateString("en", options);
+		},
+	},
 };
 </script>
 
 <style scoped lang='scss'>
+.flex-bounds {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
 </style>

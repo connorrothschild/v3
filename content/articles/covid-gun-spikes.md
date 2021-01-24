@@ -1,6 +1,6 @@
 ---
 title: "Spikes in Firearm Background Checks During COVID-19"
-date: July 2020
+date: "2020-07-26"
 description: Visualizing the precipitous rise in gun sales during COVID-19
 img: covid-gun-spikes/header.png
 img_alt: Blog header image
@@ -55,7 +55,7 @@ data %>%
   )
 ```
 
-<TableHandler src="post/covid-gun-spikes/table-replacement.png" alt="A table showing the years and months with the greatest number of firearm background checks. Those in 2020 are among the highest.">This table was created in a reactive environment and is usually interactive. Since I've moved sites, my new content rendering doesn't support HTML tables. Find the original table [here](http://connorrothschild.github.io/v2/post/covid-gun-spikes/).</TableHandler>
+<TableHandler src="post/covid-gun-spikes/table-replacement.png" alt="A table showing the years and months with the greatest number of firearm background checks. Those in 2020 are among the highest." link="http://connorrothschild.github.io/v2/post/covid-gun-spikes/"></TableHandler>
 
 As the table shows, the last 5 months have seen some of the greatest numbers of firearm background checks since the FBI has collected such data. It seems as if the only non-2020 entrants to the top 7 are from December 2015, and December 2019, which are (perhaps coincidentally) both the final months before new presidents took office. 
 
