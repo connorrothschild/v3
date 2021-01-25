@@ -42,7 +42,9 @@ export default {
 	padding: 2rem 1.5rem 3rem;
 
 	a[href] {
-		color: #cecece;
+		color: white;
+		font-weight: bold;
+		// font-weight: 900;
 	}
 }
 </style>

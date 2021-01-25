@@ -108,10 +108,11 @@ export default {
 			this.yPos = event.clientY + 20;
 		},
 		checkMobile() {
-			this.isMobile = window.matchMedia("(max-width: 768px)").matches;
+			this.isMobile = window.innerWidth < 768;
 		},
 	},
 	mounted() {
+		this.checkMobile();
 		window.addEventListener("resize", this.checkMobile);
 	},
 	destroyed() {
@@ -154,5 +155,13 @@ export default {
 	box-shadow: 0 2px 1px rgba(0, 0, 0, 0.09), 0 4px 2px rgba(0, 0, 0, 0.09),
 		0 8px 4px rgba(0, 0, 0, 0.09), 0 16px 8px rgba(0, 0, 0, 0.09),
 		0 32px 16px rgba(0, 0, 0, 0.09);
+}
+
+// Different sizes for buttons on mobile
+.button {
+	@media screen and (max-width: 420px) {
+		font-size: 0.75rem;
+		border-radius: 2px;
+	}
 }
 </style>
