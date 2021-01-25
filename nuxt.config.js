@@ -1,9 +1,9 @@
 export default {
 	// Target (https://go.nuxtjs.dev/config-target)
-	target         : 'static',
+	target          : 'static',
 
 	// Global page headers (https://go.nuxtjs.dev/config-head)
-	head           : {
+	head            : {
 		title : 'Connor Rothschild',
 		meta  : [
 			{ charset: 'utf-8' },
@@ -14,22 +14,26 @@ export default {
 	},
 
 	// Global CSS (https://go.nuxtjs.dev/config-css)
-	css            : [ '~assets/scss/colors.scss' ],
+	css             : [ '~assets/scss/colors.scss' ],
 
 	// Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-	plugins        : [ '~/plugins/v-img.js' ],
+	plugins         : [ '~/plugins/v-img.js' ],
 	// Auto import components (https://go.nuxtjs.dev/config-components)
-	components     : true,
+	components      : true,
 
 	// Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
-	buildModules   : [],
+	buildModules    : [ '@aceforth/nuxt-optimized-images' ],
 
-	image          : {
+	optimizedImages : {
+		optimizeImages : true
+	},
+
+	image           : {
 		// Options
 	},
 
 	// Modules (https://go.nuxtjs.dev/config-modules)
-	modules        : [
+	modules         : [
 		// https://go.nuxtjs.dev/bootstrap
 		'@nuxtjs/bulma',
 		'@nuxt/content',
@@ -38,7 +42,7 @@ export default {
 		'@nuxtjs/style-resources'
 	],
 
-	content        : {
+	content         : {
 		markdown : {
 			prism : {
 				// https://github.com/PrismJS/prism-themes
@@ -47,12 +51,12 @@ export default {
 		}
 	},
 
-	styleResources : {
+	styleResources  : {
 		scss : [ './assets/scss/*.scss' ]
 	},
 
 	// Build Configuration (https://go.nuxtjs.dev/config-build)
-	build          : {
+	build           : {
 		postcss : {
 			preset : {
 				features : {
