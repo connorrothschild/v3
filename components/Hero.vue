@@ -21,13 +21,22 @@
 								>
 									About Me
 								</button>
-								<NuxtLink to="/#projects" class="button is-primary">
+								<NuxtLink
+									:to="{ path: '/', hash: '#projects' }"
+									class="button is-primary"
+								>
 									Projects
 								</NuxtLink>
-								<NuxtLink to="/#awards" class="button is-primary">
+								<NuxtLink
+									:to="{ path: '/', hash: '#awards' }"
+									class="button is-primary"
+								>
 									Awards
 								</NuxtLink>
-								<NuxtLink to="/#blog" class="button is-primary">
+								<NuxtLink
+									:to="{ path: '/', hash: '#blog' }"
+									class="button is-primary"
+								>
 									Blog
 								</NuxtLink>
 							</div>

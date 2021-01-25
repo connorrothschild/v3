@@ -4,6 +4,9 @@
 	</div>
 </template>
 
+<script>
+</script>
+
 <style lang='scss'>
 // GLOBAL STYLES!
 html {

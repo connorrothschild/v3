@@ -33,14 +33,7 @@ export default {
 	},
 
 	// Modules (https://go.nuxtjs.dev/config-modules)
-	modules         : [
-		// https://go.nuxtjs.dev/bootstrap
-		'@nuxtjs/bulma',
-		'@nuxt/content',
-		'@nuxt/image',
-		// 'nuxt-lazy-load',
-		'@nuxtjs/style-resources'
-	],
+	modules         : [ '@nuxtjs/bulma', '@nuxt/content', '@nuxt/image', '@nuxtjs/style-resources' ],
 
 	content         : {
 		markdown : {

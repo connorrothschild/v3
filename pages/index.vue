@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="main-body">
 		<Nav color="is-primary" />
 		<Hero />
 		<Projects :projects="projects" />
@@ -49,5 +49,9 @@ h1 {
 		background: whitesmoke;
 		color: $primary;
 	}
+}
+
+.main-body {
+	scroll-behavior: smooth;
 }
 </style>
