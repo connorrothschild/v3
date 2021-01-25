@@ -23,16 +23,16 @@ I used [Vue](https://vuejs.org/) and [D3.js](https://d3js.org/) for all things v
 
 # Project images
 
-<ProjectImage src="projects/cudi-hums/albums-mac.png" alt="" width="48%"></ProjectImage>
-<ProjectImage src="projects/cudi-hums/tracks-mac.png" alt="" width="48%"></ProjectImage>
-<ProjectImage src="projects/cudi-hums/lyrics-mac.png" alt=""></ProjectImage>
+<InlineImage src="projects/cudi-hums/albums-mac.png" alt="" width="48%"></InlineImage>
+<InlineImage src="projects/cudi-hums/tracks-mac.png" alt="" width="48%"></InlineImage>
+<InlineImage src="projects/cudi-hums/lyrics-mac.png" alt=""></InlineImage>
 
-<ProjectImage src="projects/cudi-hums/albums-phone.png" alt="" width="32%"></ProjectImage>
-<ProjectImage src="projects/cudi-hums/tracks-phone.png" alt="" width="32%"></ProjectImage>
-<ProjectImage src="projects/cudi-hums/lyrics-phone.png" alt="" width="32%"></ProjectImage>
+<InlineImage src="projects/cudi-hums/albums-phone.png" alt="" width="32%"></InlineImage>
+<InlineImage src="projects/cudi-hums/tracks-phone.png" alt="" width="32%"></InlineImage>
+<InlineImage src="projects/cudi-hums/lyrics-phone.png" alt="" width="32%"></InlineImage>
 
-<ProjectImage src="projects/cudi-hums/intro-phone.png" alt="" width="48%"></ProjectImage>
-<ProjectImage src="projects/cudi-hums/outro-phone.png" alt="" width="48%"></ProjectImage>
+<InlineImage src="projects/cudi-hums/intro-phone.png" alt="" width="48%"></InlineImage>
+<InlineImage src="projects/cudi-hums/outro-phone.png" alt="" width="48%"></InlineImage>
 
 <!-- # Overview (in my own words!)
 

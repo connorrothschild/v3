@@ -27,8 +27,8 @@ This was actually the second iteration of this visualization. [Version 1 can be 
 
 # Project images
 
-<ProjectImage src="projects/police-killings/mac-1.png" alt="" width="74%"></ProjectImage>
-<ProjectImage src="projects/police-killings/phone-1.png" alt="" width="22%"></ProjectImage>
+<InlineImage src="projects/police-killings/mac-1.png" alt="" width="74%"></InlineImage>
+<InlineImage src="projects/police-killings/phone-1.png" alt="" width="22%"></InlineImage>
 
-<ProjectImage src="projects/police-killings/phone-2.png" alt="" width="22%"></ProjectImage>
-<ProjectImage src="projects/police-killings/mac-2.png" alt="" width="74%"></ProjectImage>
+<InlineImage src="projects/police-killings/phone-2.png" alt="" width="22%"></InlineImage>
+<InlineImage src="projects/police-killings/mac-2.png" alt="" width="74%"></InlineImage>

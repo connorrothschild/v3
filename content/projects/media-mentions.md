@@ -23,5 +23,5 @@ This project was built with [Observable](https://observablehq.com/). It was my f
 
 # Project images
 
-<ProjectImage src="projects/media-mentions/mac.png" alt="" width="74%"></ProjectImage>
-<ProjectImage src="projects/media-mentions/phone.png" alt="" width="22%"></ProjectImage>
+<InlineImage src="projects/media-mentions/mac.png" alt="" width="74%"></InlineImage>
+<InlineImage src="projects/media-mentions/phone.png" alt="" width="22%"></InlineImage>

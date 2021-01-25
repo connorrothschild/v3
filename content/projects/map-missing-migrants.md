@@ -28,14 +28,14 @@ To trigger scroll events, I used the Mapbox storytelling template. This was a si
 
 # Project images
 
-<ProjectImage src="projects/map-missing-migrants/mac-1.png" alt="" width="100%"></ProjectImage>
+<InlineImage src="projects/map-missing-migrants/mac-1.png" alt="" width="100%"></InlineImage>
 
-<ProjectImage src="projects/map-missing-migrants/mac-2.png" alt="" width="48%"></ProjectImage>
-<ProjectImage src="projects/map-missing-migrants/mac-3.png" alt="" width="48%"></ProjectImage>
+<InlineImage src="projects/map-missing-migrants/mac-2.png" alt="" width="48%"></InlineImage>
+<InlineImage src="projects/map-missing-migrants/mac-3.png" alt="" width="48%"></InlineImage>
 
-<ProjectImage src="projects/map-missing-migrants/mac-4.png" alt="" width="48%"></ProjectImage>
-<ProjectImage src="projects/map-missing-migrants/mac-5.png" alt="" width="48%"></ProjectImage>
+<InlineImage src="projects/map-missing-migrants/mac-4.png" alt="" width="48%"></InlineImage>
+<InlineImage src="projects/map-missing-migrants/mac-5.png" alt="" width="48%"></InlineImage>
 
-<ProjectImage src="projects/map-missing-migrants/phone-1.png" alt="" width="32%"></ProjectImage>
-<ProjectImage src="projects/map-missing-migrants/phone-2.png" alt="" width="32%"></ProjectImage>
-<ProjectImage src="projects/map-missing-migrants/phone-3.png" alt="" width="32%"></ProjectImage>
+<InlineImage src="projects/map-missing-migrants/phone-1.png" alt="" width="32%"></InlineImage>
+<InlineImage src="projects/map-missing-migrants/phone-2.png" alt="" width="32%"></InlineImage>
+<InlineImage src="projects/map-missing-migrants/phone-3.png" alt="" width="32%"></InlineImage>

@@ -95,6 +95,10 @@ export default {
 	li {
 		list-style: inside !important;
 	}
+
+	.img {
+		padding: 1rem 0;
+	}
 }
 // Hover icon link
 .icon.icon-link {

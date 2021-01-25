@@ -1,9 +1,27 @@
 <template>
-	<div v-if="clickable" class="img" :style="{ width: width }">
-		<img v-img :src="imgSrc()" :alt="alt" />
+	<div
+		v-if="clickable"
+		class="img"
+		style="display: inline-block"
+		:style="{ width: width }"
+	>
+		<picture>
+			<source v-img :srcSet="imgSrc()" :alt="alt" type="image/webp" />
+			<source v-img :srcSet="imgSrcFallback()" :alt="alt" type="image/png" />
+			<img v-img :src="imgSrcFallback()" />
+		</picture>
 	</div>
-	<div v-else class="img" :style="{ width: width }">
-		<img :src="imgSrc()" :alt="alt" />
+	<div
+		v-else
+		class="img"
+		style="display: inline-block"
+		:style="{ width: width }"
+	>
+		<picture>
+			<source :srcSet="imgSrc()" :alt="alt" type="image/webp" />
+			<source :srcSet="imgSrcFallback()" :alt="alt" type="image/png" />
+			<img :src="imgSrcFallback()" />
+		</picture>
 	</div>
 </template>
 
@@ -32,6 +50,13 @@ export default {
 	methods: {
 		imgSrc() {
 			try {
+				return require(`~/static/${this.src}?webp`);
+			} catch (error) {
+				return null;
+			}
+		},
+		imgSrcFallback() {
+			try {
 				return require(`~/static/${this.src}`);
 			} catch (error) {
 				return null;
@@ -42,8 +67,8 @@ export default {
 </script>
 
 <style scoped>
-img {
+/* img {
 	padding: 1rem 0;
-}
+} */
 </style>
 

@@ -23,14 +23,14 @@ This project was exclusively built with [Observable](https://observablehq.com/).
 
 # Project images
 
-<ProjectImage src="projects/covid-masking/mac-1.png" alt="" width="100%"></ProjectImage>
+<InlineImage src="projects/covid-masking/mac-1.png" alt="" width="100%"></InlineImage>
 
-<ProjectImage src="projects/covid-masking/mac-2.png" alt="" width="32%"></ProjectImage>
-<ProjectImage src="projects/covid-masking/mac-3.png" alt="" width="32%"></ProjectImage>
-<ProjectImage src="projects/covid-masking/mac-4.png" alt="" width="32%"></ProjectImage>
+<InlineImage src="projects/covid-masking/mac-2.png" alt="" width="32%"></InlineImage>
+<InlineImage src="projects/covid-masking/mac-3.png" alt="" width="32%"></InlineImage>
+<InlineImage src="projects/covid-masking/mac-4.png" alt="" width="32%"></InlineImage>
 
-<ProjectImage src="projects/covid-masking/phone-1.png" alt="" width="48%"></ProjectImage>
-<ProjectImage src="projects/covid-masking/phone-2.png" alt="" width="48%"></ProjectImage>
+<InlineImage src="projects/covid-masking/phone-1.png" alt="" width="48%"></InlineImage>
+<InlineImage src="projects/covid-masking/phone-2.png" alt="" width="48%"></InlineImage>
 
-<ProjectImage src="projects/covid-masking/mac-5.png" alt="" width="74%"></ProjectImage>
-<ProjectImage src="projects/covid-masking/phone-3.png" alt="" width="24%"></ProjectImage>
+<InlineImage src="projects/covid-masking/mac-5.png" alt="" width="74%"></InlineImage>
+<InlineImage src="projects/covid-masking/phone-3.png" alt="" width="24%"></InlineImage>
