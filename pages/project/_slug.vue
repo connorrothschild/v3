@@ -122,7 +122,7 @@ export default {
 
 <style lang='scss'>
 /* STYLING SPECIFIC TO PROJECTS GOES HERE */
-.nuxt-content-container {
+.nuxt-content {
 	h1 {
 		font-weight: bold;
 		font-size: 1.8rem;
