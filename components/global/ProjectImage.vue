@@ -13,7 +13,7 @@ export default {
 		},
 		alt: {
 			type: String,
-			required: true,
+			required: false,
 		},
 		width: {
 			type: String,

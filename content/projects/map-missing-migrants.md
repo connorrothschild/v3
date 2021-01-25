@@ -11,7 +11,7 @@ github: 'https://github.com/connorrothschild/map-missing-migrants/'
 url: 'https://connorrothschild.github.io/map-missing-migrants'
 ---
 
-[<InlineImage src="projects/map-missing-migrants/header.png" alt="Header"></InlineImage>](https://connorrothschild.github.io/map-missing-migrants)
+[<InlineImage :clickable=false src="projects/map-missing-migrants/header.png" alt="Header"></InlineImage>](https://connorrothschild.github.io/map-missing-migrants)
 
 
 # What it is

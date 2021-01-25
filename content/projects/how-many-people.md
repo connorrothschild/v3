@@ -1,7 +1,7 @@
 ---
 title: How Many People Have Had COVID-19?
 description: A novel way to visualize COVID-19 case counts.
-date: "2019-11-06"
+date: "2020-11-06"
 audience: 'The world!'
 featured: false
 img: how-many-people/header.png
@@ -11,17 +11,20 @@ github: 'https://github.com/connorrothschild/how-many-people'
 url: 'https://connorrothschild.github.io/how-many-people'
 ---
 
+[<InlineImage :clickable=false src="projects/how-many-people/header.png" alt="Header"></InlineImage>](https://connorrothschild.github.io/how-many-people)
+
 # What it is
 
-**How Much Does Kid Cudi Hum?** is a visual storytelling piece centered around analyzing music's most famous hum. 
+[How Many People Have Had COVID-19?](https://connorrothschild.github.io/how-many-people) is a small web application that visualizes COVID-19 case counts in a novel way: via state populations. The application's user can see cases either in the US or globally. The goal is to capture case counts with some comparison that everyone can understand.
 
 # Tools used
 
-I used [Vue](https://vuejs.org/) and [D3.js](https://d3js.org/) for all things visual and front-end. This was the first [scrollytelling](https://medium.com/nightingale/from-storytelling-to-scrollytelling-a-short-introduction-and-beyond-fbda32066964) project I built, and I wanted an accessible way to approach scrollytelling so that it wouldn't get in the way of other stuff (such as making cool visuals and telling an actually interesting story). I had heard good things about Russell Goldenberg's [`Scrollama`](https://github.com/russellgoldenberg/scrollama) and wanted to find an easy way to incorporate that library with Vue. I was able to do so with Vignesh Shenoy's [`vue-scrollama`](https://github.com/vgshenoy/vue-scrollama). It had a few quirks, but allowed me to quickly hit the ground running with scrollytelling capabilities.
+This application was built with [Vue](https://vuejs.org/). The minimal styling was thanks to [Bulma](https://bulma.io/), my framework of choice recently. The application was simpler than some others I have built (there were only [three components](https://github.com/connorrothschild/how-many-people/tree/master/src/components)). It was mostly a fun exercise to play around with SVGs and Vue, and also an exercise to better handle user interactions. The tool needed to be robust to many changes, including 1) the adding of state populations together, 2) a 'ceiling' (the case counts) that state populations could not exceed, 3) resets on toggle of US/global views. 
 
-# Overview (in my own words!)
+# Project images
 
-<responsive-video url="https://www.youtube.com/embed/sNCMiWoXGaQ"></responsive-video>
+<ProjectImage src="projects/how-many-people/mac-1.png" alt=""></ProjectImage>
+<ProjectImage src="projects/how-many-people/mac-2.png" alt=""></ProjectImage>
 
-To do: add code styling
-https://nuxtjs.org/blog/creating-blog-with-nuxt-content/#adding-a-code-block-to-your-post
+<ProjectImage src="projects/how-many-people/phone-1.png" alt="" width="48%"></ProjectImage>
+<ProjectImage src="projects/how-many-people/phone-2.png" alt="" width="48%"></ProjectImage>

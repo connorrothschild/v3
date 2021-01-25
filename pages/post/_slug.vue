@@ -3,17 +3,22 @@
 		<Nav color="is-primary" />
 		<article class="section container is-max-tablet mt-6">
 			<h1 class="title has-text-weight-boldest is-size-3 is-size-4-mobile">
-				{{ article.title }}
+				{{ post.title }}
 			</h1>
 			<h2 class="subtitle heading is-size-5 is-size-6-mobile">
-				{{ formatDate(article.date) }}
+				{{ formatDate(post.date) }}
 			</h2>
 			<p class="subtitle is-size-5 is-size-6-mobile">
-				{{ article.description }}
+				{{ post.description }}
 			</p>
 			<hr />
 
-			<nuxt-content :document="article" />
+			<nuxt-content :document="post" />
+			<hr />
+			<prev-next :prev="prev" :next="next" type="post" />
+			<NuxtLink to="/post" class="subtitle has-text-weight-bolder is-size-5"
+				>👈 Back to all posts</NuxtLink
+			>
 		</article>
 		<Footer />
 	</div>
@@ -23,9 +28,15 @@
 <script>
 export default {
 	async asyncData({ $content, params }) {
-		const article = await $content("articles", params.slug).fetch();
+		const post = await $content("posts", params.slug).fetch();
 
-		return { article };
+		const [prev, next] = await $content("posts")
+			.only(["title", "slug"])
+			.sortBy("date", "asc")
+			.surround(params.slug)
+			.fetch();
+
+		return { post, prev, next };
 	},
 	methods: {
 		formatDate(date) {

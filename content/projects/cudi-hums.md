@@ -11,7 +11,7 @@ github: 'https://github.com/connorrothschild/cudi-hums'
 url: 'https://connorrothschild.github.io/cudi-hums/'
 ---
 
-[<InlineImage src="projects/cudi-hums/header.png" alt="Header"></InlineImage>](https://connorrothschild.github.io/cudi-hums/)
+[<InlineImage :clickable=false src="projects/cudi-hums/header.png" alt="Header"></InlineImage>](https://connorrothschild.github.io/cudi-hums/)
 
 # What it is
 

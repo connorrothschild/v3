@@ -31,6 +31,7 @@ export default {
 			.sortBy("date", "desc")
 			.fetch();
 
+		console.log(awards);
 		return {
 			awards,
 		};

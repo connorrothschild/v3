@@ -11,12 +11,8 @@
 				</h1>
 				<!-- CONTAINER FOR PROJECTS -->
 				<div class="columns is-multiline">
-					<div
-						v-for="(article, index) in articles"
-						:key="index"
-						class="column is-3"
-					>
-						<BlogCard v-bind="article" background="has-background-white" />
+					<div v-for="(post, index) in posts" :key="index" class="column is-3">
+						<BlogCard v-bind="post" background="has-background-white" />
 					</div>
 				</div>
 			</article>
@@ -27,13 +23,14 @@
 <script>
 export default {
 	async asyncData({ $content, params }) {
-		const articles = await $content("articles", params.slug)
-			.only(["title", "description", "img", "date", "slug"])
+		const posts = await $content("posts", params)
+			// .only(["title", "description", "img", "date", "slug"])
 			.sortBy("date", "desc")
 			.fetch();
 
+		console.log(posts);
 		return {
-			articles,
+			posts,
 		};
 	},
 };

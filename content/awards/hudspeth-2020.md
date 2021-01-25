@@ -1,5 +1,5 @@
 ---
-name: Hudspeth Award
+title: Hudspeth Award
 organization: Rice Political Science Department
 date: '2020-05-19'
 featured: false

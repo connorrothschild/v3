@@ -4,48 +4,37 @@
 		<div style="min-height: 100vh">
 			<article class="section container is-max-desktop mt-6">
 				<h1 class="title has-text-weight-boldest is-size-2 is-size-4-mobile">
-					{{ award.name }}
+					{{ award.title }}
 				</h1>
 				<p class="subtitle heading is-size-5 is-size-6-mobile">
 					{{ award.organization }} | {{ formatDate(award.date) }}
 				</p>
-				<!-- <p class="subtitle is-size-5 is-size-6-mobile">
-					{{ award.description }}
-				</p> -->
 				<hr />
 				<nuxt-content :document="award" />
-				<hr />
-				<div class="columns mt-3">
-					<div class="column" v-if="award.project_url">
-						<HoverableCard :href="award.project_url">
-							<article class="card has-background-white">
-								<div class="card-content">
-									<div class="content is-flex is-justify-content-space-evenly">
-										<div class="has-text-centered">
-											<p class="has-text-weight-light title is-size-6">
-												Project Link
-											</p>
-										</div>
-									</div>
-								</div>
-							</article>
-						</HoverableCard>
-					</div>
-
-					<div class="column" v-if="award.media_url">
-						<HoverableCard :href="award.media_url">
-							<article class="card has-background-white">
-								<div class="card-content">
-									<div class="content is-flex is-justify-content-space-evenly">
-										<div class="has-text-centered">
-											<p class="has-text-weight-light title is-size-6">Media</p>
-										</div>
-									</div>
-								</div>
-							</article>
-						</HoverableCard>
-					</div>
+				<div class="mt-3 is-size-5 has-text-centered">
+					<a
+						class="has-text-weight-light"
+						target="_blank"
+						rel="noopener"
+						:href="award.project_url"
+					>
+						Project Link
+					</a>
+					|
+					<a
+						class="has-text-weight-light has-text-weight-primary"
+						target="_blank"
+						rel="noopener"
+						:href="award.media_url"
+					>
+						Media
+					</a>
 				</div>
+				<hr />
+				<prev-next :prev="prev" :next="next" type="award" />
+				<NuxtLink to="/post" class="subtitle has-text-weight-bolder is-size-5"
+					>👈 Back to all awards</NuxtLink
+				>
 			</article>
 		</div>
 		<Footer />
@@ -58,7 +47,13 @@ export default {
 	async asyncData({ $content, params }) {
 		const award = await $content("awards", params.slug).fetch();
 
-		return { award };
+		const [prev, next] = await $content("awards")
+			.only(["title", "slug"])
+			.sortBy("date", "asc")
+			.surround(params.slug)
+			.fetch();
+
+		return { award, prev, next };
 	},
 	methods: {
 		formatDate(date) {

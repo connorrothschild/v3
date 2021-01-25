@@ -3,7 +3,7 @@
 		<template v-slot:default>
 			<div class="card card-fullheight" :class="background">
 				<div class="card-content has-text-black flex-bounds">
-					<p class="title is-size-4">{{ name }}</p>
+					<p class="title is-size-4">{{ title }}</p>
 					<p
 						class="subtitle heading is-size-6 has-text-dark has-text-weight-light"
 					>
@@ -21,7 +21,7 @@ import HoverableCard from "./HoverableCard.vue";
 export default {
 	components: { HoverableCard },
 	props: [
-		"name",
+		"title",
 		"organization",
 		"date",
 		"description",

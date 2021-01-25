@@ -1,5 +1,8 @@
 <template>
-	<div class="img" :style="{ width: width }">
+	<div v-if="clickable" class="img" :style="{ width: width }">
+		<img v-img :src="imgSrc()" :alt="alt" />
+	</div>
+	<div v-else class="img" :style="{ width: width }">
 		<img :src="imgSrc()" :alt="alt" />
 	</div>
 </template>
@@ -19,6 +22,11 @@ export default {
 			type: String,
 			required: false,
 			default: "100%",
+		},
+		clickable: {
+			type: Boolean,
+			required: false,
+			default: true,
 		},
 	},
 	methods: {

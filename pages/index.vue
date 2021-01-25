@@ -4,7 +4,7 @@
 		<Hero />
 		<Projects :projects="projects" />
 		<Awards :awards="awards" />
-		<Blog :articles="articles" />
+		<Blog :posts="posts" />
 		<Footer />
 	</div>
 </template>
@@ -23,7 +23,7 @@ export default {
 			.sortBy("date", "desc")
 			.fetch();
 
-		const articles = await $content("articles", params.slug)
+		const posts = await $content("posts", params.slug)
 			.only(["title", "description", "img", "img_alt", "date", "slug"])
 			.where({ featured: true })
 			.sortBy("date", "desc")
@@ -32,7 +32,7 @@ export default {
 
 		return {
 			projects,
-			articles,
+			posts,
 			awards,
 		};
 	},

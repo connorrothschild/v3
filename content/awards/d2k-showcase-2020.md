@@ -1,5 +1,5 @@
 ---
-name: 2nd Place, 2020 D2K Showcase
+title: 2nd Place, 2020 D2K Showcase
 organization: Data to Knowledge Lab
 date: '2020-12-09'
 featured: false

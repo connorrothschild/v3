@@ -1,5 +1,5 @@
 ---
-name: Bronze, 2020 Malofiej Awards
+title: Bronze, 2020 Malofiej Awards
 organization: Malofiej
 date: '2020-08-07'
 featured: true

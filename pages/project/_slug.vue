@@ -8,20 +8,17 @@
 			<h2 class="subtitle is-size-4 is-size-6-mobile">
 				{{ project.description }}
 			</h2>
-			<hr />
 
-			<nuxt-content :document="project" />
-			<hr />
 			<div class="columns mt-3">
 				<div class="column">
 					<article class="card">
-						<header class="card-header">
+						<!-- <header class="card-header">
 							<p
 								class="card-header-title has-background-primary has-text-white"
 							>
 								Tech & Code
 							</p>
-						</header>
+						</header> -->
 						<div class="card-content">
 							<div class="content is-flex is-justify-content-space-evenly">
 								<div class="has-text-centered">
@@ -37,6 +34,8 @@
 								class="card-footer-item"
 								v-if="project.github"
 								:href="project.github"
+								target="_blank"
+								rel="noopener noreferrer"
 								><span class="has-text-weight-bold">GitHub Repository</span></a
 							>
 							<p v-else class="card-footer-item">
@@ -47,13 +46,13 @@
 				</div>
 				<div class="column">
 					<article class="card">
-						<header class="card-header">
+						<!-- <header class="card-header">
 							<p
 								class="card-header-title has-background-primary has-text-white"
 							>
 								Project Details
 							</p>
-						</header>
+						</header> -->
 						<div class="card-content">
 							<div class="content is-flex is-justify-content-space-evenly">
 								<div class="has-text-centered">
@@ -75,6 +74,8 @@
 								v-if="project.url"
 								class="card-footer-item has-text-weight-bold"
 								:href="project.url"
+								target="_blank"
+								rel="noopener noreferrer"
 								>Live URL</a
 							>
 							<p v-else class="card-footer-item">
@@ -84,6 +85,13 @@
 					</article>
 				</div>
 			</div>
+
+			<nuxt-content :document="project" />
+			<hr />
+			<prev-next :prev="prev" :next="next" type="project" />
+			<NuxtLink to="/project" class="subtitle has-text-weight-bolder is-size-5"
+				>👈 Back to all projects</NuxtLink
+			>
 		</article>
 		<Footer />
 	</div>
@@ -95,7 +103,13 @@ export default {
 	async asyncData({ $content, params }) {
 		const project = await $content("projects", params.slug).fetch();
 
-		return { project };
+		const [prev, next] = await $content("projects")
+			.only(["title", "slug"])
+			.sortBy("date", "asc")
+			.surround(params.slug)
+			.fetch();
+
+		return { project, prev, next };
 	},
 	methods: {
 		formatDate(date) {

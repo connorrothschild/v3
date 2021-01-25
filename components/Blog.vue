@@ -16,8 +16,8 @@
 				>
 				<!-- CONTAINER FOR POSTS -->
 				<div class="columns">
-					<div v-for="(article, index) in articles" :key="index" class="column">
-						<BlogCard v-bind="article" background="has-background-light" />
+					<div v-for="(post, index) in posts" :key="index" class="column">
+						<BlogCard v-bind="post" background="has-background-light" />
 					</div>
 				</div>
 			</div>
@@ -27,11 +27,9 @@
 
 <script>
 export default {
-	mounted() {
-		console.log(this.articles);
-	},
+	mounted() {},
 	props: {
-		articles: {
+		posts: {
 			type: Array,
 		},
 	},

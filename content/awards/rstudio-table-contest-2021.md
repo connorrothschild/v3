@@ -1,5 +1,5 @@
 ---
-name: Honorable Mention, RStudio Table Contest
+title: Honorable Mention, RStudio Table Contest
 organization: RStudio, Inc.
 date: '2021-01-06'
 featured: true

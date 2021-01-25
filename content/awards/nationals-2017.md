@@ -1,5 +1,5 @@
 ---
-name: National Champion, IX Speaking
+title: National Champion, IX Speaking
 organization: The Baker Institute for Public Policy
 date: '2017-07-15'
 featured: false

@@ -1,5 +1,5 @@
 ---
-name: Student Winner, C+J 2020 Conference
+title: Student Winner, C+J 2020 Conference
 organization: Northeastern University
 date: '2020-01-07'
 featured: true

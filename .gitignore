@@ -88,6 +88,3 @@ sw.*
 
 # Vim swap files
 *.swp
-
-# Files I need to move over
-content/articles/to-move/**
