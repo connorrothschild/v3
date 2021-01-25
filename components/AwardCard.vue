@@ -31,7 +31,6 @@ export default {
 	],
 	methods: {
 		formatDate(date) {
-			console.log(date);
 			const options = { year: "numeric", month: "long" };
 			return new Date(date).toLocaleDateString("en", options);
 		},

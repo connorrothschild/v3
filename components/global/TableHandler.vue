@@ -34,7 +34,6 @@ export default {
 			try {
 				return require(`~/static/${this.src}`);
 			} catch (error) {
-				console.log(error);
 				return null;
 			}
 		},

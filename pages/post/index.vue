@@ -28,7 +28,6 @@ export default {
 			.sortBy("date", "desc")
 			.fetch();
 
-		console.log(posts);
 		return {
 			posts,
 		};
