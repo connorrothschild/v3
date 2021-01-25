@@ -4,11 +4,7 @@
 			<div class="card card-fullheight" :class="background">
 				<div class="card-image">
 					<figure class="image is-2by1">
-						<WebP
-							:src="`~/assets/images/projectnpm run/${img}`"
-							:alt="img_alt"
-							class="object-fit-cover"
-						/>
+						<WebP :src="`project/${img}`" :alt="img_alt" type="project" />
 					</figure>
 				</div>
 				<div class="card-content has-text-black">
@@ -30,9 +26,10 @@
 
 <script>
 import HoverableCard from "./HoverableCard.vue";
+import WebP from "./WebP.vue";
 
 export default {
-	components: { HoverableCard },
+	components: { HoverableCard, WebP },
 	props: [
 		"title",
 		"description",
