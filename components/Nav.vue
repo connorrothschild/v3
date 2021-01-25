@@ -7,13 +7,9 @@
 	>
 		<div class="container">
 			<div class="navbar-brand">
-				<!-- <a class="navbar-item" href="#">
-				<img
-					src="https://bulma.io/images/bulma-logo.png"
-					width="112"
-					height="28"
-				/>
-			</a> -->
+				<NuxtLink class="navbar-item" to="/">
+					<span class="has-text-weight-boldest">Connor Rothschild</span>
+				</NuxtLink>
 
 				<a
 					role="button"
@@ -35,11 +31,11 @@
 				class="navbar-menu"
 				:class="{ 'is-active': isVisible }"
 			>
-				<div class="navbar-start">
+				<!-- <div class="navbar-start">
 					<NuxtLink class="navbar-item" to="/">
 						<span class="has-text-weight-boldest">Connor Rothschild</span>
 					</NuxtLink>
-				</div>
+				</div> -->
 
 				<div class="navbar-end">
 					<NuxtLink class="navbar-item" to="/#projects"> Projects </NuxtLink>
