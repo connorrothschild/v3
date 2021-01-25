@@ -4,10 +4,10 @@
 			<div class="card card-fullheight" :class="background">
 				<div class="card-image">
 					<figure class="image is-2by1">
-						<img
-							:src="require(`~/assets/images/project/${img}`)"
+						<WebP
+							:src="`~/assets/images/projectnpm run/${img}`"
 							:alt="img_alt"
-							class="object-fit-scale"
+							class="object-fit-cover"
 						/>
 					</figure>
 				</div>
@@ -18,7 +18,7 @@
 						<p class="subtitle is-size-6 has-text-weight-light">
 							{{ formatDate(date) }}
 						</p>
-						<p class="">
+						<p>
 							{{ description }}
 						</p>
 					</div>

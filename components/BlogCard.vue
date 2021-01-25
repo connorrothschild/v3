@@ -4,8 +4,8 @@
 			<div class="card card-fullheight" :class="background">
 				<div class="card-image">
 					<figure class="image is-2by1">
-						<img
-							:src="require(`~/assets/images/post/${img}`)"
+						<WebP
+							:src="`~/assets/images/post/${img}`"
 							:alt="img_alt"
 							class="object-fit-cover"
 						/>
