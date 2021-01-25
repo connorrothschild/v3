@@ -46,6 +46,7 @@
 										data visualization, presentation, and storytelling.
 									</p>
 									<div
+										v-if="!isMobile"
 										v-on:mousemove="updateCoords"
 										@mouseover="showImg = true"
 										@mouseout="showImg = false"
@@ -97,6 +98,7 @@ export default {
 			showImg: false,
 			xPos: null,
 			yPos: null,
+			isMobile: false,
 		};
 	},
 	computed: {},
@@ -105,6 +107,15 @@ export default {
 			this.xPos = event.clientX;
 			this.yPos = event.clientY + 20;
 		},
+		checkMobile() {
+			this.isMobile = window.matchMedia("(max-width: 768px)").matches;
+		},
+	},
+	mounted() {
+		window.addEventListener("resize", this.checkMobile);
+	},
+	destroyed() {
+		window.removeEventListener("resize", this.checkMobile);
 	},
 };
 </script>
