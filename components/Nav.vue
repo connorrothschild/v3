@@ -31,16 +31,16 @@
 				class="navbar-menu"
 				:class="{ 'is-active': isVisible }"
 			>
-				<!-- <div class="navbar-start">
-					<NuxtLink class="navbar-item" to="/">
-						<span class="has-text-weight-boldest">Connor Rothschild</span>
-					</NuxtLink>
-				</div> -->
-
 				<div class="navbar-end">
-					<NuxtLink class="navbar-item" to="/#projects"> Projects </NuxtLink>
-					<NuxtLink class="navbar-item" to="/#awards"> Awards </NuxtLink>
-					<NuxtLink class="navbar-item" to="/#blog"> Blog </NuxtLink>
+					<NuxtLink class="navbar-item" :to="{ path: '/', hash: '#projects' }">
+						Projects
+					</NuxtLink>
+					<NuxtLink class="navbar-item" :to="{ path: '/', hash: '#awards' }">
+						Awards
+					</NuxtLink>
+					<NuxtLink class="navbar-item" :to="{ path: '/', hash: '#blog' }">
+						Blog
+					</NuxtLink>
 					<a
 						class="navbar-item"
 						href="https://docs.google.com/document/d/1qBH-wNMe2nv9Xa4uzHZ5wBevohwKuB3h2i9M2yk4POk/edit?usp=sharing"

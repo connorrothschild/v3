@@ -1,5 +1,5 @@
 <template>
-	<HoverableCard :to="`award/${slug}`">
+	<HoverableCard :to="{ path: `/award/${slug}` }">
 		<template v-slot:default>
 			<div class="card card-fullheight" :class="background">
 				<div class="card-content has-text-black flex-bounds">

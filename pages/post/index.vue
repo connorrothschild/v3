@@ -7,7 +7,7 @@
 				<h1
 					class="title has-text-weight-boldest is-size-1 my-6 pb-4 has-border-bottom-grey"
 				>
-					Blog Posts
+					Blog Posts 📝
 				</h1>
 				<!-- CONTAINER FOR PROJECTS -->
 				<div class="columns is-multiline">

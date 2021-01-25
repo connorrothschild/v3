@@ -1,5 +1,5 @@
 <template>
-	<HoverableCard :to="`post/${slug}`">
+	<HoverableCard :to="{ path: `/post/${slug}` }">
 		<template v-slot:default>
 			<div class="card card-fullheight" :class="background">
 				<div class="card-image">
