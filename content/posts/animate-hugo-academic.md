@@ -6,7 +6,7 @@ img_alt: 'Blog post header image'
 date: "2020-07-12"
 ---
 
-<InlineImage src="post/animate-hugo-academic/final.gif" alt="A GIF showcasing the final version of my animated homepage"></InlineImage>
+<InlineImage src="post/animate-hugo-academic/final.gif" alt="A GIF showcasing the final version of my animated homepage."></InlineImage>
 
 The R package `blogdown` is an incredibly powerful tool—it allows R users with little to no familiarity in web development to build a fully functional, content-oriented, beautiful website using a language they’re already familiar with. It's built on top of [Hugo](https://gohugo.io/), the world’s (self-proclaimed) ‘fastest framework for building websites,’ which comes with a [variety of themes](https://themes.gohugo.io/) suitable for a variety of different uses. 
 
