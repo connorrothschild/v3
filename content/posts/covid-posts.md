@@ -97,6 +97,8 @@ COVID-19 data collection and dissemination to the public.
 Below, you can look at *all* data sources and how often they were
 referenced in COVID-19 blog posts.
 
+<div class='table-container'>
+
 | Data Source                                                                 | Count |
 |:----------------------------------------------------------------------------|------:|
 | Johns Hopkins University                                                    |    51 |
@@ -111,6 +113,8 @@ referenced in COVID-19 blog posts.
 | Twitter                                                                     |     5 |
 | Assessment Capacities Project (ACAPS)                                       |     4 |
 | COVID19 package                                                             |     4 |
+
+</div>
 
 ### Blog Post Topics
 

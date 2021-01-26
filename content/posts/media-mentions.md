@@ -48,6 +48,8 @@ candidate (`matched_clips`) and dividing them by the total number of
 clips that week (`total_clips`) to reveal the percent
 (`pct_of_all_candidate_clips`) of clips which mention that candidate.
 
+<div class='table-container'>
+
 | name         | date       | pct_of_all_candidate_clips | matched_clips | total_clips |
 |:-------------|:-----------|---------------------------:|--------------:|------------:|
 | John Delaney | 2018-12-30 |                  0.0039432 |             5 |       76029 |
@@ -56,6 +58,8 @@ clips that week (`total_clips`) to reveal the percent
 | John Delaney | 2019-01-20 |                  0.0020182 |             2 |       83649 |
 | John Delaney | 2019-01-27 |                  0.0015723 |             3 |       80994 |
 | John Delaney | 2019-02-03 |                  0.0006901 |             1 |       79183 |
+
+</div>
 
 Of interest to us is the `name` of each candidate and the percent
 (`pct_of_all_candidate_clips`) of media mentions they receive on a
