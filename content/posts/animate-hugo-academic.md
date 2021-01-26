@@ -381,9 +381,9 @@ This tutorial is meant to teach you the essentials of *how* to animate your home
 
 The complete power of CSS animations is not covered in this tutorial. Further applications of animations could do **much** more than just animate an object’s position. I leave that to you!
 
-For those that are interested, [my homepage](https://www.connorrothschild.com) is chock-full of CSS properties which make it unique from most; some visitors are surprised to hear that my site is Hugo Academic at all! 
+For those that are interested, [my old homepage](https://connorrothschild.github.io/v2/) is chock-full of CSS properties which make it unique from most; some visitors are surprised to hear that my site is Hugo Academic at all! 
 
 <InlineImage src="post/animate-hugo-academic/mine.gif" alt="A GIF showing the final iteration of my homepage, with animations."></InlineImage>
 
-For those interested, the code for my personal site (which, like this one, has an `about.html` and a `custom.scss` file that are carrying the load) can be found [here](https://github.com/connorrothschild/connorrothschild.com). I look forward to seeing your animated homepages! 
+For those interested, the code for my Hugo Academic personal site (now archived) can be found [here](https://github.com/connorrothschild/v2). I look forward to seeing your animated homepages! 
 
