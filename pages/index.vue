@@ -51,7 +51,7 @@ h1 {
 	}
 }
 
-.main-body {
-	scroll-behavior: smooth;
-}
+// .main-body {
+// 	scroll-behavior: smooth;
+// }
 </style>

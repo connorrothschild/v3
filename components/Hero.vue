@@ -7,12 +7,12 @@
 						class="is-flex is-justify-content-space-between is-align-items-center responsive-flex"
 					>
 						<div class="half-flex mb-mobile">
-							<h1 class="title is-size-1 has-text-weight-boldest">
-								Hi, I'm Connor Rothschild
-							</h1>
 							<h2 class="subtitle heading is-size-5">
 								Data, design, and digital
 							</h2>
+							<h1 class="title is-size-1 has-text-weight-boldest">
+								Hi, I'm Connor Rothschild
+							</h1>
 							<div class="buttons">
 								<button
 									@click="showAbout = !showAbout"
@@ -41,54 +41,34 @@
 								</NuxtLink>
 							</div>
 						</div>
-						<div class="half-flex">
-							<transition name="fade">
-								<div v-if="showAbout" class="half-flex">
+						<div class="half-flex is-justify-content-center">
+							<!-- https://vuejs.org/v2/guide/transitions.html#Transition-Modes -->
+							<transition name="fade" mode="out-in">
+								<div v-if="showAbout" class="half-flex" key="text">
 									<p class="is-size-5 content">
 										I'm a data scientist, designer, and developer based in
 										Houston, Texas.
 									</p>
 									<p class="content">
-										I currently work at Moksha Data, and have worked for clients
-										such as the City of Houston, the US Special Operations
-										Command, and the Houston Food Bank. I'm passionate about
-										data visualization, presentation, and storytelling.
+										I currently work at
+										<a
+											href="https://www.mokshadata.com/"
+											target="_blank"
+											rel="noopener noreferrer"
+											class="link"
+											>Moksha Data</a
+										>, and have worked for clients such as the City of Houston,
+										the US Special Operations Command, and the Houston Food
+										Bank. I'm passionate about data visualization, presentation,
+										and storytelling.
 									</p>
-									<div
-										v-if="!isMobile"
-										v-on:mousemove="updateCoords"
-										@mouseover="showImg = true"
-										@mouseout="showImg = false"
-										style="
-											display: inline-block;
-											cursor: none;
-											padding: 0 10px 10px 0;
-										"
-									>
-										<p style="pointer-events: none">
-											(I look like
-											<span class="has-text-weight-bold">this</span>.)
-										</p>
-										<div
-											style="
-												position: fixed;
-												pointer-events: none;
-												z-index: 1000;
-											"
-											v-bind:style="{
-												top: yPos + 'px',
-												left: xPos + 'px',
-											}"
-										>
-											<transition name="fade">
-												<img
-													class="me"
-													v-if="showImg"
-													src="~/assets/images/me.jpg"
-												/>
-											</transition>
-										</div>
-									</div>
+								</div>
+								<div v-else class="centered" key="image">
+									<img
+										src="~/assets/images/me.jpg"
+										class="me"
+										@click="showAbout = !showAbout"
+									/>
 								</div>
 							</transition>
 						</div>
@@ -104,29 +84,10 @@ export default {
 	data() {
 		return {
 			showAbout: false,
-			showImg: false,
-			xPos: null,
-			yPos: null,
-			isMobile: false,
 		};
 	},
 	computed: {},
-	methods: {
-		updateCoords: function (event) {
-			this.xPos = event.clientX;
-			this.yPos = event.clientY + 20;
-		},
-		checkMobile() {
-			this.isMobile = window.innerWidth < 768;
-		},
-	},
-	mounted() {
-		this.checkMobile();
-		window.addEventListener("resize", this.checkMobile);
-	},
-	destroyed() {
-		window.removeEventListener("resize", this.checkMobile);
-	},
+	methods: {},
 };
 </script>
 
@@ -139,7 +100,8 @@ export default {
 .fade-leave-active {
 	transition: opacity 0.5s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter,
+.fade-leave-to {
 	opacity: 0;
 }
 
@@ -152,25 +114,29 @@ export default {
 	}
 }
 
-.hoverable {
-	cursor: none;
-}
-
-.me {
-	pointer-events: none;
-	max-width: 200px;
-	max-height: 200px;
-	border-radius: 50%;
-	box-shadow: 0 2px 1px rgba(0, 0, 0, 0.09), 0 4px 2px rgba(0, 0, 0, 0.09),
-		0 8px 4px rgba(0, 0, 0, 0.09), 0 16px 8px rgba(0, 0, 0, 0.09),
-		0 32px 16px rgba(0, 0, 0, 0.09);
-}
-
 // Different sizes for buttons on mobile
 .button {
 	@media screen and (max-width: 420px) {
 		font-size: 0.75rem;
 		border-radius: 2px;
 	}
+}
+
+.me {
+	border-radius: 0.5rem;
+	transition: transform 1s ease;
+	&:hover {
+		transform: translateY(6px) translateX(2px);
+		cursor: pointer;
+	}
+}
+
+.link[href] {
+	text-decoration: underline;
+}
+
+.centered {
+	width: 50%;
+	margin: 0 auto;
 }
 </style>
