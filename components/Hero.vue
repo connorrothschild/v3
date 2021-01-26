@@ -41,10 +41,13 @@
 								</NuxtLink>
 							</div>
 						</div>
-						<div class="half-flex is-justify-content-center">
+						<div
+							class="half-flex is-flex is-justify-content-center is-align-items-center"
+							style="min-height: 300px"
+						>
 							<!-- https://vuejs.org/v2/guide/transitions.html#Transition-Modes -->
 							<transition name="fade" mode="out-in">
-								<div v-if="showAbout" class="half-flex" key="text">
+								<div v-if="showAbout" key="text">
 									<p class="is-size-5 content">
 										I'm a data scientist, designer, and developer based in
 										Houston, Texas.
@@ -105,15 +108,6 @@ export default {
 	opacity: 0;
 }
 
-@media screen and (max-width: 968px) {
-	.responsive-flex {
-		flex-direction: column;
-	}
-	.mb-mobile {
-		margin-bottom: 3rem;
-	}
-}
-
 // Different sizes for buttons on mobile
 .button {
 	@media screen and (max-width: 420px) {
@@ -138,5 +132,18 @@ export default {
 .centered {
 	width: 50%;
 	margin: 0 auto;
+
+	@media screen and (max-width: 480px) {
+		width: 75%;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.responsive-flex {
+		flex-direction: column;
+	}
+	.mb-mobile {
+		margin-bottom: 3rem;
+	}
 }
 </style>
