@@ -41,8 +41,9 @@
 	</div>
 </template>
 
-
 <script>
+import getSiteMeta from "~/utils/getSiteMeta.js";
+
 export default {
 	async asyncData({ $content, params }) {
 		const award = await $content("awards", params.slug).fetch();
@@ -60,6 +61,41 @@ export default {
 			const options = { year: "numeric", month: "long" };
 			return new Date(date).toLocaleDateString("en", options);
 		},
+	},
+	computed: {
+		meta() {
+			const metaData = {
+				// For award pages, only redefine URL for og:url and twitter:url (because they don't have images)
+				type: "article",
+				url: `https://connorrothschild.com/award/${this.$route.params.slug}`,
+			};
+			return getSiteMeta(metaData);
+		},
+	},
+	head() {
+		return {
+			title: this.award.title,
+			meta: [
+				...this.meta,
+				{
+					property: "article:published_time",
+					content: this.award.createdAt,
+				},
+				{
+					property: "article:modified_time",
+					content: this.award.updatedAt,
+				},
+				{ name: "twitter:label1", content: "Written by" },
+				{ name: "twitter:data1", content: "Connor Rothschild" },
+			],
+			link: [
+				{
+					hid: "canonical",
+					rel: "canonical",
+					href: `https://connorrothschild.com/award/${this.$route.params.slug}`,
+				},
+			],
+		};
 	},
 };
 </script>

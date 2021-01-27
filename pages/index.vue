@@ -39,9 +39,12 @@ export default {
 		};
 	},
 	computed: {
+		// * Default meta tags for homepage
+		// https://nuxtjs.org/docs/2.x/features/meta-tags-seo/
 		head() {
 			return {
-				meta: getSiteMeta(metaData),
+				title: "Connor Rothschild",
+				meta: getSiteMeta(),
 			};
 		},
 	},
