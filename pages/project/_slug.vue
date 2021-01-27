@@ -114,7 +114,6 @@ export default {
 				url: `https://connorrothschild.com/project/${this.$route.params.slug}`,
 				mainImage: `https://raw.githubusercontent.com/connorrothschild/connorrothschild.com/master/assets/images/project/${this.project.img}`,
 			};
-			console.log(getSiteMeta(metaData));
 			return getSiteMeta(metaData);
 		},
 	},

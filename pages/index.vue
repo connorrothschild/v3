@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import getSiteMeta from "~/utils/getSiteMeta.js";
+
 export default {
 	async asyncData({ $content, params }) {
 		const projects = await $content("projects", params.slug)
@@ -35,6 +37,13 @@ export default {
 			posts,
 			awards,
 		};
+	},
+	computed: {
+		head() {
+			return {
+				meta: getSiteMeta(metaData),
+			};
+		},
 	},
 };
 </script>
