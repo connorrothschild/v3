@@ -12,13 +12,6 @@
 			<div class="columns mt-3">
 				<div class="column">
 					<article class="card">
-						<!-- <header class="card-header">
-							<p
-								class="card-header-title has-background-primary has-text-white"
-							>
-								Tech & Code
-							</p>
-						</header> -->
 						<div class="card-content">
 							<div class="content is-flex is-justify-content-space-evenly">
 								<div class="has-text-centered">
@@ -46,13 +39,6 @@
 				</div>
 				<div class="column">
 					<article class="card">
-						<!-- <header class="card-header">
-							<p
-								class="card-header-title has-background-primary has-text-white"
-							>
-								Project Details
-							</p>
-						</header> -->
 						<div class="card-content">
 							<div class="content is-flex is-justify-content-space-evenly">
 								<div class="has-text-centered">
@@ -99,6 +85,8 @@
 
 
 <script>
+import getSiteMeta from "~/utils/getSiteMeta.js";
+
 export default {
 	async asyncData({ $content, params }) {
 		const project = await $content("projects", params.slug).fetch();
@@ -116,6 +104,44 @@ export default {
 			const options = { year: "numeric", month: "long" };
 			return new Date(date).toLocaleDateString("en", options);
 		},
+	},
+	computed: {
+		meta() {
+			const metaData = {
+				type: "article",
+				title: this.project.title,
+				description: this.project.description,
+				url: `https://connorrothschild.com/project/${this.$route.params.slug}`,
+				mainImage: `https://raw.githubusercontent.com/connorrothschild/connorrothschild.com/master/assets/images/project/${this.project.img}`,
+			};
+			console.log(getSiteMeta(metaData));
+			return getSiteMeta(metaData);
+		},
+	},
+	head() {
+		return {
+			title: this.project.title,
+			meta: [
+				...this.meta,
+				{
+					property: "article:published_time",
+					content: this.project.createdAt,
+				},
+				{
+					property: "article:modified_time",
+					content: this.project.updatedAt,
+				},
+				{ name: "twitter:label1", content: "Written by" },
+				{ name: "twitter:data1", content: "Connor Rothschild" },
+			],
+			link: [
+				{
+					hid: "canonical",
+					rel: "canonical",
+					href: `https://connorrothschild.com/project/${this.$route.params.slug}`,
+				},
+			],
+		};
 	},
 };
 </script>

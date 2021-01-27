@@ -26,6 +26,8 @@
 
 
 <script>
+import getSiteMeta from "~/utils/getSiteMeta.js";
+
 export default {
 	async asyncData({ $content, params }) {
 		const post = await $content("posts", params.slug).fetch();
@@ -43,6 +45,44 @@ export default {
 			const options = { year: "numeric", month: "long" };
 			return new Date(date).toLocaleDateString("en", options);
 		},
+	},
+	computed: {
+		meta() {
+			const metaData = {
+				type: "article",
+				title: this.post.title,
+				description: this.post.description,
+				url: `https://connorrothschild.com/post/${this.$route.params.slug}`,
+				mainImage: `https://connorrothschild.com/post/${this.post.img}`,
+				mainImage: `https://raw.githubusercontent.com/connorrothschild/connorrothschild.com/master/assets/images/post/${this.post.img}`,
+			};
+			return getSiteMeta(metaData);
+		},
+	},
+	head() {
+		return {
+			title: this.post.title,
+			meta: [
+				...this.meta,
+				{
+					property: "article:published_time",
+					content: this.post.createdAt,
+				},
+				{
+					property: "article:modified_time",
+					content: this.post.updatedAt,
+				},
+				{ name: "twitter:label1", content: "Written by" },
+				{ name: "twitter:data1", content: "Connor Rothschild" },
+			],
+			link: [
+				{
+					hid: "canonical",
+					rel: "canonical",
+					href: `https://connorrothschild.com/post/${this.$route.params.slug}`,
+				},
+			],
+		};
 	},
 };
 </script>
