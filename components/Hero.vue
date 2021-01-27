@@ -45,7 +45,7 @@
 							<div v-if="showAbout" key="text">
 								<p class="is-size-5 content">
 									I'm a data scientist, designer, and developer based in
-									Houston, Texas.
+									<span id="yeehaw">Houston, Texas</span>.
 								</p>
 								<p class="content">
 									I currently work at
@@ -121,26 +121,22 @@ export default {
 }
 
 .link[href] {
-	// text-decoration: underline;
-	background: #cecece;
-	color: $primary !important;
+	background: $primary;
+	color: white !important;
+	font-weight: bold;
 	padding: 3px;
 	border-radius: 3px;
 	transition: all 300ms ease;
 
 	&:hover {
-		background: $primary;
-		color: white !important;
+		background: #cecece;
+		color: $primary !important;
 	}
 }
 
 .centered {
 	width: 50%;
 	margin: 0 auto;
-
-	// @media screen and (max-width: 480px) {
-	// 	width: 75%;
-	// }
 }
 
 @media screen and (max-width: 800px) {
@@ -165,5 +161,10 @@ export default {
 		flex-direction: column;
 		align-items: flex-start;
 	}
+}
+
+#yeehaw {
+	cursor: url("data:image/svg+xml;charset=utf-8, <svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size: 24px'><text y='20'>🤠</text></svg>"),
+		auto;
 }
 </style>
