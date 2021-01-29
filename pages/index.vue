@@ -56,13 +56,6 @@ body {
 	color: $text;
 }
 
-h1 {
-	&::selection {
-		background: whitesmoke;
-		color: $primary;
-	}
-}
-
 // .main-body {
 // 	scroll-behavior: smooth;
 // }

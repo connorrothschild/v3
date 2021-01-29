@@ -1,81 +1,75 @@
 <template>
-	<div style="position: relative">
-		<section class="hero is-primary is-fullheight">
-			<div class="hero-body">
-				<!-- <div class="container"> -->
-				<div class="is-flex responsive-flex">
-					<div class="half-flex mb-mobile">
-						<h2 class="subtitle heading is-size-5">
-							Data, design, and digital
-						</h2>
-						<h1 class="title is-size-1 has-text-weight-boldest">
-							Hi, I'm Connor Rothschild
-						</h1>
-						<div class="buttons">
-							<button
-								@click="showAbout = !showAbout"
-								class="button"
-								:class="[showAbout ? 'is-primary' : 'is-white']"
-							>
-								About Me
-							</button>
-							<NuxtLink
-								:to="{ path: '/', hash: '#projects' }"
-								class="button is-primary"
-							>
-								Projects
-							</NuxtLink>
-							<NuxtLink
-								:to="{ path: '/', hash: '#awards' }"
-								class="button is-primary"
-							>
-								Awards
-							</NuxtLink>
-							<NuxtLink
-								:to="{ path: '/', hash: '#blog' }"
-								class="button is-primary"
-							>
-								Blog
-							</NuxtLink>
-						</div>
-					</div>
-					<div class="half-flex prevent-jitter">
-						<!-- https://vuejs.org/v2/guide/transitions.html#Transition-Modes -->
-						<transition name="fade" mode="out-in">
-							<div v-if="showAbout" key="text">
-								<p class="is-size-5 content">
-									I'm a data scientist, designer, and developer based in
-									<span id="yeehaw">Houston, Texas</span>.
-								</p>
-								<p class="content">
-									I currently work at
-									<a
-										href="https://www.mokshadata.com/"
-										target="_blank"
-										rel="noopener noreferrer"
-										class="link"
-										>Moksha Data</a
-									>, and have worked for clients such as the City of Houston,
-									the US Special Operations Command, and the Houston Food Bank.
-									I'm passionate about data visualization, presentation, and
-									storytelling.
-								</p>
-							</div>
-							<div v-else class="centered" key="image">
-								<img
-									src="~/assets/images/me.jpg"
-									alt="An image of Connor Rothschild"
-									class="me"
-									@click="showAbout = !showAbout"
-								/>
-							</div>
-						</transition>
+	<section class="hero is-primary is-fullheight">
+		<div class="hero-body">
+			<div class="is-flex responsive-flex">
+				<div class="half-flex responsive-margin">
+					<h2 class="subtitle heading is-size-5">Data, design, and digital</h2>
+					<h1 class="title is-size-1 has-text-weight-boldest">
+						Hi, I'm Connor Rothschild
+					</h1>
+					<div class="buttons">
+						<button
+							@click="showAbout = !showAbout"
+							class="button"
+							:class="[showAbout ? 'is-primary' : 'is-white']"
+						>
+							About Me
+						</button>
+						<NuxtLink
+							:to="{ path: '/', hash: '#projects' }"
+							class="button is-primary"
+						>
+							Projects
+						</NuxtLink>
+						<NuxtLink
+							:to="{ path: '/', hash: '#awards' }"
+							class="button is-primary"
+						>
+							Awards
+						</NuxtLink>
+						<NuxtLink
+							:to="{ path: '/', hash: '#blog' }"
+							class="button is-primary"
+						>
+							Blog
+						</NuxtLink>
 					</div>
 				</div>
-				<!-- </div> -->
+				<div class="half-flex prevent-jitter">
+					<!-- https://vuejs.org/v2/guide/transitions.html#Transition-Modes -->
+					<transition name="fade" mode="out-in">
+						<div v-if="showAbout" key="text">
+							<p class="is-size-5 content">
+								I'm a data scientist, designer, and developer based in
+								<span id="yeehaw">Houston, Texas</span>.
+							</p>
+							<p class="content">
+								I currently work at
+								<a
+									href="https://www.mokshadata.com/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="link"
+									>Moksha Data</a
+								>, and have worked for clients such as the City of Houston, the
+								US Special Operations Command, and the Houston Food Bank. I'm
+								passionate about data visualization, presentation, and
+								storytelling.
+							</p>
+						</div>
+						<div v-else class="centered" key="image">
+							<img
+								src="~/assets/images/me.jpg"
+								alt="An image of Connor Rothschild"
+								class="me"
+								@click="showAbout = !showAbout"
+							/>
+						</div>
+					</transition>
+				</div>
 			</div>
-		</section>
-	</div>
+		</div>
+	</section>
 </template>
 
 <script>
@@ -139,8 +133,12 @@ export default {
 	margin: 0 auto;
 }
 
+.responsive-margin {
+	margin-right: 1rem;
+}
+
 @media screen and (max-width: 800px) {
-	.mb-mobile {
+	.responsive-margin {
 		margin-bottom: 3rem;
 	}
 
@@ -166,5 +164,16 @@ export default {
 #yeehaw {
 	cursor: url("data:image/svg+xml;charset=utf-8, <svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size: 24px'><text y='20'>🤠</text></svg>"),
 		auto;
+}
+
+h1,
+h2,
+p,
+span,
+a {
+	&::selection {
+		background: whitesmoke;
+		color: $primary;
+	}
 }
 </style>
