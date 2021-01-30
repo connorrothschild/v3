@@ -1,7 +1,7 @@
 <template>
 	<section class="hero is-primary is-fullheight">
 		<div class="hero-body">
-			<div class="is-flex responsive-flex">
+			<div class="is-flex responsive-flex prevent-shifting">
 				<div class="half-flex responsive-margin">
 					<h2 class="subtitle heading is-size-5">Data, design, and digital</h2>
 					<h1 class="title is-size-1 has-text-weight-boldest">
@@ -158,6 +158,12 @@ export default {
 	@media screen and (max-width: 800px) {
 		flex-direction: column;
 		align-items: flex-start;
+	}
+}
+
+.prevent-shifting {
+	@media screen and (min-width: 800px) {
+		min-width: 90vw;
 	}
 }
 
