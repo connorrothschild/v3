@@ -6,8 +6,8 @@
 		:style="{ width: width }"
 	>
 		<picture>
-			<source v-img :src="imgSrc()" :alt="alt" type="image/webp" />
-			<source v-img :src="imgSrcFallback()" :alt="alt" type="image/png" />
+			<source v-img :srcSet="imgSrc()" :alt="alt" type="image/webp" />
+			<source v-img :srcSet="imgSrcFallback()" :alt="alt" type="image/png" />
 			<img v-img :src="imgSrcFallback()" :alt="alt" />
 		</picture>
 	</div>
@@ -18,8 +18,8 @@
 		:style="{ width: width }"
 	>
 		<picture>
-			<source :src="imgSrc()" :alt="alt" type="image/webp" />
-			<source :src="imgSrcFallback()" :alt="alt" type="image/png" />
+			<source :srcSet="imgSrc()" :alt="alt" type="image/webp" />
+			<source :srcSet="imgSrcFallback()" :alt="alt" type="image/png" />
 			<img :src="imgSrcFallback()" :alt="alt" />
 		</picture>
 	</div>
