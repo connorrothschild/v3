@@ -92,6 +92,10 @@ export default {
 		optimizeImages : true
 	},
 
+	generate        : {
+		fallback : true
+	},
+
 	image           : {
 		// Options
 	},
