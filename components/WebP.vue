@@ -1,8 +1,9 @@
 <template>
+	<!-- https://marquez.co/docs/nuxt-optimized-images/usage -->
 	<picture>
 		<!-- If webp is accessible prefer -->
 		<source
-			:src="imgSrc()"
+			:srcSet="imgSrc()"
 			:alt="alt"
 			type="image/webp"
 			:class="{
@@ -12,7 +13,7 @@
 		/>
 		<!-- If not, optimized PNG -->
 		<source
-			:src="imgSrcFallback()"
+			:srcSet="imgSrcFallback()"
 			:alt="alt"
 			type="image/png"
 			:class="{
@@ -28,6 +29,7 @@
 				'object-fit-cover': type == 'post',
 				'object-fit-scale': type == 'project',
 			}"
+			loading="lazy"
 		/>
 	</picture>
 </template>
