@@ -184,7 +184,7 @@ map_bw <- plot_bw +
 map_bw
 ```
 
-<InlineImage alt="" src="post/map-springfield/bw_map_springfield.png"></InlineImage>
+<InlineImage alt="A black and white map of Springfield, Missouri." src="post/map-springfield/bw_map_springfield.png"></InlineImage>
 
 Finally, save the plot:
 
@@ -302,7 +302,7 @@ map_gold <- plot_gold +
 map_gold
 ```
 
-<InlineImage alt="" src="post/map-springfield/gold_map_springfield.png"></InlineImage>
+<InlineImage alt="A gold map of Springfield, Missouri." src="post/map-springfield/gold_map_springfield.png"></InlineImage>
 
 ```r
 ggsave(map_gold,

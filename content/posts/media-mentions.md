@@ -85,7 +85,7 @@ data %>%
        title="Average Proportion of Media Coverage on a Weekly Basis")
 ```
 
-<InlineImage alt="" src="post/media-mentions/unnamed-chunk-2-1.png"></InlineImage>
+<InlineImage alt="A barchart showing average proportion of media coverage on a weekly basis. Joe Biden leads the pack at 28% of media mentions." src="post/media-mentions/unnamed-chunk-2-1.png"></InlineImage>
 
 Somewhat unsurprisingly. Joe Biden and Bernie Sanders lead the pack in
 media attention. Joe Biden tends to receive significantly more media
@@ -101,9 +101,6 @@ data %>%
   ggplot(aes(x=as.Date(date),y=pct_of_all_candidate_clips*100,group=name, color=name)) +
   geom_point() +
   geom_smooth(se = FALSE, show.legend = FALSE) +
-  # geom_text(data = subset(data, as.numeric(date) == 21 & mean(pct_of_all_candidate_clips) > .05), 
-  #           aes(x = 21, label = name, color = "#000000"), hjust = -.05, 
-  #           show.legend = FALSE) + 
   geom_label_repel(data=subset(data, pct_of_all_candidate_clips>.6),
           label = "Lucy Flores accuses Biden of \n inappropriate touching",
                    nudge_x = -25, nudge_y=-5,
@@ -114,11 +111,6 @@ data %>%
            nudge_x = -5, nudge_y=-7,
            show.legend = FALSE,
            color="black") +
-  # theme(axis.text.x = element_text(angle = 65, hjust = 1)) +
-  # coord_cartesian(clip = 'off') +
-  # # scale_x_discrete(breaks = c("1/20/19", "2/10/19","3/10/19","3/31/19","4/28/19"),
-  # #                  labels = c("January", "February", "March", "April", "May")) +
-  # # theme(plot.margin = margin(5.5, 100, 5.5, 5.5)) +
   labs(x=element_blank(),
        y="Percent of Media Mentions",
        title="Media Mentions of Candidates Over Time") + 
@@ -127,7 +119,7 @@ data %>%
                                   "Kamala Harris", "Beto O'Rourke", "Cory Booker"))
 ```
 
-<InlineImage alt="" src="post/media-mentions/unnamed-chunk-3-1.png"></InlineImage>
+<InlineImage alt="A scatterplot showing media mentions over time for each candidate. It shows Joe Biden rising in prominence, especially when he announces candidacy on April 15." src="post/media-mentions/unnamed-chunk-3-1.png"></InlineImage>
 
 Evidently, much of Joe Biden’s popularity in the media can be explained
 by a few large spikes in weekly media mentions. We can explore the
@@ -152,7 +144,7 @@ ggplot(aes(x = pct_of_all_candidate_clips*100, y = reorder(name,pct_of_all_candi
        subtitle="With density ridges depicting average mentions on a weekly basis") 
 ```
 
-<InlineImage alt="" src="post/media-mentions/unnamed-chunk-4-1.png"></InlineImage>
+<InlineImage alt="A ridgeplot showing media mentions of Joe Biden, Bernie Sanders, Elizabeth Warren, and Kamala Harris. It shows that, most weeks, candidates enjoy between 0 and 20% of media mentions, with some variation across candidates." src="post/media-mentions/unnamed-chunk-4-1.png"></InlineImage>
 
 This plot illustrates that most candidates enjoy the same levels of
 media coverage from one week to another. Joe Biden, however, often has
@@ -186,7 +178,7 @@ data %>%
        subtitle="Subtracting a given week's % mentions from the week prior")
 ```
 
-<InlineImage alt="" src="post/media-mentions/unnamed-chunk-5-1.png"></InlineImage>
+<InlineImage alt="A dual barchart showing differences in week-on-week mentions for each candidate." src="post/media-mentions/unnamed-chunk-5-1.png"></InlineImage>
 
 Unsurprisingly, the bars tend to mirror one another. If a candidate
 enjoys a steep increase in media attention one week, they are likely to
@@ -267,7 +259,7 @@ recentdata %>%
        subtitle = "Candidates ranked by weekly media mentions")
 ```
 
-<InlineImage alt="" src="post/media-mentions/unnamed-chunk-6-1.png"></InlineImage>
+<InlineImage alt="A bump chart of all candidates 'rankings' in media mentions over time. It is intentionally messy." src="post/media-mentions/unnamed-chunk-6-1.png"></InlineImage>
 
 Let’s focus on the meteoric rise of Pete Buttigieg:
 
@@ -311,7 +303,7 @@ petedata %>%
        subtitle = "Pete Buttigieg's Rapid Rise in Media Mentions")
 ```
 
-<InlineImage alt="" src="post/media-mentions/unnamed-chunk-7-1.png"></InlineImage>
+<InlineImage alt="A bump chart of all candidates 'rankings' in media mentions over time. Pete Buttigieg is highlighted to show his rise over time." src="post/media-mentions/unnamed-chunk-7-1.png"></InlineImage>
 
 Some takeaways:
 

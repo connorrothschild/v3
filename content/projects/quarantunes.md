@@ -29,5 +29,5 @@ I also had some fun developing the more novel contributions of this project, suc
 
 # Project images
 
-<InlineImage src="projects/quarantunes/macbook.png" alt=""></InlineImage>
-<InlineImage src="projects/quarantunes/side-by-side.png" alt=""></InlineImage>
+<InlineImage src="projects/quarantunes/macbook.png" alt="Project image for 'Quarantunes'"></InlineImage>
+<InlineImage src="projects/quarantunes/side-by-side.png" alt="Project image for 'Quarantunes'"></InlineImage>

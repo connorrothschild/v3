@@ -23,8 +23,8 @@ This application was built with [Vue](https://vuejs.org/). The minimal styling w
 
 # Project images
 
-<InlineImage src="projects/how-many-people/mac-1.png" alt=""></InlineImage>
-<InlineImage src="projects/how-many-people/mac-2.png" alt=""></InlineImage>
+<InlineImage src="projects/how-many-people/mac-1.png" alt="Project image for 'How Many People Have COVID-19??'"></InlineImage>
+<InlineImage src="projects/how-many-people/mac-2.png" alt="Project image for 'How Many People Have COVID-19??'"></InlineImage>
 
-<InlineImage src="projects/how-many-people/phone-1.png" alt="" width="48%"></InlineImage>
-<InlineImage src="projects/how-many-people/phone-2.png" alt="" width="48%"></InlineImage>
+<InlineImage src="projects/how-many-people/phone-1.png" alt="Project image for 'How Many People Have COVID-19??'" width="48%"></InlineImage>
+<InlineImage src="projects/how-many-people/phone-2.png" alt="Project image for 'How Many People Have COVID-19??'" width="48%"></InlineImage>

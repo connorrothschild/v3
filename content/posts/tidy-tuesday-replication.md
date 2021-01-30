@@ -24,7 +24,7 @@ visualization](https://www.bloomberg.com/graphics/2017-job-risk/) from
 Bloomberg graphics, I decided to set out on a journey to make that plot
 as close as possible to the real thing.
 
-<InlineImage alt="" src="post/tidy-tuesday-replication/bloomberg.png"></InlineImage>
+<InlineImage alt="A scatterplot by Bloomberg Graphics, showing automation risk compared to median income." src="post/tidy-tuesday-replication/bloomberg.png"></InlineImage>
 
 The real goal of this week’s Tidy Tuesday is using **the data that
 Rafael posted** to create other cool visualizations; I took a slightly
@@ -429,8 +429,8 @@ code, uninterrupted and (hopefully) reproducible,
 
 Here’s the Bloomberg visualization:
 
-<InlineImage alt="" src="post/tidy-tuesday-replication/bloomberg.png"></InlineImage>
+<InlineImage alt="A scatterplot by Bloomberg Graphics, showing automation risk compared to median income." src="post/tidy-tuesday-replication/bloomberg.png"></InlineImage>
 
 And here’s mine:
 
-<InlineImage alt="" src="post/tidy-tuesday-replication/replication.png"></InlineImage>
+<InlineImage alt="A scatterplot recreation, showing automation risk compared to median income." src="post/tidy-tuesday-replication/replication.png"></InlineImage>

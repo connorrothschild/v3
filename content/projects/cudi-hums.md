@@ -23,16 +23,16 @@ I used [Vue](https://vuejs.org/) and [D3.js](https://d3js.org/) for all things v
 
 # Project images
 
-<InlineImage src="projects/cudi-hums/albums-mac.png" alt="" width="48%"></InlineImage>
-<InlineImage src="projects/cudi-hums/tracks-mac.png" alt="" width="48%"></InlineImage>
-<InlineImage src="projects/cudi-hums/lyrics-mac.png" alt=""></InlineImage>
+<InlineImage src="projects/cudi-hums/albums-mac.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="48%"></InlineImage>
+<InlineImage src="projects/cudi-hums/tracks-mac.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="48%"></InlineImage>
+<InlineImage src="projects/cudi-hums/lyrics-mac.png" alt="Project image for 'How Much Does Kid Cudi Hum?'"></InlineImage>
 
-<InlineImage src="projects/cudi-hums/albums-phone.png" alt="" width="32%"></InlineImage>
-<InlineImage src="projects/cudi-hums/tracks-phone.png" alt="" width="32%"></InlineImage>
-<InlineImage src="projects/cudi-hums/lyrics-phone.png" alt="" width="32%"></InlineImage>
+<InlineImage src="projects/cudi-hums/albums-phone.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="32%"></InlineImage>
+<InlineImage src="projects/cudi-hums/tracks-phone.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="32%"></InlineImage>
+<InlineImage src="projects/cudi-hums/lyrics-phone.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="32%"></InlineImage>
 
-<InlineImage src="projects/cudi-hums/intro-phone.png" alt="" width="48%"></InlineImage>
-<InlineImage src="projects/cudi-hums/outro-phone.png" alt="" width="48%"></InlineImage>
+<InlineImage src="projects/cudi-hums/intro-phone.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="48%"></InlineImage>
+<InlineImage src="projects/cudi-hums/outro-phone.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="48%"></InlineImage>
 
 <!-- # Overview (in my own words!)
 

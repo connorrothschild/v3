@@ -28,12 +28,12 @@ To trigger scroll events, We used the Mapbox storytelling template. This was a s
 
 # Project images
 
-<InlineImage src="projects/map-houston-homicides/mac-1.png" alt="" width="48%"></InlineImage>
-<InlineImage src="projects/map-houston-homicides/mac-2.png" alt="" width="48%"></InlineImage>
+<InlineImage src="projects/map-houston-homicides/mac-1.png" alt="Project image for 'Mapping Houston Homicides'" width="48%"></InlineImage>
+<InlineImage src="projects/map-houston-homicides/mac-2.png" alt="Project image for 'Mapping Houston Homicides'" width="48%"></InlineImage>
 
-<InlineImage src="projects/map-houston-homicides/mac-3.png" alt="" width="48%"></InlineImage>
-<InlineImage src="projects/map-houston-homicides/mac-4.png" alt="" width="48%"></InlineImage>
+<InlineImage src="projects/map-houston-homicides/mac-3.png" alt="Project image for 'Mapping Houston Homicides'" width="48%"></InlineImage>
+<InlineImage src="projects/map-houston-homicides/mac-4.png" alt="Project image for 'Mapping Houston Homicides'" width="48%"></InlineImage>
 
-<InlineImage src="projects/map-houston-homicides/phone-1.png" alt="" width="32%"></InlineImage>
-<InlineImage src="projects/map-houston-homicides/phone-2.png" alt="" width="32%"></InlineImage>
-<InlineImage src="projects/map-houston-homicides/phone-3.png" alt="" width="32%"></InlineImage>
+<InlineImage src="projects/map-houston-homicides/phone-1.png" alt="Project image for 'Mapping Houston Homicides'" width="32%"></InlineImage>
+<InlineImage src="projects/map-houston-homicides/phone-2.png" alt="Project image for 'Mapping Houston Homicides'" width="32%"></InlineImage>
+<InlineImage src="projects/map-houston-homicides/phone-3.png" alt="Project image for 'Mapping Houston Homicides'" width="32%"></InlineImage>

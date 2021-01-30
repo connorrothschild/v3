@@ -25,8 +25,8 @@ Methodologically, for each demographic profile (a combination of race, age, mari
 
 # Project images
 
-<InlineImage src="projects/atus/mac-1.png" alt="" width="74%"></InlineImage>
-<InlineImage src="projects/atus/phone-1.png" alt="" width="22%"></InlineImage>
+<InlineImage src="projects/atus/mac-1.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="74%"></InlineImage>
+<InlineImage src="projects/atus/phone-1.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="22%"></InlineImage>
 
-<InlineImage src="projects/atus/phone-2.png" alt="" width="22%"></InlineImage>
-<InlineImage src="projects/atus/mac-2.png" alt="" width="74%"></InlineImage>
+<InlineImage src="projects/atus/phone-2.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="22%"></InlineImage>
+<InlineImage src="projects/atus/mac-2.png" alt="Project image for the project 'I Can Guess What You're Doing Right Now'" width="74%"></InlineImage>

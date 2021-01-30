@@ -23,5 +23,5 @@ I used [D3.js](https://d3js.org/) for the minor visualization that accompanies t
 
 # Project images
 
-<InlineImage src="projects/state-police-spending/mac.png" alt="" width="74%"></InlineImage>
-<InlineImage src="projects/state-police-spending/phone.png" alt="" width="22%"></InlineImage>
+<InlineImage src="projects/state-police-spending/mac.png" alt="Project image for 'How Much Does Your State Spend on Police?'" width="74%"></InlineImage>
+<InlineImage src="projects/state-police-spending/phone.png" alt="Project image for 'How Much Does Your State Spend on Police?'" width="22%"></InlineImage>

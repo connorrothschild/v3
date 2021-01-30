@@ -25,8 +25,8 @@ This project was built using vanilla JavaScript, and styling was done with assis
 
 # Project images
 
-<InlineImage src="projects/compas/mac-1.png" alt="" width="74%"></InlineImage>
-<InlineImage src="projects/compas/phone-1.png" alt="" width="22%"></InlineImage>
+<InlineImage src="projects/compas/mac-1.png" alt="Project image for the project 'Are You Smarter Than COMPAS?'" width="74%"></InlineImage>
+<InlineImage src="projects/compas/phone-1.png" alt="Project image for the project 'Are You Smarter Than COMPAS?'" width="22%"></InlineImage>
 
-<InlineImage src="projects/compas/phone-2.png" alt="" width="22%"></InlineImage>
-<InlineImage src="projects/compas/mac-2.png" alt="" width="74%"></InlineImage>
+<InlineImage src="projects/compas/phone-2.png" alt="Project image for the project 'Are You Smarter Than COMPAS?'" width="22%"></InlineImage>
+<InlineImage src="projects/compas/mac-2.png" alt="Project image for the project 'Are You Smarter Than COMPAS?'" width="74%"></InlineImage>
