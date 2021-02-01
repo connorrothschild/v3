@@ -1,5 +1,5 @@
 <template>
-	<div class="has-navbar-fixed-top">
+	<div>
 		<Nav color="is-primary" />
 		<div class="fullscreen has-background-light">
 			<article class="section container">
