@@ -3,6 +3,11 @@
 		<div class="column" v-if="next">
 			<HoverableCard :to="`/${type}/${next.slug}`">
 				<article class="card card-fullheight has-background-white">
+				<div class="card-image" v-if="next.img">
+					<figure class="image is-2by1">
+						<WebP :src="`${type}/${next.img}`" :alt="next.img_alt" type="project" />
+					</figure>
+				</div>
 					<div class="card-content">
 						<div class="content is-flex is-justify-content-space-evenly">
 							<div class="has-text-centered">
@@ -20,6 +25,11 @@
 		<div class="column" v-if="prev">
 			<HoverableCard :to="`/${type}/${prev.slug}`">
 				<article class="card card-fullheight has-background-white">
+				<div class="card-image" v-if="prev.img">
+					<figure class="image is-2by1">
+						<WebP :src="`${type}/${prev.img}`" :alt="prev.img_alt" type="project" />
+					</figure>
+				</div>
 					<div class="card-content">
 						<div class="content is-flex is-justify-content-space-evenly">
 							<div class="has-text-centered">
@@ -37,7 +47,6 @@
 	</div>
 </template>
 
-
 <script>
 export default {
 	props: {
@@ -54,5 +63,8 @@ export default {
 			default: () => null,
 		},
 	},
+	mounted() {
+		console.log(this.next)
+	}
 };
 </script>

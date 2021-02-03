@@ -92,7 +92,7 @@ export default {
 		const project = await $content("projects", params.slug).fetch();
 
 		const [prev, next] = await $content("projects")
-			.only(["title", "slug"])
+			.only(["title", "slug", "img", "img_alt"])
 			.sortBy("date", "asc")
 			.surround(params.slug)
 			.fetch();
