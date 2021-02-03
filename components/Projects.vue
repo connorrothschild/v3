@@ -14,7 +14,7 @@
 				<!-- LINK TO ALL PROJECTS -->
 				<NuxtLink
 					to="/project"
-					class="subtitle heading has-text-weight-light is-size-5"
+					class="subtitle heading has-text-weight-light is-size-5 link is-inline-block"
 					>See all projects 👉</NuxtLink
 				>
 				<!-- CONTAINER FOR PROJECTS -->
@@ -41,25 +41,4 @@ export default {
 </script>
 
 <style lang='scss'>
-.is-primary-gradient {
-	background-image: linear-gradient(
-		to bottom,
-		#03071e,
-		#0a0b1c,
-		#100f1a,
-		#131318,
-		#161616
-	);
-}
-
-.is-primary-gradient-rev {
-	background-image: linear-gradient(
-		to top,
-		#03071e,
-		#0a0b1c,
-		#100f1a,
-		#131318,
-		#161616
-	);
-}
 </style>

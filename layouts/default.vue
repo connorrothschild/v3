@@ -83,6 +83,24 @@ html {
 	opacity: 0;
 }
 
+.link {
+  background-image: linear-gradient(to top, $secondary 50%, transparent 50%);
+  background-size: 100% 200%;
+  background-position: top;
+  transition: all 250ms ease-in-out; 
+  color: white !important;
+  border-radius: 2px;
+  padding: 0 2px;
+
+  border-bottom: 2px solid $secondary;
+
+	&:hover {
+  		background-position: bottom;
+		cursor: pointer;
+		color: $primary !important;
+	}
+}
+
 // // ! FIXME - HTML makes global and that is bad...
 // html:focus-within {
 // 	scroll-behavior: smooth;

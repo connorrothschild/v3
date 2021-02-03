@@ -3,36 +3,41 @@
 		<div class="hero-body">
 			<div class="is-flex responsive-flex prevent-shifting">
 				<div class="half-flex responsive-margin">
-					<h2 class="subtitle heading is-size-5">Data, design, and digital</h2>
-					<h1 class="title is-size-1 has-text-weight-boldest">
-						Hi, I'm Connor Rothschild
-					</h1>
-					<div class="buttons">
-						<button
-							@click="showAbout = !showAbout"
-							class="button"
-							:class="[showAbout ? 'is-primary' : 'is-white']"
-						>
-							About Me
-						</button>
-						<NuxtLink
-							:to="{ path: '/', hash: '#projects' }"
-							class="button is-primary"
-						>
-							Projects
-						</NuxtLink>
-						<NuxtLink
-							:to="{ path: '/', hash: '#awards' }"
-							class="button is-primary"
-						>
-							Awards
-						</NuxtLink>
-						<NuxtLink
-							:to="{ path: '/', hash: '#blog' }"
-							class="button is-primary"
-						>
-							Blog
-						</NuxtLink>
+					<div>
+						<h2 class="subtitle heading is-size-5">
+							Data, design, and digital
+						</h2>
+						<h1 class="title is-size-1 has-text-weight-boldest">
+							Hi, I'm
+							<span class="link" @click="showAbout = !showAbout">Connor Rothschild</span>
+						</h1>
+						<div class="buttons">
+							<!-- <button
+								@click="showAbout = !showAbout"
+								class="button"
+								:class="[showAbout ? 'is-primary' : 'is-white']"
+							>
+								About Me
+							</button> -->
+							<NuxtLink
+								:to="{ path: '/', hash: '#projects' }"
+								class="button is-primary"
+							>
+								Projects
+							</NuxtLink>
+							<NuxtLink
+								:to="{ path: '/', hash: '#awards' }"
+								class="button is-primary"
+							>
+								Awards
+							</NuxtLink>
+							<NuxtLink
+								:to="{ path: '/', hash: '#blog' }"
+								class="button is-primary"
+							>
+								Blog
+							</NuxtLink>
+						</div>
 					</div>
 				</div>
 				<div class="half-flex prevent-jitter">
@@ -57,7 +62,7 @@
 								storytelling.
 							</p>
 						</div>
-						<div v-else class="centered" key="image">
+						<div v-else class="has-text-centered" key="image">
 							<img
 								src="~/assets/images/me.jpg"
 								alt="An image of Connor Rothschild"
@@ -94,18 +99,9 @@ export default {
 	opacity: 0;
 }
 
-.button {
-	// Transition background color
-	transition: 1s all ease;
-
-	// Different sizes for buttons on mobile
-	@media screen and (max-width: 420px) {
-		font-size: 0.75rem;
-		border-radius: 2px;
-	}
-}
-
 .me {
+	height: 300px;
+	width: 300px;
 	border-radius: 0.5rem;
 	transition: transform 1s ease;
 	&:hover {
@@ -114,34 +110,18 @@ export default {
 	}
 }
 
-.link[href] {
-	background: $primary;
-	color: white !important;
-	font-weight: bold;
-	padding: 3px;
-	border-radius: 3px;
-	transition: all 300ms ease;
-
-	&:hover {
-		background: #cecece;
-		color: $primary !important;
-	}
-}
-
-.centered {
-	width: 50%;
-	margin: 0 auto;
-}
-
 .responsive-margin {
-	margin-right: 1rem;
-}
+	@media screen and (min-width: 860px) {
+		margin-right: 1rem;
+		margin-left: 1rem;
+	}
 
-@media screen and (max-width: 800px) {
-	.responsive-margin {
+	@media screen and (max-width: 860px) {
 		margin-bottom: 3rem;
 	}
+}
 
+@media screen and (max-width: 860px) {
 	.prevent-jitter {
 		min-height: 200px;
 	}
@@ -149,22 +129,21 @@ export default {
 
 .half-flex {
 	flex: 1 1 0px;
+	width: 100%;
 }
 
 .responsive-flex {
 	flex-direction: row;
 	align-items: center;
 
-	@media screen and (max-width: 800px) {
+	@media screen and (max-width: 860px) {
 		flex-direction: column;
 		align-items: flex-start;
 	}
 }
 
 .prevent-shifting {
-	@media screen and (min-width: 800px) {
-		min-width: 90vw;
-	}
+	width: 100%;
 }
 
 #yeehaw {
