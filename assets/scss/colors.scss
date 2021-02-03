@@ -11,8 +11,26 @@ $text: $black;
 $text-strong: #000000;   
 
 // Primary color
-$primary: #03071e;
-$info: $red;
+$primary: #2C2D48;
+$secondary: #FFAE3A;
+
+.has-text-secondary {
+  color: $secondary !important;
+}
+
+.is-primary-gradient {
+  @extend .is-primary;
+	background-image: linear-gradient(0deg, black 0%, #2c2d48 100%)
+}
+
+.is-primary-gradient-rev {
+  @extend .is-primary;
+	background-image: linear-gradient(0deg, #2c2d48  0%, black 100%)
+}
+
+.has-underline-secondary {
+	border-bottom: 5px solid $secondary;
+}
 
 // Resolve Prism/Bulma conflicts 
 // https://www.darraghoriordan.com/2019/01/20/bulma-prismjs-in-gatsby-css-conflicts/

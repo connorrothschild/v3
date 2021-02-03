@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<div v-if="error.statusCode === 404" class="error-page">
-			<div class="error-body">
+		<div class="error-page">
+			<div class="error-body" v-if="error.statusCode === 404">
 				<h1 class="title has-text-white">
 					Hey there! This page doesn't exist.
 				</h1>
@@ -13,10 +13,16 @@
 					While you're here, why don't you check out the rest of my site?
 				</p>
 				<hr />
+								<NuxtLink to="/">👈 Back to Home</NuxtLink>
+</div>
+		<div class="error-body" v-else>
+			<h1 class="title has-text-white">
+					Hey there! An error occurred.
+				</h1>				
 				<NuxtLink to="/">👈 Back to Home</NuxtLink>
+				</div>
 			</div>
 		</div>
-		<h1 v-else>An error occurred</h1>
 	</div>
 </template>
 
