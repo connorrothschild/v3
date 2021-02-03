@@ -8,7 +8,6 @@
 					</figure>
 				</div>
 				<div class="card-content has-text-black">
-					<div class="media"></div>
 					<div class="media-content">
 						<p class="title is-size-4">{{ title }}</p>
 						<p class="subtitle is-size-6 has-text-weight-light">

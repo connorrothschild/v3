@@ -14,7 +14,7 @@
 				<!-- LINK TO ALL PROJECTS -->
 				<NuxtLink
 					to="/project"
-					class="subtitle heading has-text-weight-light is-size-5"
+					class="subtitle heading has-text-weight-light is-size-5 link is-inline-block"
 					>See all projects 👉</NuxtLink
 				>
 				<!-- CONTAINER FOR PROJECTS -->

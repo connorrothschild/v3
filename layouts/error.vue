@@ -13,15 +13,15 @@
 					While you're here, why don't you check out the rest of my site?
 				</p>
 				<hr />
-								<NuxtLink to="/">👈 Back to Home</NuxtLink>
-</div>
-		<div class="error-body" v-else>
-			<h1 class="title has-text-white">
-					Hey there! An error occurred.
-				</h1>				
 				<NuxtLink to="/">👈 Back to Home</NuxtLink>
-				</div>
 			</div>
+			<div class="error-body" v-else>
+				<h1 class="title has-text-white">
+						Hey there! An error occurred.
+					</h1>				
+					<NuxtLink to="/">👈 Back to Home</NuxtLink>
+			</div>
+		</div>
 		</div>
 	</div>
 </template>
@@ -42,7 +42,7 @@ export default {
 	justify-content: space-between;
 	place-content: center;
 
-	background-color: #03071e !important;
+	background-color: $primary !important;
 	color: white !important;
 
 	.error-body {

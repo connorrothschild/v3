@@ -11,6 +11,7 @@ $text: $black;
 $text-strong: #000000;   
 
 // Primary color
+// // https://components.ai/color-scale/?id=VZrBJFBquHUQ6smoxKNF
 $primary: #2C2D48;
 $secondary: #FFAE3A;
 
@@ -20,16 +21,16 @@ $secondary: #FFAE3A;
 
 .is-primary-gradient {
   @extend .is-primary;
-	background-image: linear-gradient(0deg, black 0%, #2c2d48 100%)
+	background-image: linear-gradient(0deg, black 0%, $primary 100%)
 }
 
 .is-primary-gradient-rev {
   @extend .is-primary;
-	background-image: linear-gradient(0deg, #2c2d48  0%, black 100%)
+	background-image: linear-gradient(0deg, $primary  0%, black 100%)
 }
 
 .has-underline-secondary {
-	border-bottom: 5px solid $secondary;
+	border-bottom: 2px solid $secondary;
 }
 
 // Resolve Prism/Bulma conflicts 

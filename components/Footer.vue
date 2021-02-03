@@ -7,12 +7,14 @@
 					href="https://twitter.com/CL_Rothschild"
 					target="_blank"
 					rel="noopener noreferrer"
+					class="link"
 					>Connor Rothschild</a
 				>. The source code is available on
 				<a
 					href="https://github.com/connorrothschild/connorrothschild.com"
 					target="_blank"
 					rel="noopener noreferrer"
+					class="link"
 					>GitHub</a
 				>
 				and licensed
@@ -20,6 +22,7 @@
 					href="http://opensource.org/licenses/mit-license.php"
 					target="_blank"
 					rel="noopener noreferrer"
+					class="link"
 					>MIT</a
 				>.
 			</p>
@@ -36,15 +39,9 @@ export default {
 </script>
 
 
-<style lang='scss'>
+<style lang='scss' scoped>
 .site-footer {
 	background: $primary;
 	padding: 2rem 1.5rem 3rem;
-
-	a[href] {
-		color: white;
-		font-weight: bold;
-		// font-weight: 900;
-	}
 }
 </style>

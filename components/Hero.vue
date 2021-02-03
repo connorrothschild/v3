@@ -9,16 +9,16 @@
 						</h2>
 						<h1 class="title is-size-1 has-text-weight-boldest">
 							Hi, I'm
-							<span class="has-underline-secondary">Connor Rothschild</span>
+							<span class="link" @click="showAbout = !showAbout">Connor Rothschild</span>
 						</h1>
 						<div class="buttons">
-							<button
+							<!-- <button
 								@click="showAbout = !showAbout"
 								class="button"
 								:class="[showAbout ? 'is-primary' : 'is-white']"
 							>
 								About Me
-							</button>
+							</button> -->
 							<NuxtLink
 								:to="{ path: '/', hash: '#projects' }"
 								class="button is-primary"
@@ -99,17 +99,6 @@ export default {
 	opacity: 0;
 }
 
-.button {
-	// Transition background color
-	transition: 1s all ease;
-
-	// Different sizes for buttons on mobile
-	@media screen and (max-width: 465px) {
-		font-size: 0.75rem;
-		border-radius: 2px;
-	}
-}
-
 .me {
 	height: 300px;
 	width: 300px;
@@ -118,20 +107,6 @@ export default {
 	&:hover {
 		transform: translateY(6px) translateX(2px);
 		cursor: pointer;
-	}
-}
-
-.link[href] {
-	background: $primary;
-	color: white !important;
-	font-weight: bold;
-	padding: 3px;
-	border-radius: 3px;
-	transition: all 300ms ease;
-
-	&:hover {
-		background: #cecece;
-		color: $primary !important;
 	}
 }
 
