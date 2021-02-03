@@ -14,7 +14,7 @@
 				<!-- LINK TO ALL AWARDS -->
 				<NuxtLink
 					to="/award"
-					class="subtitle heading has-text-weight-light is-size-5 link is-inline-block"
+					class="subtitle heading has-text-weight-normal is-size-5 link is-inline-block"
 					>See all awards 👉</NuxtLink
 				>
 				<!-- CONTAINER FOR AWARDS -->

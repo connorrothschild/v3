@@ -11,7 +11,7 @@
 				<!-- LINK FOR ALL POSTS -->
 				<NuxtLink
 					to="/post"
-					class="subtitle heading has-text-weight-light is-size-5 link is-inline-block"
+					class="subtitle heading has-text-weight-normal is-size-5 link is-inline-block"
 					>See all posts 👉</NuxtLink
 				>
 				<!-- CONTAINER FOR POSTS -->
