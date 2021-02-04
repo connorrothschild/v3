@@ -4,14 +4,14 @@
 			<div class="container">
 				<!-- TITLE -->
 				<h1
-					class="title has-text-weight-boldest is-size-1 is-size-3-mobile mt-6"
+					class="title has-text-weight-boldest is-size-title is-size-3-mobile mt-6"
 				>
 					Featured Blog Posts
 				</h1>
 				<!-- LINK FOR ALL POSTS -->
 				<NuxtLink
 					to="/post"
-					class="subtitle heading has-text-weight-light is-size-5 link is-inline-block"
+					class="subtitle heading has-text-weight-normal is-size-5 link is-inline-block"
 					>See all posts 👉</NuxtLink
 				>
 				<!-- CONTAINER FOR POSTS -->

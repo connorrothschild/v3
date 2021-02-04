@@ -16,7 +16,9 @@
 			<nuxt-content :document="post" />
 			<hr />
 			<prev-next :prev="prev" :next="next" type="post" />
-			<NuxtLink to="/post" class="subtitle has-text-weight-bolder is-size-5"
+			<NuxtLink
+				to="/post"
+				class="subtitle has-text-weight-bolder is-size-5 link"
 				>👈 Back to all posts</NuxtLink
 			>
 		</article>
@@ -33,7 +35,7 @@ export default {
 		const post = await $content("posts", params.slug).fetch();
 
 		const [prev, next] = await $content("posts")
-			.only(["title", "slug"])
+			.only(["title", "slug", "img", "img_alt"])
 			.sortBy("date", "asc")
 			.surround(params.slug)
 			.fetch();

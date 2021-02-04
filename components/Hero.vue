@@ -9,7 +9,9 @@
 						</h2>
 						<h1 class="title is-size-1 has-text-weight-boldest">
 							Hi, I'm
-							<span class="link" @click="showAbout = !showAbout">Connor Rothschild</span>
+							<span class="link" @click="showAbout = !showAbout"
+								>Connor Rothschild</span
+							>
 						</h1>
 						<div class="buttons">
 							<!-- <button

@@ -75,7 +75,9 @@
 			<nuxt-content :document="project" />
 			<hr />
 			<prev-next :prev="prev" :next="next" type="project" />
-			<NuxtLink to="/project" class="subtitle has-text-weight-bolder is-size-5"
+			<NuxtLink
+				to="/project"
+				class="subtitle has-text-weight-bolder is-size-5 link"
 				>👈 Back to all projects</NuxtLink
 			>
 		</article>
@@ -92,7 +94,7 @@ export default {
 		const project = await $content("projects", params.slug).fetch();
 
 		const [prev, next] = await $content("projects")
-			.only(["title", "slug"])
+			.only(["title", "slug", "img", "img_alt"])
 			.sortBy("date", "asc")
 			.surround(params.slug)
 			.fetch();
