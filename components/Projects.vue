@@ -7,7 +7,7 @@
 			<div class="container">
 				<!-- TITLE -->
 				<h1
-					class="title has-text-weight-boldest is-size-1 is-size-3-mobile mt-6"
+					class="title has-text-weight-boldest is-size-title is-size-3-mobile mt-6"
 				>
 					Featured Projects
 				</h1>

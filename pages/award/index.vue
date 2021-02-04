@@ -5,7 +5,7 @@
 			<article class="section container">
 				<!-- TITLE -->
 				<h1
-					class="title has-text-weight-boldest is-size-1 my-6 pb-4 has-border-bottom-grey"
+					class="title has-text-weight-boldest is-size-title my-6 pb-4 has-border-bottom-grey"
 				>
 					Awards 🏆
 				</h1>

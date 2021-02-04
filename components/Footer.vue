@@ -44,4 +44,11 @@ export default {
 	background: $primary;
 	padding: 2rem 1.5rem 3rem;
 }
+
+a {
+	color: white;	
+	&:hover {
+		color: $primary;
+	}
+}
 </style>

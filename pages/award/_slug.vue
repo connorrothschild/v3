@@ -32,7 +32,9 @@
 				</div>
 				<hr />
 				<prev-next :prev="prev" :next="next" type="award" />
-				<NuxtLink to="/award" class="subtitle has-text-weight-bolder is-size-5"
+				<NuxtLink
+					to="/award"
+					class="subtitle has-text-weight-bolder is-size-5 link"
 					>👈 Back to all awards</NuxtLink
 				>
 			</article>
