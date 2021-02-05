@@ -1,44 +1,42 @@
 <template>
 	<div>
 		<Nav color="is-primary" />
-		<div style="min-height: 100vh">
-			<article class="section container is-max-desktop mt-6">
-				<h1 class="title has-text-weight-boldest is-size-2 is-size-4-mobile">
-					{{ award.title }}
-				</h1>
-				<p class="subtitle heading is-size-5 is-size-6-mobile">
-					{{ award.organization }} | {{ formatDate(award.date) }}
-				</p>
-				<hr />
-				<nuxt-content :document="award" />
-				<div class="mt-3 is-size-5 has-text-centered">
-					<a
-						class="has-text-weight-light"
-						target="_blank"
-						rel="noopener"
-						:href="award.project_url"
-					>
-						Project Link
-					</a>
-					|
-					<a
-						class="has-text-weight-light has-text-weight-primary"
-						target="_blank"
-						rel="noopener"
-						:href="award.media_url"
-					>
-						Media
-					</a>
-				</div>
-				<hr />
-				<prev-next :prev="prev" :next="next" type="award" />
-				<NuxtLink
-					to="/award"
-					class="subtitle has-text-weight-bolder is-size-5 link"
-					>👈 Back to all awards</NuxtLink
+		<article class="section container is-max-desktop mt-6">
+			<h1 class="title has-text-weight-boldest is-size-2 is-size-4-mobile">
+				{{ award.title }}
+			</h1>
+			<p class="subtitle heading is-size-5 is-size-6-mobile">
+				{{ award.organization }} | {{ formatDate(award.date) }}
+			</p>
+			<hr />
+			<nuxt-content :document="award" />
+			<div class="mt-3 is-size-5 has-text-centered">
+				<a
+					class="has-text-weight-light"
+					target="_blank"
+					rel="noopener"
+					:href="award.project_url"
 				>
-			</article>
-		</div>
+					Project Link
+				</a>
+				|
+				<a
+					class="has-text-weight-light has-text-weight-primary"
+					target="_blank"
+					rel="noopener"
+					:href="award.media_url"
+				>
+					Media
+				</a>
+			</div>
+			<hr />
+			<prev-next :prev="prev" :next="next" type="award" />
+			<NuxtLink
+				to="/award"
+				class="subtitle has-text-weight-bolder is-size-5 link"
+				>👈 Back to all awards</NuxtLink
+			>
+		</article>
 		<Footer />
 	</div>
 </template>

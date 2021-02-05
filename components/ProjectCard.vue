@@ -10,7 +10,9 @@
 				<div class="card-content has-text-black">
 					<div class="media-content">
 						<p class="title is-size-4">{{ title }}</p>
-						<p class="subtitle is-size-6 has-text-weight-light">
+						<p 
+							class="subtitle heading is-size-6 has-text-dark has-text-weight-light"
+						>
 							{{ formatDate(date) }}
 						</p>
 						<p>

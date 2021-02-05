@@ -14,13 +14,6 @@
 							>
 						</h1>
 						<div class="buttons">
-							<!-- <button
-								@click="showAbout = !showAbout"
-								class="button"
-								:class="[showAbout ? 'is-primary' : 'is-white']"
-							>
-								About Me
-							</button> -->
 							<NuxtLink
 								:to="{ path: '/', hash: '#projects' }"
 								class="button is-primary"

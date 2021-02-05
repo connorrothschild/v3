@@ -36,7 +36,6 @@ export default {
 			type: Array,
 		},
 	},
-	scrollToTop: true,
 };
 </script>
 

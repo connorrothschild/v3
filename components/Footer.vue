@@ -42,11 +42,11 @@ export default {
 <style lang='scss' scoped>
 .site-footer {
 	background: $primary;
-	padding: 2rem 1.5rem 3rem;
+	padding: 2rem 1.5rem;
 }
 
 a {
-	color: white;	
+	color: white;
 	&:hover {
 		color: $primary;
 	}

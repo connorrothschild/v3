@@ -55,8 +55,4 @@ export default {
 body {
 	color: $text;
 }
-
-// .main-body {
-// 	scroll-behavior: smooth;
-// }
 </style>
