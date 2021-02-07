@@ -30,12 +30,14 @@
 				</a>
 			</div>
 			<hr />
+			<div class="my-4">
+				<NuxtLink
+					to="/award"
+					class="subtitle has-text-weight-bolder is-size-5 link heading is-inline-block"
+					>👈 Back to all awards</NuxtLink
+				>
+			</div>
 			<prev-next :prev="prev" :next="next" type="award" />
-			<NuxtLink
-				to="/award"
-				class="subtitle has-text-weight-bolder is-size-5 link"
-				>👈 Back to all awards</NuxtLink
-			>
 		</article>
 		<Footer />
 	</div>

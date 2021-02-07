@@ -15,12 +15,14 @@
 
 			<nuxt-content :document="post" />
 			<hr />
+			<div class="my-4">
+				<NuxtLink
+					to="/post"
+					class="subtitle has-text-weight-bolder is-size-5 link heading is-inline-block"
+					>👈 Back to all posts</NuxtLink
+				>
+			</div>
 			<prev-next :prev="prev" :next="next" type="post" />
-			<NuxtLink
-				to="/post"
-				class="subtitle has-text-weight-bolder is-size-5 link"
-				>👈 Back to all posts</NuxtLink
-			>
 		</article>
 		<Footer />
 	</div>
@@ -95,7 +97,7 @@ export default {
 	h1 {
 		font-weight: bold;
 		font-size: 1.8rem;
-		margin: 0.5rem 0;
+		margin: 0.75rem 0;
 		@media screen and (max-width: 768px) {
 			font-size: 1.4rem;
 		}
@@ -103,7 +105,7 @@ export default {
 	h2 {
 		font-weight: bold;
 		font-size: 1.6rem;
-		margin: 0.5rem 0;
+		margin: 0.75rem 0;
 		@media screen and (max-width: 768px) {
 			font-size: 1.3rem;
 		}
@@ -111,7 +113,7 @@ export default {
 	h3 {
 		font-weight: bold;
 		font-size: 1.4rem;
-		margin: 0.5rem 0;
+		margin: 0.75rem 0;
 		@media screen and (max-width: 768px) {
 			font-size: 1.2rem;
 		}
@@ -119,7 +121,7 @@ export default {
 	h4 {
 		font-weight: bold;
 		font-size: 1.2rem;
-		margin: 0.5rem 0;
+		margin: 0.75rem 0;
 		@media screen and (max-width: 768px) {
 			font-size: 1.1rem;
 		}

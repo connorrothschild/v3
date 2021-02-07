@@ -74,12 +74,14 @@
 
 			<nuxt-content :document="project" />
 			<hr />
+			<div class="my-4">
+				<NuxtLink
+					to="/project"
+					class="subtitle has-text-weight-bolder is-size-5 link heading is-inline-block"
+					>👈 Back to all projects</NuxtLink
+				>
+			</div>
 			<prev-next :prev="prev" :next="next" type="project" />
-			<NuxtLink
-				to="/project"
-				class="subtitle has-text-weight-bolder is-size-5 link"
-				>👈 Back to all projects</NuxtLink
-			>
 		</article>
 		<Footer />
 	</div>
