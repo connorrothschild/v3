@@ -1,37 +1,13 @@
 <template>
-	<!-- https://marquez.co/docs/nuxt-optimized-images/usage -->
-	<picture>
-		<!-- If webp is accessible prefer -->
-		<source
-			:srcSet="imgSrc()"
-			:alt="alt"
-			type="image/webp"
-			:class="{
-				'object-fit-cover': type == 'post',
-				'object-fit-scale': type == 'project',
-			}"
-		/>
-		<!-- If not, optimized PNG -->
-		<source
-			:srcSet="imgSrcFallback()"
-			:alt="alt"
-			type="image/png"
-			:class="{
-				'object-fit-cover': type == 'post',
-				'object-fit-scale': type == 'project',
-			}"
-		/>
-		<!-- If not, regular image -->
-		<img
-			:src="imgSrcFallback()"
-			:alt="alt"
-			:class="{
-				'object-fit-cover': type == 'post',
-				'object-fit-scale': type == 'project',
-			}"
-			loading="lazy"
-		/>
-	</picture>
+	<img
+		:src="imgSrcFallback()"
+		:alt="alt"
+		loading="lazy"
+		:class="{
+			'object-fit-cover': type == 'post',
+			'object-fit-scale': type == 'project',
+		}"
+	/>
 </template>
 
 <script>
