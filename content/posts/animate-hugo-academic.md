@@ -383,7 +383,5 @@ The complete power of CSS animations is not covered in this tutorial. Further ap
 
 For those that are interested, [my old homepage](https://connorrothschild.github.io/v2/) is chock-full of CSS properties which make it unique from most; some visitors are surprised to hear that my site is Hugo Academic at all! 
 
-<InlineImage src="post/animate-hugo-academic/mine.gif" alt="A GIF showing the final iteration of my homepage, with animations."></InlineImage>
-
 For those interested, the code for my Hugo Academic personal site (now archived) can be found [here](https://github.com/connorrothschild/v2). I look forward to seeing your animated homepages! 
 
