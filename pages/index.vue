@@ -2,9 +2,9 @@
 	<div class="main-body">
 		<Nav color="is-primary" />
 		<Hero />
-		<Projects :projects="projects" />
+		<Projects :projects="projects" :featured="featuredProject[0]" />
 		<Awards :awards="awards" />
-		<Blog :posts="posts" />
+		<Blog :posts="posts" :featured="featuredPost[0]" />
 		<Footer />
 	</div>
 </template>
@@ -26,15 +26,27 @@ export default {
 			.fetch();
 
 		const posts = await $content("posts", params.slug)
-			.only(["title", "description", "img", "img_alt", "date", "slug"])
+			.only(["title", "description", "img", "img_alt", "slug", "date"])
 			.where({ featured: true })
 			.sortBy("date", "desc")
 			.limit(3)
 			.fetch();
 
+		const featuredProject = await $content("projects", params.slug)
+			.only(["title", "description", "img", "img_alt", "slug", "date"])
+			.where({ megaFeatured: true })
+			.fetch();
+
+		const featuredPost = await $content("posts", params.slug)
+			.only(["title", "description", "img", "img_alt", "slug", "date"])
+			.where({ megaFeatured: true })
+			.fetch();
+
 		return {
 			projects,
+			featuredProject,
 			posts,
+			featuredPost,
 			awards,
 		};
 	},

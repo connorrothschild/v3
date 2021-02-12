@@ -4,6 +4,7 @@ description: A quick game to see if you are more intelligent than an algorithm u
 date: "2020-02-23"
 audience: 'The world!'
 featured: false
+megaFeatured: false
 img: compas/header.png
 img_alt: "COMPAS header image, includes an image of a MacBook with the application open."
 techstack: 'D3.js, Bulma, R'

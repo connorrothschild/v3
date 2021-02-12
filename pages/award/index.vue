@@ -4,11 +4,7 @@
 		<div class="has-background-light fullscreen">
 			<article class="section container">
 				<!-- TITLE -->
-				<h1
-					class="title has-text-weight-boldest is-size-title my-6 pb-4 has-border-bottom-grey"
-				>
-					Awards 🏆
-				</h1>
+				<h1 class="section-title">Awards 🏆</h1>
 				<!-- CONTAINER FOR PROJECTS -->
 				<div class="columns is-multiline">
 					<div

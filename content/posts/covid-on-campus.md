@@ -4,6 +4,7 @@ date: "2020-10-10"
 description: Where university reopenings led to spikes in COVID-19 case counts
 img: covid-on-campus/header.png
 img_alt: Blog post header image
+featured: true
 ---
 
 On July 17, Rice University announced [its

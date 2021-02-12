@@ -7,11 +7,9 @@
 						<WebP :src="`post/${img}`" :alt="img_alt" type="post" />
 					</figure>
 				</div>
-				<div class="card-content has-text-black">
+				<div class="card-content">
 					<p class="title is-size-4">{{ title }}</p>
-					<p
-						class="subtitle heading is-size-6 has-text-dark has-text-weight-light"
-					>
+					<p class="subtitle heading is-size-6 has-text-weight-light">
 						{{ formatDate(date) }}
 					</p>
 					<p>{{ description }}</p>
@@ -46,5 +44,5 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 </style>

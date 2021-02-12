@@ -101,12 +101,29 @@ html {
 	}
 }
 
-.is-size-title {
+.section-title {
 	font-size: 3.5rem !important;
+	font-weight: 800 !important;
+	margin: 3rem 0;
+	border-bottom: 2px solid #dadada80;
+	padding-bottom: 0.5rem;
+
+	@media screen and (max-width: 768px) {
+		font-size: 2rem !important;
+	}
 }
 
-// // ! FIXME - HTML makes global and that is bad...
-// html:focus-within {
-// 	scroll-behavior: smooth;
-// }
+.has-background-semitransparent {
+	background: #cecece10 !important;
+
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: white !important;
+	}
+}
 </style>

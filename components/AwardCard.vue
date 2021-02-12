@@ -2,11 +2,9 @@
 	<HoverableCard :to="{ path: `/award/${slug}` }">
 		<template v-slot:default>
 			<div class="card card-fullheight" :class="background">
-				<div class="card-content has-text-black flex-bounds">
+				<div class="card-content flex-bounds">
 					<p class="title is-size-4">{{ title }}</p>
-					<p
-						class="subtitle heading is-size-6 has-text-dark has-text-weight-light"
-					>
+					<p class="subtitle heading is-size-6has-text-weight-light">
 						{{ organization }} | {{ formatDate(date) }}
 					</p>
 				</div>

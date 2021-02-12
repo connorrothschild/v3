@@ -6,17 +6,7 @@
 		<div class="hero-body">
 			<div class="container">
 				<!-- TITLE -->
-				<h1
-					class="title has-text-weight-boldest is-size-title is-size-3-mobile mt-6"
-				>
-					Featured Awards
-				</h1>
-				<!-- LINK TO ALL AWARDS -->
-				<NuxtLink
-					to="/award"
-					class="subtitle heading has-text-weight-normal is-size-5 link is-inline-block"
-					>See all awards 👉</NuxtLink
-				>
+				<h1 class="section-title">Featured Awards</h1>
 				<!-- CONTAINER FOR AWARDS -->
 				<div class="columns is-multiline">
 					<div
@@ -24,9 +14,18 @@
 						:key="index"
 						class="column is-half"
 					>
-						<AwardCard v-bind="award" background="has-background-light" />
+						<AwardCard
+							v-bind="award"
+							background="has-background-semitransparent"
+						/>
 					</div>
 				</div>
+				<!-- LINK TO ALL AWARDS -->
+				<NuxtLink
+					to="/award"
+					class="subtitle heading has-text-weight-normal is-size-5 link is-inline-block is-pulled-right"
+					>See all awards 👉</NuxtLink
+				>
 			</div>
 		</div>
 	</section>

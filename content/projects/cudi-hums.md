@@ -3,7 +3,8 @@ title: How Much Does Kid Cudi Hum?
 description: An extensive analysis of music's most famous hum.
 date: "2020-12-31"
 audience: 'The world!'
-featured: true
+featured: false
+megaFeatured: true
 img: cudi-hums/header.png
 img_alt: 'A header image that says "how much does Kid Cudi hum?"'
 techstack: 'D3.js, Vue.js, Bulma, R, Scrollama, Genius API'

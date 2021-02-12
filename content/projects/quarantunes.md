@@ -3,7 +3,7 @@ title: Quarantunes
 description: Explore your listening history during COVID-19.
 date: "2020-10-22"
 audience: 'The world (2000 users)'
-featured: false
+featured: true
 img: quarantunes/header.png
 img_alt: "Quarantunes header, includes an image of a MacBook with the application open."
 techstack: 'D3.js, Vue.js, Bulma, R, Spotify API'
