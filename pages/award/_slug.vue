@@ -1,7 +1,10 @@
 <template>
 	<div>
 		<Nav color="is-primary" />
-		<article class="section container is-max-desktop mt-6">
+		<article
+			class="section container is-max-desktop mt-6"
+			style="min-height: 82.5vh"
+		>
 			<h1 class="title has-text-weight-boldest is-size-2 is-size-4-mobile">
 				{{ award.title }}
 			</h1>
