@@ -149,8 +149,10 @@ export default {
 	width: 0;
 }
 
+.nuxt-content h1 > a::before,
 .nuxt-content h2 > a::before,
-.nuxt-content h3 > a::before {
+.nuxt-content h3 > a::before,
+.nuxt-content h4 > a::before {
 	content: "#";
 	display: block;
 	float: left;
