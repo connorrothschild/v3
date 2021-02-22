@@ -16,14 +16,6 @@
 					rel="noopener noreferrer"
 					class="link"
 					>GitHub</a
-				>
-				and licensed
-				<a
-					href="http://opensource.org/licenses/mit-license.php"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="link"
-					>MIT</a
 				>.
 			</p>
 		</div>
