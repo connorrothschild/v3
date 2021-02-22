@@ -12,8 +12,6 @@
 html {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 		"Helvetica Neue", Arial, sans-serif;
-	font-size: 16px;
-	word-spacing: 1px;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 	-moz-osx-font-smoothing: grayscale;
@@ -71,7 +69,7 @@ html {
 	max-width: 768px !important;
 }
 
-// ! For page transitions, uncomment
+// Page transitions
 .page-enter-active,
 .page-leave-active {
 	transition-property: opacity;
