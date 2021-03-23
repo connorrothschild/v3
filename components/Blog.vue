@@ -29,7 +29,7 @@
 <script>
 export default {
 	mounted() {
-		console.log(this.featured);
+		// console.log(this.featured);
 	},
 	props: {
 		posts: {

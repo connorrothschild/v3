@@ -3,7 +3,7 @@ title: Mapping Police Killings
 description: Visualizing officer-involved deaths since 2013.
 date: "2020-12-22"
 audience: 'Mapping Police Violence'
-featured: true
+featured: false
 img: police-killings/header.png
 img_alt: "Police killings header, includes an image of a MacBook with the application open."
 techstack: 'D3.js, Vue.js, Bulma, R'
