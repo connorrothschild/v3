@@ -5,7 +5,7 @@
 			<h1 class="title has-text-weight-boldest is-size-3 is-size-4-mobile">
 				{{ post.title }}
 			</h1>
-			<h2 class="subtitle heading is-size-5 is-size-6-mobile">
+			<h2 class="subtitle heading is-size-6 has-text-weight-light">
 				{{ formatDate(post.date) }}
 			</h2>
 			<p class="subtitle is-size-5 is-size-6-mobile">

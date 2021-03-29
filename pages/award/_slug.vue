@@ -8,7 +8,7 @@
 			<h1 class="title has-text-weight-boldest is-size-2 is-size-4-mobile">
 				{{ award.title }}
 			</h1>
-			<p class="subtitle heading is-size-5 is-size-6-mobile">
+			<p class="subtitle heading is-size-6 has-text-weight-light">
 				{{ award.organization }} | {{ formatDate(award.date) }}
 			</p>
 			<hr />
