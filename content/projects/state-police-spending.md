@@ -2,16 +2,16 @@
 title: How Much Does Your State Spend on Police?
 description: Contextualizing police spending in your state.
 date: "2020-06-02"
-audience: 'The world!'
+audience: "The world!"
 featured: false
-img: state-police-spending/header.png
+img: state-police-spending/thumbnail.png
 img_alt: "State police spending header, includes an image of a MacBook with the application open."
-techstack: 'D3.js'
-github: 'https://github.com/connorrothschild/state-police-spending'
-url: 'https://connorrothschild.github.io/state-police-spending/'
+techstack: "D3.js"
+github: "https://github.com/connorrothschild/state-police-spending"
+url: "https://connorrothschild.github.io/state-police-spending/"
 ---
 
-[<InlineImage :clickable=false src="projects/state-police-spending/header.png" alt="Header"></InlineImage>](https://connorrothschild.github.io/state-police-spending/)
+[<InlineImage :clickable=false src="project/state-police-spending/header.png" alt="Header"></InlineImage>](https://connorrothschild.github.io/state-police-spending/)
 
 # What it is
 
@@ -23,5 +23,5 @@ I used [D3.js](https://d3js.org/) for the minor visualization that accompanies t
 
 # Project images
 
-<InlineImage src="projects/state-police-spending/mac.png" alt="Project image for 'How Much Does Your State Spend on Police?'" width="74%"></InlineImage>
-<InlineImage src="projects/state-police-spending/phone.png" alt="Project image for 'How Much Does Your State Spend on Police?'" width="22%"></InlineImage>
+<InlineImage src="project/state-police-spending/mac.png" alt="Project image for 'How Much Does Your State Spend on Police?'" width="74%"></InlineImage>
+<InlineImage src="project/state-police-spending/phone.png" alt="Project image for 'How Much Does Your State Spend on Police?'" width="22%"></InlineImage>

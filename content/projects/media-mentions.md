@@ -2,16 +2,16 @@
 title: The Race for Media Attention
 description: Visualizing media coverage of 2020 presidential candidates over time.
 date: "2019-11-12"
-audience: 'The world!'
+audience: "The world!"
 featured: false
-img: media-mentions/header.png
+img: media-mentions/thumbnail.png
 img_alt: "Media mentions header image, includes an image of a MacBook with the application open."
-techstack: 'Observable'
-github: 'https://observablehq.com/@connorrothschild/bar-chart-race'
-url: 'https://observablehq.com/@connorrothschild/bar-chart-race'
+techstack: "Observable"
+github: "https://observablehq.com/@connorrothschild/bar-chart-race"
+url: "https://observablehq.com/@connorrothschild/bar-chart-race"
 ---
 
-[<InlineImage :clickable=false src="projects/media-mentions/header.png" alt="Header"></InlineImage>](https://observablehq.com/@connorrothschild/bar-chart-race/)
+[<InlineImage :clickable=false src="project/media-mentions/header.png" alt="Header"></InlineImage>](https://observablehq.com/@connorrothschild/bar-chart-race/)
 
 # What it is
 
@@ -23,5 +23,5 @@ This project was built with [Observable](https://observablehq.com/). It was my f
 
 # Project images
 
-<InlineImage src="projects/media-mentions/mac.png" alt="Project image for 'The Race for Media Attention'" width="74%"></InlineImage>
-<InlineImage src="projects/media-mentions/phone.png" alt="Project image for 'The Race for Media Attention'" width="22%"></InlineImage>
+<InlineImage src="project/media-mentions/mac.png" alt="Project image for 'The Race for Media Attention'" width="74%"></InlineImage>
+<InlineImage src="project/media-mentions/phone.png" alt="Project image for 'The Race for Media Attention'" width="22%"></InlineImage>

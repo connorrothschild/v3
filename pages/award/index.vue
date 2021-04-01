@@ -1,41 +1,44 @@
 <template>
-	<div>
-		<Nav color="is-primary" />
-		<div class="has-background-light fullscreen">
-			<article class="section container">
-				<!-- TITLE -->
-				<h1 class="section-title">Awards 🏆</h1>
-				<!-- CONTAINER FOR PROJECTS -->
-				<div class="columns is-multiline">
-					<div
-						v-for="(award, index) in awards"
-						:key="index"
-						class="column is-one-third"
-					>
-						<AwardCard v-bind="award" background="has-background-white" />
-					</div>
-				</div>
-			</article>
-		</div>
-	</div>
+  <div>
+    <Nav color="is-primary" />
+    <div class="fullscreen">
+      <article class="section container">
+        <!-- TITLE -->
+        <h1 class="section-title">Awards 🏆</h1>
+        <!-- CONTAINER FOR PROJECTS -->
+        <div class="columns is-multiline">
+          <div
+            v-for="(award, index) in awards"
+            :key="index"
+            class="column is-one-third"
+          >
+            <AwardCard
+              v-bind="award"
+              background="has-background-semitransparent"
+            />
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-	async asyncData({ $content, params }) {
-		const awards = await $content("awards", params)
-			.sortBy("date", "desc")
-			.fetch();
+  async asyncData({ $content, params }) {
+    const awards = await $content("awards", params)
+      .sortBy("date", "desc")
+      .fetch();
 
-		return {
-			awards,
-		};
-	},
+    return {
+      awards,
+    };
+  },
 };
 </script>
 
 <style>
 .fullscreen {
-	min-height: 100vh;
+  min-height: 100vh;
 }
 </style>

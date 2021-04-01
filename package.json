@@ -32,6 +32,7 @@
     "imagemin-svgo": "^8.0.0",
     "lqip-loader": "^2.2.1",
     "node-sass": "^5.0.0",
+    "prettier": "2.2.1",
     "responsive-loader": "^2.3.0",
     "sass": "^1.32.0",
     "sass-loader": "^10.1.1",

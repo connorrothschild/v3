@@ -2,12 +2,12 @@
 title: "How to Scrollytell in R: Automation and Its Impact on Jobs"
 description: Because its easier than doing it in D3
 img: automation-scrollytell/header.png
-img_alt: 'Blog post header image'
+img_alt: "Blog post header image"
 date: "2019-10-01"
 ---
 
 I’ve always been interested in data visualization, and my most recent
-sub-passion has been *scrollytelling*. I’ve seen numerous examples of
+sub-passion has been _scrollytelling_. I’ve seen numerous examples of
 amazing scrolling articles, from sites such as [The
 Pudding](https://pudding.cool/), the [New York
 Times](https://www.nytimes.com/), and
@@ -26,7 +26,7 @@ What follows is a scrollytelling recreation of the [very first
 visualization I ever
 made](https://connorrothschild.github.io/r/automation/).
 
-``` r
+```r
 library(shiny)
 library(scrollytell)
 library(shinyjs)
@@ -46,8 +46,8 @@ we construct a plot object that will update as the user scrolls. ([Other
 R users](https://github.com/scottyd22/dream_team) make multiple plots;
 either way is fine.)
 
-``` r
-plot <- data %>% 
+```r
+plot <- data %>%
   filter(if (add != 8) add >= reveal else reveal %in% c(1:8)) %>%
   ggplot() +
   geom_point(mapping=aes(x=A_MEDIAN, y=probability, size=TOT_EMP,
@@ -64,28 +64,28 @@ plot <- data %>%
   scale_x_continuous(labels=scales::dollar_format(prefix="$"), limits = c(25000,200000)) +
   scale_y_continuous(labels=scales::number_format(suffix="%"), limits = c(0,100)) +
   # cr::drop_axis(axis = "y") +
-  theme(axis.line.x = ggplot2::element_line(colour = NULL, 
-                                            size = NULL, linetype = NULL, lineend = NULL), 
+  theme(axis.line.x = ggplot2::element_line(colour = NULL,
+                                            size = NULL, linetype = NULL, lineend = NULL),
         axis.line.y = ggplot2::element_blank(),
         panel.grid.major.x = element_blank())
 ```
 
 But wait, what’s that second line of code?
 
-``` r
+```r
 filter(if (add != 8) add >= reveal else reveal %in% c(1:8))
 ```
 
-This may make *0 sense* right now, but here’s why we have it.
+This may make _0 sense_ right now, but here’s why we have it.
 
 The important part (and somewhat difficult thing to understand) about
 this step is that your plot object has some **data which corresponds to
-an updating variable**. For me, I added a variable called *reveal* for
+an updating variable**. For me, I added a variable called _reveal_ for
 each step of the visualization. For me, this meant having reveal
 correspond to a typical level of education for a given job.
 
-``` r
-data <- data %>% 
+```r
+data <- data %>%
   mutate(reveal = case_when(
     typicaled == "No formal educational credential" ~ 1,
     typicaled == "High school diploma or equivalent" ~ 2,
@@ -99,48 +99,48 @@ data <- data %>%
 ```
 
 What this means is that every time the post observes an event (a
-scroll), it will update according to the number in the *reveal* column.
+scroll), it will update according to the number in the _reveal_ column.
 
 So, when my plot object has a line of code which says:
 
-``` r
+```r
 filter(if (add != 8) add >= reveal else reveal %in% c(1:8))
 ```
 
 That can be read as “Update the plot object to include all data points
 **up until the current point** encoded in reveal.”
 
-But, it also depends on what level of *add* we are at; if *add* == 8
+But, it also depends on what level of _add_ we are at; if _add_ == 8
 (the last data point, e.g. the concluding plot), then we want to show
-*all data points*.
+_all data points_.
 
-“Okay, okay. But what is *add*???”
+“Okay, okay. But what is _add_???”
 
-Good question. *add* is the variable I constructed to correspond to the
+Good question. _add_ is the variable I constructed to correspond to the
 user’s input (in this case, the scroll!). When we put it all together,
-we’re going to wrap our plot object into a rendering function *inside*
+we’re going to wrap our plot object into a rendering function _inside_
 the server function. Confusing? It looks like this:
 
-``` r
+```r
 server <- function(input, output, session) {
-  
+
   output$plot <- renderPlotly({
-    
+
     add <- input$scr
-    
-    plot <- 
+
+    plot <-
       # static ggplot goes here
-      
+
       ggplotly(plot) %>%
       # other ggplotly parameters go here
-      
+
   })
-  
+
   # render the plot here
   output$scr <- renderScrollytell({scrollytell()})
   renderText(paste0("Section: ", input$scr))
   observe({cat("section:", input$scr, "\n")})
-  
+
 }
 ```
 
@@ -152,20 +152,20 @@ First, we’re creating the plot object. Because we have the command `add <- inp
 This makes more sense when you connect it to the ui. In our ui function,
 we include a `scrolly_container` from the scrollytell package. Within
 that, we make our `outputId` correspond to the name of our updating
-input (in this case, *scr*).
+input (in this case, _scr_).
 
-``` r
+```r
 ui <- fluidPage(
-  
+
   # a bunch of introductory stuff, css stuff
-  
+
   # scrollytelling plot
-  scrolly_container(outputId = "scr", 
+  scrolly_container(outputId = "scr",
                        scrolly_graph(
                                      ## this is the plot object that we made earlier:
                                      plotlyOutput("plot", height = '600px')
-                                     
-                    ), 
+
+                    ),
                     scrolly_sections(
                       ## each of these sections corresponds to an update
                       ## the number after id = corresponds to the `scr` update
@@ -179,14 +179,14 @@ ui <- fluidPage(
                       scrolly_section(id = 6, render_text(6)),
                       scrolly_section(id = 7, render_text(7)),
                       scrolly_section(id = 8, render_text(8)),
-                      # add a scrolly_section with nothing in it; 
+                      # add a scrolly_section with nothing in it;
                       # this buffer prevents the plot from disappearing while reading last section
                       scrolly_section(id = "buffer", br())
                     )
-                    
+
   ),
- 
-  # a bunch of concluding stuff, other html 
+
+  # a bunch of concluding stuff, other html
 
 )
 ```
@@ -195,54 +195,54 @@ So, the simplest way to think about this so far is:
 
 Construct a plot object with some updating variable (in my case, `reveal`).
 
-``` r
+```r
 filter(if (add != 8) add >= reveal else reveal %in% c(1:8))
 ```
 
 Make that variable correspond with some input variable (in my case `add`, which is created from the `input$scr`).
 
-``` r
+```r
 server <- function(input, output, session) {
-  
+
   output$plot <- renderPlotly({
-    
+
     add <- input$scr
-    #... 
+    #...
 ```
 
 Render your plot object in `scrolly_graph`, and provide input updates
 via each `scrolly_section`.
 
-``` r
+```r
 ui <- fluidPage(
-  
+
   # a bunch of introductory stuff, css stuff
-  
+
   # scrollytelling plot
-  scrolly_container(outputId = "scr", 
+  scrolly_container(outputId = "scr",
                        scrolly_graph(plotlyOutput("plot", height = '600px')
-                                     
-                    ), 
+
+                    ),
                     scrolly_sections(
                       scrolly_section(id = 0, render_text(0)),
                       scrolly_section(id = 1, render_text(1)),
-                      
+
                       # ...
 ```
 
 Render your plots in your server function.
 
-``` r
+```r
 server <- function(input, output, session) {
-  
-  output$plot <- 
+
+  output$plot <-
     #...
   })
-  
+
   output$scr <- renderScrollytell({scrollytell()})
   renderText(paste0("Section: ", input$scr))
   observe({cat("section:", input$scr, "\n")})
-  
+
 }
 ```
 
@@ -259,7 +259,7 @@ which beautify them.
 First, we create the text boxes for each section following a similar
 naming convention:
 
-``` r
+```r
 text1 <- HTML("<H2> No education credentials </H2>
               <br> <p> Workers with <font color='#A00042'>no formal education credential</font> have a median income of $25,636.
               <br> On average, those occupations have a <b>90% chance</b> of job automation.
@@ -270,13 +270,13 @@ text2 <- HTML("<H2> High school diplomas </H2>
               <br> On average, those occupations have a <b>60% chance</b> of job automation.
               <br><br> There are 33,129,910 workers with a <font color='#F56C42'>high school diploma</font>.<p>")
 
-# ... 
+# ...
 ```
 
 Then, we create a function `render_text` which beautifies that HTML with
 CSS:
 
-``` r
+```r
 text <- function(num){
   p(
     switch(num,
@@ -293,30 +293,30 @@ text <- function(num){
 }
 
 render_text <- function(num){
-  
+
   div(
     text(num), class = "text"
   )
-  
+
 }
 ```
 
 For all 8 of the above `text`s, we’ve created a switch function which
 calls them depending on the number passed to `render_text`. Then, we
-apply paragraph format, put them in their own div, and apply the *text*
+apply paragraph format, put them in their own div, and apply the _text_
 class in our CSS sheet.
 
 How does this work?
 
 Recall that above, in our ui section, we had the following:
 
-``` r
+```r
 scrolly_sections(
                       HTML('<center>'),
                       scrolly_section(id = 0, render_text(0)),
                       scrolly_section(id = 1, render_text(1)),
                       # ...
-                      
+
 )
 ```
 
@@ -343,67 +343,67 @@ your server function.
 
 All in all, my code looks like this:
 
-``` r
+```r
 ui <- fluidPage(
-  
-  # suppress warning messages while data is loading on-screen 
+
+  # suppress warning messages while data is loading on-screen
   tags$style(type="text/css",
              ".shiny-output-error { visibility: hidden; }",
              ".shiny-output-error:before { visibility: hidden; }"),
   tags$head(
     includeCSS("www/style.css")
   ),
-  
+
   # article title & name
   fluidRow(HTML("<center>
                 <h1>Automation and Its Impact on Jobs</h1>
                 <p style='font-size:26px'> by <a href='https://connorrothschild.github.io/' target='_blank'>Connor Rothschild</a></p>
                 </center>")
   ),
-  
+
   br(),
-  
+
   fluidRow(
     column(1),
-    
+
     column(10,
            # intro text
            fluidRow(id='text',
                     column(1),
-                    column(10, 
+                    column(10,
                            br(),
                            text0,
                            hr(),
                            h1(
                              class = "instructions",
-                             "How to read this chart:", 
+                             "How to read this chart:",
                              br(),
                              br(),
                              "The size of each", icon("circle"), "corresponds to the number of workers in that job.",
                              br(),
                              "Hover over each", icon("circle"), "to see details on the occupation's income and probability of automation.",
                              br(),
-                             "Double click on a", icon("circle"), "in the legend to focus on a specific level of education." 
+                             "Double click on a", icon("circle"), "in the legend to focus on a specific level of education."
                            )),
                     column(1)),
            # plot object for intro
            plotlyOutput("introPlot", height = '400px')
            ),
-    
+
     column(1),
-    
+
            ),
-  
+
   # scrollytelling plot
   scrolly_container("scr"
-                    , scrolly_graph( br(), 
+                    , scrolly_graph( br(),
                                      br(),
                                      textOutput("section"),
                                      br(),
                                      HTML('<center>'),
                                      plotlyOutput("plot", height = '600px'),
                                      HTML('</center>')
-                                     
+
                     )
                     , scrolly_sections(
                       HTML('<center>'),
@@ -416,29 +416,29 @@ ui <- fluidPage(
                       scrolly_section(id = 6, render_text(6)),
                       scrolly_section(id = 7, render_text(7)),
                       scrolly_section(id = 8, render_text(8)),
-                      # add a scrolly_section with nothing in it; 
+                      # add a scrolly_section with nothing in it;
                       # this buffer prevents the plot from disappearing while reading last section
                       scrolly_section(id = "buffer", br()),
                       HTML('</center>')
                     )
-                    
+
   ),
-  
+
   # concluding text
   div(fluidRow(id = 'text',
                column(2),
-               column(8, 
+               column(8,
                       concludingtext,
                       br()
                ),
                column(2)
   ), style = 'margin-top: -300px;'),
-  
+
   br(),
   br(),
   br(),
   hr(),
-  
+
   fluidRow(
     column(1),
     column(10,
@@ -455,14 +455,14 @@ column(1)
 
 And the server looks like this:
 
-``` r
+```r
 server <- function(input, output, session) {
-  
+
   output$plot <- renderPlotly({
-    
+
     add <- input$scr
-    
-    plot <- data %>% 
+
+    plot <- data %>%
       filter(typicaled != "Some college, no degree") %>%
       filter(if (add != 8) add >= reveal else reveal %in% c(1:8)) %>%
       ggplot() +
@@ -480,11 +480,11 @@ server <- function(input, output, session) {
       scale_x_continuous(labels=scales::dollar_format(prefix="$"), limits = c(25000,200000)) +
       scale_y_continuous(labels=scales::number_format(suffix="%"), limits = c(0,100)) +
       # cr::drop_axis(axis = "y") +
-      theme(axis.line.x = ggplot2::element_line(colour = NULL, 
-                                                size = NULL, linetype = NULL, lineend = NULL), 
+      theme(axis.line.x = ggplot2::element_line(colour = NULL,
+                                                size = NULL, linetype = NULL, lineend = NULL),
             axis.line.y = ggplot2::element_blank(),
             panel.grid.major.x = element_blank())
-    
+
     ggplotly(plot, tooltip = 'text') %>%
     layout(
       title = list(element_blank()),
@@ -493,14 +493,14 @@ server <- function(input, output, session) {
       margin=list(t=50),
       hoverlabel = list(bgcolor = 'whitesmoke', color = 'DarkGray')) %>%
     config(displaylogo = F, showSendToCloud = F, displayModeBar = F)
-    
+
   })
-    
+
   output$introPlot <- renderPlotly({introPlot})
   output$scr <- renderScrollytell({scrollytell()})
   renderText(paste0("Section: ", input$scr))
   observe({cat("section:", input$scr, "\n")})
-  
+
 }
 ```
 

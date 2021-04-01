@@ -40,7 +40,7 @@ export default {
 				hid      : 'og:image',
 				property : 'og:image',
 				content  :
-					'https://raw.githubusercontent.com/connorrothschild/connorrothschild.com/master/static/social.png'
+					'https://connorrothschild.com/social.png'
 			},
 			{
 				hid     : 'twitter:url',
@@ -61,7 +61,7 @@ export default {
 				hid     : 'twitter:image',
 				name    : 'twitter:image',
 				content :
-					'https://raw.githubusercontent.com/connorrothschild/connorrothschild.com/master/static/social.png'
+					'https://connorrothschild.com/social.png'
 			},
 			{
 				hid     : 'twitter:site',

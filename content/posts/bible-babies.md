@@ -2,7 +2,7 @@
 title: "Bible Babies: Exploring Biblically-Inspired Baby Names over Time"
 description: Use {gganimate} to easily create animated plots
 img: bible-babies/header.png
-img_alt: 'Blog post header image'
+img_alt: "Blog post header image"
 date: "2019-06-06"
 ---
 
@@ -12,14 +12,14 @@ time.
 More specifically, I’m focusing on the decision to name one’s baby after
 a Biblical figure. I’m curious if the popularity of Biblically-inspired
 baby names has changed over time. We’re able to explore this question
-using the [*babynames*
+using the [_babynames_
 package](https://cran.r-project.org/web/packages/babynames/babynames.pdf)
 in R, which contains historical data from the U.S. Social Security
 Administration ranging back to 1880. It contains information on the
 number of babies born with a certain name in a given year, the sex of
 those babies, the year they were born, and their name (obviously).
 
-``` r
+```r
 library(babynames)
 library(knitr)
 library(readxl)
@@ -32,30 +32,30 @@ set_cr_theme(font = "IBM Plex Sans")
 ```
 
 In order to determine the popularity of “Bible babies,” we need a list
-of names found in the Bible in order to search the *babynames* dataset.
+of names found in the Bible in order to search the _babynames_ dataset.
 I pulled a random list of Bible baby names from
 [babycentre.co.uk](https://www.babycentre.co.uk/a1025984/baby-names-from-the-bible).
-The list likely doesn’t include *all* names found in the Bible (only
+The list likely doesn’t include _all_ names found in the Bible (only
 popular baby names), but that’s probably no big deal considering few, if
 any, parents name their child Athaliah.
 
-``` r
+```r
 biblenames <- read_excel("data/biblebabynames.xlsx")
 
-boybible <- biblenames %>% 
-  select(boynames) %>% 
+boybible <- biblenames %>%
+  select(boynames) %>%
   rename(names = boynames)
 
-girlbible <- biblenames %>% 
-  filter(!is.na(girlnames)) %>% 
-  select(girlnames) %>% 
+girlbible <- biblenames %>%
+  filter(!is.na(girlnames)) %>%
+  select(girlnames) %>%
   rename(names = girlnames)
 
 biblenamesbind <- rbind(boybible, girlbible)
 
 # use the %in% operator to match names with those in biblenamesbind
 babynames <- babynames %>%
-  mutate(biblepercent = ifelse(name %in% biblenamesbind$names, prop, 0)) 
+  mutate(biblepercent = ifelse(name %in% biblenamesbind$names, prop, 0))
 ```
 
 ## Popularity of Biblical Baby Names over Time
@@ -69,10 +69,10 @@ have experienced declines in recent years, one may assume that the
 decision to name one’s baby after a Biblical figure has also become less
 popular.
 
-``` r
-babynames %>% 
-  group_by(year) %>% 
-  summarise(sum = sum(biblepercent)) %>% 
+```r
+babynames %>%
+  group_by(year) %>%
+  summarise(sum = sum(biblepercent)) %>%
   ggplot(aes(x=year, y=sum)) +
     geom_line() +
   scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
@@ -90,12 +90,12 @@ Biblical names have become significantly less popular over time. We can
 split up the trend by sex to see if it is primarily driven by one group
 of babies.
 
-``` r
-babynames %>% 
-  group_by(year, sex) %>% 
-  summarise(sum = sum(biblepercent)) %>% 
-  ungroup %>% 
-  group_by(sex) %>% 
+```r
+babynames %>%
+  group_by(year, sex) %>%
+  summarise(sum = sum(biblepercent)) %>%
+  ungroup %>%
+  group_by(sex) %>%
   ggplot(aes(x=year, y=sum, col=sex)) +
   geom_line() +
   scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
@@ -116,30 +116,30 @@ some biblical figure, the same was true of only 4% of girls.
 
 ## Exploring Popular Names over Time Using gganimate
 
-Finally, we can incorporate Thomas Lin Pedersen’s [*gganimate*
+Finally, we can incorporate Thomas Lin Pedersen’s [_gganimate_
 package](https://github.com/thomasp85/gganimate) to explore the
-popularity of *specific Bible names* over time. This was inspired by
+popularity of _specific Bible names_ over time. This was inspired by
 Kieran Healy’s [similar
 visualization](https://kieranhealy.org/blog/archives/2019/05/13/baby-name-animation/)
 depicting changes in the structure of babies’ names over time. The below
 code creates a GIF showing the shifting popularity of boys’ names over
 time.
 
-``` r
+```r
 library(gganimate)
 
 # make male rank variable
 malebabynames <- babynames %>%
-  filter(sex=="M") %>% 
+  filter(sex=="M") %>%
   group_by(year) %>%
   mutate(rank = min_rank(-biblepercent) * 1) %>%
   filter(rank <= 10) %>%
   ungroup()
 
 # plot male animation
-maleanimation <- malebabynames %>% 
-  filter(sex=="M") %>% 
-  ggplot(aes(rank, group = name, 
+maleanimation <- malebabynames %>%
+  filter(sex=="M") %>%
+  ggplot(aes(rank, group = name,
                 fill = as.factor(name), color = as.factor(name))) +
   geom_tile(aes(y = biblepercent/2,
                 height = biblepercent,
@@ -149,14 +149,14 @@ maleanimation <- malebabynames %>%
   scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
   scale_x_reverse() +
   guides(color = FALSE, fill = FALSE) +
-  labs(title="Most Popular Biblical Baby Names for Males", 
+  labs(title="Most Popular Biblical Baby Names for Males",
        subtitle='in {closest_state}', x = element_blank(), y = "Percent of Names",
        caption = "Source: U.S. Social Security Administration
        \n Design: www.connorrothschild.com") +
   theme(plot.title = element_text(hjust = 0, size = 22),
         plot.subtitle = element_text(hjust = 0, size = 16),
-        axis.ticks.y = element_blank(), 
-        axis.text.y  = element_blank(), 
+        axis.ticks.y = element_blank(),
+        axis.text.y  = element_blank(),
         plot.margin = margin(1,1,1,4, "cm")) +
   transition_states(year, transition_length = 4, state_length = 1) +
   ease_aes('cubic-in-out')
@@ -169,19 +169,19 @@ animate(maleanimation, fps = 25, nframes = 500, width = 800, height = 600)
 Replicating that code with minor tweaks creates the same animation for
 girls’ names:
 
-``` r
+```r
 # make rank variable
 femalebabynames <- babynames %>%
-  filter(sex=="F") %>% 
+  filter(sex=="F") %>%
   group_by(year) %>%
   mutate(rank = min_rank(-biblepercent) * 1) %>%
   filter(rank <= 10) %>%
   ungroup()
 
 # plot animation
-femaleanimation <- femalebabynames %>% 
-  filter(sex=="F") %>% 
-  ggplot(aes(rank, group = name, 
+femaleanimation <- femalebabynames %>%
+  filter(sex=="F") %>%
+  ggplot(aes(rank, group = name,
              fill = as.factor(name), color = as.factor(name))) +
   geom_tile(aes(y = biblepercent/2,
                 height = biblepercent,
@@ -191,13 +191,13 @@ femaleanimation <- femalebabynames %>%
   scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
   scale_x_reverse() +
   guides(color = FALSE, fill = FALSE) +
-  labs(title="Most Popular Biblical Baby Names for Females", 
+  labs(title="Most Popular Biblical Baby Names for Females",
        subtitle='in {closest_state}', x = element_blank(), y = "Percent of Names",
        caption = "Source: U.S. Social Security Administration\n Design: www.connorrothschild.com") +
   theme(plot.title = element_text(hjust = 0, size = 22),
         plot.subtitle = element_text(hjust = 0, size = 16),
-        axis.ticks.y = element_blank(),  
-        axis.text.y  = element_blank(),  
+        axis.ticks.y = element_blank(),
+        axis.text.y  = element_blank(),
         plot.margin = margin(1,1,1,4, "cm")) +
   transition_states(year, transition_length = 4, state_length = 1) +
   ease_aes('cubic-in-out')
@@ -212,7 +212,7 @@ Finally, we can combine some of the insights from our earlier plot
 names are responsible for their sex’s relative dominance over girls’
 Biblically-inspired names.
 
-``` r
+```r
 # make rank variable
 babynamesrank <- babynames %>%
   group_by(year) %>%
@@ -221,8 +221,8 @@ babynamesrank <- babynames %>%
   ungroup()
 
 # plot animation
-babyanimation <- babynamesrank %>% 
-  ggplot(aes(rank, group = name, 
+babyanimation <- babynamesrank %>%
+  ggplot(aes(rank, group = name,
              fill = as.factor(sex), color = as.factor(sex))) +
   geom_tile(aes(y = biblepercent/2,
                 height = biblepercent,
@@ -232,14 +232,14 @@ babyanimation <- babynamesrank %>%
   scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
   scale_x_reverse() +
   guides(color = FALSE, fill = FALSE) +
-  labs(title="Most Popular Biblical Baby Names", 
+  labs(title="Most Popular Biblical Baby Names",
        subtitle='in {closest_state}', x = element_blank(), y = "Percent of Names",
        caption = "Source: U.S. Social Security Administration
        \n Design: www.connorrothschild.com") +
   theme(plot.title = element_text(hjust = 0, size = 22),
         plot.subtitle = element_text(hjust = 0, size = 16),
-        axis.ticks.y = element_blank(),  
-        axis.text.y  = element_blank(),  
+        axis.ticks.y = element_blank(),
+        axis.text.y  = element_blank(),
         plot.margin = margin(1,1,1,4, "cm")) +
   transition_states(year, transition_length = 4, state_length = 1) +
   ease_aes('cubic-in-out')
@@ -248,4 +248,3 @@ animate(babyanimation, fps = 25, nframes = 500, width = 800, height = 600)
 ```
 
 <InlineImage src="post/bible-babies/combined.gif" alt="A gif showing the most popular Biblical baby names over time. It is an animated barchart race where each bar's length corresponds to the proportion of babies with that name, and the bars shift for each year."></InlineImage>
-

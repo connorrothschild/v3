@@ -10,10 +10,9 @@ megaFeatured: true
 
 <InlineImage src="post/covid-gun-spikes/featured.png" alt="A small multiples map showing spikes in firearm background checks in 2020, compared to 1999-2019"></InlineImage>
 
-So far in 2020, firearm background checks are happening **significantly** more frequently than they did during the first six months of the last 20 years. Some [media reports](https://www.nytimes.com/interactive/2020/04/01/business/coronavirus-gun-sales.html) captured the gun-buying frenzy during its apparent peak in March, but according to data from the [FBI NICS](https://www.fbi.gov/file-repository/nics_firearm_checks_-_month_year_by_state_type.pdf/view), *the month of June saw the largest single month count of firearm background checks in the last 20 years.*
+So far in 2020, firearm background checks are happening **significantly** more frequently than they did during the first six months of the last 20 years. Some [media reports](https://www.nytimes.com/interactive/2020/04/01/business/coronavirus-gun-sales.html) captured the gun-buying frenzy during its apparent peak in March, but according to data from the [FBI NICS](https://www.fbi.gov/file-repository/nics_firearm_checks_-_month_year_by_state_type.pdf/view), _the month of June saw the largest single month count of firearm background checks in the last 20 years._
 
 The data, [which is scraped and cleaned by BuzzFeed News](https://github.com/BuzzFeedNews/nics-firearm-background-checks), shows a massive spike in firearm background checks in the last 5 months:
-
 
 ```r
 library(reactable)
@@ -58,7 +57,7 @@ data %>%
 
 <TableHandler src="post/covid-gun-spikes/table-replacement.png" alt="A table showing the years and months with the greatest number of firearm background checks. Those in 2020 are among the highest." link="http://connorrothschild.github.io/v2/post/covid-gun-spikes/"></TableHandler>
 
-As the table shows, the last 5 months have seen some of the greatest numbers of firearm background checks since the FBI has collected such data. It seems as if the only non-2020 entrants to the top 7 are from December 2015, and December 2019, which are (perhaps coincidentally) both the final months before new presidents took office. 
+As the table shows, the last 5 months have seen some of the greatest numbers of firearm background checks since the FBI has collected such data. It seems as if the only non-2020 entrants to the top 7 are from December 2015, and December 2019, which are (perhaps coincidentally) both the final months before new presidents took office.
 
 Visually, we see that firearm background checks follow some seasonal trends, but by and large, have undergone unprecedented spikes in the last 5 months:
 
@@ -88,11 +87,11 @@ And we can better understand the magnitude of these shifts by visualizing year-t
 
 ```r
 data %>%
-  mutate(month = lubridate::month(month)) %>% 
-  filter(month < 7) %>% 
+  mutate(month = lubridate::month(month)) %>%
+  filter(month < 7) %>%
   group_by(year) %>%
   summarise(sum = sum(totals)) %>%
-  ungroup() %>% 
+  ungroup() %>%
   mutate(last_year = lag(sum),
          perc_change =  ((sum - last_year) / last_year)) %>%
   ggplot(aes(x = year, y = perc_change)) +
@@ -111,7 +110,7 @@ data %>%
 Visualized another way, we can explore the temporal change **within each year** for every year between 1999 and 2020, with 2020 <span style="color:red">highlighted in red.</span>
 
 ```r
-data %>% 
+data %>%
   mutate(month = lubridate::month(month)) %>%
   filter(month < 7) %>%
   group_by(month, year) %>%
@@ -124,16 +123,16 @@ data %>%
   scale_color_manual(values = c("gray", "red")) +
   scale_alpha_manual(values = c(.7, 1)) +
   labs(x = element_blank(), y = element_blank(),
-       title = "Firearm background checks in <span style = 'color: red;'>2020</span> 
+       title = "Firearm background checks in <span style = 'color: red;'>2020</span>
        compared to <span style = 'color: #343434'>1999 - 2019</span>",
        subtitle = "January to June") +
   drop_axis() +
   theme(plot.title = ggtext::element_markdown())
 ```
 
-<InlineImage src="post/covid-gun-spikes/unnamed-chunk-6-1.png" alt="A line chart wherein each line shows a year, and the x axis corresponds to the month. The y axis represents the sum of background checks. The highest line is 2020, highlighted in red, indicating that across the entire year, 2020 has seen the greatest number of background checks."></InlineImage> 
+<InlineImage src="post/covid-gun-spikes/unnamed-chunk-6-1.png" alt="A line chart wherein each line shows a year, and the x axis corresponds to the month. The y axis represents the sum of background checks. The highest line is 2020, highlighted in red, indicating that across the entire year, 2020 has seen the greatest number of background checks."></InlineImage>
 
-The FBI database also includes background check data for each U.S. state. This data allows us to compare trends *across* states and over time (using `geofacet`):
+The FBI database also includes background check data for each U.S. state. This data allows us to compare trends _across_ states and over time (using `geofacet`):
 
 ```r
 data %>%
@@ -143,7 +142,7 @@ data %>%
   summarise(sum = sum(totals)) %>%
   mutate(fill = ifelse(year == 2020, "2020", "")) %>%
   ggplot(aes(group = year)) +
-  geom_line(aes(x = month, y = sum, color = fill, alpha = fill), 
+  geom_line(aes(x = month, y = sum, color = fill, alpha = fill),
             size = .2, show.legend = FALSE) +
   scale_color_manual(values = c("gray", "red")) +
   scale_alpha_manual(values = c(.5, 1)) +
@@ -173,8 +172,8 @@ data %>%
 
 Most obviously, background checks are a proxy for gun purchases and gun ownership; as such, this data informs us that more and more people are grabbing for guns during COVID-19, perhaps in anticipation of some post-COVID apocalypse or perceived government overreach during.
 
-In addition, one risk is that more guns can lead to greater numbers of firearm suicides. [One group of researchers](https://everytownresearch.org/reports/covid-gun-violence/) at the gun safety organization Everytown predicted that COVID-related unemployment would lead to a 20-30% increase in firearm suicides (5000 to 7000 people). As such, a rise in firearm-related background checks may signal an impending surge of gun violence in the forms of both homicide and suicide. 
+In addition, one risk is that more guns can lead to greater numbers of firearm suicides. [One group of researchers](https://everytownresearch.org/reports/covid-gun-violence/) at the gun safety organization Everytown predicted that COVID-related unemployment would lead to a 20-30% increase in firearm suicides (5000 to 7000 people). As such, a rise in firearm-related background checks may signal an impending surge of gun violence in the forms of both homicide and suicide.
 
-Firearm background check data, however, requires close scrutiny. The way that these data are acquired on a state-by-state basis means that we might not be able to safely make comparisons *across* states. Moreover, according to [one group of Harvard researchers](https://www.thetrace.org/2015/10/private-sale-loophole-background-check-harvard-research/), upwards of 40% of all gun owners report acquiring their most recent gun *without a background check.*
+Firearm background check data, however, requires close scrutiny. The way that these data are acquired on a state-by-state basis means that we might not be able to safely make comparisons _across_ states. Moreover, according to [one group of Harvard researchers](https://www.thetrace.org/2015/10/private-sale-loophole-background-check-harvard-research/), upwards of 40% of all gun owners report acquiring their most recent gun _without a background check._
 
 Thus, these numbers may tell a different story than one of 'guns are being purchased more frequently.' Although not employed in this post, there are some novel ways to develop stories similar to that one, like using [NYT's methodology](https://github.com/nytimes/gunsales#getting-gun-sales-estimates-from-background-checks) to estimate gun sales from background check data. I encourage those interested to pursue their work, alongside the [BuzzFeed News repository](https://github.com/BuzzFeedNews/nics-firearm-background-checks) where this data came from, and analyze such questions yourself.

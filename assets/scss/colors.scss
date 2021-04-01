@@ -1,38 +1,31 @@
 /* Import Bulma Utilities */
-@import '~bulma/sass/utilities/initial-variables';
-@import '~bulma/sass/utilities/functions';
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/functions";
 
-$black: rgb(15,15,15);
+// Define bases
+$black: rgb(15, 15, 15);
+$black-off: rgb(30, 30, 30);
+$white: rgb(255, 255, 255);
+$white-off: rgb(245, 245, 245);
 
-// Applies to: body text;
-$text: $black;
+$primary: #2b2f3d; // Primary colors
+$primary-off: #24293a; // A slightly muted version of primary
+$text: $white; // Applies to body text
+$text-strong: $white-off; // Applies to titles; text bolded with <strong>
 
-// Applies to: titles; text bolded with <strong>
-$text-strong: #000000;   
+// Semitransparent helper
+$semitransparent: #cecece10;
 
 // Primary color
-$primary: #2b2f3d;
-$secondary: #FFAE3A;
+// $primary: #2b2f3d;
+$secondary: #ffae3a;
+$secondary-off: #e09935;
 
-.has-text-secondary {
-  color: $secondary !important;
-}
+// Inverts for text etc.
+$primary-invert: invert($primary);
+$secondary-invert: invert($secondary);
 
-.is-primary-gradient {
-  @extend .is-primary;
-	background-image: linear-gradient(0deg, black 0%, $primary 100%)
-}
-
-.is-primary-gradient-rev {
-  @extend .is-primary;
-	background-image: linear-gradient(0deg, $primary  0%, black 100%)
-}
-
-.has-underline-secondary {
-	border-bottom: 2px solid $secondary;
-}
-
-// Resolve Prism/Bulma conflicts 
+// Resolve Prism/Bulma conflicts
 // https://www.darraghoriordan.com/2019/01/20/bulma-prismjs-in-gatsby-css-conflicts/
 .token.tag,
 .token.content,
@@ -55,9 +48,27 @@ $secondary: #FFAE3A;
 .token.prolog,
 .token.doctype,
 .token.cdat {
-  color:#3D9970;
+  color: #3d9970;
+}
+
+// Better code formatting
+// Code formatting for chunks
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: $black-off;
+}
+
+// Inline code chunks
+code {
+  background: $black !important;
+  color: $secondary !important;
+}
+
+// But don't apply that style to the code blocks
+pre code {
+  background: transparent !important;
+  color: $white !important;
 }
 
 /* Import the rest of Bulma */
-@import '~bulma';
-
+@import "~bulma";

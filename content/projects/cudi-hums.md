@@ -2,17 +2,17 @@
 title: How Much Does Kid Cudi Hum?
 description: An extensive analysis of music's most famous hum.
 date: "2020-12-31"
-audience: 'The world!'
+audience: "The world!"
 featured: false
 megaFeatured: true
-img: cudi-hums/header.png
+img: cudi-hums/thumbnail.png
 img_alt: 'A header image that says "how much does Kid Cudi hum?"'
-techstack: 'D3.js, Vue.js, Bulma, R, Scrollama, Genius API'
-github: 'https://github.com/connorrothschild/cudi-hums'
-url: 'https://connorrothschild.github.io/cudi-hums/'
+techstack: "D3.js, Vue.js, Bulma, R, Scrollama, Genius API"
+github: "https://github.com/connorrothschild/cudi-hums"
+url: "https://connorrothschild.github.io/cudi-hums/"
 ---
 
-[<InlineImage :clickable=false src="projects/cudi-hums/header.png" alt="Header"></InlineImage>](https://connorrothschild.github.io/cudi-hums/)
+[<InlineImage :clickable=false src="project/cudi-hums/header.png" alt="Header"></InlineImage>](https://connorrothschild.github.io/cudi-hums/)
 
 # What it is
 
@@ -24,16 +24,16 @@ I used [Vue](https://vuejs.org/) and [D3.js](https://d3js.org/) for all things v
 
 # Project images
 
-<InlineImage src="projects/cudi-hums/albums-mac.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="48%"></InlineImage>
-<InlineImage src="projects/cudi-hums/tracks-mac.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="48%"></InlineImage>
-<InlineImage src="projects/cudi-hums/lyrics-mac.png" alt="Project image for 'How Much Does Kid Cudi Hum?'"></InlineImage>
+<InlineImage src="project/cudi-hums/albums-mac.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="48%"></InlineImage>
+<InlineImage src="project/cudi-hums/tracks-mac.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="48%"></InlineImage>
+<InlineImage src="project/cudi-hums/lyrics-mac.png" alt="Project image for 'How Much Does Kid Cudi Hum?'"></InlineImage>
 
-<InlineImage src="projects/cudi-hums/albums-phone.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="32%"></InlineImage>
-<InlineImage src="projects/cudi-hums/tracks-phone.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="32%"></InlineImage>
-<InlineImage src="projects/cudi-hums/lyrics-phone.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="32%"></InlineImage>
+<InlineImage src="project/cudi-hums/albums-phone.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="32%"></InlineImage>
+<InlineImage src="project/cudi-hums/tracks-phone.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="32%"></InlineImage>
+<InlineImage src="project/cudi-hums/lyrics-phone.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="32%"></InlineImage>
 
-<InlineImage src="projects/cudi-hums/intro-phone.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="48%"></InlineImage>
-<InlineImage src="projects/cudi-hums/outro-phone.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="48%"></InlineImage>
+<InlineImage src="project/cudi-hums/intro-phone.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="48%"></InlineImage>
+<InlineImage src="project/cudi-hums/outro-phone.png" alt="Project image for 'How Much Does Kid Cudi Hum?'" width="48%"></InlineImage>
 
 <!-- # Overview (in my own words!)
 

@@ -2,16 +2,16 @@
 title: Mapping Police Killings
 description: Visualizing officer-involved deaths since 2013.
 date: "2020-12-22"
-audience: 'Mapping Police Violence'
+audience: "Mapping Police Violence"
 featured: false
-img: police-killings/header.png
+img: police-killings/thumbnail.png
 img_alt: "Police killings header, includes an image of a MacBook with the application open."
-techstack: 'D3.js, Vue.js, Bulma, R'
-github: 'https://github.com/connorrothschild/police-killings'
-url: 'https://mappingpoliceviolence.org/'
+techstack: "D3.js, Vue.js, Bulma, R"
+github: "https://github.com/connorrothschild/police-killings"
+url: "https://mappingpoliceviolence.org/"
 ---
 
-[<InlineImage :clickable=false src="projects/police-killings/header.png" alt="Header"></InlineImage>](https://connorrothschild.github.io/police-killings/)
+[<InlineImage :clickable=false src="project/police-killings/header.png" alt="Header"></InlineImage>](https://connorrothschild.github.io/police-killings/)
 
 # What it is
 
@@ -27,8 +27,8 @@ This was actually the second iteration of this visualization. [Version 1 can be 
 
 # Project images
 
-<InlineImage src="projects/police-killings/mac-1.png" alt="Project image for 'Mapping Police Killings'" width="74%"></InlineImage>
-<InlineImage src="projects/police-killings/phone-1.png" alt="Project image for 'Mapping Police Killings'" width="22%"></InlineImage>
+<InlineImage src="project/police-killings/mac-1.png" alt="Project image for 'Mapping Police Killings'" width="74%"></InlineImage>
+<InlineImage src="project/police-killings/phone-1.png" alt="Project image for 'Mapping Police Killings'" width="22%"></InlineImage>
 
-<InlineImage src="projects/police-killings/phone-2.png" alt="Project image for 'Mapping Police Killings'" width="22%"></InlineImage>
-<InlineImage src="projects/police-killings/mac-2.png" alt="Project image for 'Mapping Police Killings'" width="74%"></InlineImage>
+<InlineImage src="project/police-killings/phone-2.png" alt="Project image for 'Mapping Police Killings'" width="22%"></InlineImage>
+<InlineImage src="project/police-killings/mac-2.png" alt="Project image for 'Mapping Police Killings'" width="74%"></InlineImage>

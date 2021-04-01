@@ -1,5 +1,5 @@
 ---
-title: "COVID-19 Posts: A Public Dataset Containing 400+ COVID-19 Blog Posts"
+title: "COVID-19 Posts: A Novel Dataset"
 date: "2020-10-28"
 description: Making hundreds of COVID-19 blog posts from the R community available for public use
 img: covid-posts/header.png
@@ -34,16 +34,15 @@ ReesMorrison (dot) com.
 
 The remainder of this post highlights some of the findings from the
 dataset of COVID-19 posts. As will be made evident by the plots that
-follow, this is by no means a comprehensive review of *every* COVID-19 R
-blog post, but rather an overview of the data *that we have found*.
+follow, this is by no means a comprehensive review of _every_ COVID-19 R
+blog post, but rather an overview of the data _that we have found_.
 
 # Analysis
 
 ### Posts Over Time
 
 As the pandemic has progressed, fewer bloggers have engaged with
-COVID-related data, as we notice that blog posts peaked in March of
-2020.
+COVID-related data, as we notice that blog posts peaked in March of 2020.
 
 <InlineImage alt="COVID-19 blog posts by week. There is a peak in mid March (40 posts)." src="post/covid-posts/weekly-1.png"></InlineImage>
 
@@ -70,8 +69,8 @@ possible that this effort misrepresented what some of these bloggers do
 for a living. We welcome corrections.
 
 We’ve further categorized roles into a broad typology where professions
-fall into one of five categories: *university*, *corporate*,
-*professional*, *government*, and *nonprofit*. Those broader categories
+fall into one of five categories: _university_, _corporate_,
+_professional_, _government_, and _nonprofit_. Those broader categories
 are represented as columns in the following chart.
 
 <InlineImage alt="A barchart showcasing the roles of authors in our dataset. The most common is university (205) followed by corporate (140)." src="post/covid-posts/authorVer2-1.png"></InlineImage>
@@ -81,8 +80,8 @@ are represented as columns in the following chart.
 A greater number of data sources related to COVID-19 will yield richer
 insights. Combining different datasets can shed new light on an issue,
 yield improvements, and allow authors to contruct better indices and
-measures. For that reason, one of the authors (Rees) extracted *dataset
-information* from our collection of blog posts.
+measures. For that reason, one of the authors (Rees) extracted _dataset
+information_ from our collection of blog posts.
 
 For the most part, bloggers identified the data source they drew on for
 their analysis. On occasion, we had to apply some effort to standardize
@@ -94,25 +93,25 @@ COVID-19 data collection and dissemination to the public.
 
 <InlineImage alt="A barchart showcasing the most common data sources in our dataset. John Hopkins leads the pack at 51." src="post/covid-posts/dataTable-1.png"></InlineImage>
 
-Below, you can look at *all* data sources and how often they were
+Below, you can look at _all_ data sources and how often they were
 referenced in COVID-19 blog posts.
 
 <div class='table-container'>
 
-| Data Source                                                                 | Count |
-|:----------------------------------------------------------------------------|------:|
-| Johns Hopkins University                                                    |    51 |
-| New York Times                                                              |    14 |
-| Wikipedia                                                                   |    13 |
-| Apple Mobility                                                              |     8 |
-| COVID Tracking Project                                                      |     8 |
-| World Bank                                                                  |     7 |
-| European Centre for Disease Control (ECDC)                                  |     6 |
-| U.S. Census Bureau                                                          |     6 |
-| Our World in Data                                                           |     5 |
-| Twitter                                                                     |     5 |
-| Assessment Capacities Project (ACAPS)                                       |     4 |
-| COVID19 package                                                             |     4 |
+| Data Source                                | Count |
+| :----------------------------------------- | ----: |
+| Johns Hopkins University                   |    51 |
+| New York Times                             |    14 |
+| Wikipedia                                  |    13 |
+| Apple Mobility                             |     8 |
+| COVID Tracking Project                     |     8 |
+| World Bank                                 |     7 |
+| European Centre for Disease Control (ECDC) |     6 |
+| U.S. Census Bureau                         |     6 |
+| Our World in Data                          |     5 |
+| Twitter                                    |     5 |
+| Assessment Capacities Project (ACAPS)      |     4 |
+| COVID19 package                            |     4 |
 
 </div>
 

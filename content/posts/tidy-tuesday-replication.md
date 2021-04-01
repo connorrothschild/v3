@@ -56,13 +56,13 @@ of had to guess where Bloomberg pulled their data from.
 I relied on three datasets:
 
 1. Educational attainment broke down by occupation, provided by BLS
-    [here](https://www.bls.gov/emp/ep_education_training_system.htm)
+   [here](https://www.bls.gov/emp/ep_education_training_system.htm)
 2. Salaries, median hourly/annual wages broke down by occupation,
-    provided by BLS
-    [here](https://www.bls.gov/oes/current/oes_nat.htm#11-0000)
+   provided by BLS
+   [here](https://www.bls.gov/oes/current/oes_nat.htm#11-0000)
 3. Risk of automation broken down by occupation, provided by Carl
-    Benedikt Frey and Michael A. Osborne (but compiled
-    [here](https://data.world/wnedds/occupations-by-state-and-likelihood-of-automation))
+   Benedikt Frey and Michael A. Osborne (but compiled
+   [here](https://data.world/wnedds/occupations-by-state-and-likelihood-of-automation))
 
 ```r
 education <- read_excel("data/education.xlsx", skip=1)
@@ -80,7 +80,7 @@ simple: first, we add the title panel and beautify it with some CSS.
 
 ```r
 ui <- fluidPage(
-  
+
     titlePanel(
       h1("A College Degree Lowers Job Automation Risk",
         style = "font-family: 'Helvetica Neue';
@@ -101,7 +101,7 @@ mainPanel(
            p("DATA: FREY & OSBORNE, BUREAU OF LABOR STATISTICS",
            style = "font-family: 'Helvetica Neue';
         font-size: 8px; font-weight: 500; line-height: 1.1;")
-           )  
+           )
 
 )
 ```
@@ -119,8 +119,8 @@ All of the following takes place in the
 ## Create a ggplot Object
 
 We know we’re going to need a ggplot object. In my case, we’ll need a
-plot object which relies on *probability, median income,* and *risk of
-automation*.
+plot object which relies on _probability, median income,_ and _risk of
+automation_.
 
 ```r
 ggplot(aes(x=probability, y=A_MEDIAN, size=TOT_EMP, fill=typicaled, text = text)) +
@@ -138,7 +138,7 @@ we’re going to want a tooltip.
 That’s why we included `text` in the above code, which we define here:
 
 ```r
-data %>% 
+data %>%
     mutate(text = glue::glue('<span style="font-size:16px;font-weight:bold">{data$occupation}</span>',
                              '\n<b>Number employed:</b> {scales::comma(data$TOT_EMP)}',
                              '\n<b>Computerization prob:</b> {data$probability}%',
@@ -155,7 +155,7 @@ The Bloomberg visualization is unique in that it has no axis lines. We
 can replicate that in `ggplot2` via the following code:
 
 ```r
-theme(axis.line.x = ggplot2::element_blank(), 
+theme(axis.line.x = ggplot2::element_blank(),
       axis.line.y = ggplot2::element_blank(),
       axis.text = element_text(colour = "black", size = 8))
 ```
@@ -172,11 +172,11 @@ We can mimic that kind of styling with this code:
 ```r
 xlab("") +
 ylab("") +
-labs(size= "", alpha = "", fill = "") + 
-scale_y_continuous(limits = c(-1000,240000), 
+labs(size= "", alpha = "", fill = "") +
+scale_y_continuous(limits = c(-1000,240000),
                    breaks = c(20000, 40000, 60000, 80000, 100000, 120000, 140000, 160000, 180000, 200000, 220000),
                    labels = c("20K", "40K", "60K", "80K", "100K", "120K", "140K", "160K", "180K", "200K", "220K")) +
-scale_x_continuous(limits = c(0,100), 
+scale_x_continuous(limits = c(0,100),
                    breaks = c(10,20,30,40,50,60,70,80,90),
                    labels = c(10,20,30,40,50,60,70,80,"90%"))
 ```
@@ -194,9 +194,9 @@ then, I added them to R with the following:
 
 ```r
 cols <- c('No formal educational credential' = '#FA1A48','High school diploma or equivalent' = '#F79734',
-          "Postsecondary nondegree award" = '#FDFF1C', "Associate's degree" = '#1DDF50', 
+          "Postsecondary nondegree award" = '#FDFF1C', "Associate's degree" = '#1DDF50',
           "Bachelor's degree" = '#34D19D', "Master's degree" = '#1BC0E9',
-          "Doctoral or professional degree" = '#1B91FF') 
+          "Doctoral or professional degree" = '#1B91FF')
 ```
 
 In the plot object, we reference this with the following:
@@ -218,7 +218,7 @@ Finally, we do something really hacky: add a regression line with
 `geom_segment`. (I’m so sorry, R gods.)
 
 ```r
-geom_segment(aes(x = 0, y = 54000, xend = 100, yend = 58000), size = .1) 
+geom_segment(aes(x = 0, y = 54000, xend = 100, yend = 58000), size = .1)
 ```
 
 We now have the ggplot object created; let’s convert it to a plotly
@@ -243,7 +243,7 @@ We’d like the legend to orient horizontally, right above the plot. We do
 that with the following (inside the `layout` function):
 
 ```r
-legend = list(orientation = "h",   
+legend = list(orientation = "h",
                      xanchor = "left",
                      x = 0, y = 100,
                      traceorder = "normal",
@@ -305,7 +305,7 @@ add_annotations(
       text = "<b>Low paid,\nleast vulnerable</b>",
       xanchor = 'center',
       align = 'left',
-      font = list(size = 10), 
+      font = list(size = 10),
       showarrow = F
     ) %>%
     add_annotations(
@@ -315,7 +315,7 @@ add_annotations(
       text = "<b>Low paid,\nmost vulnerable</b>",
       xanchor = 'center',
       align = 'right',
-      font = list(size = 10), 
+      font = list(size = 10),
       showarrow = F
     ) %>%
     add_annotations(
@@ -325,7 +325,7 @@ add_annotations(
       text = "<b>Best paid,\nleast vulnerable</b>",
       xanchor = 'center',
       align = 'left',
-      font = list(size = 10), 
+      font = list(size = 10),
       showarrow = F
     ) %>%
     add_annotations(
@@ -335,7 +335,7 @@ add_annotations(
       text = "<b>Best paid,\nmost vulnerable</b>",
       xanchor = 'center',
       align = 'right',
-      font = list(size = 10), 
+      font = list(size = 10),
       showarrow = F
     )
 ```
@@ -351,7 +351,7 @@ add_annotations(
       text = glue::glue(sprintf('\u2190'), "Least likely to be automated"),
       xanchor = 'left',
       align = 'left',
-      font = list(size = 10), 
+      font = list(size = 10),
       showarrow = F
     ) %>%
     add_annotations(
@@ -361,7 +361,7 @@ add_annotations(
       text = glue::glue("Most likely to be automated", sprintf('\u2192')),
       xanchor = 'right',
       align = 'right',
-      font = list(size = 10), 
+      font = list(size = 10),
       showarrow = F
     ) %>%
     add_annotations(
@@ -371,7 +371,7 @@ add_annotations(
       text = "Average annual wage",
       xanchor = 'center',
       align = 'right',
-      font = list(size = 10), 
+      font = list(size = 10),
       showarrow = F
     )
 ```
@@ -388,12 +388,12 @@ add_annotations(
       yref = "y",
       xanchor = 'center',
       align = 'right',
-      font = list(size = 10), 
+      font = list(size = 10),
       showarrow = TRUE,
       arrowhead = 0,
       ax = 50,
       ay = 25
-    ) %>% 
+    ) %>%
     add_annotations(
       x = subset(data$probability, data$occupation == "Cashiers"),
       y = subset(data$A_MEDIAN, data$occupation == "Cashiers"),
@@ -402,7 +402,7 @@ add_annotations(
       yref = "y",
       xanchor = 'center',
       align = 'right',
-      font = list(size = 10), 
+      font = list(size = 10),
       showarrow = TRUE,
       arrowhead = 0,
       ax = 40,
@@ -425,7 +425,7 @@ shinyApp(ui = ui, server = server)
 And we’re done! Find my interactive visualization
 [here](https://connorrothschild.shinyapps.io/2019-12-10/). Find the
 code, uninterrupted and (hopefully) reproducible,
-*[here](https://github.com/connorrothschild/tidytuesday/blob/master/2019-12-10/app.R)*.
+_[here](https://github.com/connorrothschild/tidytuesday/blob/master/2019-12-10/app.R)_.
 
 Here’s the Bloomberg visualization:
 

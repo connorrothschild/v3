@@ -1,5 +1,5 @@
 ---
-title: "COVID on Campus" 
+title: "COVID on Campus"
 date: "2020-10-10"
 description: Where university reopenings led to spikes in COVID-19 case counts
 img: covid-on-campus/header.png
@@ -25,7 +25,7 @@ Despite such complaints, Rice opened its doors to in-person students on
 August 11th. And despite all of the concerns, the university has done a
 remarkable job at keeping COVID case counts relatively low.
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A big part of <a href="https://twitter.com/RiceUniversity?ref_src=twsrc%5Etfw">@RiceUniversity</a>&#39;s approach to COVID-19: test often. Within the first two weeks of August, the university recorded over 4000 tests, with a total of 19 positive cases (0.41%). <a href="https://t.co/IDI3qtIE6f">pic.twitter.com/IDI3qtIE6f</a></p>&mdash; Connor Rothschild (@CL_Rothschild) <a href="https://twitter.com/CL_Rothschild/status/1296495845664272386?ref_src=twsrc%5Etfw">August 20, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A big part of <a href="https://twitter.com/RiceUniversity?ref_src=twsrc%5Etfw">@RiceUniversity</a>&#39;s approach to COVID-19: test often. Within the first two weeks of August, the university recorded over 4000 tests, with a total of 19 positive cases (0.41%). <a href="https://t.co/IDI3qtIE6f">pic.twitter.com/IDI3qtIE6f</a></p>&mdash; Connor Rothschild (@CL_Rothschild) <a href="https://twitter.com/CL_Rothschild/status/1296495845664272386?ref_src=twsrc%5Etfw">August 20, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Rice’s success at maintaining low case
 counts–[recording](https://coronavirus.rice.edu/) only 37 positive cases
@@ -47,7 +47,7 @@ Times](https://github.com/nytimes/covid-19-data/tree/master/colleges)):
 <TableHandler src="post/covid-on-campus/table1.png" alt="A table showcasing universities that have the greatest number of COVID-19 cases. University of Georgia leads the pack at 3888 cases. Last updated October 11, 2020" link="http://connorrothschild.github.io/v2/post/covid-on-campus/"></TableHandler>
 
 In addition to the criticism leveled against university administrators
-for jeopardizing the health and safety of their *students*, to what
+for jeopardizing the health and safety of their _students_, to what
 extent have reopenings put the community at large at greater risk?
 
 One way to answer this question is to analyze case counts attributable
@@ -68,7 +68,7 @@ university-affiliated case counts.
 <TableHandler src="post/covid-on-campus/table2.png" alt="A table showcasing counties that have the greatest number of COVID-19 cases attributable to colleges. Pickens, South Carolina is expanded, showcasing two universities which account for 105% of the county's total cases. Last updated October 11, 2020" link="http://connorrothschild.github.io/v2/post/covid-on-campus/"></TableHandler>
 
 In two counties, Otsego County (New York) and Pickens County (South
-Carolina), university-affiliated COVID-19 case counts actually *outpace*
+Carolina), university-affiliated COVID-19 case counts actually _outpace_
 officially recorded COVID-19 cases in their respective counties. This
 might signal an issue with the data, or a unique way of treating
 university students in county-wide case counts. According to one of the

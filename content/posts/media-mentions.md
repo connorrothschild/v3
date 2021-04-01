@@ -38,7 +38,7 @@ set_cr_theme(font = "IBM Plex Sans")
 data <- read.csv("data/mentions.csv", header = T)
   #read.csv(("https://raw.githubusercontent.com/fivethirtyeight/data/master/media-mentions-2020/cable_weekly.csv"), header=T)
 
-data <- data %>% 
+data <- data %>%
   mutate(date = as.Date(date, "%m/%d/%y"))
 ```
 
@@ -51,7 +51,7 @@ clips that week (`total_clips`) to reveal the percent
 <div class='table-container'>
 
 | name         | date       | pct_of_all_candidate_clips | matched_clips | total_clips |
-|:-------------|:-----------|---------------------------:|--------------:|------------:|
+| :----------- | :--------- | -------------------------: | ------------: | ----------: |
 | John Delaney | 2018-12-30 |                  0.0039432 |             5 |       76029 |
 | John Delaney | 2019-01-06 |                  0.0019589 |             2 |       82964 |
 | John Delaney | 2019-01-13 |                  0.0081566 |             5 |       82521 |
@@ -72,10 +72,10 @@ most frequently by the media by averaging their weekly proportion of
 mentions in the media.
 
 ```r
-data %>% 
-  group_by(name) %>% 
-  summarise(pct_of_all_candidate_clips = mean(pct_of_all_candidate_clips)*100) %>% 
-  top_n(12, wt = pct_of_all_candidate_clips) %>% 
+data %>%
+  group_by(name) %>%
+  summarise(pct_of_all_candidate_clips = mean(pct_of_all_candidate_clips)*100) %>%
+  top_n(12, wt = pct_of_all_candidate_clips) %>%
   ggplot(aes(x=reorder(name,pct_of_all_candidate_clips),y=pct_of_all_candidate_clips)) +
   geom_col(show.legend=FALSE) +
   coord_flip() +
@@ -95,8 +95,8 @@ overall media content compared to 0.14% for the average candidate).
 How has that coverage changed over time?
 
 ```r
-data %>% 
-  group_by(name) %>% 
+data %>%
+  group_by(name) %>%
   filter(mean(pct_of_all_candidate_clips) > .06) %>% # filter out unpopular candidates for plot clarity
   ggplot(aes(x=as.Date(date),y=pct_of_all_candidate_clips*100,group=name, color=name)) +
   geom_point() +
@@ -105,7 +105,7 @@ data %>%
           label = "Lucy Flores accuses Biden of \n inappropriate touching",
                    nudge_x = -25, nudge_y=-5,
                    show.legend = FALSE,
-                   color="black") + 
+                   color="black") +
   geom_label_repel(data=subset(data, pct_of_all_candidate_clips > .58 & pct_of_all_candidate_clips <.6),
           label = "Joe Biden announces candidacy",
            nudge_x = -5, nudge_y=-7,
@@ -113,9 +113,9 @@ data %>%
            color="black") +
   labs(x=element_blank(),
        y="Percent of Media Mentions",
-       title="Media Mentions of Candidates Over Time") + 
-  scale_color_discrete(name="Candidate", 
-                       limits = c("Joe Biden", "Bernie Sanders", "Elizabeth Warren", 
+       title="Media Mentions of Candidates Over Time") +
+  scale_color_discrete(name="Candidate",
+                       limits = c("Joe Biden", "Bernie Sanders", "Elizabeth Warren",
                                   "Kamala Harris", "Beto O'Rourke", "Cory Booker"))
 ```
 
@@ -128,20 +128,20 @@ distribution of weekly media mentions using a visualization known as a
 plot](https://cran.r-project.org/web/packages/ggridges/vignettes/introduction.html).
 
 ```r
-data %>% 
-  group_by(name) %>% 
-  filter(mean(pct_of_all_candidate_clips) > 0.1) %>% 
-  ungroup() %>% 
+data %>%
+  group_by(name) %>%
+  filter(mean(pct_of_all_candidate_clips) > 0.1) %>%
+  ungroup() %>%
 ggplot(aes(x = pct_of_all_candidate_clips*100, y = reorder(name,pct_of_all_candidate_clips))) +
-  geom_density_ridges(aes(point_colour=name), 
-                      show.legend = FALSE, 
-                      alpha = .2, 
-                      point_alpha = 1, 
+  geom_density_ridges(aes(point_colour=name),
+                      show.legend = FALSE,
+                      alpha = .2,
+                      point_alpha = 1,
                       jittered_points = TRUE) +
   labs(x = "Percent of Media Mentions",
        y=element_blank(),
        title="Media Mentions of Each Candidate",
-       subtitle="With density ridges depicting average mentions on a weekly basis") 
+       subtitle="With density ridges depicting average mentions on a weekly basis")
 ```
 
 <InlineImage alt="A ridgeplot showing media mentions of Joe Biden, Bernie Sanders, Elizabeth Warren, and Kamala Harris. It shows that, most weeks, candidates enjoy between 0 and 20% of media mentions, with some variation across candidates." src="post/media-mentions/unnamed-chunk-4-1.png"></InlineImage>
@@ -164,10 +164,10 @@ week’s coverage and the prior week’s coverage (using the
 function).
 
 ```r
-data %>% 
-  group_by(name) %>% 
-  mutate(change = (pct_of_all_candidate_clips-(dplyr::lag(pct_of_all_candidate_clips, n=1, default=NA)))) %>% 
-  filter(change >.2 | change < -.2) %>% 
+data %>%
+  group_by(name) %>%
+  mutate(change = (pct_of_all_candidate_clips-(dplyr::lag(pct_of_all_candidate_clips, n=1, default=NA)))) %>%
+  filter(change >.2 | change < -.2) %>%
   ggplot(aes(x=reorder(as.factor(date),change),y=change*100, fill=name)) +
   geom_col() +
   scale_fill_discrete(name="Candidate") +
@@ -212,28 +212,28 @@ mycolors <- colorRampPalette(brewer.pal(8, "RdYlBu"))(nb.cols)
 show.top.n <- 10
 
 # give each candidate a ranking for each week
-data <- data %>% 
-  group_by(date) %>% 
-  arrange(date, desc(pct_of_all_candidate_clips), name) %>%  
-  mutate(rank = row_number()) %>% 
+data <- data %>%
+  group_by(date) %>%
+  arrange(date, desc(pct_of_all_candidate_clips), name) %>%
+  mutate(rank = row_number()) %>%
   ungroup()
 
 # filter most recent data so as to make the plot more digestible
-recentdata <- data %>% 
-  mutate(date = as.Date(date, "%m/%d/%y")) %>% 
+recentdata <- data %>%
+  mutate(date = as.Date(date, "%m/%d/%y")) %>%
   filter(date > "2019-03-01")
 
 # for axis labels, create ranking at the start and end of the analysis
-finranking <- recentdata %>% 
-  filter(date=="2019-05-19") %>% 
-  select(date,name,rank) 
+finranking <- recentdata %>%
+  filter(date=="2019-05-19") %>%
+  select(date,name,rank)
 
-startranking <- recentdata %>% 
-  filter(date=="2019-03-03") %>% 
-  select(date,name,rank) 
+startranking <- recentdata %>%
+  filter(date=="2019-03-03") %>%
+  select(date,name,rank)
 
 # and plot!
-recentdata %>% 
+recentdata %>%
   ggplot(aes(x=date, y=rank, group=name, label=name)) +
   geom_line(aes(color=name, alpha = 1), size = 2) +
   geom_point(aes(color = name, alpha = 1), size = 4) +
@@ -242,16 +242,16 @@ recentdata %>%
   scale_y_reverse(breaks = 1:show.top.n) +
   scale_x_date(expand = c(0,29)) +
   coord_cartesian(ylim = c(1,show.top.n)) +
-  geom_text(data = subset(startranking), size=3, 
+  geom_text(data = subset(startranking), size=3,
             aes(x = date, hjust = 1.2)) +
-  geom_text(data = subset(finranking), size=3, 
+  geom_text(data = subset(finranking), size=3,
             aes(x = date, hjust = -.2)) +
   # scale_color_brewer(palette = "Paired") +
-  theme(line = element_blank(), rect = element_blank(), axis.text = element_blank(), 
+  theme(line = element_blank(), rect = element_blank(), axis.text = element_blank(),
         axis.title = element_blank(),
-        axis.ticks.length = unit(0, "pt"), axis.ticks.length.x = NULL, 
-        axis.ticks.length.x.top = NULL, axis.ticks.length.x.bottom = NULL, 
-        axis.ticks.length.y = NULL, axis.ticks.length.y.left = NULL, 
+        axis.ticks.length = unit(0, "pt"), axis.ticks.length.x = NULL,
+        axis.ticks.length.x.top = NULL, axis.ticks.length.x.bottom = NULL,
+        axis.ticks.length.y = NULL, axis.ticks.length.y.left = NULL,
         axis.ticks.length.y.right = NULL, legend.box = NULL, legend.position = "none") +
   labs(x = element_blank(),
        y = "Rank",
@@ -264,38 +264,38 @@ recentdata %>%
 Let’s focus on the meteoric rise of Pete Buttigieg:
 
 ```r
-petedata <- recentdata %>% 
+petedata <- recentdata %>%
   mutate(pete = ifelse(name == "Pete Buttigieg", 1, 0))
 
-petedata %>% 
+petedata %>%
   ggplot(aes(x=date, y=rank, group=name, label=name)) +
   # pete's line
   geom_line(aes(color = "#1089FF"),
-                data = subset (petedata, pete == 1), 
+                data = subset (petedata, pete == 1),
             size = 2, show.legend = FALSE) +
   # everyone else's line
-  geom_line(aes(alpha = 1), 
+  geom_line(aes(alpha = 1),
             data = subset(petedata, pete != 1),
             size = .5, show.legend = FALSE) +
-  geom_point(aes(fill = "grey80", alpha = 1), 
+  geom_point(aes(fill = "grey80", alpha = 1),
              data = subset(petedata, pete == 1), size = 4) +
-  geom_point(aes(alpha = 1), 
+  geom_point(aes(alpha = 1),
              data = subset(petedata, pete != 1), size = 2) +
   geom_point(color = "#FFFFFF", size = 1) +
   # scale_fill_manual(values = mycolors) +
   scale_y_reverse(breaks = 1:show.top.n) +
   scale_x_date(expand = c(0,29)) +
   coord_cartesian(ylim = c(show.top.n, 1)) +
-  geom_text(data = subset(startranking), size=3, 
+  geom_text(data = subset(startranking), size=3,
             aes(x = date, hjust = 1.2)) +
-  geom_text(data = subset(finranking), size=3, 
+  geom_text(data = subset(finranking), size=3,
             aes(x = date, hjust = -.2)) +
   # scale_fill_brewer(palette = "Dark2") +
-  theme(line = element_blank(), rect = element_blank(), axis.text = element_blank(), 
+  theme(line = element_blank(), rect = element_blank(), axis.text = element_blank(),
         axis.title = element_blank(),
-        axis.ticks.length = unit(0, "pt"), axis.ticks.length.x = NULL, 
-        axis.ticks.length.x.top = NULL, axis.ticks.length.x.bottom = NULL, 
-        axis.ticks.length.y = NULL, axis.ticks.length.y.left = NULL, 
+        axis.ticks.length = unit(0, "pt"), axis.ticks.length.x = NULL,
+        axis.ticks.length.x.top = NULL, axis.ticks.length.x.bottom = NULL,
+        axis.ticks.length.y = NULL, axis.ticks.length.y.left = NULL,
         axis.ticks.length.y.right = NULL, legend.box = NULL, legend.position = "none") +
   labs(x = element_blank(),
        y = "Rank",
@@ -319,7 +319,7 @@ Some takeaways:
 ## Next Steps
 
 Future work could capitalize upon this analysis by looking at the
-*content* of media coverage of candidates. Other researchers have
+_content_ of media coverage of candidates. Other researchers have
 [shown](http://www.storybench.org/watching-the-watchdog-analyzing-initial-coverage-of-2020-candidates/)
 that media coverage of female presidential candidates tends to be more
 negative than coverage of male candidates. Continuing this work with a

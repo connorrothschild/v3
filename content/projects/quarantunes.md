@@ -2,23 +2,23 @@
 title: Quarantunes
 description: Explore your listening history during COVID-19.
 date: "2020-10-22"
-audience: 'The world (2000 users)'
+audience: "The world (2000 users)"
 featured: true
-img: quarantunes/header.png
+img: quarantunes/thumbnail.png
 img_alt: "Quarantunes header, includes an image of a MacBook with the application open."
-techstack: 'D3.js, Vue.js, Bulma, R, Spotify API'
-github: 'https://github.com/connorrothschild/quarantunes'
-url: 'https://quarantune.netlify.app'
+techstack: "D3.js, Vue.js, Bulma, R, Spotify API"
+github: "https://github.com/connorrothschild/quarantunes"
+url: "https://quarantune.netlify.app"
 ---
 
-[<InlineImage :clickable=false src="projects/quarantunes/header.png" alt="Header"></InlineImage>](https://quarantune.netlify.app)
+[<InlineImage :clickable=false src="project/quarantunes/header.png" alt="Header"></InlineImage>](https://quarantune.netlify.app)
 
 # What it is
 
-[**Quarantunes**](https://quarantune.netlify.app) is an application for Spotify users to explore their listening history during the COVID-19 pandemic. It has been viewed by over 2,000 users.
+[**Quarantunes**](https://quarantune.netlify.app) is an application for Spotify users to explore their listening history during the COVID-19 pandemic. It has been used by over 4,000 visitors.
 There are three tabs within the application.
-The first showcases 'top artists' and 'top tracks' throughout the pandemic. 
-The second shows some statistics about tracks according to Spotify's [audio features](https://developer.spotify.com/documentation/web-api/reference/#endpoint-get-audio-features) (e.g. which of your top songs is most danceable?). 
+The first showcases 'top artists' and 'top tracks' throughout the pandemic.
+The second shows some statistics about tracks according to Spotify's [audio features](https://developer.spotify.com/documentation/web-api/reference/#endpoint-get-audio-features) (e.g. which of your top songs is most danceable?).
 The last tab creates two playlists for the user: one with their top tracks and another with recommendations for future listening.
 
 # Tools used
@@ -29,5 +29,5 @@ I also had some fun developing the more novel contributions of this project, suc
 
 # Project images
 
-<InlineImage src="projects/quarantunes/macbook.png" alt="Project image for 'Quarantunes'"></InlineImage>
-<InlineImage src="projects/quarantunes/side-by-side.png" alt="Project image for 'Quarantunes'"></InlineImage>
+<InlineImage src="project/quarantunes/macbook.png" alt="Project image for 'Quarantunes'"></InlineImage>
+<InlineImage src="project/quarantunes/side-by-side.png" alt="Project image for 'Quarantunes'"></InlineImage>

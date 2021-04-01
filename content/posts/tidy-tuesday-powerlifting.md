@@ -8,7 +8,7 @@ description: Leveraging the power of {gganimate} and {magick} to combine animate
 
 In this tutorial, I'm going to outline the steps necessary to create an animated, faceted plot in R. Although rare, combining animated plots can be a powerful way to showcase different elements of the same data (as you'll see below).
 
-In this example, I'm using weightlifting data from the International Powerlifting Federation. For the purposes of this tutorial, we'll look at *differences in top lifts by sex*. A faceted, animated plot is a great option because we'd like to observe **the magnitude of these differences** and **how these differences have evolved over time**.
+In this example, I'm using weightlifting data from the International Powerlifting Federation. For the purposes of this tutorial, we'll look at _differences in top lifts by sex_. A faceted, animated plot is a great option because we'd like to observe **the magnitude of these differences** and **how these differences have evolved over time**.
 
 We'll be creating this GIF:
 
@@ -40,19 +40,19 @@ Here, we'll do some minor cleaning and then reshape the three lifts into one col
 ipf_lifts <- readr::read_csv("data/ipf_lifts.csv") %>%
   mutate(year = lubridate::year(date))
 
-ipf_lifts_reshape <- ipf_lifts %>% 
-  tidyr::pivot_longer(cols = c("best3squat_kg", "best3bench_kg", "best3deadlift_kg"), names_to = "lift") %>% 
+ipf_lifts_reshape <- ipf_lifts %>%
+  tidyr::pivot_longer(cols = c("best3squat_kg", "best3bench_kg", "best3deadlift_kg"), names_to = "lift") %>%
   select(name, sex, year, lift, value)
 ```
 
-For my visualization, I’m only concerned with the *heaviest* lifts from
+For my visualization, I’m only concerned with the _heaviest_ lifts from
 each year:
 
 ```r
-ipf_lifts_maxes <- ipf_lifts_reshape %>% 
-  group_by(year, sex, lift) %>% 
-  top_n(1, value) %>% 
-  ungroup %>% 
+ipf_lifts_maxes <- ipf_lifts_reshape %>%
+  group_by(year, sex, lift) %>%
+  top_n(1, value) %>%
+  ungroup %>%
   distinct(year, lift, value, .keep_all = TRUE)
 ```
 
@@ -62,23 +62,23 @@ In order to construct a dumbbell plot, we need both male and female
 observations in the same row. For this, we use the `spread` function.
 
 ```r
-max_pivot <- ipf_lifts_maxes %>% 
+max_pivot <- ipf_lifts_maxes %>%
   spread(sex, value)
 ```
 
 Now, let’s construct a dataframe for each sex:
 
 ```r
-male_lifts <- max_pivot %>% 
-  select(-name) %>% 
-  filter(!is.na(M)) %>% 
-  group_by(year, lift) %>% 
+male_lifts <- max_pivot %>%
+  select(-name) %>%
+  filter(!is.na(M)) %>%
+  group_by(year, lift) %>%
   summarise(male = mean(M))
 
-female_lifts <- max_pivot %>% 
-  select(-name) %>% 
-  filter(!is.na(F)) %>% 
-  group_by(year, lift) %>% 
+female_lifts <- max_pivot %>%
+  select(-name) %>%
+  filter(!is.na(F)) %>%
+  group_by(year, lift) %>%
   summarise(female = mean(F))
 ```
 
@@ -87,8 +87,8 @@ And join them:
 ```r
 max_lifts <- merge(male_lifts, female_lifts)
 
-max_lifts_final <- max_lifts %>% 
-  group_by(year, lift) %>% 
+max_lifts_final <- max_lifts %>%
+  group_by(year, lift) %>%
   mutate(diff = male - female)
 ```
 
@@ -96,18 +96,18 @@ Not following along, or want to check your progress? Here's what our data looks 
 
 <div class='table-container'>
 
-  | year | lift             | male   | female | diff  |
-  |:-----|:-----------------|:-------|:-------|:------|
-  | 1980 | best3bench_kg    | 262.5  | 120    | 142.5 |
-  | 1980 | best3deadlift_kg | 395    | 205    | 190   |
-  | 1980 | best3squat_kg    | 417.5  | 230    | 187.5 |
-  | 1981 | best3bench_kg    | 245    | 150    | 95    | 
-  | 1981 | best3deadlift_kg | 367.5  | 230    | 137.5 |
-  | 1981 | best3squat_kg    | 427.5  | 215    | 212.5 |
-  
+| year | lift             | male  | female | diff  |
+| :--- | :--------------- | :---- | :----- | :---- |
+| 1980 | best3bench_kg    | 262.5 | 120    | 142.5 |
+| 1980 | best3deadlift_kg | 395   | 205    | 190   |
+| 1980 | best3squat_kg    | 417.5 | 230    | 187.5 |
+| 1981 | best3bench_kg    | 245   | 150    | 95    |
+| 1981 | best3deadlift_kg | 367.5 | 230    | 137.5 |
+| 1981 | best3squat_kg    | 427.5 | 215    | 212.5 |
+
 </div>
 
-## Visualize! 
+## Visualize!
 
 Finally, we can construct the visualization.
 
@@ -116,9 +116,9 @@ First, we can create a static visualization using `ggalt` (again, my [blog post]
 You can fast forward the creation of individual plots if you're only interested in the **combination** of the two. You'll find that at the end of this post!
 
 ```r
-max_lifts_final %>% 
-  filter(year == 2019) %>% 
-  ggplot() + 
+max_lifts_final %>%
+  filter(year == 2019) %>%
+  ggplot() +
   ggalt::geom_dumbbell(aes(y = lift,
                     x = female, xend = male),
                 colour = "grey", size = 5,
@@ -147,8 +147,8 @@ Finally, we animate, using Thomas Pedersen’s wonderful [gganimate
 package](https://github.com/thomasp85/gganimate). This is a relatively easy step, because `gganimate` only requires two extra lines of code: `transition_states` and `ease_aes`. Then, we pass it into the `animate` function!
 
 ```r
-animation <- max_lifts_final %>% 
-  ggplot() + 
+animation <- max_lifts_final %>%
+  ggplot() +
   ggalt::geom_dumbbell(aes(y = lift,
                     x = female, xend = male),
                 colour = "grey", size = 5,
@@ -168,10 +168,10 @@ animation <- max_lifts_final %>%
   transition_states(year, transition_length = 4, state_length = 1) +
   ease_aes('cubic-in-out')
 
-a_gif <- animate(animation, 
-                 fps = 10, 
+a_gif <- animate(animation,
+                 fps = 10,
                  duration = 25,
-                 width = 800, height = 400, 
+                 width = 800, height = 400,
                  renderer = gifski_renderer("outputs/animation.gif"))
 
 a_gif
@@ -182,29 +182,29 @@ a_gif
 But in our case, we'd like to include another GIF: a line chart of differences over time.
 
 ```r
-animation2 <- max_lifts_final %>% 
-  ungroup %>% 
+animation2 <- max_lifts_final %>%
+  ungroup %>%
   mutate(lift = case_when(lift == "best3bench_kg" ~ "Bench",
                           lift == "best3squat_kg" ~ "Squat",
-                          lift == "best3deadlift_kg" ~ "Deadlift")) %>% 
-  ggplot(aes(year, diff, group = lift, color = lift)) + 
-  geom_line(show.legend = FALSE) + 
-  geom_segment(aes(xend = 2019.1, yend = diff), linetype = 2, colour = 'grey', show.legend = FALSE) + 
-  geom_point(size = 2, show.legend = FALSE) + 
-  geom_text(aes(x = 2019.1, label = lift, color = "#000000"), hjust = 0, show.legend = FALSE) + 
+                          lift == "best3deadlift_kg" ~ "Deadlift")) %>%
+  ggplot(aes(year, diff, group = lift, color = lift)) +
+  geom_line(show.legend = FALSE) +
+  geom_segment(aes(xend = 2019.1, yend = diff), linetype = 2, colour = 'grey', show.legend = FALSE) +
+  geom_point(size = 2, show.legend = FALSE) +
+  geom_text(aes(x = 2019.1, label = lift, color = "#000000"), hjust = 0, show.legend = FALSE) +
   drop_axis(axis = "y") +
   transition_reveal(year) +
   coord_cartesian(clip = 'off') +
   theme(plot.title = element_text(size = 20)) +
   labs(title = 'Difference over time',
        y = 'Difference (kg)',
-       x = element_blank()) + 
+       x = element_blank()) +
   theme(plot.margin = margin(5.5, 40, 5.5, 5.5))
 
-b_gif <- animate(animation2, 
-                 fps = 10, 
+b_gif <- animate(animation2,
+                 fps = 10,
                  duration = 25,
-        width = 800, height = 200, 
+        width = 800, height = 200,
         renderer = gifski_renderer("outputs/animation2.gif"))
 
 b_gif
@@ -229,7 +229,7 @@ for(i in 2:250){
 
 What’s happening here? Essentially, we’re using the power of `magick` to:
 
-1. Read in all of the *individual images* (`image_read`) from each GIF (after all, a GIF is just a series of images!).
+1. Read in all of the _individual images_ (`image_read`) from each GIF (after all, a GIF is just a series of images!).
 2. For the first frame, stack the two images on top of each other (`image_append`), so plot 1 is above plot 2.
 3. For the rest of the frames (in my case, the next 249, because my GIF had 250 frames), replicate this and combine it with the first frame (this is the `for` loop).
 
@@ -239,4 +239,4 @@ In combination, the process results in our final output:
 
 <InlineImage src="post/tidy-tuesday-powerlifting/unnamed-chunk-11-1.gif" alt="A combination of the two aforementioned plots. The top plot is the animated dumbbell plot, and the bottom is a line chart. In combination, they allow the user to see the magnitude of differences between men and women, as well as how these differences have evolved over time."></InlineImage>
 
-In this view, we can see the magnitude of the differences both relatively and absolutely (top chart), *and* we can see how these differences change over time (bottom chart). The power of an animated, combined chart!
+In this view, we can see the magnitude of the differences both relatively and absolutely (top chart), _and_ we can see how these differences change over time (bottom chart). The power of an animated, combined chart!

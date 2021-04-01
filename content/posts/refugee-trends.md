@@ -8,32 +8,32 @@ description: Or, how a single line of code can create a beautiful small multiple
 
 <InlineImage alt="A small multiples map of refugee acceptance over time, across states" src="post/refugee-trends/featured.png"></InlineImage>
 
-In [previous projects](https://connorrothschild.github.io/map-missing-migrants/), I've explored how migration has unfolded across *places*: where migrants travel, where they go missing, and where their journeys come to a fatal end.
+In [previous projects](https://connorrothschild.github.io/map-missing-migrants/), I've explored how migration has unfolded across _places_: where migrants travel, where they go missing, and where their journeys come to a fatal end.
 
-Next, I wanted to see how *host countries* have approached the migrant and refugee crisis, with a particular focus on the United States. In my mind, an effective visualization of the U.S.'s response to an increasing number of refugees needs to present two things: how refugee acceptance has changed *over time* and how refugee acceptance differs *across states.* 
+Next, I wanted to see how _host countries_ have approached the migrant and refugee crisis, with a particular focus on the United States. In my mind, an effective visualization of the U.S.'s response to an increasing number of refugees needs to present two things: how refugee acceptance has changed _over time_ and how refugee acceptance differs _across states._
 
 An effective way to present both of these trends is with a map of [small multiple](https://en.wikipedia.org/wiki/Small_multiple) line charts. For aesthetic purposes, it would also be nice to arrange these multiples in a shape that vaguely resembles the United States. (This also makes it easier for readers to find their state of interest.)
 
-There are examples of these types of small multiple maps across the internet. The Washington Post's [overview of the electoral college](https://www.washingtonpost.com/graphics/politics/how-fair-is-the-electoral-college/) was visualized in the following way: 
+There are examples of these types of small multiple maps across the internet. The Washington Post's [overview of the electoral college](https://www.washingtonpost.com/graphics/politics/how-fair-is-the-electoral-college/) was visualized in the following way:
 
 <InlineImage alt="Washington Post small multiples map of electoral college data" src="post/refugee-trends/wapo.png"></InlineImage>
 
-You can also find an overview of *why* they work, and some additional examples, on the [PolicyViz](https://policyviz.com/2016/05/19/small-multiple-tile-grid-map/) blog:
+You can also find an overview of _why_ they work, and some additional examples, on the [PolicyViz](https://policyviz.com/2016/05/19/small-multiple-tile-grid-map/) blog:
 
 <InlineImage alt="Policy Viz's small multiples of overall voting results over time" src="post/refugee-trends/policyviz.jpg"></InlineImage>
 
 ## Making it in R
 
-The process of creating a small multiple tile grid map is relatively easy in R (like most things done in R). It is considerably more difficult in D3.js; if you're interested in that type of thing, you can take a look at [this code](https://bl.ocks.org/jinniluo/a95b27b1f4ea65ae94ab6ca3fcfb5934#index.html) for inspiration. 
+The process of creating a small multiple tile grid map is relatively easy in R (like most things done in R). It is considerably more difficult in D3.js; if you're interested in that type of thing, you can take a look at [this code](https://bl.ocks.org/jinniluo/a95b27b1f4ea65ae94ab6ca3fcfb5934#index.html) for inspiration.
 
 #### Step 1: Build the basic line chart
 
-The first step (after obnoxious data [merging](https://raw.githubusercontent.com/connorrothschild/R/master/refugee-trends/merge.R) and cleaning) is getting a feel for the basic line chart. To do so, we can visualize the macro-level trends of refugee acceptance across *all states* combined. 
+The first step (after obnoxious data [merging](https://raw.githubusercontent.com/connorrothschild/R/master/refugee-trends/merge.R) and cleaning) is getting a feel for the basic line chart. To do so, we can visualize the macro-level trends of refugee acceptance across _all states_ combined.
 
 ```r
-data %>% 
-  group_by(region_name_3) %>% 
-  summarise(textbox37 = sum(textbox37)) %>% 
+data %>%
+  group_by(region_name_3) %>%
+  summarise(textbox37 = sum(textbox37)) %>%
   ggplot(aes(x = region_name_3, y = textbox37)) +
   geom_line() +
   labs(title = "Refugee Acceptance on the Decline",
@@ -46,11 +46,11 @@ data %>%
 
 <InlineImage alt="A small multiples map of refugee acceptance over time, across states" src="post/refugee-trends/macro.jpg"></InlineImage>
 
-Now we have the answer to our first question: **how has refugee acceptance changed over time?** The answer: pretty drastically. The US accepted nearly 100,000 refugees in 2016; 2 years later, that number was barely over 20,000. 
+Now we have the answer to our first question: **how has refugee acceptance changed over time?** The answer: pretty drastically. The US accepted nearly 100,000 refugees in 2016; 2 years later, that number was barely over 20,000.
 
 #### Step 2: Make small multiples
 
-Next, we make 50 of these lines: one for each US state. We do so using Ryan Hafen's `geofacet` [package](https://hafen.github.io/geofacet/rd.html). 
+Next, we make 50 of these lines: one for each US state. We do so using Ryan Hafen's `geofacet` [package](https://hafen.github.io/geofacet/rd.html).
 
 It's as simple as adding one line of code to our previous plot:
 
@@ -82,7 +82,7 @@ theme(
   )
 ```
 
-Finally, I don't like huge gray boxes around my axis labels. Could we make those transparent? 
+Finally, I don't like huge gray boxes around my axis labels. Could we make those transparent?
 
 ```
 theme(
@@ -93,9 +93,9 @@ theme(
 Add it all together (and tweak the font size), and we get this:
 
 ```r
-data %>% 
-  group_by(region_name_3, state) %>% 
-  summarise(textbox37 = sum(textbox37)) %>% 
+data %>%
+  group_by(region_name_3, state) %>%
+  summarise(textbox37 = sum(textbox37)) %>%
   ggplot(aes(x = region_name_3, y = textbox37)) +
   geom_line(color = "black") +
   scale_x_continuous(breaks = c(2002,2019)) +
@@ -118,7 +118,7 @@ data %>%
 
 <InlineImage alt="secondtry" src="post/refugee-trends/secondtry.jpg"></InlineImage>
 
-Pretty good! Much better. But we can add some elements to take our visualization to the next level. 
+Pretty good! Much better. But we can add some elements to take our visualization to the next level.
 
 Because our data spans nearly 20 years (2002 to 2019), we can overlay our small multiples with other variables of interest, such as who was President during a given period.
 
@@ -133,10 +133,10 @@ The first line of code creates a blue box which spans 2009 to 2017 (Obama's tenu
 
 Bringing it all together, the code and output look like this:
 
-```r 
-data %>% 
-  group_by(region_name_3, state) %>% 
-  summarise(textbox37 = sum(textbox37)) %>% 
+```r
+data %>%
+  group_by(region_name_3, state) %>%
+  summarise(textbox37 = sum(textbox37)) %>%
   ggplot(aes(x = region_name_3, y = textbox37)) +
   geom_line(color = "black") +
   geom_rect(mapping=aes(xmin=2009, xmax=2017, ymin=0, ymax=12000), fill = "#ADD8E6", alpha = .05) +
@@ -165,7 +165,6 @@ I brought that plot to Illustrator and made it a lot prettier. Here's the final 
 
 <InlineImage alt="A small multiples map of refugee acceptance over time, across states" src="post/refugee-trends/featured.png"></InlineImage>
 
+What do we notice? A few key states (Texas, California, Florida, and Michigan) make up the vast majority of refugee acceptance, while other accept almost _no_ _refugees_. Nearly every state has reduced their refugee acceptance since 2017, but the bulk of this decline has come from these larger states.
 
-What do we notice? A few key states (Texas, California, Florida, and Michigan) make up the vast majority of refugee acceptance, while other accept almost *no* *refugees*. Nearly every state has reduced their refugee acceptance since 2017, but the bulk of this decline has come from these larger states.
-
-While you're here, take a look at my project [*Mapping Missing Migrants.*](https://connorrothschild.github.io/map-missing-migrants/)
+While you're here, take a look at my project [_Mapping Missing Migrants._](https://connorrothschild.github.io/map-missing-migrants/)

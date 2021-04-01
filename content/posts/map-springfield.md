@@ -28,14 +28,14 @@ First, per the tutorial, we load street (and river, etc). data:
 ```r
 streets <- getbb("Springfield Missouri")%>%
   opq() %>%
-  add_osm_feature(key = "highway", 
-                  value = c("motorway", "primary", 
+  add_osm_feature(key = "highway",
+                  value = c("motorway", "primary",
                             "secondary", "tertiary")) %>%
   osmdata_sf()
 
 small_streets <- getbb("Springfield Missouri")%>%
   opq() %>%
-  add_osm_feature(key = "highway", 
+  add_osm_feature(key = "highway",
                   value = c("residential", "living_street",
                             "unclassified",
                             "service", "footway")) %>%
@@ -310,4 +310,3 @@ ggsave(map_gold,
        width = 3.234,
        height = 5.016)
 ```
-

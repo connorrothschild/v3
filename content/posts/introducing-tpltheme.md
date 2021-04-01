@@ -60,7 +60,7 @@ Here’s an overview of some of the packages key features:
 
 You can install the package via GitHub:
 
-``` r
+```r
 library(ggplot2)
 library(tidyverse)
 
@@ -79,7 +79,7 @@ specially created for plotting geographical data (`style = "Texas"`).
 Calling `set_tpl_theme()` after `library(tpltheme)` does most of the
 work for this package!
 
-``` r
+```r
 set_tpl_theme(font = 'IBM Plex Sans')
 
 ggplot(iris, aes(x=Species, y=Sepal.Width, fill=Species)) +
@@ -92,14 +92,14 @@ ggplot(iris, aes(x=Species, y=Sepal.Width, fill=Species)) +
 
 ### Fonts
 
-The user is able to specify whether they want to use *Lato* or *Adobe
-Caslon Pro* in their figures.
+The user is able to specify whether they want to use _Lato_ or _Adobe
+Caslon Pro_ in their figures.
 
 To ensure that these fonts are installed and registered, use
 `tpl_font_test()`. If fonts are not properly installed, install both
 fonts online and then run `tpl_font_install()`.
 
-``` r
+```r
 tpl_font_test()
 tpl_font_install()
 ```
@@ -107,7 +107,7 @@ tpl_font_install()
 Here are some examples of sample TPL plots with different specifications
 for `style` and `font`.
 
-``` r
+```r
 set_tpl_theme(style = "print", font = "lato")
 
 ggplot(iris, aes(x=jitter(Sepal.Width), y=jitter(Sepal.Length), col=Species, size = Petal.Length)) +
@@ -120,7 +120,7 @@ ggplot(iris, aes(x=jitter(Sepal.Width), y=jitter(Sepal.Length), col=Species, siz
 By specifying `style = "Texas"` within `set_tpl_theme`, the user may
 also create Texas-specific plots.
 
-``` r
+```r
 tx_vac <- readr::read_csv("https://raw.githubusercontent.com/connorrothschild/tpltheme/master/data/tx_vac_example.csv")
 set_tpl_theme(style = "Texas", font = "adobe")
 
@@ -138,13 +138,13 @@ ggplot(data = tx_vac, mapping = aes(x = long, y = lat, group = group, fill = avg
 
 And it also works for categorical variables:
 
-``` r
+```r
 set_tpl_theme(style = "Texas", font = "lato")
 
-tx_vac %>% 
+tx_vac %>%
   dplyr::mutate(cat = factor(dplyr::case_when(avgvac*100 > 99 ~ "Great",
                          avgvac*100 > 90 ~ "Average",
-                         avgvac*100 < 90 ~ "Bad"))) %>% 
+                         avgvac*100 < 90 ~ "Bad"))) %>%
   ggplot(mapping = aes(x = long, y = lat, group = group, fill = cat)) +
   coord_fixed(1.3) +
   geom_polygon(color = "black") +
@@ -163,8 +163,8 @@ RColorBrewer’s “Paired” palette (for more information on the use of
 RColorBrewer palettes, see [this
 chapter](https://bookdown.org/rdpeng/exdata/plotting-and-color-in-r.html#using-the-rcolorbrewer-palettes)).
 
-``` r
-tx_vac %>% 
+```r
+tx_vac %>%
   ggplot(mapping = aes(x = long, y = lat, group = group, fill = subregion)) +
   coord_fixed(1.3) +
   geom_polygon(color = "black", show.legend = FALSE) +
@@ -173,7 +173,7 @@ tx_vac %>%
 
 <InlineImage alt="An example of a plot in the TPL theme." src="post/introducing-tpltheme/unnamed-chunk-8-1.png"></InlineImage>
 
-``` r
+```r
 # default to print afterwards
 set_tpl_theme(style = "print")
 ```
@@ -189,10 +189,10 @@ to serve as a pseudo-watermark in proprietary plots.
 The user can specify the `position` of the logo as well as its `scale`.
 The scale argument refers to the size of the logo object, with the
 specified number corresponding to a multiplication with the normal logo
-size. In other words, `scale = 2` will *double* the size of the logo.
+size. In other words, `scale = 2` will _double_ the size of the logo.
 The logo defaults to 1/7th of the size of the plot.
 
-``` r
+```r
 plot <- ggplot(iris, aes(x=Species, y=Sepal.Width, fill=Species)) +
     geom_bar(stat="summary", fun.y="mean", show.legend = FALSE) +
     scale_y_continuous(expand = expand_scale(mult = c(0, 0.001))) +
@@ -210,11 +210,11 @@ preferred. If that is the case and the user would still like to
 watermark their figures, they can use the function `add_tpl_logo_text()`
 to add text to an existing plot object:
 
-``` r
+```r
 plot <- ggplot(iris, aes(x=jitter(Sepal.Width), y=jitter(Sepal.Length), col=Species, size = Petal.Length)) +
     geom_point() +
     labs(x="Sepal Width (cm)", y="Sepal Length (cm)", col="Species", size = "Petal Length", title="Iris Dataset")
-    
+
 add_tpl_logo_text(plot)
 ```
 
@@ -223,12 +223,12 @@ add_tpl_logo_text(plot)
 The user may also need to specify `align`, which moves the plot
 horizontally across the bottom of the page.
 
-``` r
+```r
 plot <- ggplot(iris, aes(x=Species, y=Sepal.Width, fill=Species)) +
     geom_boxplot(show.legend = FALSE) +
     labs(x="Species", y="Sepal Width (cm)", fill="Species", title="Iris Dataset", subtitle ="When specifying align = 1")
-    
-add_tpl_logo_text(plot, align = 1)    
+
+add_tpl_logo_text(plot, align = 1)
 ```
 
 <InlineImage alt="An example of a plot in the TPL theme." src="post/introducing-tpltheme/unnamed-chunk-11-1.png"></InlineImage>
@@ -242,10 +242,10 @@ In the event that the user wishes to drop an axis, they may do so with
 on the user’s input (`drop = "x"`, `drop = "y"`, `drop = "both"`,
 `drop = "neither"`).
 
-Unlike `add_tpl_logo()`, `drop_axis()` should be *added* to an existing
+Unlike `add_tpl_logo()`, `drop_axis()` should be _added_ to an existing
 plot object:
 
-``` r
+```r
 ggplot(iris, aes(x=jitter(Sepal.Width), y=jitter(Sepal.Length), col=Species, size = Petal.Length)) +
     geom_point() +
     labs(x="Sepal Width (cm)", y="Sepal Length (cm)", col="Species", size = "Petal Length", title="Iris Dataset") +
@@ -268,7 +268,7 @@ The function `view_palette` plots base color palettes included in
 `palette_tpl_*` and therefore can be easily autocompleted within
 RStudio.
 
-``` r
+```r
 p1 <- view_palette(palette = palette_tpl_main) + ggtitle("Categorical")
 p2 <- view_palette(palette = palette_tpl_diverging) + ggtitle("Diverging")
 p3 <- view_palette(palette = palette_tpl_sequential) + ggtitle("Sequential")
@@ -287,11 +287,11 @@ variety of colors from <https://coolors.co/> and the TPL website.
 
 In action, the color palette looks like this:
 
-``` r
-normal <- diamonds %>% 
-  group_by(clarity) %>% 
-  summarise(price = mean(price)) %>% 
-  mutate(clarity = forcats::fct_reorder(clarity, price)) %>% 
+```r
+normal <- diamonds %>%
+  group_by(clarity) %>%
+  summarise(price = mean(price)) %>%
+  mutate(clarity = forcats::fct_reorder(clarity, price)) %>%
   ggplot() +
   geom_col(aes(x = clarity, y = price, fill = clarity), show.legend = FALSE) +
   labs(title = "TPL Color Palette",
@@ -319,7 +319,7 @@ The user may specify the color palette in the `scale_fill_*` or
 specify the `palette` (categorical, diverging, sequential) and whether
 the palette should be reversed.
 
-``` r
+```r
 set_tpl_theme(style = "print", font = "lato")
 normal <- ggplot(diamonds) +
   geom_bar(aes(x = cut, fill = clarity)) +
@@ -340,8 +340,8 @@ gridExtra::grid.arrange(normal, reversed, nrow = 1)
 
 <InlineImage alt="An example of a plot in the TPL theme." src="post/introducing-tpltheme/unnamed-chunk-15-1.png"></InlineImage>
 
-``` r
-data <- gapminder::gapminder %>% 
+```r
+data <- gapminder::gapminder %>%
   dplyr::filter(gapminder::gapminder$country %in% c("France", "Germany", "Ireland", "Italy", "Japan", "Norway", "Mexico", "United States")) %>%
   dplyr::mutate(year = as.Date(paste(year, "-01-01", sep = "", format='%Y-%b-%d')))
 
@@ -353,7 +353,7 @@ ggplot(data = data, aes(x = year, y = gdpPercap, fill = country)) +
        subtitle = "Using the TPL Color Palette",
        x = element_blank(),
        y = "GDP Per Capita",
-       fill = "Country") + 
+       fill = "Country") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
@@ -365,13 +365,13 @@ By calling `undo_tpl_theme`, you are able to remove TPL-specific theme
 settings and restores to ggplot defaults (but why would you want to do
 that?).
 
-``` r
+```r
 undo_tpl_theme()
 ```
 
     ## [1] "All TPL defaults were removed and the tpltheme package has been effectively detached from the current environment. To restore TPL defaults, use set_tpl_theme()."
 
-``` r
+```r
 ggplot(iris, aes(x=jitter(Sepal.Width), y=jitter(Sepal.Length), col=Species, size = Petal.Length)) +
     geom_point() +
     labs(x="Sepal Width (cm)", y="Sepal Length (cm)", col="Species", size = "Petal Length", title="Iris Dataset")
@@ -381,7 +381,7 @@ ggplot(iris, aes(x=jitter(Sepal.Width), y=jitter(Sepal.Length), col=Species, siz
 
 To restore the TPL theme, simply call `set_tpl_theme()`:
 
-``` r
+```r
 set_tpl_theme()
 last_plot()
 ```

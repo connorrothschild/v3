@@ -8,19 +8,19 @@ description: How to create dumbbell plots in R, using {ggalt}
 
 <InlineImage alt="A dumbbell plot depicting in-group differences between Republicans and Democrats' worry about the Coronavirus. It shows that Republicans are less worried than Democrats. The question text survey respondents answered is 'How concerned are you that you or someone you know will be infected with the Coronavirus?'" src="post/dumbbell-plots/featured.jpg"></InlineImage>
 
-As of this writing, nearly [6000](https://www.worldometers.info/coronavirus/coronavirus-death-toll/) people have died  of COVID-19 and another [150,000](https://www.worldometers.info/coronavirus/coronavirus-death-toll/) have been infected. All signs seem to show that the virus is only growing.
+As of this writing, nearly [6000](https://www.worldometers.info/coronavirus/coronavirus-death-toll/) people have died of COVID-19 and another [150,000](https://www.worldometers.info/coronavirus/coronavirus-death-toll/) have been infected. All signs seem to show that the virus is only growing.
 
-But some groups are less worried about COVID-19 than others. Recent [polling](https://poll.qu.edu/national/release-detail?ReleaseID=3657#.XmaSrM7okEs.twitter) from Quinnipiac University suggests that worries about the coronavirus are related to one’s partisan identity, age, and race. 
+But some groups are less worried about COVID-19 than others. Recent [polling](https://poll.qu.edu/national/release-detail?ReleaseID=3657#.XmaSrM7okEs.twitter) from Quinnipiac University suggests that worries about the coronavirus are related to one’s partisan identity, age, and race.
 
 Let’s visualize that to see just how stark the differences are. I use dumbbell dot plots because they’re some of the most powerful tools for visualizing differences between two groups (e.g. Republicans and Democrats).
 
 ## Political Affiliation
 
-Republicans tend to be significantly less worried about coronavirus than Democrats. This is true in two regards. First, with respect to *concern for becoming infected*:
+Republicans tend to be significantly less worried about coronavirus than Democrats. This is true in two regards. First, with respect to _concern for becoming infected_:
 
 <InlineImage alt="A dumbbell plot depicting in-group differences between Republicans and Democrats' worry about the Coronavirus. It shows that Republicans are less worried than Democrats. The question text survey respondents answered is 'How concerned are you that you or someone you know will be infected with the Coronavirus?'" src="post/dumbbell-plots/partisan-worry.jpg"></InlineImage>
 
-It’s also true when we look at concern than COVID-19 will *disrupt an individual’s life*:
+It’s also true when we look at concern than COVID-19 will _disrupt an individual’s life_:
 
 <InlineImage alt="A dumbbell plot depicting in-group differences between Republicans and Democrats' worry about the Coronavirus. It shows that Republicans are less worried than Democrats. The question text survey respondents answered is 'How concerned are you that the coronavirus will disrupt your daily life?'" src="post/dumbbell-plots/partisan-disrupt.jpg"></InlineImage>
 
@@ -36,25 +36,23 @@ There is also a relationship between age and fears related to the coronavirus.
 
 <InlineImage alt="A dumbbell plot depicting in-group differences between different age groups' worry about the Coronavirus. It shows that older respondents are more concerned than younger ones. The question text survey respondents answered is 'How concerned are you that you or someone you know will be infected with the Coronavirus?'" src="post/dumbbell-plots/age-worry.jpg"></InlineImage>
 
-These plots show that there are significant differences in worry by age, but that fears of disruption are felt more universally than fears of infection. The first plot shows that *every age group* fears that COVID-19 will disrupt their daily lives; although younger people express this sentiment less frequently. The second plot **the majority of people under age 50 are unconcerned by the prospect of COVID-19 infection**. The opposite is true for older respondents; those aged 65 years and old are **significantly** more likely to be concerned by the risk of infection (62% vs 37%).
-
-
+These plots show that there are significant differences in worry by age, but that fears of disruption are felt more universally than fears of infection. The first plot shows that _every age group_ fears that COVID-19 will disrupt their daily lives; although younger people express this sentiment less frequently. The second plot **the majority of people under age 50 are unconcerned by the prospect of COVID-19 infection**. The opposite is true for older respondents; those aged 65 years and old are **significantly** more likely to be concerned by the risk of infection (62% vs 37%).
 
 ## Why Dumbbell Plots?
 
-Dumbbell plots are an alternative to grouped barcharts. Like barcharts, they show differences between populations and they more powerfully represent the *distances between two groups*. They are frequently used by survey research firms such as the Pew Research Center, as seen in this [example](https://twitter.com/pewresearch/status/1238345807348334593/photo/1): 
+Dumbbell plots are an alternative to grouped barcharts. Like barcharts, they show differences between populations and they more powerfully represent the _distances between two groups_. They are frequently used by survey research firms such as the Pew Research Center, as seen in this [example](https://twitter.com/pewresearch/status/1238345807348334593/photo/1):
 
 <InlineImage alt="A dumbbell plot from the Pew Research Center, showcasing perceived importance of US military bases by the age of the respondent; older folks think overseas bases are more important." src="post/dumbbell-plots/pew.jpg"></InlineImage>
 
-While a barchart would require eight bars to visualize each datapoint above, a dumbbell dot plot shows eight dots *on four lines*, reducing clutter and emphasizing the differences *between groups*. 
+While a barchart would require eight bars to visualize each datapoint above, a dumbbell dot plot shows eight dots _on four lines_, reducing clutter and emphasizing the differences _between groups_.
 
 Here’s another example, this time from [Axios](https://www.axios.com/trumps-disapproval-rate-is-up-in-every-state-2495232720.html?utm_source=twitter&utm_medium=social&utm_campaign=organic&utm_content=infographic&utm_term=politics) (visualizing changes in presidential disapproval between January and October 2017):
 
 <InlineImage alt="A dumbbell plot from Axios, which showcases changes in approval ratings between January and October 2017, by state. Most states have become more disapproving of the President." src="post/dumbbell-plots/axios.jpg"></InlineImage>
 
-This pseudo-dumbbell plot (dumbbells with weird endpoints; don’t pick up that side!) has 50 ‘groups’ (US states), but only two *outcomes* (January and October). A dumbbell plot is *far* superior to a grouped bar chart in this case because it emphasizes the difference is between two periods of time, and it does so with fewer objects (50 lines rather than 100 bars) than a barchart would use. 
+This pseudo-dumbbell plot (dumbbells with weird endpoints; don’t pick up that side!) has 50 ‘groups’ (US states), but only two _outcomes_ (January and October). A dumbbell plot is _far_ superior to a grouped bar chart in this case because it emphasizes the difference is between two periods of time, and it does so with fewer objects (50 lines rather than 100 bars) than a barchart would use.
 
-One key lesson from the examples above: If the *comparison* of interest is between two groups (e.g. Republicans and Democrats), or if the *outcome* of interest is two-fold (e.g. ‘concerned’ and ‘not concerned’), dot plots are a superior way to visualize your data.
+One key lesson from the examples above: If the _comparison_ of interest is between two groups (e.g. Republicans and Democrats), or if the _outcome_ of interest is two-fold (e.g. ‘concerned’ and ‘not concerned’), dot plots are a superior way to visualize your data.
 
 ## Let’s Make It In R!
 
@@ -89,11 +87,11 @@ percent_first <- function(x) {
 
 ### Step 1: Barebones
 
-We begin with a basic `ggplot` object. In `geom_segment`, we define the pseudo-grid lines (one for each ‘level’ of concern). 
+We begin with a basic `ggplot` object. In `geom_segment`, we define the pseudo-grid lines (one for each ‘level’ of concern).
 
 ```r
-library(ggplot2) 
-library(ggalt)   
+library(ggplot2)
+library(ggalt)
 library(tidyverse)
 
 ggplot() +
@@ -105,7 +103,7 @@ Here, `geom_segment` creates grey lines with a size of 0.15. The lines span from
 
 <InlineImage alt="A blank canvas with only plot bounds." src="post/dumbbell-plots/process-0.jpg"></InlineImage>
 
-Then, `geom_dumbbell` reads in our data and creates the dumbbells: we specify the *beginning* (`x`) of each dumbbell to represent Republicans and the *end* (`xend`) to correspond to Democrats. Other specifications affect the accompanying line and points.
+Then, `geom_dumbbell` reads in our data and creates the dumbbells: we specify the _beginning_ (`x`) of each dumbbell to represent Republicans and the _end_ (`xend`) to correspond to Democrats. Other specifications affect the accompanying line and points.
 
 ```r
 geom_dumbbell(data=infected, aes(y=concerned, x=rep, xend=dem),
@@ -131,7 +129,7 @@ geom_text(data=filter(infected, concerned=="Very concerned"),
           color=blue, size=3, vjust=-1.5, fontface="bold", family="Lato") +
 geom_text(data=filter(infected, concerned=="Very concerned"),
           aes(x=rep, y=concerned, label="Republicans"),
-          color=red, size=3, vjust=-1.5, fontface="bold", family="Lato") 
+          color=red, size=3, vjust=-1.5, fontface="bold", family="Lato")
 ```
 
 This code is hopefully quite intuitive. Since we are only showing the labels once, we specify a filter in the `data` argument of `geom_text`. If we instead wanted to show the labels for only the bottom level of concern, we would specify `data=filter(infected, concerned=="Not concerned at all”)`.
@@ -149,18 +147,18 @@ geom_text(data=infected, color=blue, size=2.75, vjust=2.5, family="Lato",
           aes(x=dem, y=concerned, label=percent_first(dem)))
 ```
 
-Here, we utilize the function `percent_first` we defined earlier, because we only want percentages to appear on the first numbers (to reduce clutter). The rest of the labels are just numbers which represent percentages. The syntax here is simple syntax that should be familiar to  `ggplot` users. It creates this output:
+Here, we utilize the function `percent_first` we defined earlier, because we only want percentages to appear on the first numbers (to reduce clutter). The rest of the labels are just numbers which represent percentages. The syntax here is simple syntax that should be familiar to `ggplot` users. It creates this output:
 
 <InlineImage alt="In addition to the prior plot, there are now direct labels for the percent of respondents represented by each point." src="post/dumbbell-plots/process-3.jpg"></InlineImage>
 
 ### Step 3: A Differences Column
 
-Finally, we want to help our viewers see *how stark* the differences between Democrats and Republicans really is. We do so with a differences column.
+Finally, we want to help our viewers see _how stark_ the differences between Democrats and Republicans really is. We do so with a differences column.
 
 ```r
 geom_rect(data=infected, aes(xmin=.5, xmax=.6, ymin=-Inf, ymax=Inf), fill="grey") +
 geom_text(data=infected, aes(label=paste0(diff*100, "%"), y=concerned, x=.55), fontface="bold", size=3, family="Lato") +
-geom_text(data=filter(infected, concerned=="Very concerned"), 
+geom_text(data=filter(infected, concerned=="Very concerned"),
             aes(x=.55, y=concerned, label="Difference"),
             color="black", size=3.1, vjust=-2, fontface="bold", family="Lato") +
 scale_x_continuous(expand=c(0,0), limits=c(0, .625)) +
@@ -177,7 +175,7 @@ Finally, let’s add our title, subtitle, caption, and axis labels:
 
 ```r
 labs(x=NULL, y=NULL, title="Republicans are less worried about COVID-19",
-       subtitle="How concerned are you that you or someone 
+       subtitle="How concerned are you that you or someone
 								 you know will be infected with the coronavirus?",
        caption="Source: Quinnipiac University Poll, March 9, 2020. Q27
 								\n\nDesign: Connor Rothschild")
@@ -210,10 +208,10 @@ After specifying our base `ggplot` theme, `theme_bw`, we use `theme()` to specif
 
 To simplify, the above code:
 
-* Removes grid lines (`panel.grid.major`, `panel.grid.minor`)
-* Removes the panel border (`panel.border`)
-* Removes axis ticks and axis text (`axis.ticks`, `axis.text.x`)
-* Positions the axis plot, subtitle, and caption, and styles them as well (`plot.title`, `plot.title.position`,`plot.subtitle`,`plot.caption`).
+- Removes grid lines (`panel.grid.major`, `panel.grid.minor`)
+- Removes the panel border (`panel.border`)
+- Removes axis ticks and axis text (`axis.ticks`, `axis.text.x`)
+- Positions the axis plot, subtitle, and caption, and styles them as well (`plot.title`, `plot.title.position`,`plot.subtitle`,`plot.caption`).
 
 Our final output:
 
