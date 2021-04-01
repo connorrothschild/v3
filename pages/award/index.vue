@@ -34,6 +34,18 @@ export default {
       awards,
     };
   },
+  head() {
+    return {
+      title: `Awards | Connor Rothschild`,
+      link: [
+        {
+          hid: "canonical",
+          rel: "canonical",
+          href: `https://connorrothschild.com/award/`,
+        },
+      ],
+    };
+  },
 };
 </script>
 

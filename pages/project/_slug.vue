@@ -122,7 +122,7 @@ export default {
   },
   head() {
     return {
-      title: this.project.title,
+      title: `${this.project.title} | Connor Rothschild`,
       meta: [
         ...this.meta,
         {

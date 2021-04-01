@@ -79,7 +79,7 @@ export default {
   },
   head() {
     return {
-      title: this.award.title,
+      title: `${this.award.title} | Connor Rothschild`,
       meta: [
         ...this.meta,
         {

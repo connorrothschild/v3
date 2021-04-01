@@ -35,6 +35,18 @@ export default {
       projects,
     };
   },
+  head() {
+    return {
+      title: `Projects | Connor Rothschild`,
+      link: [
+        {
+          hid: "canonical",
+          rel: "canonical",
+          href: `https://connorrothschild.com/project/`,
+        },
+      ],
+    };
+  },
 };
 </script>
 

@@ -23,12 +23,26 @@
 export default {
   async asyncData({ $content, params }) {
     const posts = await $content("posts", params)
-      // .only(["title", "description", "img", "date", "slug"])
       .sortBy("date", "desc")
       .fetch();
 
+      // If missing parameter, run below
+      // console.log(posts.filter(posts => !posts.img_alt))
+
     return {
       posts,
+    };
+  },
+  head() {
+    return {
+      title: `Posts | Connor Rothschild`,
+      link: [
+        {
+          hid: "canonical",
+          rel: "canonical",
+          href: `https://connorrothschild.com/post/`,
+        },
+      ],
     };
   },
 };
