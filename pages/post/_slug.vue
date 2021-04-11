@@ -2,13 +2,13 @@
   <div>
     <Nav color="is-primary" />
     <article class="section container is-max-tablet mt-6">
-      <h1 class="title has-text-weight-boldest is-size-3 is-size-4-mobile">
+      <h2 class="heading is-size-6 has-text-weight-light">
+        {{ formatDate(post.date) }} | <ReadingTime :content="post"></ReadingTime>
+      </h2>
+      <h1 class="my-3 title has-text-weight-boldest is-size-2 is-size-3-mobile">
         {{ post.title }}
       </h1>
-      <h2 class="subtitle heading is-size-6 has-text-weight-light">
-        {{ formatDate(post.date) }}
-      </h2>
-      <p class="subtitle is-size-5 is-size-6-mobile">
+      <p class="mt-3 is-size-5 is-size-6-mobile">
         {{ post.description }}
       </p>
       <hr />
@@ -126,12 +126,13 @@ export default {
   }
 
   p {
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
+    margin-bottom: 1.25rem;
+    font-size: 1.1rem;
 
-    .nuxt-content p:last-child {
-      margin-bottom: 0;
-    }
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   }
 
   li {
@@ -149,6 +150,12 @@ export default {
       color: $text;
       text-decoration: underline;
     }
+  }
+
+  blockquote {
+    padding: 0 1rem;
+    border-left: 5px solid $text;
+    margin: 1rem;
   }
 }
 // Hover icon link
