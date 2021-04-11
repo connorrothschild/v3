@@ -17,9 +17,8 @@ $text-strong: $white-off; // Applies to titles; text bolded with <strong>
 $semitransparent: #cecece10;
 
 // Primary color
-// $primary: #2b2f3d;
-$secondary: #ffae3a;
-$secondary-off: #e09935;
+$secondary: rgb(46, 201, 151);
+$secondary-bg: rgba($secondary, .1);
 
 // Inverts for text etc.
 $primary-invert: invert($primary);
@@ -53,21 +52,20 @@ $secondary-invert: invert($secondary);
 
 // Better code formatting
 // Code formatting for chunks
-:not(pre) > code[class*="language-"],
 pre[class*="language-"] {
   background: $black-off;
 }
 
 // Inline code chunks
-code {
-  background: $black !important;
+:not(pre) > code {
+  background: $secondary-bg !important;
   color: $secondary !important;
-}
-
-// But don't apply that style to the code blocks
-pre code {
-  background: transparent !important;
-  color: $white !important;
+  padding: 6px 4px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
 }
 
 /* Import the rest of Bulma */

@@ -41,7 +41,7 @@ Great question! It's thankfully not that hard, but the payoff is huge. The shift
 
 The process mostly relies on `d3-tip`, which you can learn more about [here](http://labratrevenge.com/d3-tip/).
 
-You can load `d3-tip`with the following code:
+You can load `d3-tip` with the following code:
 
 ```javascript
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>

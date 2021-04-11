@@ -2,7 +2,7 @@
   <footer class="site-footer">
     <div class="content has-text-centered site-footer-content">
       <p>
-        Built with 🧡 and Nuxt.js by
+        Built with 💚 and Nuxt.js by
         <a
           href="https://twitter.com/CL_Rothschild"
           target="_blank"
