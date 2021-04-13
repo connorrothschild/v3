@@ -129,18 +129,9 @@ export default {
     margin-bottom: 1.25rem;
     font-size: 1.1rem;
 
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  }
-
-  li {
-    list-style: inside !important;
-  }
-
-  .img {
-    padding: 1rem 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   a {
@@ -154,10 +145,32 @@ export default {
 
   blockquote {
     padding: 0 1rem;
-    border-left: 5px solid $text;
+    border-left: 5px solid $secondary;
     margin: 1rem;
   }
+
+  // List styling
+  li {
+    list-style-position: inside !important;
+  }
+
+  ol, ul {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  ul li {
+    list-style-type: circle;
+  }
+
+  // Give a padding to anything that follows an image, except another image
+  // And same for if the image follows anything that is not an image
+  .img + :not(.img),
+  :not(.img) + .img {
+    margin-top: 1rem;
+  }
 }
+
 // Hover icon link
 .icon.icon-link {
   width: 0;
