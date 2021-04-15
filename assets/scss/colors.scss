@@ -58,7 +58,7 @@ pre[class*="language-"] {
 }
 
 // Inline code chunks
-:not(pre)>code {
+code {
   background: $secondary-bg !important;
   color: $secondary !important;
   padding: 6px 4px;
