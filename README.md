@@ -6,16 +6,16 @@ My personal website, built from scratch using Vue/Nuxt.js. This site intends to 
 
 ### Performance
 
-The site receives up to a 99/100 on [Lighthouse tests](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwww.connorrothschild.com%2F) (desktop view). I am still working on mobile optimization, although the site usually receives around 60-80 on mobile tests. Here are some high-level stats (these numbers vary from test to test):
+The site receives a 100/100 on [Lighthouse tests](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwww.connorrothschild.com%2F&tab=desktop) (desktop view). It also hovers around 90/100 on [mobile tests](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwww.connorrothschild.com%2F&tab=mobile). Here are some high-level stats (these numbers vary from test to test):
 
 | Metric                   | Time                                                         |
 | ------------------------ | ------------------------------------------------------------ |
-| First Contentful Paint   | <span style='background: #0CCE6B; padding: 5px; border-radius: 5px; color:white;'>0.5s</span> |
-| Time to Interactive      | <span style='background: #0CCE6B; padding: 5px; border-radius: 5px; color:white;'>1.3s</span> |
-| Speed Index              | <span style='background: #0CCE6B; padding: 5px; border-radius: 5px; color:white;'>1.2s</span> |
-| Total Blocking Time      | <span style='background: #0CCE6B; padding: 5px; border-radius: 5px; color:white;'>70ms</span> |
-| Largest Contentful Paint | <span style='background: #0CCE6B; padding: 5px; border-radius: 5px; color:white;'>0.8s</span> |
-| Cumulative Layout Shift  | <span style='background: #0CCE6B; padding: 5px; border-radius: 5px; color:white;'>0.038</span> |
+| First Contentful Paint   | <span style='background: #0CCE6B; padding: 5px; border-radius: 5px; color:white;'>0.4s</span> |
+| Time to Interactive      | <span style='background: #0CCE6B; padding: 5px; border-radius: 5px; color:white;'>0.6s</span> |
+| Speed Index              | <span style='background: #0CCE6B; padding: 5px; border-radius: 5px; color:white;'>0.4s</span> |
+| Total Blocking Time      | <span style='background: #0CCE6B; padding: 5px; border-radius: 5px; color:white;'>60ms</span> |
+| Largest Contentful Paint | <span style='background: #0CCE6B; padding: 5px; border-radius: 5px; color:white;'>0.7s</span> |
+| Cumulative Layout Shift  | <span style='background: #0CCE6B; padding: 5px; border-radius: 5px; color:white;'>0</span> |
 
 ### Accessibility
 
@@ -43,3 +43,5 @@ To interact with this site, clone this repository and run the following code on 
 npm install
 npm run dev
 ```
+
+Interested in making your own site, based on this one? Cloning this site might cause some headaches because there's a lot going on. Instead, check out my [Nuxt Blog Starter template](https://github.com/connorrothschild/nuxt-blog-starter)!

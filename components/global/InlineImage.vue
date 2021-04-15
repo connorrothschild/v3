@@ -62,14 +62,14 @@ export default {
   methods: {
     imgSrc() {
       try {
-        return require(`~/static/${this.src}?webp`);
+        return require(`~/assets/images/${this.src}?webp`);
       } catch (error) {
         return null;
       }
     },
     imgSrcFallback() {
       try {
-        return require(`~/static/${this.src}`);
+        return require(`~/assets/images/${this.src}`);
       } catch (error) {
         return null;
       }

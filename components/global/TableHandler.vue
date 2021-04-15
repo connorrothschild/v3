@@ -32,7 +32,7 @@ export default {
   methods: {
     imgSrc() {
       try {
-        return require(`~/static/${this.src}`);
+        return require(`~/assets/images/${this.src}`);
       } catch (error) {
         return null;
       }
