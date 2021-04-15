@@ -59,14 +59,8 @@ pre[class*="language-"] {
 
 // Inline code chunks
 code {
-  background: $secondary-bg !important;
+  background: $black !important;
   color: $secondary !important;
-  padding: 6px 4px;
-  border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
 }
 
 // But don't apply that style to the code blocks
