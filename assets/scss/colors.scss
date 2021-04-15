@@ -53,7 +53,14 @@ $secondary-invert: invert($secondary);
 // Better code formatting
 // Code formatting for chunks
 pre[class*="language-"] {
-  background: $black-off;
+  background: $black-off !important;
+}
+
+pre code {
+  background-color: transparent;
+  color: currentColor;
+  font-size: 1em;
+  padding: 0;
 }
 
 // Inline code chunks
