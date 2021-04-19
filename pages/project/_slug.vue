@@ -89,8 +89,17 @@
 
 <script>
 import getSiteMeta from "~/utils/getSiteMeta.js";
+import { TweenMax, Power3 } from "gsap";
 
 export default {
+  transition: {
+    mode: 'out-in',
+    css: false,
+    enter (el, done) {
+      TweenMax.fromTo(".title", {x: "10%"}, {x: "0%" , duration: 0.1});
+      TweenMax.fromTo(".subtitle, .card, .img", {x: "10%", autoAlpha: 0}, {x: "0%", autoAlpha: 1, delay: 0.25, duration: 0.5, ease: Power3.easeOut});
+    },
+  },
   async asyncData({ $content, params }) {
     const project = await $content("projects", params.slug).fetch();
 
@@ -202,20 +211,8 @@ export default {
   p:not(:last-child) {
     margin-bottom: 0.35rem !important;
   }
-
-  // a[href] {
-  // 	background-color: #f03a5f;
-  // 	color: white !important;
-  // 	padding: 3px;
-  // 	border-radius: 3px;
-  // 	text-decoration: none !important;
-  // 	transition: 200ms background-color;
-
-  // 	&:hover {
-  // 		background-color: #363636;
-  // 	}
-  // }
 }
+
 // HOVER ICON LINK
 .icon.icon-link {
   width: 0;

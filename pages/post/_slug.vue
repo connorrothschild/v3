@@ -5,10 +5,10 @@
       <h2 class="heading is-size-6 has-text-weight-light">
         {{ formatDate(post.date) }} | <ReadingTime :content="post"></ReadingTime>
       </h2>
-      <h1 class="my-3 title has-text-weight-boldest is-size-2 is-size-3-mobile">
+      <h1 class="title my-3 has-text-weight-boldest is-size-2 is-size-3-mobile">
         {{ post.title }}
       </h1>
-      <p class="mt-3 is-size-5 is-size-6-mobile">
+      <p class="subtitle mt-3 is-size-5 is-size-6-mobile">
         {{ post.description }}
       </p>
       <hr />
@@ -30,8 +30,17 @@
 
 <script>
 import getSiteMeta from "~/utils/getSiteMeta.js";
+import { TweenMax, Power3 } from "gsap";
 
 export default {
+  transition: {
+    mode: 'out-in',
+    css: false,
+    enter (el, done) {
+      TweenMax.fromTo(".title", {x: "10%"}, {x: "0%" , duration: 0.1});
+      TweenMax.fromTo(".subtitle, .card, .img", {x: "10%", autoAlpha: 0}, {x: "0%", autoAlpha: 1, delay: 0.25, duration: 0.5, ease: Power3.easeOut});
+    },
+  },
   async asyncData({ $content, params }) {
     const post = await $content("posts", params.slug).fetch();
 

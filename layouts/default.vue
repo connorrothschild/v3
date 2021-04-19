@@ -4,7 +4,8 @@
   </div>
 </template>
 
-<script></script>
+<script>
+</script>
 
 <style lang="scss">
 // GLOBAL STYLES!
@@ -16,7 +17,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  scroll-padding-top: 3.3rem;
+  // scroll-padding-top: 3.3rem;
   background: $primary-off !important;
   color: $text !important;
 }
@@ -113,23 +114,26 @@ hr {
 }
 
 // Page transitions
-.page-enter-active,
-.page-leave-active {
-  transition-property: opacity;
-  transition-timing-function: ease-in-out;
-  transition-duration: 250ms;
-}
+// .page-enter-active,
+// .page-leave-active {
+//   transition-property: opacity;
+//   transition-timing-function: ease-in-out;
+//   transition-duration: 250ms;
+// }
 
-.page-enter,
-.page-leave-to {
-  opacity: 0;
-}
+// .page-enter,
+// .page-leave-to {
+//   opacity: 0;
+// }
 
 .link {
   background-image: linear-gradient(to top, $secondary 50%, transparent 50%);
   background-size: 100% 200%;
   background-position: top;
-  transition: all 250ms ease-in-out;
+  transition-property: background-position, color;
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
   color: $text !important;
   border-radius: 2px;
   padding: 0 2px;
