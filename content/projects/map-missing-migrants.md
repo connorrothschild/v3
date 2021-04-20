@@ -1,6 +1,6 @@
 ---
 title: Mapping Missing Migrants
-description: Documenting migrants who have lost their lives while seeking a better life.
+description: Documenting migrants who have lost their lives while seeking refuge.
 date: "2019-10-22"
 audience: "The world!"
 featured: true

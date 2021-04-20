@@ -1,10 +1,12 @@
 <template>
+<!-- If clickable == true, use v-img (below) for gallery view -->
   <div
     v-if="clickable"
     class="img"
     style="display: inline-block"
     :style="{ width: width }"
   >
+  <!-- https://www.joshwcomeau.com/performance/embracing-modern-image-formats/ -->
     <picture>
       <source
         v-img
@@ -23,6 +25,7 @@
       <img v-img :src="imgSrcFallback()" :alt="alt" />
     </picture>
   </div>
+  <!-- If clickable == false, (for images surrounded by <a> tag for example, regular image) -->
   <div
     v-else
     class="img"
