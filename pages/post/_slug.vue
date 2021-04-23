@@ -153,9 +153,10 @@ export default {
   }
 
   blockquote {
-    padding: 0 1rem;
+    padding: 1rem;
     border-left: 5px solid $secondary;
     margin: 1rem;
+    background: $semitransparent;
   }
 
   // List styling

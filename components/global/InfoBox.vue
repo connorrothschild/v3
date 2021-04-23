@@ -1,16 +1,17 @@
 <template>
   <div class="p-4 my-3 info-box">
-    <!-- <img src="~/assets/icons/exclamation.png" alt="Note" /> -->
     <div><slot name="info-box"></slot></div>
   </div>
 </template>
 
 <style scoped lang="scss">
-// img {
-// 	max-width: 30px;
-// 	max-height: 30px;
-// 	margin-right: 1em;
-// }
+
+.info-box::before {
+  content: "❗";
+  font-size: 1.5rem;
+  margin-right: .5rem;
+}
+
 .info-box {
   display: flex;
   place-items: center;
