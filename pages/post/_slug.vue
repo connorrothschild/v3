@@ -210,7 +210,7 @@ export default {
   opacity: 0;
   font-weight: 400;
   font-size: 1.25rem;
-  line-height: 2.05rem;
+  line-height: 2.25rem;
   padding-right: 0.5rem;
   position: absolute;
   transition: 500ms ease opacity;

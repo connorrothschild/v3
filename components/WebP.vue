@@ -10,6 +10,7 @@
         'object-fit-cover': type == 'post',
         'object-fit-scale': type == 'project',
       }"
+      v-bind:style="imgStyle"
     />
     <!-- If not, optimized PNG -->
     <source
@@ -20,6 +21,7 @@
         'object-fit-cover': type == 'post',
         'object-fit-scale': type == 'project',
       }"
+      v-bind:style="imgStyle"
     />
     <!-- If not, regular image -->
     <img
@@ -29,6 +31,7 @@
         'object-fit-cover': type == 'post',
         'object-fit-scale': type == 'project',
       }"
+      v-bind:style="imgStyle"
       loading="lazy"
     />
   </picture>
@@ -50,6 +53,10 @@ export default {
       type: String,
       required: true,
     },
+    imgStyle: {
+      type: String,
+      required: false,
+    }
   },
   methods: {
     imgSrc() {
