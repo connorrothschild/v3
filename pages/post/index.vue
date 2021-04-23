@@ -26,8 +26,8 @@ export default {
       .sortBy("date", "desc")
       .fetch();
 
-      // If missing parameter, run below
-      // console.log(posts.filter(posts => !posts.img_alt))
+    // If missing parameter, run below
+    // console.log(posts.filter(posts => !posts.img_alt))
 
     return {
       posts,

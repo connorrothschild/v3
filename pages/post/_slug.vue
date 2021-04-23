@@ -3,7 +3,8 @@
     <Nav color="is-primary" />
     <article class="section container is-max-tablet mt-6">
       <h2 class="heading is-size-6 has-text-weight-light">
-        {{ formatDate(post.date) }} | <ReadingTime :content="post"></ReadingTime>
+        {{ formatDate(post.date) }} |
+        <ReadingTime :content="post"></ReadingTime>
       </h2>
       <h1 class="title my-3 has-text-weight-boldest is-size-2 is-size-3-mobile">
         {{ post.title }}
@@ -34,11 +35,21 @@ import { TweenMax, Power3 } from "gsap";
 
 export default {
   transition: {
-    mode: 'out-in',
+    mode: "out-in",
     css: false,
-    enter (el, done) {
-      TweenMax.fromTo(".title", {x: "10%"}, {x: "0%" , duration: 0.1});
-      TweenMax.fromTo(".subtitle, .card, .img", {x: "10%", autoAlpha: 0}, {x: "0%", autoAlpha: 1, delay: 0.25, duration: 0.5, ease: Power3.easeOut});
+    enter(el, done) {
+      TweenMax.fromTo(".title", { x: "10%" }, { x: "0%", duration: 0.1 });
+      TweenMax.fromTo(
+        ".subtitle, .card, .img",
+        { x: "10%", autoAlpha: 0 },
+        {
+          x: "0%",
+          autoAlpha: 1,
+          delay: 0.25,
+          duration: 0.5,
+          ease: Power3.easeOut,
+        }
+      );
     },
   },
   async asyncData({ $content, params }) {
@@ -164,7 +175,8 @@ export default {
     list-style-position: inside !important;
   }
 
-  ol, ul {
+  ol,
+  ul {
     margin-left: 1rem;
     margin-bottom: 1rem;
   }
@@ -198,14 +210,16 @@ export default {
   opacity: 0;
   font-weight: 400;
   font-size: 1.25rem;
-  line-height: 1.75rem;
-  line-height: 2rem;
+  line-height: 2.05rem;
   padding-right: 0.5rem;
   position: absolute;
+  transition: 500ms ease opacity;
 }
 
+.nuxt-content h1:hover > a::before,
 .nuxt-content h2:hover > a::before,
-.nuxt-content h3:hover > a::before {
+.nuxt-content h3:hover > a::before,
+.nuxt-content h4:hover > a::before {
   opacity: 1;
 }
 

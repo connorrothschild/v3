@@ -93,11 +93,21 @@ import { TweenMax, Power3 } from "gsap";
 
 export default {
   transition: {
-    mode: 'out-in',
+    mode: "out-in",
     css: false,
-    enter (el, done) {
-      TweenMax.fromTo(".title", {x: "10%"}, {x: "0%" , duration: 0.1});
-      TweenMax.fromTo(".subtitle, .card, .img", {x: "10%", autoAlpha: 0}, {x: "0%", autoAlpha: 1, delay: 0.25, duration: 0.5, ease: Power3.easeOut});
+    enter(el, done) {
+      TweenMax.fromTo(".title", { x: "10%" }, { x: "0%", duration: 0.1 });
+      TweenMax.fromTo(
+        ".subtitle, .card, .img",
+        { x: "10%", autoAlpha: 0 },
+        {
+          x: "0%",
+          autoAlpha: 1,
+          delay: 0.25,
+          duration: 0.5,
+          ease: Power3.easeOut,
+        }
+      );
     },
   },
   async asyncData({ $content, params }) {

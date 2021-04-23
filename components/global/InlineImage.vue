@@ -1,12 +1,12 @@
 <template>
-<!-- If clickable == true, use v-img (below) for gallery view -->
+  <!-- If clickable == true, use v-img (below) for gallery view -->
   <div
     v-if="clickable"
     class="img"
     style="display: inline-block"
     :style="{ width: width }"
   >
-  <!-- https://www.joshwcomeau.com/performance/embracing-modern-image-formats/ -->
+    <!-- https://www.joshwcomeau.com/performance/embracing-modern-image-formats/ -->
     <picture>
       <source
         v-img
