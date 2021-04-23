@@ -134,7 +134,7 @@ export default {
         title: this.project.title,
         description: this.project.description,
         url: `https://connorrothschild.com/project/${this.$route.params.slug}`,
-        mainImage: `https://connorrothschild.com/project/${this.project.img}`,
+        mainImage: `https://connorrothschild.com/project/${this.$route.params.slug}/social.png`,
       };
       return getSiteMeta(metaData);
     },
