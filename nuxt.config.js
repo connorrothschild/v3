@@ -86,8 +86,8 @@ export default {
 	components      : true,
 
 	// Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
-	buildModules    : [ '@aceforth/nuxt-optimized-images', '@nuxtjs/pwa', ],
-
+	buildModules    : [ '@aceforth/nuxt-optimized-images', '@nuxtjs/pwa', 'nuxt-compress' ],
+	  
 	optimizedImages : {
 		optimizeImages : true
 	},
@@ -117,7 +117,10 @@ export default {
 	},
 
 	// Build Configuration (https://go.nuxtjs.dev/config-build)
-	build           : {
+	build: {
+		extractCSS: {
+			allChunks: true
+		},
 		postcss : {
 			preset : {
 				features : {
