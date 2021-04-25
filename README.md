@@ -8,7 +8,7 @@ My personal website, built from scratch using Vue/Nuxt.js. This site intends to 
 
 The site receives a 100/100 on [Lighthouse tests](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwww.connorrothschild.com%2F&tab=desktop) (desktop view). It also hovers around 90/100 on [mobile tests](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwww.connorrothschild.com%2F&tab=mobile). Here are some high-level stats (these numbers vary from test to test):
 
-[![Metrics](https://metrics.lecoq.io/connorrothschild?template=classic&base.header=0&base.activity=0&base.community=0&base.repositories=0&base.metadata=0&pagespeed=1&pagespeed.url=https%3A%2F%2Fwww.connorrothschild.com&pagespeed.detailed=true&pagespeed.screenshot=false&config.timezone=America%2FChicago)](https://web.dev/measure/)
+[![Metrics](https://metrics.lecoq.io/connorrothschild?template=classic&base.header=0&base.activity=0&base.community=0&base.repositories=0&base.metadata=0&pagespeed=1&pagespeed.url=https%3A%2F%2Fwww.connorrothschild.com&pagespeed.detailed=true&pagespeed.screenshot=false&config.timezone=America%2FChicago)](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwww.connorrothschild.com%2F&tab=desktop)
 
 ### Accessibility
 
