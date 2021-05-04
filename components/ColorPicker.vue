@@ -74,8 +74,8 @@ export default {
         document.documentElement.style.setProperty("--text-strong", "#f5f5f5");
       } else if (scheme == "white") {
         document.documentElement.style.setProperty("--base", "white");
-        document.documentElement.style.setProperty("--primary", "#e3e3e3");
-        document.documentElement.style.setProperty("--primary-off", "#d4d4d4");
+        document.documentElement.style.setProperty("--primary", "#d4d4d4");
+        document.documentElement.style.setProperty("--primary-off", "#e3e3e3");
         document.documentElement.style.setProperty("--secondary", "#650202");
         document.documentElement.style.setProperty(
           "--secondary-bg",

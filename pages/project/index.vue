@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="theme-primary-off">
     <Nav color="theme-primary" />
     <div class="fullscreen">
       <article class="section container">
