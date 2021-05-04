@@ -1,7 +1,7 @@
 <template>
   <section
     id="projects"
-    class="hero is-primary is-primary-gradient is-fullheight"
+    class="hero theme-primary theme-primary-gradient is-fullheight"
   >
     <div class="hero-body">
       <div class="container">

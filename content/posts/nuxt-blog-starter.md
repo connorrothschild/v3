@@ -7,7 +7,7 @@ img: nuxt-blog-starter/header.png
 img_alt: Blog post header image
 ---
 
-I'm happy to share a [new starter template](https://github.com/connorrothschild/nuxt-blog-starter) for minimal, content-focused blogs using NuxtJS and Bulma for styling. The site is a more simplified version of [my own site](https://www.connorrothschild.com/). 
+I'm happy to share a [new starter template](https://github.com/connorrothschild/nuxt-blog-starter) for minimal, content-focused blogs using NuxtJS and Bulma for styling. The site is a more simplified version of [my own site](https://www.connorrothschild.com/).
 
 ## Why Nuxt?
 
@@ -32,7 +32,7 @@ Too often, making 'fast' websites comes at the cost of flexibility and power. Fo
 
 I built this template because it is as performant as my V1 site (both receive over 95/100 on [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)), but with much more flexibility. In my experience, modifying the appearance of this site—whether thats through its constituent components in the `components/` folder, or globally in the `assets/scss/colors.scss` file—is seamless while also allowing greater power than modifying the defaults in other, simpler blog templates.
 
-Moreover, this kind of flexibility scales up with your knowledge of Vue and Nuxt. If you are already familiar with the technologies, this template should be ready for total transformation through whatever modifications you find necessary. Otherwise, all you need to do is follow the simple instructions in the template's [README](https://github.com/connorrothschild/nuxt-blog-starter). To test this, I've helped a non-technical friend build out his [own website](https://dyllonschmehl.netlify.app/) from this theme, and seen firsthand how intuitive getting started can really be. 
+Moreover, this kind of flexibility scales up with your knowledge of Vue and Nuxt. If you are already familiar with the technologies, this template should be ready for total transformation through whatever modifications you find necessary. Otherwise, all you need to do is follow the simple instructions in the template's [README](https://github.com/connorrothschild/nuxt-blog-starter). To test this, I've helped a non-technical friend build out his [own website](https://dyllonschmehl.netlify.app/) from this theme, and seen firsthand how intuitive getting started can really be.
 
 #### 3. Learning new tech
 
@@ -69,8 +69,8 @@ transition: {
     css: false,
     enter () {
         TweenMax.fromTo(".title", {x: "10%"}, {x: "0%" , duration: 0.1});
-        TweenMax.fromTo(".subtitle, .card, .img", 
-                            {x: "10%", autoAlpha: 0}, 
+        TweenMax.fromTo(".subtitle, .card, .img",
+                            {x: "10%", autoAlpha: 0},
                             {x: "0%", autoAlpha: 1, delay: 0.25, duration: 0.5, ease: Power3.easeOut}
                         );
     },
@@ -85,7 +85,7 @@ You can modify these transitions by adding and removing elements in the CSS sele
 
 ### Meta tags/SEO
 
-The function `getSiteMeta()`, found in the `utils/` folder, allows for different meta tags for each page and for each blog post. The function allows the Twitter Cards for my home page and for a blog post to look different, like this: 
+The function `getSiteMeta()`, found in the `utils/` folder, allows for different meta tags for each page and for each blog post. The function allows the Twitter Cards for my home page and for a blog post to look different, like this:
 
 <InlineImage src="post/nuxt-blog-starter/home-card.png" alt="Twitter card of homepage" width="47.2%"></InlineImage>
 <InlineImage src="post/nuxt-blog-starter/blog-card.png" alt="Twitter card of blog post page" width="50%"></InlineImage>
@@ -112,12 +112,12 @@ Info boxes look like this!
 
 ### Images
 
-**[`InlineImage.vue`](https://github.com/connorrothschild/nuxt-blog-starter/blob/master/components/global/InlineImage.vue)** optimizes and handles the messy parts of images. 
+**[`InlineImage.vue`](https://github.com/connorrothschild/nuxt-blog-starter/blob/master/components/global/InlineImage.vue)** optimizes and handles the messy parts of images.
 
 In specific, it:
 
-* Allows for fullscreen, gallery views via [`v-img`](https://github.com/crowdbotics/v-img).
-* Optimizes images with [`nuxt-optimized-images`](https://github.com/juliomrqz/nuxt-optimized-images).
+- Allows for fullscreen, gallery views via [`v-img`](https://github.com/crowdbotics/v-img).
+- Optimizes images with [`nuxt-optimized-images`](https://github.com/juliomrqz/nuxt-optimized-images).
 
 ### Videos
 

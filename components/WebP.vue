@@ -56,7 +56,7 @@ export default {
     imgStyle: {
       type: String,
       required: false,
-    }
+    },
   },
   methods: {
     imgSrc() {

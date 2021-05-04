@@ -32,15 +32,15 @@ export default {
 
 <style lang="scss" scoped>
 .site-footer {
-  background: $primary;
-  color: $text;
+  background: var(--primary);
+  color: var(--text);
   padding: 2rem 1.5rem;
 }
 
 a {
-  color: $text;
+  color: var(--text);
   &:hover {
-    color: $secondary;
+    color: var(--secondary);
   }
 }
 </style>

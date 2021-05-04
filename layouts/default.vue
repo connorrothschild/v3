@@ -17,8 +17,8 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   // scroll-padding-top: 3.3rem;
-  background: $primary-off !important;
-  color: $text !important;
+  background: var(--primary-off) !important;
+  color: var(--text) !important;
 }
 
 *,
@@ -29,45 +29,64 @@ html {
 }
 
 a {
-  color: $secondary !important;
+  color: var(--secondary) !important;
 
   &:hover {
-    color: $text-strong !important;
+    color: var(--text-strong) !important;
   }
 }
 
 hr {
-  background-color: $primary-invert !important;
+  background-color: var(--secondary) !important;
   opacity: 0.3;
   height: 1px !important;
 }
 
 .has-text-secondary {
-  color: $secondary !important;
+  color: var(--secondary) !important;
 }
 
-.is-primary {
-  background: $primary;
-  color: $text !important;
+.theme-primary-off {
+  background: var(--primary-off) !important;
+}
+
+.theme-primary {
+  background: var(--primary) !important;
+}
+
+.theme-primary-off,
+.theme-primary {
+  color: var(--text) !important;
+  transition: all 1s ease;
 
   .title,
-  .subtitle {
-    color: $text-strong !important;
+  .subtitle,
+  #text,
+  strong {
+    color: var(--text-strong) !important;
   }
 }
 
-.is-primary-gradient {
-  @extend .is-primary;
-  background-image: linear-gradient(0deg, black 0%, $primary 100%);
+.theme-primary-gradient {
+  @extend .theme-primary;
+  background-image: linear-gradient(
+    0deg,
+    var(--base) 0%,
+    var(--primary) 100%
+  ) !important;
 }
 
-.is-primary-gradient-rev {
-  @extend .is-primary;
-  background-image: linear-gradient(0deg, $primary 0%, black 100%);
+.theme-primary-gradient-rev {
+  @extend .theme-primary;
+  background-image: linear-gradient(
+    0deg,
+    var(--primary) 0%,
+    var(--base) 100%
+  ) !important;
 }
 
 .has-underline-secondary {
-  border-bottom: 2px solid $secondary;
+  border-bottom: 2px solid var(--secondary);
 }
 
 .object-fit-scale {
@@ -126,23 +145,27 @@ hr {
 // }
 
 .link {
-  background-image: linear-gradient(to top, $secondary 50%, transparent 50%);
+  background-image: linear-gradient(
+    to top,
+    var(--secondary) 50%,
+    transparent 50%
+  );
   background-size: 100% 200%;
   background-position: top;
   transition-property: background-position, color;
   transition-duration: 250ms;
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
-  color: $text !important;
+  color: var(--text) !important;
   border-radius: 2px;
   padding: 0 2px;
 
-  border-bottom: 2px solid $secondary;
+  border-bottom: 2px solid var(--secondary);
 
   &:hover {
     background-position: bottom;
     cursor: pointer;
-    color: $primary !important;
+    color: var(--primary) !important;
   }
 }
 
@@ -159,7 +182,7 @@ hr {
 }
 
 .has-background-semitransparent {
-  background: $semitransparent !important;
+  background: var(--semitransparent) !important;
 
   p,
   h1,
@@ -168,7 +191,7 @@ hr {
   h4,
   h5,
   h6 {
-    color: $text !important;
+    color: var(--text) !important;
   }
 }
 

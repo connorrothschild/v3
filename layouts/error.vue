@@ -37,8 +37,8 @@ export default {
   justify-content: space-between;
   place-content: center;
 
-  background-color: $primary !important;
-  color: $text !important;
+  background-color: var(--primary) !important;
+  color: var(--text) !important;
 
   .error-body {
     max-width: 968px;
@@ -48,7 +48,7 @@ export default {
     flex-direction: column;
 
     a {
-      // color: $text;
+      // color: var(--text);
       font-weight: bold;
       font-size: 1.5rem;
     }

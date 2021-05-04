@@ -16,11 +16,11 @@
   place-items: center;
   border-radius: 10px;
   font-weight: normal;
-  background: $semitransparent;
-  box-shadow: 2px 2px 5px 1px $primary-off;
+  background: var(--semitransparent);
+  box-shadow: 2px 2px 5px 1px var(--primary-off);
 
   p:not(:last-of-type) {
-    color: $text;
+    color: var(--text);
     margin-bottom: 1rem;
   }
 }

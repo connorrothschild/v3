@@ -1,5 +1,5 @@
 <template>
-  <section class="hero is-primary is-fullheight">
+  <section class="hero theme-primary is-fullheight">
     <div class="hero-body">
       <div class="is-flex responsive-flex prevent-shifting">
         <div class="half-flex responsive-margin">
@@ -32,6 +32,7 @@
               >
                 Blog
               </NuxtLink>
+              <div class="color-container"><ColorPicker /></div>
             </div>
           </div>
         </div>
@@ -61,7 +62,6 @@
               <img
                 src="~assets/images/me.jpg"
                 alt="An image of Connor Rothschild"
-                type="post"
                 class="me"
                 @click="showAbout = !showAbout"
               />
@@ -153,14 +153,41 @@ p,
 span,
 a {
   &::selection {
-    background: $text;
-    color: $primary;
+    background: var(--text);
+    color: var(--primary);
   }
 }
 
 .is-semitransparent {
-  background: $semitransparent;
-  color: $text !important;
+  background: var(--semitransparent);
+  color: var(--text) !important;
   border: none;
+}
+
+.hero {
+  background: var(--primary);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  align-content: center;
+  align-items: stretch;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-body {
+  flex-grow: 1;
+  flex-shrink: 0;
+  padding: 3rem 1.5rem;
+  align-items: center;
+  display: flex;
+}
+
+.color-container {
+  margin-left: 6px;
+
+  @media screen and (max-width: 386px) {
+    margin-top: 6px;
+  }
 }
 </style>

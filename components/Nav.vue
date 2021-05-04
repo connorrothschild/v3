@@ -27,6 +27,9 @@
 
     <div id="navbarID" class="navbar-menu" :class="{ 'is-active': isVisible }">
       <div class="navbar-end">
+        <div class="navbar-item">
+          <ColorPicker />
+        </div>
         <NuxtLink class="navbar-item" :to="{ path: '/', hash: '#projects' }">
           Projects
         </NuxtLink>
@@ -77,28 +80,28 @@ export default {
   }
 }
 
-.navbar.is-primary * {
-  color: $text !important;
+.navbar.theme-primary * {
+  color: var(--text) !important;
 }
 
-.is-primary {
-  background-color: $primary;
+.theme-primary {
+  background-color: var(--primary);
   .navbar-item {
     &:hover,
     &:focus,
     .is-active {
-      background-color: $primary-off;
+      background-color: var(--primary-off);
     }
   }
 }
 
-.is-primary-off {
-  background-color: $primary-off;
+.theme-primary-off {
+  background-color: var(--primary-off);
   .navbar-item {
     &:hover,
     &:focus,
     .is-active {
-      background-color: $primary;
+      background-color: var(--primary);
     }
   }
 }

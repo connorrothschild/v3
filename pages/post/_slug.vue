@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <Nav color="is-primary" />
+  <div class="theme-primary-off">
+    <Nav color="theme-primary" />
     <article class="section container is-max-tablet mt-6">
       <h2 class="heading is-size-6 has-text-weight-light">
         {{ formatDate(post.date) }} |
@@ -155,19 +155,19 @@ export default {
   }
 
   a {
-    color: $secondary;
+    color: var(--secondary);
 
     &:hover {
-      color: $text;
+      color: var(--text);
       text-decoration: underline;
     }
   }
 
   blockquote {
     padding: 1rem;
-    border-left: 5px solid $secondary;
+    border-left: 5px solid var(--secondary);
     margin: 1rem;
-    background: $semitransparent;
+    background: var(--semitransparent);
   }
 
   // List styling
@@ -206,7 +206,7 @@ export default {
   display: block;
   float: left;
   margin-left: -1.25rem;
-  color: $text;
+  color: var(--text);
   opacity: 0;
   font-weight: 400;
   font-size: 1.25rem;
@@ -234,11 +234,11 @@ table {
   @extend .is-fullwidth;
   @extend .is-hoverable;
 
-  background: $primary;
-  color: $text;
+  background: var(--primary);
+  color: var(--text);
 
   tr:hover {
-    background-color: $primary-off !important;
+    background-color: var(--primary-off) !important;
   }
 }
 </style>

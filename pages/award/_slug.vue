@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <Nav color="is-primary" />
+  <div class="theme-primary-off">
+    <Nav color="theme-primary" />
     <article
       class="section container is-max-desktop mt-6"
       style="min-height: 82.5vh"

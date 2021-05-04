@@ -1,7 +1,7 @@
 <template>
   <section
     id="awards"
-    class="hero is-primary is-primary-gradient-rev is-fullheight"
+    class="hero theme-primary theme-primary-gradient-rev is-fullheight"
   >
     <div class="hero-body">
       <div class="container">

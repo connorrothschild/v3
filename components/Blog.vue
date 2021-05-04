@@ -1,5 +1,8 @@
 <template>
-  <section id="blog" class="hero is-primary is-primary-gradient is-fullheight">
+  <section
+    id="blog"
+    class="hero theme-primary theme-primary-gradient is-fullheight"
+  >
     <div class="hero-body">
       <div class="container">
         <!-- TITLE -->

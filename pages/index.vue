@@ -1,6 +1,6 @@
 <template>
   <div class="main-body">
-    <Nav color="is-primary" />
+    <Nav color="theme-primary" />
     <Hero />
     <Projects :projects="projects" :featured="featuredProject[0]" />
     <Awards :awards="awards" />
@@ -65,8 +65,8 @@ export default {
 
 <style lang="scss" scoped>
 body {
-  color: $text;
-  background: $primary-off;
+  color: var(--text);
+  background: var(--primary-off);
 }
 
 section {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Nav color="is-primary" />
+    <Nav color="theme-primary" />
     <div class="fullscreen">
       <article class="section container">
         <!-- TITLE -->

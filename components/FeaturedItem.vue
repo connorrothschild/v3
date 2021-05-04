@@ -13,7 +13,12 @@
     </div>
     <div class="half-flex">
       <HoverableCard :to="{ path: `/${type}/${slug}` }">
-        <WebP :src="`${type}/${img}`" :alt="img_alt" :type="type" imgStyle="border-radius: 5px;"/>
+        <WebP
+          :src="`${type}/${img}`"
+          :alt="img_alt"
+          :type="type"
+          imgStyle="border-radius: 5px;"
+        />
       </HoverableCard>
     </div>
   </div>
