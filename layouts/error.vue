@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class='theme-primary'>
     <div class="error-page">
       <div class="error-body" v-if="error.statusCode === 404">
         <h1 class="title">Hey there! This page doesn't exist.</h1>
@@ -7,7 +7,7 @@
           Don't worry, this is my problem, not yours. The link you followed is
           probably from a former version of my website.
         </p>
-        <p class="is-size-5 has-text-light has-text-weight-light">
+        <p class="is-size-5 has-text-light has-text-weight-light mt-2">
           While you're here, why don't you check out the rest of my site?
         </p>
         <hr />
@@ -34,7 +34,6 @@ export default {
   align-items: stretch;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   place-content: center;
 
   background-color: var(--primary) !important;
@@ -43,12 +42,9 @@ export default {
   .error-body {
     max-width: 968px;
     margin: 0 auto;
-    padding: auto 1rem;
-    display: flex;
-    flex-direction: column;
+    padding: 0 2rem;
 
     a {
-      // color: var(--text);
       font-weight: bold;
       font-size: 1.5rem;
     }
