@@ -591,4 +591,4 @@ div(
 
 ---
 
-Thanks for reading. You can find the code that creates the tables and graphics for this post [on GitHub](https://github.com/connorrothschild/connorrothschild.com/tree/master/content/post/covid-on-campus/index.Rmd). As always, feel free to message me on [Twitter](https://twitter.com/CL_Rothschild) with any questions, comments, or just to say hi 🙂
+Thanks for reading. You can find the code that creates the tables and graphics for this post [on GitHub](https://github.com/connorrothschild/v2/tree/master/content/post/covid-on-campus/index.Rmd). As always, feel free to message me on [Twitter](https://twitter.com/CL_Rothschild) with any questions, comments, or just to say hi 🙂
