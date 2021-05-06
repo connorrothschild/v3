@@ -2,7 +2,7 @@
 title: Honorable Mention, RStudio Table Contest
 organization: RStudio, Inc.
 date: "2021-01-06"
-featured: true
+featured: false
 media_url: "https://blog.rstudio.com/2020/12/23/winners-of-the-2020-rstudio-table-contest/"
 project_url: "https://connorrothschild.github.io/v2/post/economist-table-replication-using-reactable"
 ---

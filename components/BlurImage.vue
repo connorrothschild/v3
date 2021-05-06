@@ -1,10 +1,13 @@
 <template>
-  <!-- https://marquez.co/docs/nuxt-optimized-images/usage -->
-    <v-lazy-image 
-    :src="imgSrc()" :alt="alt" :style="imgStyle" :class="{
-        'object-fit-cover': type == 'post',
-        'object-fit-scale': type == 'project',
-      }"/>
+  <v-lazy-image
+    :src="imgSrc()"
+    :alt="alt"
+    :style="imgStyle"
+    :class="{
+      'object-fit-cover': type == 'post',
+      'object-fit-scale': type == 'project',
+    }"
+  />
 </template>
 
 <script>

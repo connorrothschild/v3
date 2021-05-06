@@ -1,5 +1,5 @@
 <template>
-  <div class='theme-primary'>
+  <div class="theme-primary">
     <div class="error-page">
       <div class="error-body" v-if="error.statusCode === 404">
         <h1 class="title">Hey there! This page doesn't exist.</h1>
