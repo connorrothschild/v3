@@ -5,7 +5,7 @@
         <article class="card card-fullheight has-background-semitransparent">
           <div class="card-image" v-if="next.img">
             <figure class="image is-2by1">
-              <WebP
+              <BlurImage
                 :src="`${type}/${next.img}`"
                 :alt="next.img_alt"
                 :type="type"
@@ -31,7 +31,7 @@
         <article class="card card-fullheight has-background-semitransparent">
           <div class="card-image" v-if="prev.img">
             <figure class="image is-2by1">
-              <WebP
+              <BlurImage
                 :src="`${type}/${prev.img}`"
                 :alt="prev.img_alt"
                 :type="type"

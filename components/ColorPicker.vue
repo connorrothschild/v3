@@ -41,8 +41,8 @@ export default {
         this.currentScheme = scheme;
       } else if (scheme == "red") {
         document.documentElement.style.setProperty("--base", "black");
-        document.documentElement.style.setProperty("--primary", "#1f0000");
-        document.documentElement.style.setProperty("--primary-off", "#140000");
+        document.documentElement.style.setProperty("--primary", "#540000");
+        document.documentElement.style.setProperty("--primary-off", "#300000");
         document.documentElement.style.setProperty("--secondary", "#d99f00");
         document.documentElement.style.setProperty(
           "--secondary-bg",

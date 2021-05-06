@@ -4,7 +4,7 @@
       <div class="card card-fullheight" :class="background">
         <div class="card-image">
           <figure class="image is-2by1">
-            <WebP :src="`project/${img}`" :alt="img_alt" type="project" />
+            <BlurImage :src="`project/${img}`" :alt="img_alt" type="project" />
           </figure>
         </div>
         <div class="card-content">
@@ -25,10 +25,10 @@
 
 <script>
 import HoverableCard from "./HoverableCard.vue";
-import WebP from "./WebP.vue";
+import BlurImage from "./BlurImage.vue";
 
 export default {
-  components: { HoverableCard, WebP },
+  components: { HoverableCard, BlurImage },
   props: [
     "title",
     "description",

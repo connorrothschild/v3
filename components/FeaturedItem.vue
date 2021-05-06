@@ -13,7 +13,7 @@
     </div>
     <div class="half-flex">
       <HoverableCard :to="{ path: `/${type}/${slug}` }">
-        <WebP
+        <BlurImage
           :src="`${type}/${img}`"
           :alt="img_alt"
           :type="type"
@@ -25,10 +25,10 @@
 </template>
 
 <script>
-import WebP from "./WebP.vue";
+import BlurImage from "./BlurImage.vue";
 
 export default {
-  components: { WebP },
+  components: { BlurImage },
   props: [
     "title",
     "description",
