@@ -240,5 +240,9 @@ table {
   tr:hover {
     background-color: var(--primary-off) !important;
   }
+
+  thead th {
+    color: var(--text-strong);
+  }
 }
 </style>
