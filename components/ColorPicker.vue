@@ -104,7 +104,7 @@ export default {
 <style lang="scss" scoped>
 .themepicker__btn {
   cursor: pointer;
-  user-select: none;  
+  user-select: none;
   transition: scale 500ms linear;
 
   &:hover {

@@ -188,7 +188,7 @@ a {
 .color-container {
   margin-left: 6px;
   animation: wiggle 2.5s infinite;
-  
+
   &:hover {
     animation: none;
   }
@@ -196,13 +196,23 @@ a {
   @media screen and (max-width: 386px) {
     margin-top: 6px;
   }
-  }
+}
 
 @keyframes wiggle {
-    0% { transform: rotate(0deg); }
-   80% { transform: rotate(0deg); }
-   85% { transform: rotate(5deg); }
-   95% { transform: rotate(-5deg); }
-  100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(0deg);
+  }
+  85% {
+    transform: rotate(5deg);
+  }
+  95% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 </style>

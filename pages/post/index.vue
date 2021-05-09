@@ -23,6 +23,7 @@
 export default {
   async asyncData({ $content, params }) {
     const posts = await $content("posts", params)
+      .where({ draft: { $ne: true } }) // Draft posts have no title, exclude them
       .sortBy("date", "desc")
       .fetch();
 
