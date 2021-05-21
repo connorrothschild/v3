@@ -56,6 +56,7 @@ export default {
     const post = await $content("posts", params.slug).fetch();
 
     const [prev, next] = await $content("posts")
+      .where({ draft: { $ne: true } }) // Exclude where draft != true
       .only(["title", "slug", "img", "img_alt"])
       .sortBy("date", "asc")
       .surround(params.slug)

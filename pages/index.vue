@@ -69,8 +69,8 @@ body {
   background: var(--primary-off);
 }
 
-section {
-  content-visibility: auto;
-  content-intrinsic-size: 0 100vh;
-}
+// section {
+//   content-visibility: auto;
+//   content-intrinsic-size: 0 100vh;
+// }
 </style>

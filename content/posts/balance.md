@@ -8,6 +8,10 @@ featured: false
 draft: true
 ---
 
+https://angel.co/blog/over-60-of-employees-are-happy-at-startups-far-outpacing-faang-and-msft
+https://www.bizjournals.com/sanjose/news/2019/10/17/best-faang-companies-to-work-for-vs-startups.html
+https://ed.stanford.edu/news/stanford-education-study-provides-new-evidence-big-fish-little-pond-effect-students-globally
+
 I graduated college last week. I've been thinking about what it means for a new graduate to find a career that they find *fulfilling*. In my view of things, it seems as if new grads' plans fall into one of a few categories. You can usually split up these paths by degree focus.
 
 **Non-technical graduates**:
@@ -28,9 +32,18 @@ When they do choose, there's not much enthusiasm—it's a tradeoff. These bigger
 
 I'm writing about *taking the risk*—doing the "something else" that isn't McKinsey or Microsoft. There's value in the something else, and I hope I can encourage you it's more than consolation, it's a career.
 
-## Work is the most important thing we do
+<info-box>
+  <template #info-box>
 
-Work is the most important thing we do. Not in the late-capitalism/workaholic-father type of way, but in the sense that you spend the majority of your day doing it. Every (week)day, you spend between 8 and 10 hours on work, and so you *cannot overstate* how important work is. If we dislike our work, we 
+Please note that I'm not dunking on my friends who take these impressive jobs, but instead writing to people who are doing something else, whether by their own choice or not. Microsoft friends, I love you <3
+
+  </template>
+</info-box>
+
+
+## Establishing the stakes
+
+**Work is the most important thing we do.** Not in the late-capitalism/workaholic-father type of way, but in the sense that you spend the majority of your day doing it. Every (week)day, you spend between 8 and 10 hours on work, and so you *cannot overstate* how important work is. If you dislike your work, you're unlikely to enjoy your life.  All this to say, make the decisions you make about work *intentionally* and not because of pressure, prestige, or anything else.
 
 ## Big/little fish/pond
 
@@ -40,7 +53,7 @@ Cog in the machine vs. running the machine yourself.
 
 Taking a job at a big tech or big consulting company means you're subject to their structure. More often than not, the organizations have narrowly defined roles due to their massive size. As such, you assume whatever role they give you, with perhaps a little wiggle room. Some like this scope of work. For others, it can be stifling. It can come at the expense of your creativity and feel as if you have little room to grow.
 
-The "something else" jobs, by contrast, are probably more variegated. To feel fulfilled, I think a job needs two things: 1) work that is *in line with your passions*, and 2) work that is *commensurate to your capacity*.
+The "something else" jobs, by contrast, are probably more variegated. To feel fulfilled, I think a job needs two things: 1) work that is *in line with your passions*, and 2) work that is *commensurate with your capacity*.
 
 #### Passion
 
@@ -56,15 +69,17 @@ The problem is, big consulting and big tech companies **necessarily** constrain 
 
 As an incoming entry-level employee at Microsoft, you join 144,000 other employees. The organization is structured hierarchically, and you assume the role that you're given. Is there some level of matching at play? Definitely. But are you able to apply yourself as you would in a personal project, or as you could in a smaller, less rigid organization? Definitely not. 
 
-As an incoming entry-level employee at McKinsey, you join 30,000 other employees. Your job infamously requires you to travel often, sit through countless meetings, and work long hours. My peers in these positions joke about how their job responsibilities are 1) sending emails, 2) sitting through meetings, and 3) designing PowerPoints.
+As an incoming entry-level employee at McKinsey, share a similar experience. Your job infamously requires you to travel often, sit through countless meetings, and work long hours. Peers in these positions joke about how their job responsibilities are 1) sending emails, 2) sitting through meetings, and 3) designing PowerPoints.
 
-Your capacity, skills, and competence can be understood as this:
+In both of these contexts, you have this much capacity and competence:
 
 <progress style="width: 80%;" value="100" max="100"></progress>
 
-But larger companies hire you *so that you can do this*:
+But larger companies hire you *so that you can exercise this much of it*:
 
 <progress style="width: 80%;" value="30" max="100"></progress>
+
+To make matters worse, we start working in these rigid organizations right after we graduate, which (for most people) is the *most exhilarating, unique, and stimulting experience of our lives*. We're familiar with challenging work (often too challenging), and so the contrast between college and work becomes even more stark. 
 
 ## Conclusion
 
