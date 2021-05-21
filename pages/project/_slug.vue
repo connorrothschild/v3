@@ -24,13 +24,12 @@
             </div>
             <footer class="card-footer">
               <a
-                class="card-footer-item"
+                class="card-footer-item has-text-weight-bold"
                 v-if="project.github"
                 :href="project.github"
                 target="_blank"
                 rel="noopener noreferrer"
-                ><span class="has-text-weight-bold">GitHub Repository</span></a
-              >
+                >GitHub Repository</a>
               <p v-else class="card-footer-item">
                 Code is not publicly available 😢
               </p>
@@ -217,23 +216,12 @@ export default {
   margin-bottom: 0;
 }
 
-.my-tiles {
-  p:not(:last-child) {
-    margin-bottom: 0.35rem !important;
-  }
-}
-
 // HOVER ICON LINK
 .icon.icon-link {
   width: 0;
 }
 
-.card-footer-item {
-  color: var(--text) !important;
-
-  &:hover {
-    color: var(--secondary) !important;
-    text-decoration: underline;
-  }
+.card-footer {
+  border-top: 1px solid var(--text);
 }
 </style>

@@ -156,11 +156,24 @@ export default {
   }
 
   a {
-    color: var(--secondary);
+
+  display: inline-block;
+    &:after {
+      color: var(--secondary);
+      text-decoration: none;
+      display: block;
+      content: '';
+      border-bottom: solid 1px var(--secondary);
+      transform: scaleX(0);  
+      transition: transform 250ms ease-in-out;
+    }
 
     &:hover {
-      color: var(--text);
-      text-decoration: underline;
+      color: var(--secondary) !important;
+     
+     &:after {
+      transform: scaleX(1);
+      }
     }
   }
 

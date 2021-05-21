@@ -66,11 +66,24 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.navbar {
+  // border-bottom: 3px solid var(--primary-off);
+  box-shadow: 1px 1px 3px 1px var(--primary-off);
+}
+
+.navbar-menu {
+  padding: 1rem 0;
+  background: transparent;
+}
+
 .navbar-end {
+  overflow-x: hidden;
+
   .navbar-item {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 0.8rem;
+    text-align: center;
   }
 }
 
@@ -104,9 +117,5 @@ export default {
       background-color: var(--primary);
     }
   }
-}
-
-.navbar-menu {
-  background: transparent;
 }
 </style>
