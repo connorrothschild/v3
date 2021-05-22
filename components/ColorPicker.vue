@@ -117,8 +117,8 @@ export default {
 
 .themepicker__swatch {
   display: inline-block;
-  width: 1.2em;
-  height: 1.2em;
+  width: 1em;
+  height: 1em;
   border-radius: 50%;
   box-shadow: 0 0 0 1px var(--text); // 1px 1px 6px 1px #cecece;
 

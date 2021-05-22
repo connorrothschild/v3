@@ -6,8 +6,8 @@
     aria-label="main navigation"
   >
     <div class="navbar-brand">
-      <NuxtLink class="navbar-item" to="/">
-        <span class="has-text-weight-boldest">Connor Rothschild</span>
+      <NuxtLink class="navbar-item has-text-weight-boldest" to="/"
+        >Connor Rothschild
       </NuxtLink>
 
       <a
@@ -66,13 +66,37 @@ export default {
 </script>
 
 <style scoped lang="scss">
+// .navbar.theme-primary * {
+//   color: var(--text);
+// }
+
+.theme-primary {
+  background-color: var(--primary);
+  .navbar-item {
+    &:hover,
+    &:focus,
+    .is-active {
+      background-color: var(--primary);
+    }
+  }
+}
+
+.theme-primary-off {
+  background-color: var(--primary-off);
+  .navbar-item {
+    &:hover,
+    &:focus,
+    .is-active {
+      background-color: var(--primary-off);
+    }
+  }
+}
+
 .navbar {
-  // border-bottom: 3px solid var(--primary-off);
   box-shadow: 1px 1px 3px 1px var(--primary-off);
 }
 
 .navbar-menu {
-  padding: 1rem 0;
   background: transparent;
 }
 
@@ -93,29 +117,12 @@ export default {
   }
 }
 
-.navbar.theme-primary * {
+.navbar a {
   color: var(--text) !important;
-}
+  transition: color 250ms ease-in-out;
 
-.theme-primary {
-  background-color: var(--primary);
-  .navbar-item {
-    &:hover,
-    &:focus,
-    .is-active {
-      background-color: var(--primary-off);
-    }
-  }
-}
-
-.theme-primary-off {
-  background-color: var(--primary-off);
-  .navbar-item {
-    &:hover,
-    &:focus,
-    .is-active {
-      background-color: var(--primary);
-    }
+  &:hover {
+    color: var(--secondary) !important;
   }
 }
 </style>
