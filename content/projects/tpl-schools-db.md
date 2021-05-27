@@ -1,8 +1,8 @@
 ---
 title: Texas School District COVID-19 Monitoring Dashboard
-description: 
+description: Informing data-driven decisions about school reopenings.
 date: "2021-05-05"
-audience: "Texas policymakers"
+audience: "Texas policymakers, parents"
 featured: false
 img: tpl-schools-db/thumbnail.png
 img_alt: "TPL header image, includes an image of a MacBook with the application open."

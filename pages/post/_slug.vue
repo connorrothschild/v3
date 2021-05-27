@@ -1,32 +1,32 @@
 <template>
-  <div class="theme-primary-off">
-    <Nav color="theme-primary" />
-    <article class="section container is-max-tablet mt-6">
-      <h2 class="heading is-size-6 has-text-weight-light">
-        {{ formatDate(post.date) }} |
-        <ReadingTime :content="post"></ReadingTime>
-      </h2>
-      <h1 class="title my-3 has-text-weight-boldest is-size-2 is-size-3-mobile">
-        {{ post.title }}
-      </h1>
-      <p class="subtitle mt-3 is-size-5 is-size-6-mobile">
-        {{ post.description }}
-      </p>
-      <hr />
+	<div class="theme-primary-off">
+		<Nav color="theme-primary" />
+		<article class="section container is-max-tablet mt-6">
+			<h2 class="heading is-size-6 has-text-weight-light">
+				{{ formatDate(post.date) }} |
+				<ReadingTime :content="post"></ReadingTime>
+			</h2>
+			<h1 class="title my-3 has-text-weight-boldest is-size-2 is-size-3-mobile">
+				{{ post.title }}
+			</h1>
+			<p class="subtitle mt-3 is-size-5 is-size-6-mobile">
+				{{ post.description }}
+			</p>
+			<hr />
 
-      <nuxt-content :document="post" />
-      <hr />
-      <div class="my-4">
-        <NuxtLink
-          to="/post"
-          class="subtitle has-text-weight-bolder is-size-5 link heading is-inline-block"
-          >👈 Back to all posts</NuxtLink
-        >
-      </div>
-      <prev-next :prev="prev" :next="next" type="post" />
-    </article>
-    <Footer />
-  </div>
+			<nuxt-content :document="post" />
+			<hr />
+			<div class="my-4">
+				<NuxtLink
+					to="/post"
+					class="subtitle has-text-weight-bolder is-size-5 link heading is-inline-block"
+					>👈 Back to all posts</NuxtLink
+				>
+			</div>
+			<prev-next :prev="prev" :next="next" type="post" />
+		</article>
+		<Footer />
+	</div>
 </template>
 
 <script>
@@ -34,229 +34,248 @@ import getSiteMeta from "~/utils/getSiteMeta.js";
 import { TweenMax, Power3 } from "gsap";
 
 export default {
-  transition: {
-    mode: "out-in",
-    css: false,
-    enter(el, done) {
-      TweenMax.fromTo(".title", { x: "10%" }, { x: "0%", duration: 0.1 });
-      TweenMax.fromTo(
-        ".subtitle, .card, .img",
-        { x: "10%", autoAlpha: 0 },
-        {
-          x: "0%",
-          autoAlpha: 1,
-          delay: 0.25,
-          duration: 0.5,
-          ease: Power3.easeOut,
-        }
-      );
-    },
-  },
-  async asyncData({ $content, params }) {
-    const post = await $content("posts", params.slug).fetch();
+	transition: {
+		mode: "out-in",
+		css: false,
+		enter(el, done) {
+			TweenMax.fromTo(".title", { x: "10%" }, { x: "0%", duration: 0.1 });
+			TweenMax.fromTo(
+				".subtitle, .card, .img",
+				{ x: "10%", autoAlpha: 0 },
+				{
+					x: "0%",
+					autoAlpha: 1,
+					delay: 0.25,
+					duration: 0.5,
+					ease: Power3.easeOut,
+				}
+			);
+		},
+	},
+	async asyncData({ $content, params }) {
+		const post = await $content("posts", params.slug).fetch();
 
-    const [prev, next] = await $content("posts")
-      .where({ draft: { $ne: true } }) // Exclude where draft != true
-      .only(["title", "slug", "img", "img_alt"])
-      .sortBy("date", "asc")
-      .surround(params.slug)
-      .fetch();
+		const [prev, next] = await $content("posts")
+			.where({ draft: { $ne: true } }) // Exclude where draft != true
+			.only(["title", "slug", "img", "img_alt"])
+			.sortBy("date", "asc")
+			.surround(params.slug)
+			.fetch();
 
-    return { post, prev, next };
-  },
-  methods: {
-    formatDate(date) {
-      const options = { year: "numeric", month: "long" };
-      return new Date(date).toLocaleDateString("en", options);
-    },
-  },
-  computed: {
-    meta() {
-      const metaData = {
-        type: "article",
-        title: this.post.title,
-        description: this.post.description,
-        url: `https://connorrothschild.com/post/${this.$route.params.slug}`,
-        mainImage: `https://connorrothschild.com/post/${this.post.img}`,
-      };
-      return getSiteMeta(metaData);
-    },
-  },
-  head() {
-    return {
-      title: `${this.post.title} | Connor Rothschild`,
-      meta: [
-        ...this.meta,
-        {
-          property: "article:published_time",
-          content: this.post.createdAt,
-        },
-        {
-          property: "article:modified_time",
-          content: this.post.updatedAt,
-        },
-        { name: "twitter:label1", content: "Written by" },
-        { name: "twitter:data1", content: "Connor Rothschild" },
-      ],
-      link: [
-        {
-          hid: "canonical",
-          rel: "canonical",
-          href: `https://connorrothschild.com/post/${this.$route.params.slug}`,
-        },
-      ],
-    };
-  },
+		return { post, prev, next };
+	},
+	methods: {
+		formatDate(date) {
+			const options = { year: "numeric", month: "long" };
+			return new Date(date).toLocaleDateString("en", options);
+		},
+	},
+	computed: {
+		meta() {
+			const metaData = {
+				type: "article",
+				title: this.post.title,
+				description: this.post.description,
+				url: `https://connorrothschild.com/post/${this.$route.params.slug}`,
+				mainImage: `https://connorrothschild.com/post/${this.post.img}`,
+			};
+			return getSiteMeta(metaData);
+		},
+	},
+	head() {
+		return {
+			title: `${this.post.title} | Connor Rothschild`,
+			meta: [
+				...this.meta,
+				{
+					property: "article:published_time",
+					content: this.post.createdAt,
+				},
+				{
+					property: "article:modified_time",
+					content: this.post.updatedAt,
+				},
+				{ name: "twitter:label1", content: "Written by" },
+				{ name: "twitter:data1", content: "Connor Rothschild" },
+			],
+			link: [
+				{
+					hid: "canonical",
+					rel: "canonical",
+					href: `https://connorrothschild.com/post/${this.$route.params.slug}`,
+				},
+			],
+		};
+	},
 };
 </script>
 
 <style lang="scss">
 /* STYLING SPECIFIC TO BLOG POSTS GOES HERE */
 .nuxt-content {
-  h1 {
-    font-weight: bold;
-    font-size: 1.8rem;
-    margin: 0.75rem 0;
-    @media screen and (max-width: 768px) {
-      font-size: 1.4rem;
-    }
-  }
-  h2 {
-    font-weight: bold;
-    font-size: 1.6rem;
-    margin: 0.75rem 0;
-    @media screen and (max-width: 768px) {
-      font-size: 1.3rem;
-    }
-  }
-  h3 {
-    font-weight: bold;
-    font-size: 1.4rem;
-    margin: 0.75rem 0;
-    @media screen and (max-width: 768px) {
-      font-size: 1.2rem;
-    }
-  }
-  h4 {
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin: 0.75rem 0;
-    @media screen and (max-width: 768px) {
-      font-size: 1.1rem;
-    }
-  }
+  // Basic typography
+	h1 {
+		font-weight: bold;
+		font-size: 1.8rem;
+		margin: 0.75rem 0;
+		@media screen and (max-width: 768px) {
+			font-size: 1.4rem;
+		}
+	}
+	h2 {
+		font-weight: bold;
+		font-size: 1.6rem;
+		margin: 0.75rem 0;
+		@media screen and (max-width: 768px) {
+			font-size: 1.3rem;
+		}
+	}
+	h3 {
+		font-weight: bold;
+		font-size: 1.4rem;
+		margin: 0.75rem 0;
+		@media screen and (max-width: 768px) {
+			font-size: 1.2rem;
+		}
+	}
+	h4 {
+		font-weight: bold;
+		font-size: 1.2rem;
+		margin: 0.75rem 0;
+		@media screen and (max-width: 768px) {
+			font-size: 1.1rem;
+		}
+	}
 
-  p {
-    margin-bottom: 1.25rem;
-    font-size: 1.1rem;
+  // Paras
+	p {
+		margin-bottom: 1.25rem;
+		font-size: 1.1rem;
 
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
 
-  a {
+  // Links
+	a {
+		display: inline-block;
+		&:after {
+			color: var(--secondary);
+			text-decoration: none;
+			display: block;
+			content: "";
+			border-bottom: solid 1px var(--secondary);
+			transform: scaleX(0);
+			transition: transform 250ms ease-in-out;
+		}
 
-  display: inline-block;
-    &:after {
-      color: var(--secondary);
-      text-decoration: none;
-      display: block;
-      content: '';
-      border-bottom: solid 1px var(--secondary);
-      transform: scaleX(0);  
-      transition: transform 250ms ease-in-out;
-    }
+		&:hover {
+			color: var(--secondary) !important;
 
-    &:hover {
-      color: var(--secondary) !important;
-     
-     &:after {
-      transform: scaleX(1);
-      }
-    }
-  }
+			&:after {
+				transform: scaleX(1);
+			}
+		}
+	}
 
-  blockquote {
-    padding: 1rem;
-    border-left: 5px solid var(--secondary);
-    margin: 1rem;
-    background: var(--semitransparent);
-  }
+	blockquote {
+		padding: 1rem;
+		border-left: 5px solid var(--secondary);
+		margin: 1rem;
+		background: var(--semitransparent);
+	}
 
-  // List styling
-  li {
-    list-style-position: inside !important;
-  }
+	// List styling
+	li {
+		list-style-position: inside !important;
+	}
 
-  ol,
-  ul {
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-  }
+	ol,
+	ul {
+		margin-left: 1rem;
+		margin-bottom: 1rem;
+	}
 
-  ul li {
-    list-style-type: circle;
-  }
+	ul li {
+		list-style-type: circle;
+	}
 
-  // Give a padding to anything that follows an image, except another image
-  // And same for if the image follows anything that is not an image
-  .img + :not(.img),
-  :not(.img) + .img {
-    margin-top: 1rem;
-  }
-}
+	// Give a padding to anything that follows an image, except another image
+	// And same for if the image follows anything that is not an image
+	.img + :not(.img),
+	:not(.img) + .img {
+		margin-top: 1rem;
+	}
 
-// Hover icon link
-.icon.icon-link {
-  width: 0;
-}
+	// Margin around code highlighting
+	.nuxt-content-highlight {
+		margin: 1rem 0;
+	}
 
-.nuxt-content h1 > a::before,
-.nuxt-content h2 > a::before,
-.nuxt-content h3 > a::before,
-.nuxt-content h4 > a::before {
-  content: "#";
-  display: block;
-  float: left;
-  margin-left: -1.25rem;
-  color: var(--text);
-  opacity: 0;
-  font-weight: 400;
-  font-size: 1.25rem;
-  line-height: 2.25rem;
-  padding-right: 0.5rem;
-  position: absolute;
-  transition: 500ms ease opacity;
+	// Hover icon link
+  h1,
+	h2,
+	h3,
+	h4 {
+		> a::before {
+			content: "#️⃣";
+			display: block;
+			float: left;
+			margin-left: -1.75rem;
+			color: var(--text);
+			opacity: 0;
+			font-weight: 400;
+			padding-right: 0.5rem;
+			position: absolute;
+			transition: 500ms ease opacity;
+		}
+	}
+
+	.icon.icon-link {
+		width: 0;
+	}
+
+  // Different hover icons have different sizes
+	h1 > a::before {
+		font-size: 1.5rem;
+		line-height: 2.75rem;
+	}
+
+	h2 > a::before {
+		font-size: 1.35rem;
+		line-height: 2.5rem;
+	}
+
+	h3 > a::before,
+	h4 > a::before {
+		font-size: 1.25rem;
+		line-height: 2rem;
+	}
 }
 
 .nuxt-content h1:hover > a::before,
 .nuxt-content h2:hover > a::before,
 .nuxt-content h3:hover > a::before,
 .nuxt-content h4:hover > a::before {
-  opacity: 1;
-}
-
-// Margin around code highlighting
-.nuxt-content-highlight {
-  margin: 1rem 0;
+	opacity: 1;
 }
 
 // Markdown tables, by default, apply Bulma table styling https://bulma.io/documentation/elements/table/
 table {
-  @extend .table;
-  @extend .is-fullwidth;
-  @extend .is-hoverable;
+	@extend .table;
+	@extend .is-fullwidth;
+	@extend .is-hoverable;
 
-  background: var(--primary);
-  color: var(--text);
+	background: var(--primary);
+	color: var(--text);
 
-  tr:hover {
-    background-color: var(--primary-off) !important;
-  }
+	tr:hover {
+		background-color: var(--primary-off) !important;
+	}
 
-  thead th {
-    color: var(--text-strong);
-  }
+	thead th {
+		color: var(--text-strong);
+	}
 }
 </style>

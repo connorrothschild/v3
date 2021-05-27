@@ -18,6 +18,7 @@ export default {
       .only(["title", "description", "img", "img_alt", "slug", "date"])
       .where({ featured: true })
       .sortBy("date", "desc")
+      .limit(3)
       .fetch();
 
     const awards = await $content("awards", params.slug)

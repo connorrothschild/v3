@@ -1,6 +1,6 @@
 ---
-title: Do "Something Else" After Graduation
-description: On meaningful work
+title: Feel Free to Do "Something Else" After Graduation
+description: Finding meaningful work
 img: adding-a-chart-to-your-d3-tooltip/header.png
 img_alt: "Blog post header image"
 date: "2021-05-12"
@@ -12,7 +12,7 @@ https://angel.co/blog/over-60-of-employees-are-happy-at-startups-far-outpacing-f
 https://www.bizjournals.com/sanjose/news/2019/10/17/best-faang-companies-to-work-for-vs-startups.html
 https://ed.stanford.edu/news/stanford-education-study-provides-new-evidence-big-fish-little-pond-effect-students-globally
 
-I graduated college last week. I've been thinking about what it means for a new graduate to find a career that they find *fulfilling*. In my view of things, it seems as if new grads' plans fall into one of a few categories. You can usually split up these paths by degree focus.
+I graduated college last week. I've been thinking about what it means for a new graduate to find a career that they find *fulfilling*. In my view of things, it seems as if new grads' plans fall into one of a few categories, which you can usually split up by degree focus.
 
 **Non-technical graduates**:
 
@@ -22,11 +22,11 @@ I graduated college last week. I've been thinking about what it means for a new 
 **Technical graduates**:
 
 1. Big tech (FAANG, etc.)
-3. Something else (startup, civic tech, government, etc.)
+3. Something else (startup, civic tech, etc.)
 
 Is it reductive to categorize *all jobs* into these four categories? Check my LinkedIn feed, and you'll realize that enough graduates pursue the first option from each group (big consulting/big tech) that other jobs almost seem like an afterthought. (Apparently, [~40% of Harvard grads](https://medium.com/s/story/a-culture-of-prestige-98c8671ceade) and [~29% of Yale grads](https://yaledailynews.com/blog/2019/11/01/mckinsey-and-the-fig-tree/) go into finance or consulting after college.)
 
-Of course, these sets of options mirror one another. Most students who aren't set on pursuing a JD, PhD, or MD will ask themselves whether they want to pursue the safe, well-paying, "big" option after graduating, or pursue something else. 
+Of course, these sets of options mirror one another. Most students who aren't set on a JD, PhD, or MD will ask themselves whether they want to pursue the safe, well-paying, "big" option after graduating, or something else. 
 
 When they do choose, there's not much enthusiasm—it's a tradeoff. These bigger companies offer alluring signing bonuses, prestige, and exorbitant salaries. In return, they ask you to put up with longer-than-usual hours and more monotonous work.
 
@@ -45,13 +45,17 @@ Please note that I'm not dunking on my friends who take these impressive jobs, b
 
 **Work is the most important thing we do.** Not in the late-capitalism/workaholic-father type of way, but in the sense that you spend the majority of your day doing it. Every (week)day, you spend between 8 and 10 hours on work, and so you *cannot overstate* how important work is. If you dislike your work, you're unlikely to enjoy your life.  All this to say, make the decisions you make about work *intentionally* and not because of pressure, prestige, or anything else.
 
-## Big/little fish/pond
-
-Cog in the machine vs. running the machine yourself.
-
 ## Fulfillment
 
-Taking a job at a big tech or big consulting company means you're subject to their structure. More often than not, the organizations have narrowly defined roles due to their massive size. As such, you assume whatever role they give you, with perhaps a little wiggle room. Some like this scope of work. For others, it can be stifling. It can come at the expense of your creativity and feel as if you have little room to grow.
+In 2019, [AngelList](https://angel.co/) and [Blind](https://www.teamblind.com/) surveyed 11,000 employees across FAANG and various startups, asking about job satisfaction and the factors that influence it. Their findings? **Employees at startups were much happier than their FAANG counterparts.**
+
+<InlineImage src='post/do-something-else/startup-faang-satisfaction.png' alt="A bar graph showing higher rates of job satisfaction among startup employees compared to FAANG employees."></InlineImage>
+
+Data on early-career consultants in non-technical fields is harder to come by, but generally employees are [relatively satisfied despite the long hours](https://poetsandquants.com/2017/09/10/job-satisfaction-rates-at-top-consulting-firms/3/). Many consultants, however, do quit their job and pursue [independent consulting](https://hbr.org/2019/07/why-consultants-quit-their-jobs-to-go-independent), where they tend to be [happier](https://www.consultancy.uk/news/12795/independent-management-consultants-are-happier-and-half-earn-more).
+
+And so there might be a tradeoff between prestige and satisfaction within these high-profile organizations. Definitely in tech, and perhaps in other spaces, work can be *better paying* but *less fulfilling*.
+
+There could be many reasons for this, but I suspect a large one is **structure**. Taking a job at a big tech or big consulting company means you're subject to their structure. More often than not, the organizations have narrowly defined roles due to their massive size. As such, you assume whatever role they give you, with perhaps a little wiggle room. Some like this scope of work. For others, it can be stifling. It can come at the expense of your creativity and feel as if you have little room to grow.
 
 The "something else" jobs, by contrast, are probably more variegated. To feel fulfilled, I think a job needs two things: 1) work that is *in line with your passions*, and 2) work that is *commensurate with your capacity*.
 
