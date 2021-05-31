@@ -73,11 +73,11 @@ export default {
         document.documentElement.style.setProperty("--text", "#ffffff");
         document.documentElement.style.setProperty("--text-strong", "#f5f5f5");
       } else if (scheme == "white") {
-        document.documentElement.style.setProperty("--base", "white");
-        document.documentElement.style.setProperty("--primary", "white");
+        document.documentElement.style.setProperty("--base", "#ebebeb");
+        document.documentElement.style.setProperty("--primary", "#E1E4E8");
         document.documentElement.style.setProperty(
           "--primary-off",
-          "whitesmoke"
+          "#ebebeb"
         );
         document.documentElement.style.setProperty("--secondary", "#650202");
         document.documentElement.style.setProperty(

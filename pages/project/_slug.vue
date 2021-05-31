@@ -1,7 +1,7 @@
 <template>
   <div class="theme-primary-off">
     <Nav classes="theme-primary" />
-    <article class="section container is-max-desktop mt-6">
+    <article class="section container is-max-desktop">
       <h1 class="title has-text-weight-boldest is-size-2 is-size-4-mobile">
         {{ project.title }}
       </h1>
@@ -29,7 +29,8 @@
                 :href="project.github"
                 target="_blank"
                 rel="noopener noreferrer"
-                >GitHub Repository</a>
+                >GitHub Repository</a
+              >
               <p v-else class="card-footer-item">
                 Code is not publicly available 😢
               </p>
