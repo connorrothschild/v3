@@ -4,6 +4,7 @@ description: Use {gganimate} to easily create animated plots
 img: bible-babies/header.png
 img_alt: "Blog post header image"
 date: "2019-06-06"
+draft: true
 ---
 
 The goal of this post is to explore how baby names have changed over

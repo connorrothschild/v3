@@ -1,6 +1,6 @@
 <template>
 	<div class="theme-primary-off">
-		<Nav color="theme-primary" />
+		<Nav classes="theme-primary" />
 		<article class="section container is-max-tablet mt-6">
 			<h2 class="heading is-size-6 has-text-weight-light">
 				{{ formatDate(post.date) }} |

@@ -4,6 +4,7 @@ date: "2019-05-05"
 img: media-mentions/header.png
 img_alt: Blog header image
 description: How media coverage of 2020 presidential candidates has changed over time
+draft: true
 ---
 
 ## Overview

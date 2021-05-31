@@ -1,6 +1,6 @@
 <template>
   <div class="main-body">
-    <Nav color="theme-primary" />
+    <Nav classes="is-fixed-top theme-primary" />
     <Hero />
     <Projects :projects="projects" :featured="featuredProject[0]" />
     <Awards :awards="awards" />

@@ -1,6 +1,6 @@
 <template>
   <div class="theme-primary-off">
-    <Nav color="theme-primary" />
+    <Nav classes="theme-primary" />
     <article class="section container is-max-desktop mt-6">
       <h1 class="title has-text-weight-boldest is-size-2 is-size-4-mobile">
         {{ project.title }}

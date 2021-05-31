@@ -1,7 +1,7 @@
 <template>
   <nav
-    class="navbar is-fixed-top"
-    :class="color"
+    class="navbar"
+    :class="classes"
     role="navigation"
     aria-label="main navigation"
   >
@@ -55,7 +55,7 @@
 <script>
 export default {
   props: {
-    color: String,
+    classes: String,
   },
   data() {
     return {
@@ -66,10 +66,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-// .navbar.theme-primary * {
-//   color: var(--text);
-// }
-
 .theme-primary {
   background-color: var(--primary);
   .navbar-item {

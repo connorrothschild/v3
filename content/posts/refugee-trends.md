@@ -1,6 +1,6 @@
 ---
 title: "Trends in Refugee Acceptance, 2002 to 2019"
-date: "2019-02-02"
+date: "2020-02-02"
 img: refugee-trends/header.png
 img_alt: Blog header image
 description: Or, how a single line of code can create a beautiful small multiples US map.
