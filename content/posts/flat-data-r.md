@@ -150,3 +150,5 @@ Obviously, the content in the above cleaning script is irrelevant. It functions 
 Upon completing these steps and pushing the above to a repository, GitHub will automatically set up the action and run it on a daily basis. You can then examine the logs for each run in the **Actions** tab. This tab will be helpful for debugging, and you can force workflow executions manually here as well. In sum, the process of carrying out a GitHub Flat Data workflow, with the addition of an R postprocessing script, looks something like this:
 
 <InlineImage src="post/flat-data-r/header.png" alt="Diagram of flat data processing in R"/>
+
+Thanks for reading! You might learn more by perusing the [GitHub repository](https://github.com/connorrothschild/flat-demo-r-processing) that accompanies this post; otherwise, please send any questions via [Twitter](https://twitter.com/CL_Rothschild) 🙂

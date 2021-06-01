@@ -12,7 +12,14 @@
 export default {
   data() {
     return {
-      colorSchemes: ["blue", "red", "brown", "dark-blue", "grey", "black" /*, "white", */],
+      colorSchemes: [
+        "blue",
+        "red",
+        "brown",
+        "dark-blue",
+        "grey",
+        "black" /*, "white", */,
+      ],
       currentScheme: "black",
     };
   },
@@ -86,10 +93,7 @@ export default {
       } else if (scheme == "white") {
         document.documentElement.style.setProperty("--base", "#ebebeb");
         document.documentElement.style.setProperty("--primary", "#E1E4E8");
-        document.documentElement.style.setProperty(
-          "--primary-off",
-          "#ebebeb"
-        );
+        document.documentElement.style.setProperty("--primary-off", "#ebebeb");
         document.documentElement.style.setProperty("--secondary", "#650202");
         document.documentElement.style.setProperty(
           "--secondary-bg",

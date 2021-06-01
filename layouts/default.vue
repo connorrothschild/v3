@@ -37,19 +37,19 @@ a {
   }
 }
 
-  // Links
-  p a {
-    text-decoration: none;
-    border-bottom: 2px solid var(--secondary);
+// Links
+p a {
+  text-decoration: none;
+  border-bottom: 2px solid var(--secondary);
 
-    &:hover {
-      border-bottom: 3px solid var(--text);
-    }
+  &:hover {
+    border-bottom: 3px solid var(--text);
   }
+}
 
-    // a:not(a > img) {
-    //   border-bottom: none !important;
-    // }
+// a:not(a > img) {
+//   border-bottom: none !important;
+// }
 
 hr {
   background-color: var(--secondary) !important;
