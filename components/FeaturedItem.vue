@@ -1,7 +1,7 @@
 <template>
   <div class="is-flex responsive-flex mb-6">
     <div class="half-flex responsive-margin">
-      <h1 class="title is-size-3">
+      <h1 class="title has-text-weight-bold is-size-3">
         {{ title }}
       </h1>
       <h2 class="subtitle">{{ description }}</h2>

@@ -3,7 +3,7 @@
     <a :href="link" target="_blank" rel="noopener noreferrer">
       <img :src="imgSrc()" :alt="alt" />
     </a>
-    <p class="is-size-7">
+    <p class="is-size-7 mt-3">
       <strong>Note:</strong> This table was created in a reactive environment
       and is usually interactive. Since I've moved sites, my new content
       rendering doesn't support HTML tables. Find the original table

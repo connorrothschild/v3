@@ -81,12 +81,24 @@ export default {
 	css             : [ '~assets/scss/colors.scss' ],
 
 	// Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-	plugins         : [ '~/plugins/v-img.js', '~/plugins/v-lazy-image.js'],
+	plugins: ['~/plugins/v-img.js', '~/plugins/v-lazy-image.js', '~/plugins/prism'],
 	// Auto import components (https://go.nuxtjs.dev/config-components)
 	components      : true,
 
 	// Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
 	buildModules    : [ '@aceforth/nuxt-optimized-images', '@nuxtjs/pwa', ],
+	  
+	purgeCSS: {
+		enabled: true, // True means it's always on in dev/build/generate mode
+		// The two below options achieve the happy medium between Prism.js and PurgeCSS
+		// If you're having trouble with code highlighting, try adding the pertinent clases to the whitelist
+		whitelistPatternsChildren: [/token$/],
+		whitelist: [
+		'pre', 'code', 'prism', 'line-numbers', 'tag', 'toolbar-item', 'toolbar',
+		'code-toolbar', 'span', 'button', 'line-numbers-rows', 'url-link', 'attr-name', 'attr-value', 'punctuation',
+		'keyword', 'keyword-let', 'operator', 'string'
+   		 ]
+	},
 	  
 	optimizedImages : {
 		optimizeImages : true

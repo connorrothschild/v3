@@ -58,8 +58,17 @@ pre[class*="language-"] {
   -o-border-radius: 3px;
 }
 
-/* Import the rest of Bulma */
-// @import "~bulma";
+// Overwrite default toolbar CSS for code chunks
+div.code-toolbar>.toolbar a,
+div.code-toolbar>.toolbar span,
+div.code-toolbar>.toolbar button {
+  padding: 0.2rem 0.4rem;
+  margin: .2rem;
+}
+
+div.code-toolbar>.toolbar button {
+    cursor: pointer;
+}
 
 // Import only what you need from Bulma
 @import "~bulma/sass/utilities/_all.sass";

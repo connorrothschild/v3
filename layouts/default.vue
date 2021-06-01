@@ -30,7 +30,7 @@ html {
 
 a {
   color: var(--text) !important;
-  transition: all 300ms ease;
+  transition: all 150ms ease;
 
   &:hover {
     color: var(--text) !important;
@@ -46,6 +46,10 @@ a {
       border-bottom: 3px solid var(--text);
     }
   }
+
+    // a:not(a > img) {
+    //   border-bottom: none !important;
+    // }
 
 hr {
   background-color: var(--secondary) !important;
