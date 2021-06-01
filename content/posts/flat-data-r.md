@@ -19,9 +19,9 @@ The [GitHub OCTO team](https://octo.github.com/) recently released their first p
 
 ## What's Flat Data?
 
-[Flat Data](https://octo.github.com/projects/flat-data) solves the problem of carrying out the same repetitive tasks—retrieving, cleaning, and then republishing data—that commonly affects developers who want to present rapidly updating data (for example, COVID-19 data that updates daily). And although alternative solutions exist, Flat Data is easy, intuitive, and integrated directly with your GitHub repository:
+[Flat Data](https://octo.github.com/projects/flat-data) solves the problem of carrying out the same repetitive tasks—retrieving, cleaning, and then republishing data—that commonly affects developers who want to present rapidly updating data (for example, COVID-19 data that updates daily). And although alternative solutions exist, Flat Data is easy, intuitive, and integrated directly with your GitHub repository (via [GitHub](https://octo.github.com/projects/flat-data)):
 
-[<InlineImage src="post/flat-data-r/flat-diagram.png" alt="A diagram showcasing a common Flat Data workflow" :clickable=false></InlineImage>](https://octo.github.com/projects/flat-data)
+<InlineImage src="post/flat-data-r/flat-diagram.png" alt="A diagram showcasing a common Flat Data workflow" :clickable=false></InlineImage>
 
 The idea, as seen above, is essentially to read in data (*data.json*), conduct some postprocessing (*process.js*), and output some better data (*processed-data.json*).
 
@@ -33,7 +33,7 @@ The most essential step of a Flat Data project is *postprocessing*. This occurs 
 
 We'll be grabbing data from the [Mapping Police Violence](https://mappingpoliceviolence.org/) homepage, tidying it up, and then republishing it. (This cleaned data is the source for my [visualization](https://connorrothschild.github.io/police-killings/) on police violence.)  The final data output looks like this:
 
-<iframe src="https://flatgithub.com/connorrothschild/police-killings?filename=public%2Fdata%2Fcleaned.csv" style="height: 90vh;" width="100%"></iframe>
+<iframe src="https://flatgithub.com/connorrothschild/flat-demo-r-processing?filename=output.csv&sha=61df289b127a70513b334d686de65ed79ce48a96" style="height: 90vh;" width="100%"></iframe>
 
 ### 01. Setup `flat.yml`
 
