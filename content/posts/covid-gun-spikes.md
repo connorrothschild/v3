@@ -4,7 +4,6 @@ date: "2020-07-26"
 description: Visualizing the precipitous rise in gun sales during COVID-19
 img: covid-gun-spikes/header.png
 img_alt: Blog header image
-featured: true
 ---
 
 <InlineImage src="post/covid-gun-spikes/featured.png" alt="A small multiples map showing spikes in firearm background checks in 2020, compared to 1999-2019"></InlineImage>

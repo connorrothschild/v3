@@ -1,26 +1,25 @@
 ---
-title: Using R with GitHub's Flat Data
+title: Including R in your Flat Data Workflow
 description: Fetch and clean data on a schedule, using GitHub Actions + R
 img: flat-data-r/header.png
 img_alt: "Blog post header image"
 date: "2021-05-30"
-featured: false
-draft: true
+megaFeatured: true
 ---
 
-The [GitHub OCTO team](https://octo.github.com/) recently released their first project: [**Flat Data**](https://octo.github.com/projects/flat-data). The project aims to offer 'a simple pattern for bringing working datasets into your repositories and versioning them.' And it succeeds in doing so! I recently incorporated Flat Data into [one of my projects](https://github.com/connorrothschild/police-killings), allowing me to finally stop manually updating the data on a semiregular basis (yikes!). While working, I couldn't find any documentation on using R with Flat Data. Here, I'll explain the steps I took to incorporate R scripts into a Flat Data pipeline! 
+The [GitHub OCTO team](https://octo.github.com/) recently released their first project: [**Flat Data**](https://octo.github.com/projects/flat-data). The project aims to offer "a simple pattern for bringing working datasets into your repositories and versioning them." And it succeeds in doing so! I recently incorporated Flat Data into [one of my projects](https://github.com/connorrothschild/police-killings), allowing me to finally stop manually updating the data on a semiregular basis (yikes!). While working, I couldn't find any documentation on using R with Flat Data. Here, I'll explain the steps I took to incorporate R scripts into a Flat Data pipeline.
 
 <info-box>
   <template #info-box>
 
-**Note:** It's not that hard, and the payoff is huge 🙂 If you want to follow along, the GitHub repo can be found [here](https://github.com/connorrothschild/flat-demo-r-processing/).
+**Note:** If you want to follow along, the GitHub repo can be found [here](https://github.com/connorrothschild/flat-demo-r-processing/).
 
   </template>
 </info-box>
 
 ## What's Flat Data?
 
-[Flat Data](https://octo.github.com/projects/flat-data) is a powerful solution to the problem of carrying out the same repetitive tasks—retrieving, cleaning, and then republishing data—that commonly affects developers who want to present rapidly updating data (e.g., COVID-19 data that updates daily). And although alternative solutions exist, Flat Data is easy, intuitive, and integrated directly with your GitHub repository:
+[Flat Data](https://octo.github.com/projects/flat-data) solves the problem of carrying out the same repetitive tasks—retrieving, cleaning, and then republishing data—that commonly affects developers who want to present rapidly updating data (for example, COVID-19 data that updates daily). And although alternative solutions exist, Flat Data is easy, intuitive, and integrated directly with your GitHub repository:
 
 [<InlineImage src="post/flat-data-r/flat-diagram.png" alt="A diagram showcasing a common Flat Data workflow" :clickable='false'/>](https://octo.github.com/projects/flat-data)
 
@@ -28,11 +27,13 @@ The idea, as seen above, is essentially to read in data (*data.json*), conduct s
 
 ## Doing it in R
 
-The most essential step of a Flat Data project is *postprocessing*. This occurs **after data retrieval** and **before data output**, and it can be done in a few different languages! By default, most of the OCTO team's [examples](https://github.com/githubocto/flat-postprocessing/tree/main/examples) are done in JavaScript/TypeScript, and one user has given an example of postprocessing in [Python.](https://github.com/pierrotsmnrd/flat_data_py_example) To the best of my knowledge, there aren't any examples of including R in the postprocessing stage, hence the reason for this post!
+The most essential step of a Flat Data project is *postprocessing*. This occurs **after data retrieval** and **before data output**, and it can be done in a few different languages. By default, the OCTO team's [examples](https://github.com/githubocto/flat-postprocessing/tree/main/examples) are done in JavaScript/TypeScript, and one user has given an example of postprocessing in [Python](https://github.com/pierrotsmnrd/flat_data_py_example). To the best of my knowledge, though, there aren't any examples of including R in the postprocessing stage, hence the reason for this post! 
 
-We'll be grabbing data from the [Mapping Police Violence](https://mappingpoliceviolence.org/) homepage, tidying it up, and then republishing it. (This cleaned data is the source for my [visualization](https://connorrothschild.github.io/police-killings/) on police violence.)  The final output, if you're interested, looks like this:
+**Using R in a Flat Data pipeline is as simple as installing the necessary packages and then sourcing your R cleaning script from a postprocessing TypeScript file.** Let's explore how that works.
 
-<iframe src="https://flatgithub.com/connorrothschild/police-killings?filename=public%2Fdata%2Fcleaned_data.csv" style="height: 90vh;" width="100%"></iframe>
+We'll be grabbing data from the [Mapping Police Violence](https://mappingpoliceviolence.org/) homepage, tidying it up, and then republishing it. (This cleaned data is the source for my [visualization](https://connorrothschild.github.io/police-killings/) on police violence.)  The final data output looks like this:
+
+<iframe src="https://flatgithub.com/connorrothschild/police-killings?filename=public%2Fdata%2Fcleaned.csv" style="height: 90vh;" width="100%"></iframe>
 
 ### 01. Setup `flat.yml`
 
@@ -45,9 +46,8 @@ on:
     - cron: 0 0 * * * # Runs daily. See https://crontab.cronhub.io/
   workflow_dispatch: {}
   push:
-    paths:
-      - .github/workflows/flat.yml
-      - ./postprocess.ts
+    branches:
+      - main # Or master, or whatever branch you'd like to 'watch'
 jobs:
   scheduled:
     runs-on: ubuntu-latest
@@ -81,7 +81,7 @@ postprocess: ./postprocess.ts
 
 Here, we reference a TypeScript file titled `postprocess.ts`. Upon completion of the data download, GitHub will run *this script* for any additional processing steps. This file must be a `.js` or `.ts` file.
 
-Those who are skilled in data wrangling with JavaScript might be able to write their additional processing *in JavaScript itself*, but ~~not all~~ most of us aren't skilled in data wrangling with JavaScript. Moreover, some users want to migrate their existing projects and workflows to a Flat Data workflow, and so including languages other than JavaScript is essential. 
+Those who are skilled in data wrangling with JavaScript might be able to write their additional processing *in JavaScript itself*, but few of us are skilled in data wrangling with JavaScript. Moreover, some users want to migrate their existing projects and workflows to Flat Data, and so including languages other than JavaScript (in this case, R) is essential. 
 
 The `postprocess.ts` file I use in my workflow looks like this (it might help to see how [Deno works](https://deno.land/manual@v1.10.2/examples/subprocess)):
 
@@ -104,9 +104,9 @@ const r_run = Deno.run({
 await r_run.status();
 ```
 
-The above script is rather simple: it 1) imports Deno, 2) installs packages (via the command line, not in the R script), and 3) runs the processing script, titled `clean.R`.
+The above script is rather simple: it 1) imports Deno, 2) installs packages, and 3) runs the processing script, titled `clean.R`.
 
-Step 2 is important.  **Package management was the biggest issue I ran into while setting up this workflow; if you're having issues, pay attention to this step.** You'll need to identify all the scripts that are required in your R processing script, but you can't install those packages *in the script itself*, due to virtual machine permissions. You instead have to run them via the command line, using `sudo Rscript -e`, as I do above (in step 2). 
+The second step is important.  **Package management was the biggest issue I ran into while setting up this workflow; if you're having issues, pay attention to this step.** You'll need to identify all the scripts that are required in your R processing script, but you can't install those packages *in the script itself*, due to virtual machine permissions. You instead have to run them via the command line, using `sudo Rscript -e`, as I do above (in step 2). 
 
 The command `sudo Rscript -e` precedes any regular function or command that you would run in an R script. It executes those commands via the command line, rather than within a script. (We add sudo to overcome system user permission problems.) For more, see [this page](https://stackoverflow.com/questions/18306362/run-r-script-from-command-line). 
 
@@ -123,7 +123,7 @@ library(stringr)
 raw_data <- readxl::read_excel("./raw.xlsx")
 
 # All the processing!
-data <- raw_data %>% 
+clean_data <- raw_data %>% 
   rename("Date" = `Date of Incident (month/day/year)`,
          "Link" = `Link to news article or photo of official document`,
          "Armed Status" = `Armed/Unarmed Status`, 
@@ -133,8 +133,8 @@ data <- raw_data %>%
          "Image" = `URL of image of victim`, 
          "Name" = `Victim's name`) %>% 
   mutate(Zipcode = as.character(Zipcode),
-         `Body Camera (Source: WaPo)` = as.logical(`Body Camera (Source: WaPo)`),
-         `WaPo ID (If included in WaPo database)` = as.logical(`WaPo ID (If included in WaPo database)`)) %>% 
+         Year = lubridate::year(Date),
+         Sex = ifelse(is.na(Sex), 'Unknown', Sex)) %>% 
   arrange(Date)
 
 ### Additional processing goes here...
@@ -143,9 +143,7 @@ data <- raw_data %>%
 readr::write_csv(clean_data, "./output.csv")
 ```
 
-The [real script](https://github.com/connorrothschild/flat-demo-r-processing/blob/master/clean.R) is around 60 lines. Now you know why keeping the postprocessing in R was preferable!
-
-The script functions as any other R script would: it reads in data (based on the data we downloaded in `postprocess.ts`), does some cleaning, and then outputs the new data.
+Obviously, the content in the above cleaning script is irrelevant. It functions as any other R script would: it reads in data (based on the data we downloaded in `postprocess.ts`), does some cleaning, and then outputs the new data. The [real script](https://github.com/connorrothschild/flat-demo-r-processing/blob/master/clean.R) is around 55 lines. Now you know why keeping the postprocessing in R was preferable!
 
 ## In Sum
 

@@ -4,7 +4,6 @@ description: A visual, virtual tour of every piece in The Joy of Painting.
 date: "2021-03-22"
 audience: "The world!"
 featured: true
-megaFeatured: false
 img: bob-ross-art-gallery/thumbnail.png
 img_alt: 'A header image that says "The Bob Ross (virtual) Art Gallery"'
 techstack: "D3.js, Svelte, R, Scrollama"
