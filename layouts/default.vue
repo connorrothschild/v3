@@ -29,12 +29,23 @@ html {
 }
 
 a {
-  color: var(--secondary) !important;
+  color: var(--text) !important;
+  transition: all 300ms ease;
 
   &:hover {
-    color: var(--text-strong) !important;
+    color: var(--text) !important;
   }
 }
+
+  // Links
+  p a {
+    text-decoration: none;
+    border-bottom: 2px solid var(--secondary);
+
+    &:hover {
+      border-bottom: 3px solid var(--text);
+    }
+  }
 
 hr {
   background-color: var(--secondary) !important;
@@ -130,19 +141,6 @@ hr {
 .container.is-max-tablet {
   max-width: 768px !important;
 }
-
-// Page transitions
-// .page-enter-active,
-// .page-leave-active {
-//   transition-property: opacity;
-//   transition-timing-function: ease-in-out;
-//   transition-duration: 250ms;
-// }
-
-// .page-enter,
-// .page-leave-to {
-//   opacity: 0;
-// }
 
 .link {
   background-image: linear-gradient(

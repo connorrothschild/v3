@@ -12,7 +12,7 @@
 export default {
   data() {
     return {
-      colorSchemes: ["blue", "red", "brown", "grey", "white", "black"],
+      colorSchemes: ["blue", "red", "brown", "dark-blue", "grey", "black" /*, "white", */],
       currentScheme: "black",
     };
   },
@@ -61,7 +61,7 @@ export default {
         );
         document.documentElement.style.setProperty("--text", "#ffffff");
         document.documentElement.style.setProperty("--text-strong", "#f5f5f5");
-      } else if (scheme == "grey") {
+      } else if (scheme == "dark-blue") {
         document.documentElement.style.setProperty("--base", "black");
         document.documentElement.style.setProperty("--primary", "#2B2F3D");
         document.documentElement.style.setProperty("--primary-off", "#1e283d");
@@ -72,6 +72,17 @@ export default {
         );
         document.documentElement.style.setProperty("--text", "#ffffff");
         document.documentElement.style.setProperty("--text-strong", "#f5f5f5");
+      } else if (scheme == "grey") {
+        document.documentElement.style.setProperty("--base", "black");
+        document.documentElement.style.setProperty("--primary", "#242629");
+        document.documentElement.style.setProperty("--primary-off", "#313335");
+        document.documentElement.style.setProperty("--secondary", "#2962FF");
+        document.documentElement.style.setProperty(
+          "--secondary-bg",
+          "#2962FF20"
+        );
+        document.documentElement.style.setProperty("--text", "#fafafa");
+        document.documentElement.style.setProperty("--text-strong", "#ffffff");
       } else if (scheme == "white") {
         document.documentElement.style.setProperty("--base", "#ebebeb");
         document.documentElement.style.setProperty("--primary", "#E1E4E8");

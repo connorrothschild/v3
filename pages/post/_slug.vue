@@ -159,26 +159,15 @@ export default {
 
   // Links
   a {
-    display: inline-block;
-    &:after {
-      color: var(--secondary);
-      text-decoration: none;
-      display: block;
-      content: "";
-      border-bottom: solid 1px var(--secondary);
-      transform: scaleX(0);
-      transition: transform 250ms ease-in-out;
-    }
+    text-decoration: none;
+    border-bottom: 2px solid var(--secondary);
 
     &:hover {
-      color: var(--secondary) !important;
-
-      &:after {
-        transform: scaleX(1);
-      }
+      border-bottom: 3px solid var(--text);
     }
   }
 
+  // Blocks
   blockquote {
     padding: 1rem;
     border-left: 5px solid var(--secondary);
