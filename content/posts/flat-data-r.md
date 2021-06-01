@@ -21,7 +21,7 @@ The [GitHub OCTO team](https://octo.github.com/) recently released their first p
 
 [Flat Data](https://octo.github.com/projects/flat-data) solves the problem of carrying out the same repetitive tasks—retrieving, cleaning, and then republishing data—that commonly affects developers who want to present rapidly updating data (for example, COVID-19 data that updates daily). And although alternative solutions exist, Flat Data is easy, intuitive, and integrated directly with your GitHub repository:
 
-[<InlineImage src="post/flat-data-r/flat-diagram.png" alt="A diagram showcasing a common Flat Data workflow" :clickable='false'></InlineImage>](https://octo.github.com/projects/flat-data)
+[<InlineImage src="post/flat-data-r/flat-diagram.png" alt="A diagram showcasing a common Flat Data workflow" :clickable=false></InlineImage>](https://octo.github.com/projects/flat-data)
 
 The idea, as seen above, is essentially to read in data (*data.json*), conduct some postprocessing (*process.js*), and output some better data (*processed-data.json*).
 
