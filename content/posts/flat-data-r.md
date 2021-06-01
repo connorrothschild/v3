@@ -1,6 +1,6 @@
 ---
 title: Including R in your Flat Data Workflow
-description: Fetch and clean data on a schedule, using GitHub Actions + R
+description: Fetch and clean data automatically with GitHub Actions + R
 img: flat-data-r/header.png
 img_alt: "Blog post header image"
 date: "2021-05-30"
