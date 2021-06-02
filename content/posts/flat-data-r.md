@@ -86,17 +86,14 @@ Those who are skilled in data wrangling with JavaScript might be able to write t
 The `postprocess.ts` file I use in my workflow looks like this (it might help to see how [Deno works](https://deno.land/manual@v1.10.2/examples/subprocess)):
 
 ```js
-// 1. Import Deno
-import 'https://deno.land/x/flat@0.0.10/mod.ts'
-
-// 2. Install necessary packages
+// 1. Install necessary packages
 const r_install = Deno.run({
     cmd: ['sudo', 'Rscript', '-e', "install.packages(c('dplyr', 'readxl', 'readr', 'lubridate', 'stringr'))"]
 });
 
 await r_install.status();
 
-// 3. Forward the execution to the R script
+// 2. Forward the execution to the R script
 const r_run = Deno.run({
     cmd: ['Rscript', './clean.R']
 });
@@ -104,9 +101,9 @@ const r_run = Deno.run({
 await r_run.status();
 ```
 
-The above script is rather simple: it 1) imports Deno, 2) installs packages, and 3) runs the processing script, titled `clean.R`.
+The above script is rather simple: it 1) installs packages, and 2) runs the processing script, titled `clean.R`.
 
-The second step is important.  **Package management was the biggest issue I ran into while setting up this workflow; if you're having issues, pay attention to this step.** You'll need to identify all the scripts that are required in your R processing script, but you can't install those packages *in the script itself*, due to virtual machine permissions. You instead have to run them via the command line, using `sudo Rscript -e`, as I do above (in step 2). 
+The first step is important.  **Package management was the biggest issue I ran into while setting up this workflow; if you're having issues, pay attention to this step.** You'll need to identify all the scripts that are required in your R processing script, but you can't install those packages *in the script itself*, due to virtual machine permissions. You instead have to run them via the command line, using `sudo Rscript -e`, as I do above (in step 1). 
 
 The command `sudo Rscript -e` precedes any regular function or command that you would run in an R script. It executes those commands via the command line, rather than within a script. (We add sudo to overcome system user permission problems.) For more, see [this page](https://stackoverflow.com/questions/18306362/run-r-script-from-command-line). 
 
