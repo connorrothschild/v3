@@ -41,6 +41,12 @@
         </NuxtLink>
         <a
           class="navbar-item"
+          href="mailto:connor@connorrothschild.com"
+        >
+          Email
+        </a>
+        <a
+          class="navbar-item"
           href="https://docs.google.com/document/d/1qBH-wNMe2nv9Xa4uzHZ5wBevohwKuB3h2i9M2yk4POk/edit?usp=sharing"
           target="_blank"
           rel="noopener"
