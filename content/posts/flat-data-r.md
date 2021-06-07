@@ -31,9 +31,9 @@ The most essential step of a Flat Data project is *postprocessing*. This occurs 
 
 **Using R in a Flat Data pipeline is as simple as installing the necessary packages and then sourcing your R cleaning script from a postprocessing TypeScript file.** Let's explore how that works.
 
-We'll be grabbing data from the [Mapping Police Violence](https://mappingpoliceviolence.org/) homepage, tidying it up, and then republishing it. (This cleaned data is the source for my [visualization](https://connorrothschild.github.io/police-killings/) on police violence.)  The final data output looks like this:
+We'll be grabbing data from the [Mapping Police Violence](https://mappingpoliceviolence.org/) homepage, tidying it up, and then republishing it. (This cleaned data is the source for my [visualization](https://connorrothschild.github.io/police-killings/) on police violence.)  Here's a sample of the final data output:
 
-<iframe src="https://flatgithub.com/connorrothschild/flat-demo-r-processing?filename=output.csv&sha=61df289b127a70513b334d686de65ed79ce48a96" style="height: 90vh;" width="100%"></iframe>
+<iframe src="https://flatgithub.com/connorrothschild/flat-demo-r-processing?filename=sample.csv&sha=585d7221d2712494195dea616bac68dc864025b1" loading="lazy" style="height: 90vh;" width="100%"></iframe>
 
 ### 01. Setup `flat.yml`
 
