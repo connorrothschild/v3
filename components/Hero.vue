@@ -59,6 +59,16 @@
                 passionate about data visualization, presentation, and
                 storytelling.
               </p>
+              <p class="content">
+                My latest updates are on
+                <a
+                  href="https://twitter.com/CL_Rothschild"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="link"
+                  >Twitter</a
+                >.
+              </p>
             </div>
             <div v-else class="has-text-centered" key="image">
               <img
