@@ -15,7 +15,11 @@ url: "https://connorrothschild.github.io/bob-ross-art-gallery/"
 
 # What it is
 
-[**The Bob Ross Virtual Art Gallery**](https://connorrothschild.github.io/bob-ross-art-gallery/) is a visual storytelling piece analyzing Bob Ross' series _The Joy of Painting_. It allows the user to explore each painting from the series in an interactive, digital art gallery.
+[**The Bob Ross Virtual Art Gallery**](https://connorrothschild.github.io/bob-ross-art-gallery/) is a visual storytelling piece analyzing Bob Ross' series _The Joy of Painting_. 
+
+<!-- It allows the user to explore each painting from the series in an interactive, digital art gallery. -->
+
+It has since been retired due to a cease and desist from Bob Ross, Inc. Before that, it attracted media attention from [Yahoo](https://www.yahoo.com/now/bob-ross-virtual-gallery-offers-195835693.html), [Nerdist](https://nerdist.com/article/bob-ross-virtual-gallery-art/), [OpenCulture](https://www.openculture.com/2021/06/the-bob-ross-virtual-art-gallery.html), [Fatherly](https://www.fatherly.com/play/bob-ross-virtual-art-gallery-perfect-relax/), [DesignTaxi](https://designtaxi.com/news/414284/Bob-Ross-Virtual-Art-Gallery-Lets-You-Take-A-Happy-Little-Break-To-See-His-Art/), [FlowingData](https://flowingdata.com/2021/06/01/colors-of-bob-ross-explored/) and others. It also won first place in the Standalone Multimedia category at the Society for News Design's [2021 Student Design Contest](https://msusnd.org/2021-college-design-contest/).
 
 # Tools used
 

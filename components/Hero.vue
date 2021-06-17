@@ -47,6 +47,16 @@
                 <span id="yeehaw">Houston, Texas</span>.
               </p>
               <p class="content">
+                I currently make data visualizations at 
+                <a
+                  href="https://www.axios.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="link"
+                  >Axios</a
+                >!
+              </p>
+              <!-- <p class="content">
                 I currently work at
                 <a
                   href="https://www.mokshadata.com/"
@@ -58,7 +68,7 @@
                 US Special Operations Command, and the Houston Food Bank. I'm
                 passionate about data visualization, presentation, and
                 storytelling.
-              </p>
+              </p> -->
               <p class="content">
                 My latest updates are on
                 <a
