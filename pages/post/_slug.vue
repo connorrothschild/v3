@@ -3,7 +3,7 @@
     <Nav classes="theme-primary" />
     <article class="section container is-max-tablet">
       <h2 class="heading is-size-6 has-text-weight-light">
-        {{ formatDate(post.date) }} //
+        {{ formatDate(post.date) }} •
         <ReadingTime :content="post"></ReadingTime>
       </h2>
       <h1 class="title my-3 has-text-weight-boldest is-size-2 is-size-3-mobile">

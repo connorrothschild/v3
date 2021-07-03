@@ -13,7 +13,7 @@ For one example, look at this "Color Emotion Guide" from marketing site [TapClic
 
 <InlineImage alt="Color guide that doesn’t make any sense. Random emotions are assigned to different brand colors, with no apparent pattern." src="post/color-in-data-vis/color-emotion-guide-lol.jpg"></InlineImage>
 
-The implicit suggestion here is that we should use color--whenever and however we can--to capture some form of emotion. Not only is this specific categorization rather odd (Monster energy drinks are peaceful, Virgin Mobile embodies "bold excitement", and Harley Davidson motorcycles just scream "cheerful friendliness" 🤩), it leads novice practitioners to believe that color should be used just for the sake of using color.
+The implicit suggestion here is that we should use color—whenever and however we can—to capture some form of emotion. Not only is this specific categorization rather odd (Monster energy drinks are peaceful, Virgin Mobile embodies "bold excitement", and Harley Davidson motorcycles just scream "cheerful friendliness" 🤩), it leads novice practitioners to believe that color should be used just for the sake of using color.
 
 Examples of gratuitous color use abound.
 
@@ -49,13 +49,13 @@ Color is not the enemy. Rather, the (far too frequent) abuse and misuse of color
 
 One use of color is to draw attention to a data point of interest. This kind of color use would fall into the category of [explanatory visualization](https://www.oreilly.com/library/view/designing-data-visualizations/9781449314774/ch01.html), as opposed to its exploratory counterpart. If you've already explored, analyzed, and probed your data, you now need to deliver those insights to someone else (a supervisor, a client, or a curious friend). It would be a waste of time to present to them all of the exploratory work you did, which is why your presentation should make use of color to focus on your findings.
 
-As practitioner Andy Kirk [puts it](https://www.visualisingdata.com/2015/01/make-grey-best-friend/), visualization practitioners in this stage of presentation should **make grey their best friend**. This is because the _absence of color_, not the excessive use of it, helps paint a picture and tell a story. By using grey as the primary color in a visualization, we automatically draw our viewers' eyes to <span style = "color:red">whatever isn't grey</span>. That way, if we are interested in telling a story about _one data point_, we can do so quite easily.
+As practitioner Andy Kirk [puts it](https://www.visualisingdata.com/2015/01/make-grey-best-friend/), visualization practitioners in this stage of presentation should **make grey their best friend**. This is because the _absence of color_, not the excessive use of it, helps paint a picture and tell a story. By using grey as the primary color in a visualization, we automatically draw our viewers' eyes to <span style = "background: #FF9B9B; color: black; padding: 3px; border-radius: 3px; box-decoration-break: clone;">whatever isn't grey</span>. That way, if we are interested in telling a story about _one data point_, we can do so quite easily.
 
 Here's a quick [example](https://github.com/connorrothschild/bbdata) I made in R a while back:
 
 <InlineImage alt="A barplot showcasing vaccination by county in Texas. All bars are grey except the lowest bar, representing Terry County (78% vaccinated), which is highlighted in a royal blue." src="post/color-in-data-vis/color-emphasized.png"></InlineImage>
 
-The point of the visualization is not to show our audience the kindergarten vaccination rate of _every county_ in Texas. It is instead to highlight the lowest rate--Terry County. This visualization leverages the grey fill of every other bar to immediately draw the audiences' eyes to Terry County. Because we used only two colors, we can also highlight text in the subtitle to make the connection even clearer for our audience. Color--if used prudently--makes our visualizations more digestible and more informative.
+The point of the visualization is not to show our audience the kindergarten vaccination rate of _every county_ in Texas. It is instead to highlight the lowest rate—Terry County. This visualization leverages the grey fill of every other bar to immediately draw the audiences' eyes to Terry County. Because we used only two colors, we can also highlight text in the subtitle to make the connection even clearer for our audience. Color—if used prudently—makes our visualizations more digestible and more informative.
 
 Now, imagine if I visualized that same data in the following way:
 

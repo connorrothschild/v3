@@ -9,7 +9,7 @@
         {{ award.title }}
       </h1>
       <p class="subtitle heading is-size-6 has-text-weight-light">
-        {{ award.organization }} // {{ formatDate(award.date) }}
+        {{ award.organization }} • {{ formatDate(award.date) }}
       </p>
       <hr />
       <nuxt-content :document="award" />
