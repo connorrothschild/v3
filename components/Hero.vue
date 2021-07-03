@@ -47,14 +47,19 @@
                 <span id="yeehaw">Houston, Texas</span>.
               </p>
               <p class="content">
-                I currently make data visualizations at 
+                I currently make data visualizations at
                 <a
                   href="https://www.axios.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="link"
                   >Axios</a
-                >!
+                >! Find some of my visualizations <a
+                  href="https://muckrack.com/connor-rothschild-1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="link"
+                  >here</a>.
               </p>
               <!-- <p class="content">
                 I currently work at

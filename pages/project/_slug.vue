@@ -167,62 +167,15 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 /* STYLING SPECIFIC TO PROJECTS GOES HERE */
-.nuxt-content {
-  h1 {
-    font-weight: bold;
-    font-size: 1.8rem;
-    @media screen and (max-width: 768px) {
-      font-size: 1.4rem;
-    }
-  }
-  h2 {
-    font-weight: bold;
-    font-size: 1.6rem;
-    @media screen and (max-width: 768px) {
-      font-size: 1.3rem;
-    }
-  }
-  h3 {
-    font-weight: bold;
-    font-size: 1.4rem;
-    @media screen and (max-width: 768px) {
-      font-size: 1.2rem;
-    }
-  }
-  h4 {
-    font-weight: bold;
-    font-size: 1.2rem;
-    @media screen and (max-width: 768px) {
-      font-size: 1.1rem;
-    }
-  }
-
-  p,
-  figure {
-    margin-bottom: 1rem;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin-bottom: 0.5rem;
-  }
-}
-
-.nuxt-content p:last-child {
-  margin-bottom: 0;
-}
-
-// HOVER ICON LINK
-.icon.icon-link {
-  width: 0;
-}
-
 .card-footer {
   border-top: 1px solid var(--text);
+
+  .card-footer-item {
+    &:hover {
+      color: var(--secondary) !important;
+    }
+  }
 }
 </style>

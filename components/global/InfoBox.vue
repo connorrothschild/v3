@@ -6,9 +6,9 @@
 
 <style scoped lang="scss">
 .info-box::before {
-  content: "❗";
+  content: "❕";
   font-size: 1.5rem;
-  margin-right: 0.5rem;
+  margin-right: 1rem;
 }
 
 .info-box {

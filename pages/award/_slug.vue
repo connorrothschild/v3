@@ -9,22 +9,21 @@
         {{ award.title }}
       </h1>
       <p class="subtitle heading is-size-6 has-text-weight-light">
-        {{ award.organization }} | {{ formatDate(award.date) }}
+        {{ award.organization }} // {{ formatDate(award.date) }}
       </p>
       <hr />
       <nuxt-content :document="award" />
       <div class="mt-3 is-size-5 has-text-centered">
         <a
-          class="has-text-weight-light"
+          class="has-text-weight-light award-link"
           target="_blank"
           rel="noopener"
           :href="award.project_url"
         >
           Project Link
         </a>
-        |
         <a
-          class="has-text-weight-light has-text-weight-primary"
+          class="has-text-weight-light award-link"
           target="_blank"
           rel="noopener"
           :href="award.media_url"
@@ -124,64 +123,16 @@ export default {
 };
 </script>
 
-<style lang="scss">
-/* STYLING SPECIFIC TO PROJECTS GOES HERE */
-.nuxt-content-container {
-  h1 {
-    font-weight: bold;
-    font-size: 28px;
-  }
-  h2 {
-    font-weight: bold;
-    font-size: 22px;
-  }
-  h3 {
-    font-weight: bold;
-    font-size: 18px;
-  }
-  h4 {
-    font-weight: bold;
-    font-size: 16px;
-  }
+<style scoped lang="scss">
+/* STYLING SPECIFIC TO AWARDS GOES HERE */
+.award-link {
+  border-bottom: 1px solid var(--text);
+  display: inline-block;
+  margin: 3px 5px;
+  text-align: center;
 
-  p,
-  figure {
-    margin-bottom: 1rem;
+  &:hover {
+    border-bottom: 1px solid var(--secondary);
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin-bottom: 0.5rem;
-  }
-}
-
-.nuxt-content p:last-child {
-  margin-bottom: 0;
-}
-
-.my-tiles {
-  p:not(:last-child) {
-    margin-bottom: 0.35rem !important;
-  }
-
-  // a[href] {
-  // 	background-color: #f03a5f;
-  // 	color: white !important;
-  // 	padding: 3px;
-  // 	border-radius: 3px;
-  // 	text-decoration: none !important;
-  // 	transition: 200ms background-color;
-
-  // 	&:hover {
-  // 		background-color: #363636;
-  // 	}
-  // }
-}
-// HOVER ICON LINK
-.icon.icon-link {
-  width: 0;
 }
 </style>

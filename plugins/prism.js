@@ -1,7 +1,7 @@
 /* eslint-disable no-template-curly-in-string */
 /* eslint-disable no-undef */
 import 'clipboard' // For the copy to clipboard plugin
-import Prism from 'prismjs'
+import Prism from 'prismjs';
 import Vue from 'vue'
 
 // Include a theme:
@@ -11,6 +11,8 @@ import 'prism-themes/themes/prism-atom-dark.css'
 import 'prismjs/components/prism-yaml'
 import 'prismjs/components/prism-markup'
 import 'prismjs/components/prism-r'
+import 'prismjs/components/prism-jsx'
+// import 'prism-svelte'
 
 // Include the toolbar plugin: (optional)
 import 'prismjs/plugins/toolbar/prism-toolbar'

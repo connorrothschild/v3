@@ -39,10 +39,7 @@
         <NuxtLink class="navbar-item" :to="{ path: '/', hash: '#blog' }">
           Blog
         </NuxtLink>
-        <a
-          class="navbar-item"
-          href="mailto:connor@connorrothschild.com"
-        >
+        <a class="navbar-item" href="mailto:connor@connorrothschild.com">
           Email
         </a>
         <a

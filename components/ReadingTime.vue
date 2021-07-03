@@ -1,7 +1,8 @@
 <template>
-  <span @mouseover="hovered = true" @mouseout="hovered = false">{{ readingTime }} minute read 
-    <span class='wpm' v-if="hovered">(at 200 WPM)</span>
-    </span>
+  <span @mouseover="hovered = true" @mouseout="hovered = false"
+    >{{ readingTime }} minute read
+    <span class="wpm" v-if="hovered">(at 200 WPM)</span>
+  </span>
 </template>
 
 <script>
@@ -9,9 +10,9 @@ export default {
   name: "readingTime",
   props: ["content"],
   data: function () {
-      return {
-        hovered: false
-      }
+    return {
+      hovered: false,
+    };
   },
   computed: {
     readingTime() {
@@ -29,7 +30,7 @@ export default {
 <style>
 .wpm {
   text-transform: none;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: 200;
 }
 </style>
