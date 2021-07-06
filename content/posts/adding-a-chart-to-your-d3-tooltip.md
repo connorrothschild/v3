@@ -43,7 +43,7 @@ The process mostly relies on `d3-tip`, which you can learn more about [here](htt
 
 You can load `d3-tip` with the following code:
 
-```javascript
+```js
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
 ```
 
@@ -51,12 +51,13 @@ You can load `d3-tip` with the following code:
 
 Next, you initialize your tooltip, give it a class (for CSS styling), and provide the specified `offset`. In my example, I define my offset according to the [user's mouse position](https://stackoverflow.com/questions/28536367/in-d3-js-how-to-adjust-tooltip-up-and-down-based-on-the-screen-position). That way, if a user hovers over an eastern state, the tooltip doesn't disappear off the screen!
 
-```javascript
-// define the tooltip
+```js
+// Define the tooltip
 var tool_tip = d3
   .tip()
   .attr("class", "d3-tip")
-  // if the mouse position is greater than 650 (~ Kentucky/Missouri), offset tooltip to the left instead of the right
+  // If the mouse position is greater beyond ~ Kentucky/Missouri,
+  // Offset tooltip left instead of right
   .offset(function () {
     if (current_position[0] > 650) {
       return [-20, -120];
@@ -64,17 +65,18 @@ var tool_tip = d3
       return [20, 120];
     }
   })
-  // input the title, and include the div
+  // Input the title, and include the div with an id of #tipDiv
   .html("<p>Opioid-involved deaths over time in</p><div id='tipDiv'></div>");
 
+// Call it as a function to our app-wide SVG
 svg.call(tool_tip);
 ```
 
 The most important part here is
 
-```javascript
+```js
 .html(
-     "<p>Opioid-involved deaths over time in</p><div id='tipDiv'></div>"
+  "<p>Opioid-involved deaths over time in</p><div id='tipDiv'></div>"
 );
 ```
 
@@ -82,9 +84,9 @@ where we define the html that creates the tooltip itself. In our case, we provid
 
 ### Step 3: Create the `tipDiv` object
 
-Finally, we can create the `tipDiv` object we referenced in the above code. The object will be created on mouseover of the group of interest (in my case, states). Thus, the code will look something like this:
+Finally, we can create the `tipDiv` object we referenced in the above code. The object will be created on mouseover of the group of interest (in my case, states). Our code will look something like this (don't worry too much about it, I'll explain step by step below):
 
-```javascript
+```js
 states = svg.append("g")
   .attr("class", "states")
   .selectAll("path")
@@ -93,25 +95,31 @@ states = svg.append("g")
   .append("path")
   .attr("d", path)
   .on('mouseover', function(d) {
+    // Define and store the mouse position;
+    // This is used to define tooltip offset, seen above
+    current_position = d3.mouse(this);
 
-// define and store the mouse position. this is used to define tooltip offset, seen above.
-current_position = d3.mouse(this);
+    // Record current state
+    current_state = nameById[d.id]
 
-// define current state
-current_state = nameById[d.id]
+    // Show the tooltip
+    tool_tip.show();
 
-// show the tooltip
-tool_tip.show();
+    // ... Continued below
 ```
 
 After that initialization and `show` function, we can define the `tipDiv` object:
 
-```javascript
+```js
+// ... Continued from above
+// Select the #tipDiv element, and appends an SVG (this is the tooltip)
 var tipSVG = d3.select("#tipDiv")
      .append("svg")
      .attr("width", 220)
      .attr("height", 55);
 
+// Apply the same logic you would to a regular chart, 
+// but append it to our tipSVG
 tipSVG.append("path")
      .datum(overdoses.filter(function(d) {return nameById[d.id] == current_state}))
      .style("stroke", function() {
@@ -125,6 +133,7 @@ tipSVG.append("path")
      .style("fill", "none")
      .attr("d", line)
 
+// Same as above (this is the circle at the end of the line)
 tipSVG.append("circle")
      .attr("fill", function() {
      	if (rateById[d.id] < 10) {
@@ -138,6 +147,7 @@ tipSVG.append("circle")
     .attr("cy", y_tooltip(rateById[d.id]))
     .attr("r", 3)
 
+// Tooltip labelling on last value
 tipSVG.append("text")
      .text(rateById[d.id] + " deaths")
      .attr("x", 140)
@@ -146,6 +156,7 @@ tipSVG.append("text")
      		else { return y_tooltip(rateById[d.id]) - 7 }
      	})
 
+// Same as above
 tipSVG.append("text")
      .text("per 100,000")
      .attr("x", 140)
@@ -154,6 +165,7 @@ tipSVG.append("text")
      		else { return y_tooltip(rateById[d.id]) + 7 }
      	})
 
+// State name
 tipSVG.append("text")
      .text(current_state)
      .attr("x", 0)
@@ -161,6 +173,7 @@ tipSVG.append("text")
      .style("font-size", 18)
      .style("font-weight", 400)
  })
+ // On mouseout, hide the tooltip
 .on('mouseout', tool_tip.hide)
 ```
 
@@ -168,7 +181,7 @@ What's happening here? Let's look at one piece at a time.
 
 **First**, we define the object and name it `tipSVG`. `tipSVG` selects `#tipDiv` (defined in our d3-tip) and appends an SVG. We also define the width and height of the tooltip.
 
-```javascript
+```js
 var tipSVG = d3
   .select("#tipDiv")
   .append("svg")
@@ -178,7 +191,7 @@ var tipSVG = d3
 
 **Next**, we append a path to that SVG. This could be a circle, or a rectangle, or any other appendable shape. Because I am drawing a simple line, we use `path`.
 
-```javascript
+```js
 tipSVG
   .append("path")
   .datum(
@@ -198,9 +211,9 @@ tipSVG
   .attr("d", line);
 ```
 
-In defining the `d` attribute, you see I use the phrase `line`. This is defined earlier in my code to return the x and y position of each data point, to create the path itself.
+In defining the `d` attribute, you see I reference `line`. This is a function defined earlier in my code to return the `x` and `y` position of each data point, to create the path itself, as you can see below:
 
-```javascript
+```js
 var x_tooltip = d3
   .scaleLinear()
   .domain(
@@ -222,9 +235,18 @@ var line = d3
   });
 ```
 
+<info-box>
+  <template #info-box>
+
+Because the tooltip contains its own chart with a predefined with and height, we need to provide scale functions as we would in a normal chart. We name this `x_tooltip` and `y_tooltip` so as to avoid confusion with our main scaling functions.
+
+  </template>
+</info-box>
+
 **Lastly**, we add a circle at the end of the line to signify the final data point. We also add the text label for the year 2017.
 
-```javascript
+```js
+// Final point
 tipSVG.append("circle")
   .attr("fill", function() {
   	if (rateById[d.id] < 10) {
@@ -238,6 +260,7 @@ tipSVG.append("circle")
   .attr("cy", y_tooltip(rateById[d.id]))
   .attr("r", 3)
 
+// Text label (##### deaths)
 tipSVG.append("text")
   .text(rateById[d.id] + " deaths")
   .attr("x", 140)
@@ -246,6 +269,7 @@ tipSVG.append("text")
   		else { return y_tooltip(rateById[d.id]) - 7 }
   	})
 
+// Per 100,00
 tipSVG.append("text")
   .text("per 100,000")
   .attr("x", 140)
@@ -254,21 +278,32 @@ tipSVG.append("text")
   		else { return y_tooltip(rateById[d.id]) + 7 }
   	})
 
+// State name
 tipSVG.append("text")
-  .text(current_state)
+  .text(current_state) // Set in our mouseover function from earlier
   .attr("x", 0)
   .attr("y", 15)
   .style("font-size", 18)
   .style("font-weight", 400)
- })
+ }) // End mouseover function
 ```
 
 And finally, we hide the tooltip on mouseout:
 
-```javascript
+```js
 .on('mouseout', tool_tip.hide)
 ```
 
-Thanks for reading! You can play around with the visualization and checkout the tooltip for yourself here (find the fullscreen version [here](https://connorrothschild.github.io/D3.js/map-overdoses/)):
+## In sum
+
+The process of appending a chart to your tooltip in a D3.js visualization is as simple as:
+
+1. Load `d3-tip` via a `<script>` tag
+2. Create a tooltip object using `d3-tip`, which can be done easily upon consulting their documentation
+3. Add an SVG element to the tooltip we created, as we would create a chart normally using D3 syntax
+
+Voila! You can find the code all in one place [here](https://github.com/connorrothschild/D3.js/blob/master/map-overdoses/index.html). Please note that I made this visualization early in my career, so I'm not particularly proud of the code 😅
+
+You can play around with the visualization and checkout the tooltip for yourself below (find the fullscreen version [here](https://connorrothschild.github.io/D3.js/map-overdoses/)):
 
 <iframe title="Map of opioid-related overdoses, by state, between 1999 and 2017." src="https://connorrothschild.github.io/D3.js/map-overdoses/" width='100%' height="860px" style="background: #FFFFFF;"></iframe>
