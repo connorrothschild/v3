@@ -254,7 +254,7 @@ hr {
   }
 
   // Paras
-  p {
+  p, li {
     margin-bottom: 1.25rem;
     font-size: 1.1rem;
     font-weight: 300;
@@ -288,9 +288,13 @@ hr {
     margin-bottom: 0.5rem;
   }
 
+  li::marker {
+    font-weight: bold;
+  }
+
   ol,
   ul {
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     margin-bottom: 1rem;
   }
 
@@ -307,6 +311,13 @@ hr {
 
   .img + :not(.img) {
     margin-top: 1rem;
+  }
+  
+  iframe {
+    position: relative;
+    left: calc(-40vw + 50%);
+    width: 80vw;
+    margin: 1rem 0 1.5rem 0;
   }
 
   // Margin around code highlighting
