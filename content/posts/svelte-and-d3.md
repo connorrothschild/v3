@@ -27,9 +27,9 @@ When I started making data visualizations<!-- my visualization "career" (it feel
 
 As I progress in my career <!-- (it still feels weird calling it that) -->, I'm realizing that D3 has a more particular, and smaller, role in the visualization lifecycle than I initially envisioned. As I design more visualizations, I find that one rule makes my development experience more productive, and the process of creating visualizations more intuitive. That rule? **To program literally, not declaratively.** <!-- **Less D3, more SVG**. --> 
 
-Increasingly, I've been writing SVG *literally*, rather than telling a tool like D3 *how to* create SVG. I've stopped using D3 method chaining, and started using Svelte's `{#each}` blocks for each of my elements. By writing my markup directly, and appending the data inline, my code makes more sense and causes fewer headaches.
+What does that mean? (I'm making up the term.) It means that I'm moving away from *declarative* data visualization in D3, and starting to make my visualizations *literally*, by simply writing markup in Svelte. I've stopped using D3 method chaining, and started using Svelte's `{#each}` blocks for each of my elements. By writing my markup directly and appending the data inline, my code makes more sense and causes fewer headaches.
 
-## 3️⃣ What D3 does
+## What D3 does 3️⃣ 
 
 D3 allows for intuitive transformations of the DOM by leveraging easy-to-understand selection syntax. Sound confusing? Let's learn through an example (adapted from the [D3 homepage](https://d3js.org/#selections)). Imagine we had 5 circles and wanted to change the fill of each. 
 
@@ -52,7 +52,7 @@ for (var i = 0; i < circles.length; i++) {
 }
 ```
 
-By contrast, D3 reduces the length of our code by a factor of 5, and allows us to write in a way that *just makes sense*. Here, we literally select every circle and change its fill.
+By contrast, D3 reduces the length of our code by a factor of 5, and allows us to write in a way that *just makes sense*. Here, we select every circle and change its fill.
 
 ```js
 d3.selectAll("circle").style("fill", "white")
@@ -102,7 +102,7 @@ All that to say, D3 is great. It works, and it works wonderfully. By removing th
 
 But I'm hardly using it at all recently. Increasingly, I've been the JavaScript ~~framework~~ compiler [Svelte](https://svelte.dev/) to *write SVG directly* rather than *tell the DOM to write SVG*.
 
-## 🗣 "Literal" programming with Svelte
+## "Literal" programming with Svelte 🗣
 
 Going back to our circles example from earlier, imagine if we could simply bind our data to our app's markup **directly**, without any intermediate code serving as instructions.
 
@@ -110,7 +110,7 @@ Going back to our circles example from earlier, imagine if we could simply bind 
 
 ```jsx
 <script>
-  let data = [{x: 15, r: 5}, 
+  let data = [{x: 15, r: 5 }, 
               {x: 30, r: 10}, 
               {x: 45, r: 15}, 
               {x: 60, r: 20}, 
@@ -139,9 +139,11 @@ In my view, there are three benefits to writing our code this way:
 2. **Less friction in translating D3 to the DOM.** By writing SVG directly, we can copy an SVG element from the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle), paste in our values, and see immediate results. There's no handoff which might result in errors.
 3. **Reusability.** Creating a robust and flexible `<Circle />`, `<Bar />`, or `<Axis />` component allows for consistent reuse within and across projects. D3 code is usually written as a series of blocks, which lacks a natural structure and becomes difficult to reuse effectively.
 
-## 🍔 Bringing it home with burgers <!-- (or, imperative < declarative < literal) -->
+The only downside (which is actually just an adjustment) is that this new approach requires you to learn how to [write SVG](https://www.w3schools.com/graphics/svg_intro.asp). But isn't it a good exercise to learn the anatomy of what we're actually creating? Having knowledge of SVG elements and attributes will benefit any visual developer who creates visuals, no matter how they eventually do so.
 
-Imagine we want to make a burger. We have an array of objects, each with an ingredient and ingredient-specfic instructions.
+## Bringing it home with burgers 🍔 <!-- (or, imperative < declarative < literal) -->
+
+Imagine we want to make a burger. We have an array of objects, each with an ingredient and ingredient-specfic instructions. We want to 1) create each item (place it in our DOM), and 2) carry out its instructions (execute some function).
 
 ```js
 let ingredients = [
@@ -160,7 +162,7 @@ There are three ways to make this burger (at least, in our fantasy world where w
 <info-box>
   <template #info-box>
 
-Although I use the Svelte REPL to showcase these three examples, only the last one requires Svelte.
+Although I use the Svelte REPL to showcase these three examples, only the last one requires Svelte. The REPL is just a nice place to host (editable!) code 🙂
 
   </template>
 </info-box>
@@ -195,7 +197,7 @@ Using Svelte (or whatever framework you prefer) has a few other perks:
 
 ### Responsiveness
 
-By using Svelte's [reactive declarations](https://svelte.dev/tutorial/reactive-declarations), we can make certain variables  'watch' for state changes and update automatically. One huge benefit of this is that we can bind our scales to updating values such as the window width, and write minimal code to make our charts update on resize.
+By using Svelte's [reactive declarations](https://svelte.dev/tutorial/reactive-declarations) (the dollar signs 💰), we can make certain variables  'watch' for state changes and update automatically. One huge benefit of this is that we can bind our scales to updating values such as the window width, and write minimal code to make our charts update on resize.
 
 ```jsx
 import { windowWidth } from "../stores/store.js";

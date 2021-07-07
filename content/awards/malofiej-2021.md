@@ -1,8 +1,8 @@
 ---
 title: Bronze, 2021 Malofiej Awards
 organization: Malofiej
-date: "2020-06-18"
-featured: true
+date: "2021-06-18"
+featured: false
 media_url: "https://www.malofiejgraphics.com/awards/students-have-won-awards-too-2/2021/06"
 project_url: "https://www.connorrothschild.com/project/bob-ross-art-gallery"
 ---
