@@ -4,7 +4,7 @@ date: "2020-01-22"
 img: color-in-data-vis/header.png
 img_alt: "Blog post header image"
 description: An overview of the use of color in data visualization
-featured: true
+featured: false
 ---
 
 If our use of color in visualizations follows the [Five Ws (and one H)](https://en.wikipedia.org/wiki/Five_Ws), we're spending too much time on _how_, and not enough time on _why_. Color is too often seen as a tool to make pretty pictures, when it should be used to inform our audiences.
