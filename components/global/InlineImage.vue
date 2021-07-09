@@ -7,23 +7,21 @@
     :style="{ width: width }"
   >
     <!-- https://www.joshwcomeau.com/performance/embracing-modern-image-formats/ -->
-    <picture>
+    <!-- <picture>
       <source
         v-img
-        :src="imgSrcFallback()"
-        :srcSet="imgSrc()"
+        :srcSet="require(`~/assets/images/${this.src}?webp`)"
         :alt="alt"
         type="image/webp"
       />
       <source
         v-img
-        :src="imgSrcFallback()"
-        :srcSet="imgSrcFallback()"
+        :srcSet="require(`~/assets/images/${this.src}`)"
         :alt="alt"
         type="image/png"
-      />
-      <img v-img :src="imgSrcFallback()" :alt="alt" />
-    </picture>
+      /> -->
+      <img v-img :src="require(`~/assets/images/${this.src}`)" :alt="alt" />
+    <!-- </picture> -->
   </div>
   <!-- If clickable == false, (for images surrounded by <a> tag for example, regular image) -->
   <div
@@ -32,11 +30,11 @@
     style="display: inline-block"
     :style="{ width: width }"
   >
-    <picture>
-      <source :srcSet="imgSrc()" :alt="alt" type="image/webp" />
-      <source :srcSet="imgSrcFallback()" :alt="alt" type="image/png" />
-      <img :src="imgSrcFallback()" :alt="alt" />
-    </picture>
+    <!-- <picture>
+      <source :srcSet="require(`~/assets/images/${this.src}?webp`)" :alt="alt" type="image/webp" />
+      <source :srcSet="require(`~/assets/images/${this.src}`)" :alt="alt" type="image/png" /> -->
+      <BlurImage :src="src" :alt="alt" :type="'project'" />
+    <!-- </picture> -->
   </div>
 </template>
 
@@ -60,22 +58,6 @@ export default {
       type: Boolean,
       required: false,
       default: true,
-    },
-  },
-  methods: {
-    imgSrc() {
-      try {
-        return require(`~/assets/images/${this.src}?webp`);
-      } catch (error) {
-        return null;
-      }
-    },
-    imgSrcFallback() {
-      try {
-        return require(`~/assets/images/${this.src}`);
-      } catch (error) {
-        return null;
-      }
     },
   },
 };

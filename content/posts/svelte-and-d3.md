@@ -21,13 +21,19 @@ rect {
   height: 100%;
   fill: var(--semitransparent);
 }
+
+circle {
+  cursor: crosshair;
+}
 </style>
 
 When I started making data visualizations<!-- my visualization "career" (it feels weird calling it that) -->, I considered [D3](https://d3js.org/)—Data Driven Documents—to be the **gold standard** programming language required to create beautiful graphics on the web.
 
 As I progress in my career <!-- (it still feels weird calling it that) -->, I'm realizing that D3 has a more particular, and smaller, role in the visualization lifecycle than I initially envisioned. As I design more visualizations, I find that one rule makes my development experience more productive, and the process of creating visualizations more intuitive. That rule? **To program literally, not declaratively.** <!-- **Less D3, more SVG**. --> 
 
-What does that mean? (I'm making up the term.) It means that I'm moving away from *declarative* data visualization in D3, and starting to make my visualizations *literally*, by simply writing markup in Svelte. I've stopped using D3 method chaining, and started using Svelte's `{#each}` blocks for each of my elements. By writing my markup directly and appending the data inline, my code makes more sense and causes fewer headaches.
+FIXME improve the below paragraph
+
+What does that mean? (I'm making up the term.) It means that I'm moving away from *declarative* data visualization in D3, and starting to make my visualizations *literally*, by simply writing markup in [Svelte](https://svelte.dev/). I've stopped using D3 method chaining, and started using Svelte's `{#each}` blocks for each of my elements. By writing my markup directly and appending the data inline, my code makes more sense and causes fewer headaches.
 
 ## What D3 does 3️⃣ 
 
@@ -52,7 +58,7 @@ for (var i = 0; i < circles.length; i++) {
 }
 ```
 
-By contrast, D3 reduces the length of our code by a factor of 5, and allows us to write in a way that *just makes sense*. Here, we select every circle and change its fill.
+Doing this in D3 would reduce the length of our code by a factor of 5, and allows us to write in a way that *just makes sense*. Here, we select every circle and change its fill.
 
 ```js
 d3.selectAll("circle").style("fill", "white")
@@ -100,7 +106,7 @@ Again, we reduce the length of our code nearly 5x, and the code just **makes sen
 
 All that to say, D3 is great. It works, and it works wonderfully. By removing the need to write highly imperative code that is unintuitive in nature, D3 saves developers time and allows for more powerful visualizations.
 
-But I'm hardly using it at all recently. Increasingly, I've been the JavaScript ~~framework~~ compiler [Svelte](https://svelte.dev/) to *write SVG directly* rather than *tell the DOM to write SVG*.
+But I'm hardly using it at all recently. Increasingly, I've been using the JavaScript ~~framework~~ compiler [Svelte](https://svelte.dev/) to *write SVG directly* rather than *tell JavaScript to write SVG*.
 
 ## "Literal" programming with Svelte 🗣
 
@@ -110,11 +116,11 @@ Going back to our circles example from earlier, imagine if we could simply bind 
 
 ```jsx
 <script>
-  let data = [{x: 15, r: 5 }, 
+  let data = [{x: 10, r: 5 }, 
               {x: 30, r: 10}, 
-              {x: 45, r: 15}, 
-              {x: 60, r: 20}, 
-              {x: 75, r: 25}]
+              {x: 50, r: 15}, 
+              {x: 70, r: 20}, 
+              {x: 90, r: 25}]
 </script>
 
 <svg>
@@ -136,10 +142,22 @@ Going back to our circles example from earlier, imagine if we could simply bind 
 In my view, there are three benefits to writing our code this way:
 
 1. **More intuitive authoring.** It feels much more natural to write our SVG elements *directly* rather than provide D3 instructions on how to do so.
-2. **Less friction in translating D3 to the DOM.** By writing SVG directly, we can copy an SVG element from the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle), paste in our values, and see immediate results. There's no handoff which might result in errors.
+2. **Less friction in translating D3 to the DOM.** By writing SVG directly, we can copy an SVG element from the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle), paste in our values, and see immediate results. Fewer handoffs results in fewer errors.
 3. **Reusability.** Creating a robust and flexible `<Circle />`, `<Bar />`, or `<Axis />` component allows for consistent reuse within and across projects. D3 code is usually written as a series of blocks, which lacks a natural structure and becomes difficult to reuse effectively.
 
-The only downside (which is actually just an adjustment) is that this new approach requires you to learn how to [write SVG](https://www.w3schools.com/graphics/svg_intro.asp). But isn't it a good exercise to learn the anatomy of what we're actually creating? Having knowledge of SVG elements and attributes will benefit any visual developer who creates visuals, no matter how they eventually do so.
+The only downside (which is actually just an adjustment) is that this new approach requires you to learn how to [write SVG](https://www.w3schools.com/graphics/svg_intro.asp). But isn't it a good exercise to learn the anatomy of what we're actually creating? Having knowledge of SVG elements and attributes will benefit any developer who creates visuals, no matter how they eventually do so.
+
+FIXME where should this para go?
+
+I'll be writing more about *how to* use D3 and Svelte to make visualizations in the near future. ([Stay tuned.](https://twitter.com/CL_Rothschild)) In the meantime, you can find great tutorials from [Matthias Stahl](https://www.youtube.com/watch?v=bnd64ZrHC0U), and great examples of Svelte and D3 in action on [The Pudding's GitHub](https://github.com/the-pudding/). 
+
+<info-box>
+  <template #info-box>
+
+Want an immediate example? [Here's a Svelte component](https://github.com/connorrothschild/bob-ross-art-gallery/blob/master/src/components/ColorViz.svelte) I used in a recent project about Bob Ross.
+
+  </template>
+</info-box>
 
 ## Bringing it home with burgers 🍔 <!-- (or, imperative < declarative < literal) -->
 
@@ -171,11 +189,11 @@ Although I use the Svelte REPL to showcase these three examples, only the last o
 
 <iframe src="https://svelte.dev/repl/4b4eee03981b4450aa08e402aa0ceeb6?version=3.38.3" width="100%" height='600' title="Imperative burger building"></iframe>
 
-**The second option** is to tell your app to read in each ingredient and instruction, *declaratively*. D3 allows for declarative burger-making:
+**The second option** is to tell your app to read in each ingredient and instruction, *declaratively*. FIXME EXPLAIN WHAT THIS MEANS HERE, with a bit more context. D3 allows for declarative burger-making:
 
 <iframe src="https://svelte.dev/repl/8198de15de314aee860932629370ed09?version=3.38.3" width="100%" height='600' title="Declarative burger building"></iframe>
 
-**Finally**, we can simply append the instructions directly to the ingredient, *literally*. Only Svelte enables such burgers:
+**Finally**, we can simply append our instructions directly to the ingredient, *literally*. Only Svelte enables such burgers:
 
 <iframe src="https://svelte.dev/repl/f64bd9dcface42a1a2d544b35638631e?version=3" width="100%" height='600' title="Literal burger building"></iframe>
 
@@ -185,7 +203,7 @@ Which do you prefer? It's much easier to make a burger by *just making it*, rath
 
 ## In sum
 
-1. Svelte allows visualization developers to **write SVG directly** (and avoid telling D3 what to do), while using Svelte syntax (`{#each}`, etc.) to avoid annoying and inefficient for loops. 
+1. Svelte allows visualization developers to **write SVG directly** (and avoid telling D3 what to do), while using Svelte syntax (`{#each}`, etc.) to avoid annoying and inefficient `for` loops. 
 2. Including logic directly in your markup (`{#if}`, etc.) removes the need for complex JavaScript/DOM interactions. 
 3. Svelte works to *complement* D3, not replace it, by continuing to leverage the most powerful parts of its API: `d3-scale`, `d3-array`, `d3-shape`, etc.
 
@@ -220,7 +238,7 @@ Another way to achieve easy responsiveness is to [bind the SVG's parent containe
 
 ### If/else blocks
 
-In regular D3, we can use the [ternary operator](https://en.wikipedia.org/wiki/%3F:) to define condition-specific attributes, like this:
+In regular D3, we often use the [ternary operator](https://en.wikipedia.org/wiki/%3F:) to define condition-specific attributes, like this:
 
 ```js
 // Circles are filled green if positive, red if negative
@@ -234,9 +252,9 @@ This is great, but what if we want to make more significant changes based on app
 2. Tablet (520px to 1024px)
 3. Mobile (< 520px)
 
-In D3, we would achieve this by adding a resize event listener, provide the custom breakpoints, and render different visuals if the updated window width is within a certain range. The complicated part would be having to render a different visual at each breakpoint. Honestly, I can't explain exactly how I would do it because I haven't done it (😅). What I do know is that Svelte makes this easy as pie.
+In D3, we would achieve this by adding a resize event listener, providing custom breakpoints, and rendering different visuals if the updated window width were within a certain range. The complicated part would be having to render a different visual at each breakpoint. ~~Honestly, I can't explain exactly how I would do it because I haven't done it (😅). What I do know is that Svelte makes this easy as pie.~~
 
-One key difference between relying on D3 and leveraging the power of Svelte is that Svelte allows for [conditional rendering](https://svelte.dev/tutorial/if-blocks) *directly in our markup*, not just in our JavaScript logic. In other words, while vanilla JavaScript would be able to do the following:
+One key difference between relying on D3 and leveraging the power of Svelte is that Svelte allows for [conditional rendering](https://svelte.dev/tutorial/if-blocks) *directly in our markup*, not just in our JavaScript logic. In other words, while vanilla JavaScript would approach our problem with the following:
 
 ```js
 window.addEventListener('resize', function(event) {

@@ -101,7 +101,8 @@ export default {
 	},
 	  
 	optimizedImages : {
-		optimizeImages : true
+		optimizeImages : true,
+		// optimizeImagesInDev: true,
 	},
 
 	generate        : {
