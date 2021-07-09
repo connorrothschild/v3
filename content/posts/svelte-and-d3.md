@@ -31,11 +31,13 @@ circle {
 }
 </style>
 
-When I started making data visualizations<!-- my visualization "career" (it feels weird calling it that) -->, I considered [D3](https://d3js.org/)—Data Driven Documents—to be the gold standard programming language required to create beautiful graphics on the web.
+When I started making data visualizations, I considered [D3](https://d3js.org/)—Data Driven Documents—to be the gold standard programming language required to create beautiful graphics on the web.
 
-As I progress in my career<!-- (it still feels weird calling it that) -->, I'm realizing that D3 has a more particular (and smaller) role in the visualization lifecycle than I initially envisioned. As I design more visualizations, I'm learning that my most efficient and intuitive development comes when I **program literally, not declaratively.** <!-- **Less D3, more SVG**. --> 
+As I progress in my career, I'm realizing that D3 has a more particular (and smaller) role in the visualization lifecycle than I initially envisioned. As I design more visualizations, I'm learning that my most efficient and intuitive development comes when I **program literally**. 
 
-What does that mean? (To be honest, I'm making up the term.) It means that I'm moving away from *declarative* data visualization in D3, and starting to make my visualizations *literally*, by simply writing markup in [Svelte](https://svelte.dev/). I've stopped using [D3 method chaining](https://www.carlosrendon.me/unfinished_d3_book/d3_method_chaining.html), and started using Svelte's `{#each}` blocks to render each of my elements. By writing my markup directly and appending data inline, my code makes more sense and causes fewer headaches.
+What does that mean? (To be honest, I'm making up the term.) It means that I'm moving away from *pseudo-declarative* data visualization in D3, and starting to make my visualizations *literally*, by simply writing markup in [Svelte](https://svelte.dev/). 
+
+Although D3 [claims](https://d3js.org/#selections) to be declarative, it still uses [method chaining](https://www.carlosrendon.me/unfinished_d3_book/d3_method_chaining.html) to provide instructions to render visuals. In Svelte, we don't provide instructions but instead render our SVG elements directly, using `{#each}` blocks. By writing my markup literally and appending data inline, my code makes more sense and causes fewer headaches.
 
 #### What you'll find in this post 
 
@@ -191,19 +193,17 @@ Although I use the Svelte REPL to showcase these three examples, only the last o
   </template>
 </info-box>
 
-**The first option** is to tell your app to loop through each ingredient, add it to the others, and stack the ingredients accordingly. For each ingredient in the loop, execute the burger-making according to our ingredient-specific instruction. This is *[imperative](https://en.wikipedia.org/wiki/Imperative_programming)*. This is how burgers would have been made, painfully, before D3.
+**The first option** (old school) is to tell your app to loop through each ingredient, add it to the others, and stack the ingredients accordingly. For each ingredient in the loop, execute the burger-making according to our ingredient-specific instruction. This is how burgers would have been made, painfully, before D3.
 
-<iframe src="https://svelte.dev/repl/4b4eee03981b4450aa08e402aa0ceeb6?version=3.38.3" width="100%" height='600' title="Imperative burger building"></iframe>
+<iframe src="https://svelte.dev/repl/4b4eee03981b4450aa08e402aa0ceeb6?version=3.38.3" width="100%" height='600' title="Old school burger building"></iframe>
 
-**The second option** is to tell your app to read in each ingredient and instruction, *[declaratively](https://en.wikipedia.org/wiki/Declarative_programming)*. In other words, your code **describes what you want to do, and not how you want to do it**. D3 allows for declarative burger-making:
+**The second option** (new school) is to tell your app to read in each ingredient and instruction through D3 method chaining. We remove the need for our verbose `for` loop, and use the chain to give D3 a set of sequential instructions.
 
-<iframe src="https://svelte.dev/repl/8198de15de314aee860932629370ed09?version=3.38.3" width="100%" height='600' title="Declarative burger building"></iframe>
+<iframe src="https://svelte.dev/repl/8198de15de314aee860932629370ed09?version=3.38.3" width="100%" height='600' title="New school burger building"></iframe>
 
-**Finally**, we can simply append our instructions directly to the ingredient, *literally*. Here, we skip `for` loops and we skip D3 method chaining; instead, we componentize our general "burger item" and pass each ingredient/instruction directly to that component. Only Svelte enables such burgers:
+**Our final option** (new new school), we can simply append our instructions directly to the ingredient, *literally*. Here, we skip `for` loops and we skip D3 method chaining; instead, we componentize our general "burger item" and pass each ingredient/instruction directly to that component. Only Svelte enables such burgers:
 
 <iframe src="https://svelte.dev/repl/f64bd9dcface42a1a2d544b35638631e?version=3" width="100%" height='600' title="Literal burger building"></iframe>
-
-<!-- <hr/> -->
 
 Which do you prefer? It's much easier to make a burger by *just making it*, rather than giving instructions, no matter what form they come in. Frameworks allow for the construction of burgers—and visualizations—**literally**. We write our ingredients (or DOM elements) directly, and include our instructions (or data) in our markup. Now that's a tasty burger.
 
