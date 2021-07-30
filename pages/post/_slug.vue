@@ -2,15 +2,15 @@
   <div class="theme-primary-off">
     <Nav classes="theme-primary" />
     <article class="section container is-max-tablet">
-      <h2 class="heading is-size-6 has-text-weight-light">
-        {{ formatDate(post.date) }} •
-        <ReadingTime :content="post"></ReadingTime>
-      </h2>
-      <h1 class="title my-3 has-text-weight-boldest is-size-2 is-size-3-mobile">
+      <h1 class="my-3 has-text-weight-boldest content-title is-size-3-mobile">
         {{ post.title }}
       </h1>
-      <p class="subtitle mt-3 is-size-5 is-size-6-mobile">
+      <p class="my-3 content-description is-size-5-mobile">
         {{ post.description }}
+      </p>
+      <p class="heading is-size-6 has-text-weight-light">
+        {{ formatDate(post.date) }} •
+        <ReadingTime :content="post"></ReadingTime>
       </p>
       <hr />
 
@@ -112,4 +112,19 @@ export default {
 
 <style lang="scss">
 // STYLING SPECIFIC TO BLOG POSTS GO HERE
+.content-title {
+  font-size: 3.5rem;
+  line-height: 1.25;
+  // background: var(--secondary);
+  // background: -webkit-linear-gradient(to right, var(--secondary) 0%, var(--text) 100%);
+  // background: -moz-linear-gradient(to right, var(--secondary) 0%, var(--text) 100%);
+  // background: linear-gradient(to right, var(--secondary) 0%, var(--text) 100%);
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+}
+
+.content-description {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
 </style>

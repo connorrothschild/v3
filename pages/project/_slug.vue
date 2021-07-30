@@ -2,10 +2,10 @@
   <div class="theme-primary-off">
     <Nav classes="theme-primary" />
     <article class="section container is-max-desktop">
-      <h1 class="title has-text-weight-boldest is-size-2 is-size-4-mobile">
+      <h1 class="has-text-weight-boldest content-title is-size-4-mobile">
         {{ project.title }}
       </h1>
-      <h2 class="subtitle is-size-4 is-size-6-mobile">
+      <h2 class="my-3 content-description is-size-6-mobile">
         {{ project.description }}
       </h2>
 
