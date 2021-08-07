@@ -68,7 +68,7 @@ D3 allows for intuitive transformations of the DOM by leveraging easy-to-underst
 
 In the traditional [HTML DOM model](https://www.w3schools.com/js/js_htmldom.asp), we would 1) select all circles, 2) loop through each one, and 3) redefine its fill. In code, that would look like this:
 
-```js
+```js[file.js]
 var circles = document.getElementsByTagName("circle");
 for (var i = 0; i < circles.length; i++) {
   var circle = circles.item(i);
@@ -78,7 +78,7 @@ for (var i = 0; i < circles.length; i++) {
 
 Doing this in D3 would reduce the length of our code by a factor of 5, and allows us to write in a way that *just makes sense*. Here, we select every circle and change its fill.
 
-```js
+```js[fileWithD3.js]
 d3.selectAll("circle").style("fill", "white")
 ```
 
@@ -93,7 +93,7 @@ d3.selectAll("circle").style("fill", "white")
 
 Imagine if you also wanted to bind data to those circles. That is, you wanted to fill the circle according to some attribute, or size its radius according to some datapoint. In traditional JavaScript, that might look something like this:
 
-```js
+```js[file.js]
 let data = [5, 10, 15, 20, 25];
 
 var circles = document.getElementsByTagName("circle");
@@ -105,7 +105,7 @@ for (var i = 0; i < circles.length; i++) {
 
 Not too hard—but also, not too easy. D3 simplifies this logic by removing the need for a loop and iterating on your selection for you:
 
-```js
+```js[fileWithD3.js]
 let data = [5, 10, 15, 20, 25];
 
 d3.selectAll("circle").data(data).attr("r", d => d)
@@ -132,7 +132,7 @@ Going back to the above circles, imagine if we could simply bind our data to our
 
 **We can!** Svelte (and Vue, React and other frameworks) allow for seamless interactions between our app's logic, data, and markup, so that we can embed data directly into our SVG elements. In this new paradigm, we could replace the set of D3 instructions from earlier with the following Svelte code:
 
-```jsx
+```jsx[Component.svelte]
 <script>
   let data = [{x: 10, r: 5 }, 
               {x: 30, r: 10}, 
@@ -223,7 +223,7 @@ Using Svelte to create visualizations has a few other perks:
 
 By using Svelte's [reactive declarations](https://svelte.dev/tutorial/reactive-declarations) (the dollar signs 💰), we can make certain variables  'watch' for state changes and update automatically. One huge benefit of this is that we can bind our scales to updating values such as the window width, and write minimal code to make our charts update on resize.
 
-```jsx
+```jsx[Component.svelte]
 import { windowWidth } from "../stores/store.js";
 import { scaleLinear } from 'd3-scale';
 
@@ -246,7 +246,7 @@ Another way to achieve easy responsiveness is to [bind the SVG's parent containe
 
 In regular D3, we often use the [ternary operator](https://en.wikipedia.org/wiki/%3F:) to define condition-specific attributes, like this:
 
-```js
+```js[fileWithD3.js]
 // Circles are filled green if positive, red if negative
 d3.selectAll('circle')
   .style('fill', d => d.value < 0 ? 'red' : 'green')
@@ -258,11 +258,11 @@ This is great, but what if we want to make more significant changes based on app
 2. Tablet (520px to 1024px)
 3. Mobile (< 520px)
 
-In D3, we would achieve this by adding a resize event listener, providing custom breakpoints, and rendering different visuals if the updated window width were within a certain range. The complicated part would be having to render a different visual at each breakpoint. <!--Honestly, I can't explain exactly how I would do it because I haven't done it (😅). What I do know is that Svelte makes this easy as pie.-->
+In D3, we would achieve this by adding a resize event listener, providing custom breakpoints, and rendering different visuals if the updated window width were within a certain range. The complicated part would be having to render a different visual at each breakpoint.
 
 One key difference between relying on D3 and leveraging the power of Svelte is that Svelte allows for [conditional rendering](https://svelte.dev/tutorial/if-blocks) *directly in our markup*, not just in our JavaScript logic. In other words, while vanilla JavaScript would approach our problem with the following:
 
-```js
+```js[file.js]
 window.addEventListener('resize', function(event) {
     let newWidth = window.innerWidth;
 
@@ -293,7 +293,7 @@ window.addEventListener('resize', function(event) {
 
 Svelte simplifies our logic to:
 
-```jsx
+```jsx[RandomComponent.svelte]
 {#if $windowWidth < 520}
   <Mobile />
 {:else if $windowWidth < 1024}

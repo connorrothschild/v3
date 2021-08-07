@@ -302,13 +302,6 @@ hr {
     list-style-type: circle;
   }
 
-  // Give a padding to anything that follows an image, except another image
-  // And same for if the image follows anything that is not an image
-  // .img + :not(.img),
-  // :not(.img) + .img {
-  //   margin-top: 1rem;
-  // }
-
   .img + :not(.img) {
     margin-top: 1rem;
   }
@@ -389,5 +382,26 @@ hr {
       color: var(--text-strong);
     }
   }
+
+  // em {
+  //   color: var(--secondary);
+  //   background-color: var(--secondary);
+  //   background: linear-gradient(0deg, var(--secondary) 0%, var(--text-strong) 100%) no-repeat 100% 100%;
+  //   background-size: 400% 400%;
+  //   background-clip: text;
+  //   -webkit-background-clip: text;
+  //   -webkit-text-fill-color: transparent;
+  //   font-weight: 700;
+  //   font-variant: normal;
+  //   transition: 500ms ease-in-out all;
+  // }
+
+  // em:hover {
+  //   background: linear-gradient(0deg, var(--text-strong) 0%, var(--secondary) 25%, var(--text) 75%) no-repeat 100% 0%;
+  //   background-position: 0 0;
+  //   -webkit-background-clip: text;
+  //   -webkit-text-fill-color: transparent;
+  //   background-size: 400% 400%
+  // }
 }
 </style>
