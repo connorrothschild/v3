@@ -180,20 +180,20 @@ p,
 span,
 a {
   &::selection {
-    background: var(--text);
-    color: var(--primary);
+    background: rgb(var(--text));
+    color: rgb(var(--primary));
   }
 }
 
 .is-semitransparent {
-  background: var(--semitransparent);
-  color: var(--text) !important;
+  background: rgb(var(--primary), .5);
+  color: rgb(var(--text)) !important;
   border: none;
 }
 
 .hero {
-  background: var(--primary);
-  color: var(--text);
+  background: rgb(var(--primary));
+  color: rgb(var(--text));
   min-height: 100vh;
   display: flex;
   align-content: center;

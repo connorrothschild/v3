@@ -39,7 +39,7 @@ We'll be grabbing data from the [Mapping Police Violence](https://mappingpolicev
 
 The first step in any Flat Data pipeline is to create `.github/workflows/flat.yml`, which will include the configuration for your project. You can do so by using GitHub's [VSCode extension](https://marketplace.visualstudio.com/items?itemName=GitHubOCTO.flat), or by creating your own YAML file manually. The YAML file we use in this project is remarkably similar to the [boilerplate](https://github.com/marketplace/actions/flat-data) file, with a few differences:
 
-```yaml
+```yaml[flat.yml]
 name: Update data
 on:
   schedule:
@@ -75,7 +75,7 @@ The tweaks you would make to this workflow are most likely in `http_url` and `sc
 
 We pick up at the last line of code in the previous chunk:
 
-```yaml
+```yaml[flat.yml]
 postprocess: ./postprocess.ts 
 ```
 
@@ -85,7 +85,7 @@ Those who are skilled in data wrangling with JavaScript might be able to write t
 
 The `postprocess.ts` file I use in my workflow looks like this (it might help to see how [Deno works](https://deno.land/manual@v1.10.2/examples/subprocess)):
 
-```js
+```js[postprocess.ts]
 // 1. Install necessary packages
 const r_install = Deno.run({
     cmd: ['sudo', 'Rscript', '-e', "install.packages(c('dplyr', 'readxl', 'readr', 'lubridate', 'stringr'))"]
@@ -111,7 +111,7 @@ The command `sudo Rscript -e` precedes any regular function or command that you 
 
 My `clean.R` script, which I reference at the bottom of `postprocess.ts` looks like this:
 
-```r
+```r[clean.R]
 # Load libraries
 library(dplyr)
 library(stringr)

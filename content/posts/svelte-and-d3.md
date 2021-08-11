@@ -16,14 +16,14 @@ html {
 svg {
   width: 100%;
   margin: 0.5rem 0 1.5rem 0;
-  box-shadow: 2px 2px 5px 1px var(--primary-off);
+  box-shadow: 2px 2px 5px 1px rgb(var(--primary-off));
   border-radius: 6px;
 }
 
 rect {
   width: 100%; 
   height: 100%;
-  fill: var(--semitransparent);
+  fill: rgb(var(--primary), .5);
 }
 
 circle {

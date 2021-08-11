@@ -17,8 +17,8 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   // scroll-padding-top: 3.3rem;
-  background: var(--primary-off) !important;
-  color: var(--text) !important;
+  background: rgb(var(--primary-off)) !important;
+  color: rgb(var(--text)) !important;
 }
 
 *,
@@ -39,21 +39,21 @@ em::after {
 }
 
 a {
-  color: var(--text) !important;
+  color: rgb(var(--text)) !important;
   transition: all 150ms ease;
 
   &:hover {
-    color: var(--text) !important;
+    color: rgb(var(--text)) !important;
   }
 }
 
 // Links
 p a {
   text-decoration: none;
-  border-bottom: 2px solid var(--secondary);
+  border-bottom: 2px solid rgb(var(--secondary));
 
   &:hover {
-    border-bottom: 3px solid var(--text);
+    border-bottom: 3px solid rgb(var(--text));
   }
 }
 
@@ -62,33 +62,33 @@ p a {
 // }
 
 hr {
-  background-color: var(--secondary) !important;
+  background-color: rgb(var(--secondary)) !important;
   opacity: 0.3;
   height: 1px !important;
 }
 
 .has-text-secondary {
-  color: var(--secondary) !important;
+  color: rgb(var(--secondary)) !important;
 }
 
 .theme-primary-off {
-  background: var(--primary-off) !important;
+  background: rgb(var(--primary-off)) !important;
 }
 
 .theme-primary {
-  background: var(--primary) !important;
+  background: rgb(var(--primary)) !important;
 }
 
 .theme-primary-off,
 .theme-primary {
-  color: var(--text) !important;
+  color: rgb(var(--text)) !important;
   transition: all 1s ease;
 
   .title,
   .subtitle,
   #text,
   strong {
-    color: var(--text-strong) !important;
+    color: rgb(var(--text-strong)) !important;
   }
 }
 
@@ -96,8 +96,8 @@ hr {
   @extend .theme-primary;
   background-image: linear-gradient(
     0deg,
-    var(--base) 0%,
-    var(--primary) 100%
+    rgb(var(--base)) 0%,
+    rgb(var(--primary)) 100%
   ) !important;
 }
 
@@ -105,13 +105,13 @@ hr {
   @extend .theme-primary;
   background-image: linear-gradient(
     0deg,
-    var(--primary) 0%,
-    var(--base) 100%
+    rgb(var(--primary)) 0%,
+    rgb(var(--base)) 100%
   ) !important;
 }
 
 .has-underline-secondary {
-  border-bottom: 2px solid var(--secondary);
+  border-bottom: 2px solid rgb(var(--secondary));
 }
 
 .object-fit-scale {
@@ -159,7 +159,7 @@ hr {
 .link {
   background-image: linear-gradient(
     to top,
-    var(--secondary) 50%,
+    rgb(var(--secondary)) 50%,
     transparent 50%
   );
   background-size: 100% 200%;
@@ -168,17 +168,17 @@ hr {
   transition-duration: 250ms;
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
-  color: var(--text) !important;
+  color: rgb(var(--text)) !important;
   border-radius: 2px;
   padding: 0 2px;
 
-  border-bottom: 2px solid var(--secondary);
+  border-bottom: 2px solid rgb(var(--secondary));
 
   &:hover {
     background-position: bottom;
     cursor: pointer;
-    color: var(--primary) !important;
-    border-bottom: 2px solid var(--secondary);
+    color: rgb(var(--primary)) !important;
+    border-bottom: 2px solid rgb(var(--secondary));
   }
 }
 
@@ -195,7 +195,7 @@ hr {
 }
 
 .has-background-semitransparent {
-  background: var(--semitransparent) !important;
+  background: rgb(var(--primary), .5) !important;
 
   p,
   h1,
@@ -204,7 +204,7 @@ hr {
   h4,
   h5,
   h6 {
-    color: var(--text) !important;
+    color: rgb(var(--text)) !important;
   }
 }
 
@@ -267,19 +267,19 @@ hr {
   // Links
   a {
     text-decoration: none;
-    border-bottom: 2px solid var(--secondary);
+    border-bottom: 2px solid rgb(var(--secondary));
 
     &:hover {
-      border-bottom: 3px solid var(--text);
+      border-bottom: 3px solid rgb(var(--text));
     }
   }
 
   // Blocks
   blockquote {
     padding: 1rem;
-    border-left: 5px solid var(--secondary);
+    border-left: 5px solid rgb(var(--secondary));
     margin: 1rem;
-    background: var(--semitransparent);
+    background: rgb(var(--primary), .5);
   }
 
   // List styling
@@ -328,7 +328,7 @@ hr {
       display: block;
       float: left;
       margin-left: -1.8rem;
-      color: var(--text);
+      color: rgb(var(--text));
       opacity: 0;
       font-weight: 400;
       padding-right: 0.5rem;
@@ -371,22 +371,23 @@ hr {
     @extend .is-fullwidth;
     @extend .is-hoverable;
 
-    background: var(--primary);
-    color: var(--text);
+    background: rgb(var(--primary));
+    color: rgb(var(--text));
 
     tr:hover {
-      background-color: var(--primary-off) !important;
+      background-color: rgb(var(--primary-off)) !important;
     }
 
     thead th {
-      color: var(--text-strong);
+      color: rgb(var(--text-strong));
+      font-weight: bold;
     }
   }
 
   // em {
-  //   color: var(--secondary);
-  //   background-color: var(--secondary);
-  //   background: linear-gradient(0deg, var(--secondary) 0%, var(--text-strong) 100%) no-repeat 100% 100%;
+  //   color: rgb(var(--secondary));
+  //   background-color: rgb(var(--secondary));
+  //   background: linear-gradient(0deg, rgb(var(--secondary)) 0%, rgb(var(--text-strong)) 100%) no-repeat 100% 100%;
   //   background-size: 400% 400%;
   //   background-clip: text;
   //   -webkit-background-clip: text;
@@ -397,11 +398,27 @@ hr {
   // }
 
   // em:hover {
-  //   background: linear-gradient(0deg, var(--text-strong) 0%, var(--secondary) 25%, var(--text) 75%) no-repeat 100% 0%;
+  //   background: linear-gradient(0deg, rgb(var(--text-strong)) 0%, rgb(var(--secondary)) 25%, rgb(var(--text)) 75%) no-repeat 100% 0%;
   //   background-position: 0 0;
   //   -webkit-background-clip: text;
   //   -webkit-text-fill-color: transparent;
   //   background-size: 400% 400%
   // }
+
+}
+.content-title {
+  font-size: 3.5rem;
+  line-height: 1.25;
+  background: rgb(var(--secondary));
+  background: -webkit-linear-gradient(to right, rgb(var(--secondary)) 0%, rgb(var(--text)) 70%);
+  background: -moz-linear-gradient(to right, rgb(var(--secondary)) 0%, rgb(var(--text)) 70%);
+  background: linear-gradient(to right, rgb(var(--secondary)) 0%, rgb(var(--text)) 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.content-description {
+  font-size: 1.5rem;
+  line-height: 1.5;
 }
 </style>

@@ -66,8 +66,8 @@ export default {
 
 <style lang="scss" scoped>
 body {
-  color: var(--text);
-  background: var(--primary-off);
+  color: rgb(var(--text));
+  background: rgb(var(--primary-off));
 }
 
 // section {

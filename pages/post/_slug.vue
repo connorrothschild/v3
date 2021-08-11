@@ -112,19 +112,4 @@ export default {
 
 <style lang="scss">
 // STYLING SPECIFIC TO BLOG POSTS GO HERE
-.content-title {
-  font-size: 3.5rem;
-  line-height: 1.25;
-  // background: var(--secondary);
-  // background: -webkit-linear-gradient(to right, var(--secondary) 0%, var(--text) 100%);
-  // background: -moz-linear-gradient(to right, var(--secondary) 0%, var(--text) 100%);
-  // background: linear-gradient(to right, var(--secondary) 0%, var(--text) 100%);
-  // -webkit-background-clip: text;
-  // -webkit-text-fill-color: transparent;
-}
-
-.content-description {
-  font-size: 1.5rem;
-  line-height: 1.5;
-}
 </style>

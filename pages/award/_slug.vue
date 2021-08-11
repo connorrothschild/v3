@@ -126,13 +126,13 @@ export default {
 <style scoped lang="scss">
 /* STYLING SPECIFIC TO AWARDS GOES HERE */
 .award-link {
-  border-bottom: 1px solid var(--text);
+  border-bottom: 1px solid rgb(var(--text));
   display: inline-block;
   margin: 3px 5px;
   text-align: center;
 
   &:hover {
-    border-bottom: 1px solid var(--secondary);
+    border-bottom: 1px solid rgb(var(--secondary));
   }
 }
 </style>

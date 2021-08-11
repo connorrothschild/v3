@@ -170,11 +170,11 @@ export default {
 <style scoped lang="scss">
 /* STYLING SPECIFIC TO PROJECTS GOES HERE */
 .card-footer {
-  border-top: 1px solid var(--text);
+  border-top: 1px solid rgb(var(--text));
 
   .card-footer-item {
     &:hover {
-      color: var(--secondary) !important;
+      color: rgb(var(--secondary)) !important;
     }
   }
 }

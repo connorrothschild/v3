@@ -36,8 +36,8 @@ export default {
   flex-direction: column;
   place-content: center;
 
-  background-color: var(--primary) !important;
-  color: var(--text) !important;
+  background-color: rgb(var(--primary)) !important;
+  color: rgb(var(--text)) !important;
 
   .error-body {
     max-width: 968px;

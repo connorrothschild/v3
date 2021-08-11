@@ -50,12 +50,12 @@ We can record the exact number of pixels we want "on the sides" in an object cal
 
 ```jsx{4, 5, 6}[App.svelte]
 <script>
-	let containerWidth;
-	let containerHeight = 600;
-	let margin = {top: 30, right: 20, bottom: 50, left: 50};
+  let containerWidth;
+  let containerHeight = 600;
+  let margin = {top: 30, right: 20, bottom: 50, left: 50};
 
   $: chartWidth = containerWidth - margin.left - margin.right;
-	$: chartHeight = containerHeight - margin.top - margin.bottom;
+  $: chartHeight = containerHeight - margin.top - margin.bottom;
 </script>
 
 <div class='chart-container' bind:offsetWidth={containerWidth}>
@@ -75,11 +75,11 @@ To see our reactive chart dimensions in action, play around with the width of th
 
 <iframe src="https://svelte.dev/repl/060a2a7847bc479eb4e456c966f096e9?version=3.38.3" width="100%" height='600' title="Responsive chart container"></iframe>
 
-## Creating a `<Scatterplot />` component
+## Create a `<Scatterplot />` component
 
 Now that we have our chart dimensions, we can pass those dimensions into a component that will handle the visualization itself.
 
-We'll want our scatterplot component to receive four properties ([more information on `props`](https://svelte.dev/tutorial/declaring-props)):
+We'll want our scatterplot component to receive four properties.<more-info content="Props are values passed from one component to another." href="https://svelte.dev/tutorial/declaring-props"></more-info>
 
 1. The data (`data`)
 2. Our chart width (`chartWidth`)
@@ -96,7 +96,7 @@ In code, that looks like this:
 
 And in `Scatterplot.svelte`, we receive our props like this:
 
-```jsx[Scatterplot.svelte]
+```js[Scatterplot.svelte]
 <script>
   export let data;
   export let width;
@@ -105,22 +105,31 @@ And in `Scatterplot.svelte`, we receive our props like this:
 </script>
 ```
 
-Now that we have our dimensions, we'll want to create *scales* with them. 
+Now that we have our dimensions, we'll want to create *scales* with them.<more-info content="Scales map datapoints to positions on the canvas." href='https://www.d3indepth.com/scales/'></more-info>
 
-<more-info>
-  <template #more-info>
+Here, we will leverage the power of D3—in particular, [`d3-scale`](https://github.com/d3/d3-scale)—to map our data's values to points on our canvas.
 
-lol
+We'll want to make our scales reactive according to our dynamic size variables we referenced earlier. Here, notice how we use `$` to denote reactivity, and notice how we reference `width`.
 
-  </template>
-</more-info> 
+```js{8,12}[Scatterplot.svelte]
+<script>
+// Import props...
+import { scaleLinear } from "d3-scale";
+import { extent } from "d3-array";
 
-<info-box>
-  <template #info-box>
+$: xScale = scaleLinear()
+  .domain(extent(data, (d) => d.mpg))
+  .range([margin.left, width - margin.right]);
 
-We're using the `$` notation here because `chartWidth` is *reactive*; that is, it updates according to another variable, `containerWidth`, which updates on resize.
+$: yScale = scaleLinear()
+  .domain(extent(data, (d) => d.hp))
+  .range([height - margin.top, margin.bottom]);
+</script>
+```
 
-  </template>
-</info-box>
+In the above code, we're defining the domain <more-info content="A domain accepts the range of values to map data from." href='https://observablehq.com/@d3/introduction-to-d3s-scales#cell-104'></more-info> according to each cars' miles per gallon (`mpg`) and horsepower (`hp`). We set the parameters for our range <more-info content="A range converts the values from our domain into a specified 'range' of positions." href='https://observablehq.com/@d3/introduction-to-d3s-scales#cell-104'></more-info> to span the starting position (the left/bottom margin) to our chart width/height (minus our right/top margin value).
 
-Here, we will leverage the power of D3--in particular, [`d3-scale`](https://github.com/d3/d3-scale)--to map our data's values to points on our canvas.
+We'll use these scales to define the `cx` and `cy` values for each of our circles. But first...
+
+## Create a `Circle` component
+

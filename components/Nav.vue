@@ -70,29 +70,29 @@ export default {
 
 <style scoped lang="scss">
 .theme-primary {
-  background-color: var(--primary);
+  background-color: rgb(var(--primary));
   .navbar-item {
     &:hover,
     &:focus,
     .is-active {
-      background-color: var(--primary);
+      background-color: rgb(var(--primary));
     }
   }
 }
 
 .theme-primary-off {
-  background-color: var(--primary-off);
+  background-color: rgb(var(--primary-off));
   .navbar-item {
     &:hover,
     &:focus,
     .is-active {
-      background-color: var(--primary-off);
+      background-color: rgb(var(--primary-off));
     }
   }
 }
 
 .navbar {
-  box-shadow: 1px 1px 3px 1px var(--primary-off);
+  box-shadow: 1px 1px 3px 1px rgb(var(--primary-off));
 }
 
 .navbar-menu {
@@ -117,11 +117,11 @@ export default {
 }
 
 .navbar a {
-  color: var(--text) !important;
+  color: rgb(var(--text)) !important;
   transition: color 250ms ease-in-out;
 
   &:hover {
-    color: var(--secondary) !important;
+    color: rgb(var(--secondary)) !important;
   }
 }
 </style>
