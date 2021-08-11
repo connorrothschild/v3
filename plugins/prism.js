@@ -42,10 +42,6 @@ Vue.component('prism', {
       type: String,
       default: 'js'
     },
-    // line: {
-    //   type: String,
-    //   default: null
-    // }
   },
   mounted () {
     Prism.highlightAll()
