@@ -1,6 +1,9 @@
 export default {
 	// Target (https://go.nuxtjs.dev/config-target)
 	target          : 'static',
+	router: {
+   	 	base: '/v3/'
+  	},
 
 	// Global page headers (https://go.nuxtjs.dev/config-head)
 	head            : {
@@ -24,7 +27,7 @@ export default {
 			{
 				hid      : 'og:url',
 				property : 'og:url',
-				content  : 'https://www.connorrothschild.com'
+				content  : 'https://www.connorrothschild.github.io/v3'
 			},
 			{
 				hid      : 'og:title',
@@ -40,12 +43,12 @@ export default {
 				hid      : 'og:image',
 				property : 'og:image',
 				content  :
-					'https://connorrothschild.com/social.png'
+					'https://connorrothschild.github.io/v3/social.png'
 			},
 			{
 				hid     : 'twitter:url',
 				name    : 'twitter:url',
-				content : 'https://www.connorrothschild.com'
+				content : 'https://www.connorrothschild.github.io/v3'
 			},
 			{
 				hid     : 'twitter:title',
@@ -61,7 +64,7 @@ export default {
 				hid     : 'twitter:image',
 				name    : 'twitter:image',
 				content :
-					'https://connorrothschild.com/social.png'
+					'https://connorrothschild.github.io/v3/social.png'
 			},
 			{
 				hid     : 'twitter:site',

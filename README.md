@@ -6,9 +6,9 @@ My personal website, built from scratch using Vue/Nuxt.js. This site intends to 
 
 ### Performance
 
-The site receives a 100/100 on [Lighthouse tests](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwww.connorrothschild.com%2F&tab=desktop) (desktop view). It also hovers around 90/100 on [mobile tests](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwww.connorrothschild.com%2F&tab=mobile). Here are some high-level stats (these numbers vary from test to test):
+The site receives a 100/100 on [Lighthouse tests](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwww.connorrothschild.github.io/v3%2F&tab=desktop) (desktop view). It also hovers around 90/100 on [mobile tests](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwww.connorrothschild.github.io/v3%2F&tab=mobile). Here are some high-level stats (these numbers vary from test to test):
 
-[![Metrics](https://metrics.lecoq.io/connorrothschild?template=classic&base.header=0&base.activity=0&base.community=0&base.repositories=0&base.metadata=0&pagespeed=1&pagespeed.url=https%3A%2F%2Fwww.connorrothschild.com&pagespeed.detailed=true&pagespeed.screenshot=false&config.timezone=America%2FChicago)](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwww.connorrothschild.com%2F&tab=desktop)
+[![Metrics](https://metrics.lecoq.io/connorrothschild?template=classic&base.header=0&base.activity=0&base.community=0&base.repositories=0&base.metadata=0&pagespeed=1&pagespeed.url=https%3A%2F%2Fwww.connorrothschild.github.io/v3&pagespeed.detailed=true&pagespeed.screenshot=false&config.timezone=America%2FChicago)](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwww.connorrothschild.github.io/v3%2F&tab=desktop)
 
 ### Accessibility
 
@@ -16,17 +16,17 @@ The site was also designed with accessibility in mind. It **passes all [pa11y](h
 
 ```bash
 npm install -g pa11y
-pa11y https://www.connorrothschild.com/
+pa11y https://www.connorrothschild.github.io/v3/
 ```
 
 It passes all [Lighthouse](https://developers.google.com/web/tools/lighthouse/) accessibility tests as well and receives a **100/100** on accessibility marks there.
 
 ```bash
 npm install -g lighthouse
-lighthouse https://www.connorrothschild.com/
+lighthouse https://www.connorrothschild.github.io/v3/
 ```
 
-The [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) reveals **0 errors, 0 contrast errors, and 14 features** on my homepage ([see the audit](https://wave.webaim.org/report#/https://www.connorrothschild.com/)).
+The [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) reveals **0 errors, 0 contrast errors, and 14 features** on my homepage ([see the audit](https://wave.webaim.org/report#/https://www.connorrothschild.github.io/v3/)).
 
 ## Interact With My Site
 

@@ -133,8 +133,8 @@ export default {
         type: "article",
         title: this.project.title,
         description: this.project.description,
-        url: `https://connorrothschild.com/project/${this.$route.params.slug}`,
-        mainImage: `https://connorrothschild.com/project/${this.$route.params.slug}/social.png`,
+        url: `https://connorrothschild.github.io/v3/project/${this.$route.params.slug}`,
+        mainImage: `https://connorrothschild.github.io/v3/project/${this.$route.params.slug}/social.png`,
       };
       return getSiteMeta(metaData);
     },
@@ -159,7 +159,7 @@ export default {
         {
           hid: "canonical",
           rel: "canonical",
-          href: `https://connorrothschild.com/project/${this.$route.params.slug}`,
+          href: `https://connorrothschild.github.io/v3/project/${this.$route.params.slug}`,
         },
       ],
     };

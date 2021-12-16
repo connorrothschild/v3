@@ -29,6 +29,7 @@ export default {
   background: rgb(var(--secondary), 0.3);
   padding: 1px 3px;
   border-radius: 3px;
+  margin-left: 4px;
 }
 
 .tip .text {

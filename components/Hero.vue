@@ -87,7 +87,7 @@
             </div>
             <div v-else class="has-text-centered" key="image">
               <img
-                src="~assets/images/me.jpg"
+                src="~/assets/images/me.jpg"
                 alt="An image of Connor Rothschild"
                 class="me"
                 @click="showAbout = !showAbout"
