@@ -19,6 +19,7 @@ html {
   // scroll-padding-top: 3.3rem;
   background: rgb(var(--primary-off)) !important;
   color: rgb(var(--text)) !important;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -408,13 +409,14 @@ hr {
 }
 .content-title {
   font-size: 3.5rem;
-  line-height: 1.25;
-  background: rgb(var(--secondary));
-  background: -webkit-linear-gradient(to right, rgb(var(--secondary)) 0%, rgb(var(--text)) 70%);
-  background: -moz-linear-gradient(to right, rgb(var(--secondary)) 0%, rgb(var(--text)) 70%);
-  background: linear-gradient(to right, rgb(var(--secondary)) 0%, rgb(var(--text)) 70%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+  color: rgb(var(--text-strong));
+  // background: rgb(var(--secondary));
+  // background: -webkit-linear-gradient(to right, rgb(var(--secondary)) 0%, rgb(var(--text)) 70%);
+  // background: -moz-linear-gradient(to right, rgb(var(--secondary)) 0%, rgb(var(--text)) 70%);
+  // background: linear-gradient(to right, rgb(var(--secondary)) 0%, rgb(var(--text)) 70%);
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
 }
 
 .content-description {
