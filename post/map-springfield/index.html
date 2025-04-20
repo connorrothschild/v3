@@ -1,0 +1,310 @@
+<!doctype html>
+<html data-n-head-ssr lang="en" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Create a Streetmap of Any City in R | Connor Rothschild</title><meta data-n-head="ssr" charset="utf-8"><meta data-n-head="ssr" name="viewport" content="width=device-width,initial-scale=1"><meta data-n-head="ssr" data-hid="charset" charset="utf-8"><meta data-n-head="ssr" data-hid="mobile-web-app-capable" name="mobile-web-app-capable" content="yes"><meta data-n-head="ssr" data-hid="apple-mobile-web-app-title" name="apple-mobile-web-app-title" content="site"><meta data-n-head="ssr" data-hid="og:site_name" name="og:site_name" property="og:site_name" content="site"><meta data-n-head="ssr" data-hid="description" name="description" content="Creating a beautiful streetmap of my hometown, exclusively in R"><meta data-n-head="ssr" data-hid="og:type" property="og:type" content="article"><meta data-n-head="ssr" data-hid="og:url" property="og:url" content="https://v3.connorrothschild.com/post/map-springfield"><meta data-n-head="ssr" data-hid="og:title" property="og:title" content="Create a Streetmap of Any City in R"><meta data-n-head="ssr" data-hid="og:description" property="og:description" content="Creating a beautiful streetmap of my hometown, exclusively in R"><meta data-n-head="ssr" data-hid="og:image" property="og:image" content="https://v3.connorrothschild.com/post/map-springfield/header.png"><meta data-n-head="ssr" data-hid="twitter:url" name="twitter:url" content="https://v3.connorrothschild.com/post/map-springfield"><meta data-n-head="ssr" data-hid="twitter:title" name="twitter:title" content="Create a Streetmap of Any City in R"><meta data-n-head="ssr" data-hid="twitter:description" name="twitter:description" content="Creating a beautiful streetmap of my hometown, exclusively in R"><meta data-n-head="ssr" data-hid="twitter:image" name="twitter:image" content="https://v3.connorrothschild.com/post/map-springfield/header.png"><meta data-n-head="ssr" data-hid="twitter:site" name="twitter:site" content="@CL_Rothschild"><meta data-n-head="ssr" data-hid="twitter:card" name="twitter:card" content="summary_large_image"><meta data-n-head="ssr" property="article:published_time" content="2021-12-16T21:41:20.783Z"><meta data-n-head="ssr" property="article:modified_time" content="2021-12-16T21:41:20.783Z"><meta data-n-head="ssr" name="twitter:label1" content="Written by"><meta data-n-head="ssr" name="twitter:data1" content="Connor Rothschild"><base href="/"><link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.png"><link data-n-head="ssr" data-hid="shortcut-icon" rel="shortcut icon" href="/_nuxt/icons/icon_64x64.ecd1ba.png"><link data-n-head="ssr" data-hid="apple-touch-icon" rel="apple-touch-icon" href="/_nuxt/icons/icon_512x512.ecd1ba.png" sizes="512x512"><link data-n-head="ssr" rel="manifest" href="/_nuxt/manifest.d23946e6.json" data-hid="manifest"><link data-n-head="ssr" data-hid="canonical" rel="canonical" href="https://v3.connorrothschild.com/post/map-springfield"><link rel="preload" href="/_nuxt/64b5898.js" as="script"><link rel="preload" href="/_nuxt/cbfb02f.js" as="script"><link rel="preload" href="/_nuxt/css/0e51f67.css" as="style"><link rel="preload" href="/_nuxt/7e4b2d1.js" as="script"><link rel="preload" href="/_nuxt/css/2510a47.css" as="style"><link rel="preload" href="/_nuxt/2bd4311.js" as="script"><link rel="preload" href="/_nuxt/css/2d74e3a.css" as="style"><link rel="preload" href="/_nuxt/c4401d5.js" as="script"><link rel="preload" href="/_nuxt/2c17e43.js" as="script"><link rel="preload" href="/_nuxt/css/ff4f90e.css" as="style"><link rel="preload" href="/_nuxt/e8925e5.js" as="script"><link rel="preload" href="/_nuxt/css/2cc613b.css" as="style"><link rel="preload" href="/_nuxt/ea1b2ed.js" as="script"><link rel="stylesheet" href="/_nuxt/css/0e51f67.css"><link rel="stylesheet" href="/_nuxt/css/2510a47.css"><link rel="stylesheet" href="/_nuxt/css/2d74e3a.css"><link rel="stylesheet" href="/_nuxt/css/ff4f90e.css"><link rel="stylesheet" href="/_nuxt/css/2cc613b.css"><link rel="preload" href="/_nuxt/static/1639691221/post/map-springfield/state.js" as="script"><link rel="preload" href="/_nuxt/static/1639691221/post/map-springfield/payload.js" as="script"><link rel="preload" href="/_nuxt/static/1639691221/manifest.js" as="script">
+  </head>
+  <body>
+    <div data-server-rendered="true" id="__nuxt"><!----><div id="__layout"><div><div class="theme-primary-off"><nav role="navigation" aria-label="main navigation" class="navbar theme-primary" data-v-577d5465><div class="navbar-brand" data-v-577d5465><a href="/" class="navbar-item has-text-weight-boldest nuxt-link-active" data-v-577d5465>Connor Rothschild
+    </a> <a role="button" aria-label="menu" aria-expanded="false" data-target="navbarID" class="navbar-burger" data-v-577d5465><span aria-hidden="true" data-v-577d5465></span> <span aria-hidden="true" data-v-577d5465></span> <span aria-hidden="true" data-v-577d5465></span></a></div> <div id="navbarID" class="navbar-menu" data-v-577d5465><div class="navbar-end" data-v-577d5465><div class="navbar-item" data-v-577d5465><div class="themepicker__btn" data-v-15133967 data-v-577d5465><span class="themepicker__palette" data-v-15133967><span class="themepicker__swatch themepicker__swatch--primary" data-v-15133967></span> <span class="themepicker__swatch themepicker__swatch--secondary" data-v-15133967></span> <span class="themepicker__swatch themepicker__swatch--text" data-v-15133967></span></span></div></div> <a href="/#projects" class="navbar-item" data-v-577d5465>
+        Projects
+      </a> <a href="/#awards" class="navbar-item" data-v-577d5465>
+        Awards
+      </a> <a href="/#blog" class="navbar-item" data-v-577d5465>
+        Blog
+      </a> <a href="mailto:connor@connorrothschild.com" class="navbar-item" data-v-577d5465>
+        Email
+      </a> <a href="https://docs.google.com/document/d/1qBH-wNMe2nv9Xa4uzHZ5wBevohwKuB3h2i9M2yk4POk/edit?usp=sharing" target="_blank" rel="noopener" class="navbar-item" data-v-577d5465>
+        Resume
+      </a></div></div></nav> <article class="section container is-max-tablet"><h1 class="my-3 has-text-weight-boldest content-title is-size-3-mobile">
+      Create a Streetmap of Any City in R
+    </h1> <p class="my-3 content-description is-size-5-mobile">
+      Creating a beautiful streetmap of my hometown, exclusively in R
+    </p> <p class="heading is-size-6 has-text-weight-light">
+      November 2019 •
+      <span>9 minute read
+  <!----></span></p> <hr> <div class="nuxt-content"><p>In this post, I expand upon <a href="https://christianburkhart.de/" rel="nofollow noopener noreferrer" target="_blank">Christian
+Burkhart</a>'s wonderful <a href="https://ggplot2tutor.com/streetmaps/streetmaps/" rel="nofollow noopener noreferrer" target="_blank">ggplot2tor
+tutorial</a> on streetmap
+creation using ggplot2. My process differs slightly from his in that I
+include text using <code>geom_label</code>, rather than PowerPoint, to create the
+text annotations. (This was much more difficult!)</p>
+<div class="nuxt-content-highlight"><pre class="language-r line-numbers"><code>library<span class="token punctuation">(</span>tidyverse<span class="token punctuation">)</span>
+library<span class="token punctuation">(</span>gridExtra<span class="token punctuation">)</span>
+library<span class="token punctuation">(</span>grid<span class="token punctuation">)</span>
+library<span class="token punctuation">(</span>ggplot2<span class="token punctuation">)</span>
+library<span class="token punctuation">(</span>lattice<span class="token punctuation">)</span>
+library<span class="token punctuation">(</span>osmdata<span class="token punctuation">)</span>
+library<span class="token punctuation">(</span>sf<span class="token punctuation">)</span>
+</code></pre></div>
+<p>First, per the tutorial, we load street (and river, etc). data:</p>
+<div class="nuxt-content-highlight"><pre class="language-r line-numbers"><code>streets <span class="token operator">&lt;-</span> getbb<span class="token punctuation">(</span><span class="token string">"Springfield Missouri"</span><span class="token punctuation">)</span><span class="token percent-operator operator">%>%</span>
+  opq<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token percent-operator operator">%>%</span>
+  add_osm_feature<span class="token punctuation">(</span>key <span class="token operator">=</span> <span class="token string">"highway"</span><span class="token punctuation">,</span>
+                  value <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token string">"motorway"</span><span class="token punctuation">,</span> <span class="token string">"primary"</span><span class="token punctuation">,</span>
+                            <span class="token string">"secondary"</span><span class="token punctuation">,</span> <span class="token string">"tertiary"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token percent-operator operator">%>%</span>
+  osmdata_sf<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+small_streets <span class="token operator">&lt;-</span> getbb<span class="token punctuation">(</span><span class="token string">"Springfield Missouri"</span><span class="token punctuation">)</span><span class="token percent-operator operator">%>%</span>
+  opq<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token percent-operator operator">%>%</span>
+  add_osm_feature<span class="token punctuation">(</span>key <span class="token operator">=</span> <span class="token string">"highway"</span><span class="token punctuation">,</span>
+                  value <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token string">"residential"</span><span class="token punctuation">,</span> <span class="token string">"living_street"</span><span class="token punctuation">,</span>
+                            <span class="token string">"unclassified"</span><span class="token punctuation">,</span>
+                            <span class="token string">"service"</span><span class="token punctuation">,</span> <span class="token string">"footway"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token percent-operator operator">%>%</span>
+  osmdata_sf<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+river <span class="token operator">&lt;-</span> getbb<span class="token punctuation">(</span><span class="token string">"Springfield Missouri"</span><span class="token punctuation">)</span><span class="token percent-operator operator">%>%</span>
+  opq<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token percent-operator operator">%>%</span>
+  add_osm_feature<span class="token punctuation">(</span>key <span class="token operator">=</span> <span class="token string">"waterway"</span><span class="token punctuation">,</span> value <span class="token operator">=</span> <span class="token string">"river"</span><span class="token punctuation">)</span> <span class="token percent-operator operator">%>%</span>
+  osmdata_sf<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div>
+<p>Next, we define the plot limits, using the lat-long found in the last
+step.</p>
+<div class="nuxt-content-highlight"><pre class="language-r line-numbers"><code>right <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">93.175</span>
+left <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">93.395</span>
+bottom <span class="token operator">=</span> <span class="token number">37</span>
+top <span class="token operator">=</span> <span class="token number">37.275</span>
+</code></pre></div>
+<p>In my plot, I’m going to create a text box to hold the city, state, and
+lat/long combination.</p>
+<p>We can create the parameters for this box through some manipulations of
+the existing plot limits:</p>
+<div class="nuxt-content-highlight"><pre class="language-r line-numbers"><code>top_rect <span class="token operator">=</span> <span class="token punctuation">(</span>top <span class="token operator">+</span> bottom<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2.0035</span>
+bot_rect <span class="token operator">=</span> bottom <span class="token operator">+</span> <span class="token number">.01</span>
+box_height <span class="token operator">=</span> <span class="token punctuation">(</span>top_rect <span class="token operator">+</span> bot_rect<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span>
+mid_box <span class="token operator">=</span> <span class="token punctuation">(</span>left <span class="token operator">+</span> right<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span>
+</code></pre></div>
+<p>Finally, we can create a black and white plot. This follows the same
+structure as the ggplot2tor tutorial:</p>
+<div class="nuxt-content-highlight"><pre class="language-r line-numbers"><code>plot_bw <span class="token operator">&lt;-</span> ggplot<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_sf<span class="token punctuation">(</span>data <span class="token operator">=</span> streets<span class="token operator">$</span>osm_lines<span class="token punctuation">,</span>
+          inherit.aes <span class="token operator">=</span> <span class="token boolean">FALSE</span><span class="token punctuation">,</span>
+          color <span class="token operator">=</span> <span class="token string">"#000000"</span><span class="token punctuation">,</span>
+          size <span class="token operator">=</span> <span class="token number">.3</span><span class="token punctuation">,</span>
+          alpha <span class="token operator">=</span> <span class="token number">.8</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_sf<span class="token punctuation">(</span>data <span class="token operator">=</span> small_streets<span class="token operator">$</span>osm_lines<span class="token punctuation">,</span>
+          inherit.aes <span class="token operator">=</span> <span class="token boolean">FALSE</span><span class="token punctuation">,</span>
+          color <span class="token operator">=</span> <span class="token string">"#000000"</span><span class="token punctuation">,</span>
+          size <span class="token operator">=</span> <span class="token number">.1</span><span class="token punctuation">,</span>
+          alpha <span class="token operator">=</span> <span class="token number">.6</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_sf<span class="token punctuation">(</span>data <span class="token operator">=</span> river<span class="token operator">$</span>osm_lines<span class="token punctuation">,</span>
+          inherit.aes <span class="token operator">=</span> <span class="token boolean">FALSE</span><span class="token punctuation">,</span>
+          color <span class="token operator">=</span> <span class="token string">"#000000"</span><span class="token punctuation">,</span>
+          size <span class="token operator">=</span> <span class="token number">.2</span><span class="token punctuation">,</span>
+          alpha <span class="token operator">=</span> <span class="token number">.5</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  coord_sf<span class="token punctuation">(</span>xlim <span class="token operator">=</span> c<span class="token punctuation">(</span>left<span class="token punctuation">,</span> right<span class="token punctuation">)</span><span class="token punctuation">,</span>
+           ylim <span class="token operator">=</span> c<span class="token punctuation">(</span>bottom<span class="token punctuation">,</span> top<span class="token punctuation">)</span><span class="token punctuation">,</span>
+           expand <span class="token operator">=</span> <span class="token boolean">FALSE</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  theme_void<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  theme<span class="token punctuation">(</span>
+    plot.background <span class="token operator">=</span> element_rect<span class="token punctuation">(</span>fill <span class="token operator">=</span> <span class="token string">"#FFFFFF"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    panel.background <span class="token operator">=</span> element_rect<span class="token punctuation">(</span>fill <span class="token operator">=</span> <span class="token string">"#FFFFFF"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    plot.margin<span class="token operator">=</span>unit<span class="token punctuation">(</span>c<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">0.5</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"mm"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span>
+</code></pre></div>
+<p>Finally, we can introduce our text elements using <code>geom_text</code> (as well
+as borders using <code>geom_rect</code>).</p>
+<div class="nuxt-content-highlight"><pre class="language-r line-numbers"><code>map_bw <span class="token operator">&lt;-</span> plot_bw <span class="token operator">+</span>
+  <span class="token comment"># big box</span>
+  geom_rect<span class="token punctuation">(</span>
+    aes<span class="token punctuation">(</span>
+      xmax <span class="token operator">=</span> right <span class="token operator">-</span> <span class="token number">.005</span><span class="token punctuation">,</span>
+      xmin <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token number">.005</span><span class="token punctuation">,</span>
+      ymin <span class="token operator">=</span> bottom <span class="token operator">+</span> <span class="token number">.005</span><span class="token punctuation">,</span>
+      ymax <span class="token operator">=</span> top <span class="token operator">-</span> <span class="token number">.005</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    alpha <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    color <span class="token operator">=</span> <span class="token string">"black"</span><span class="token punctuation">,</span>
+    size <span class="token operator">=</span> <span class="token number">1</span>
+  <span class="token punctuation">)</span> <span class="token operator">+</span>
+  <span class="token comment"># smaller, label box</span>
+  geom_rect<span class="token punctuation">(</span>
+    aes<span class="token punctuation">(</span>
+      xmax <span class="token operator">=</span> right <span class="token operator">-</span> <span class="token number">.01</span><span class="token punctuation">,</span>
+      xmin <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token number">.01</span><span class="token punctuation">,</span>
+      ymin <span class="token operator">=</span> bot_rect<span class="token punctuation">,</span>
+      ymax <span class="token operator">=</span> top_rect
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    alpha <span class="token operator">=</span> <span class="token number">.75</span><span class="token punctuation">,</span>
+    color <span class="token operator">=</span> <span class="token string">"black"</span><span class="token punctuation">,</span>
+    fill <span class="token operator">=</span> <span class="token string">"white"</span><span class="token punctuation">,</span>
+    size <span class="token operator">=</span> <span class="token number">.6</span>
+  <span class="token punctuation">)</span> <span class="token operator">+</span>
+  <span class="token comment"># springfield</span>
+  geom_text<span class="token punctuation">(</span>
+    aes<span class="token punctuation">(</span>x <span class="token operator">=</span> mid_box<span class="token punctuation">,</span> y <span class="token operator">=</span> box_height <span class="token operator">+</span> <span class="token number">.002</span><span class="token punctuation">,</span>
+        label <span class="token operator">=</span> <span class="token string">"SPRINGFIELD\n"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    color <span class="token operator">=</span> <span class="token string">"black"</span><span class="token punctuation">,</span>
+    family <span class="token operator">=</span> <span class="token string">"Lato"</span><span class="token punctuation">,</span>
+    fontface <span class="token operator">=</span> <span class="token string">"bold"</span><span class="token punctuation">,</span>
+    size <span class="token operator">=</span> <span class="token number">9</span>
+  <span class="token punctuation">)</span> <span class="token operator">+</span>
+  <span class="token comment"># a line that goes behind 'Missouri'</span>
+  geom_segment<span class="token punctuation">(</span>aes<span class="token punctuation">(</span>
+    x <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token number">.03</span><span class="token punctuation">,</span>
+    y <span class="token operator">=</span> <span class="token punctuation">(</span>top_rect <span class="token operator">+</span> bottom<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    xend <span class="token operator">=</span> right <span class="token operator">-</span> <span class="token number">.03</span><span class="token punctuation">,</span>
+    yend <span class="token operator">=</span> <span class="token punctuation">(</span>top_rect <span class="token operator">+</span> bottom<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span>
+  <span class="token punctuation">)</span><span class="token punctuation">,</span> color <span class="token operator">=</span> <span class="token string">"black"</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  <span class="token comment"># Missouri label</span>
+  geom_label<span class="token punctuation">(</span>
+    aes<span class="token punctuation">(</span>x <span class="token operator">=</span> mid_box<span class="token punctuation">,</span> y <span class="token operator">=</span> box_height <span class="token operator">-</span> <span class="token number">.005</span><span class="token punctuation">,</span>
+        label <span class="token operator">=</span> <span class="token string">"MISSOURI"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    color <span class="token operator">=</span> <span class="token string">"black"</span><span class="token punctuation">,</span>
+    fill <span class="token operator">=</span> <span class="token string">"white"</span><span class="token punctuation">,</span>
+    <span class="token comment"># alpha = .9,</span>
+    label.size <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    family <span class="token operator">=</span> <span class="token string">"Lato"</span><span class="token punctuation">,</span>
+    <span class="token comment"># fontface = "thin",</span>
+    size <span class="token operator">=</span> <span class="token number">7</span>
+  <span class="token punctuation">)</span> <span class="token operator">+</span>
+  <span class="token comment"># coords</span>
+  geom_text<span class="token punctuation">(</span>
+    aes<span class="token punctuation">(</span>x <span class="token operator">=</span> mid_box<span class="token punctuation">,</span> y <span class="token operator">=</span> box_height <span class="token operator">-</span> <span class="token number">.02</span><span class="token punctuation">,</span>
+        label <span class="token operator">=</span> <span class="token string">"37.2090° N / 93.2923° W"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    color <span class="token operator">=</span> <span class="token string">"black"</span><span class="token punctuation">,</span>
+    family <span class="token operator">=</span> <span class="token string">"Lato"</span><span class="token punctuation">,</span>
+    size <span class="token operator">=</span> <span class="token number">4</span>
+  <span class="token punctuation">)</span> <span class="token operator">+</span>
+  <span class="token comment"># me!</span>
+  geom_label<span class="token punctuation">(</span>
+    aes<span class="token punctuation">(</span>
+      x <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token number">.035</span><span class="token punctuation">,</span>
+      y <span class="token operator">=</span> top_rect <span class="token operator">+</span> <span class="token number">.005</span><span class="token punctuation">,</span>
+      label <span class="token operator">=</span> <span class="token string">"Design: Connor Rothschild"</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    size <span class="token operator">=</span> <span class="token number">1.5</span><span class="token punctuation">,</span>
+    color <span class="token operator">=</span> <span class="token string">"black"</span><span class="token punctuation">,</span>
+    fill <span class="token operator">=</span> <span class="token string">"white"</span><span class="token punctuation">,</span>
+    label.size <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    family <span class="token operator">=</span> <span class="token string">"Lato"</span>
+  <span class="token punctuation">)</span>
+
+map_bw
+</code></pre></div>
+<div class="img" style="display:inline-block;width:100%" data-v-bbcfffec><img src="/_nuxt/img/3590889.png" alt="A black and white map of Springfield, Missouri." data-v-bbcfffec></div>
+<p>Finally, save the plot:</p>
+<div class="nuxt-content-highlight"><pre class="language-r line-numbers"><code>ggsave<span class="token punctuation">(</span>map_bw<span class="token punctuation">,</span> filename <span class="token operator">=</span> <span class="token string">"bw_springfield_map.png"</span><span class="token punctuation">,</span> width <span class="token operator">=</span> <span class="token number">3.234</span><span class="token punctuation">,</span> height <span class="token operator">=</span> <span class="token number">5.016</span><span class="token punctuation">)</span>
+</code></pre></div>
+<p>Replicate that code with different colors:</p>
+<div class="nuxt-content-highlight"><pre class="language-r line-numbers"><code>plot_gold <span class="token operator">&lt;-</span> ggplot<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_sf<span class="token punctuation">(</span>
+    data <span class="token operator">=</span> streets<span class="token operator">$</span>osm_lines<span class="token punctuation">,</span>
+    inherit.aes <span class="token operator">=</span> <span class="token boolean">FALSE</span><span class="token punctuation">,</span>
+    color <span class="token operator">=</span> <span class="token string">"steelblue"</span><span class="token punctuation">,</span>
+    size <span class="token operator">=</span> <span class="token number">.3</span><span class="token punctuation">,</span>
+    alpha <span class="token operator">=</span> <span class="token number">.8</span>
+  <span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_sf<span class="token punctuation">(</span>
+    data <span class="token operator">=</span> small_streets<span class="token operator">$</span>osm_lines<span class="token punctuation">,</span>
+    inherit.aes <span class="token operator">=</span> <span class="token boolean">FALSE</span><span class="token punctuation">,</span>
+    color <span class="token operator">=</span> <span class="token string">"#ffbe7f"</span><span class="token punctuation">,</span>
+    size <span class="token operator">=</span> <span class="token number">.1</span><span class="token punctuation">,</span>
+    alpha <span class="token operator">=</span> <span class="token number">.6</span>
+  <span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_sf<span class="token punctuation">(</span>
+    data <span class="token operator">=</span> river<span class="token operator">$</span>osm_lines<span class="token punctuation">,</span>
+    inherit.aes <span class="token operator">=</span> <span class="token boolean">FALSE</span><span class="token punctuation">,</span>
+    color <span class="token operator">=</span> <span class="token string">"#ffbe7f"</span><span class="token punctuation">,</span>
+    size <span class="token operator">=</span> <span class="token number">.2</span><span class="token punctuation">,</span>
+    alpha <span class="token operator">=</span> <span class="token number">.5</span>
+  <span class="token punctuation">)</span> <span class="token operator">+</span>
+  coord_sf<span class="token punctuation">(</span>
+    xlim <span class="token operator">=</span> c<span class="token punctuation">(</span>left<span class="token punctuation">,</span> right<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    ylim <span class="token operator">=</span> c<span class="token punctuation">(</span>bottom<span class="token punctuation">,</span> top<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    expand <span class="token operator">=</span> <span class="token boolean">FALSE</span>
+  <span class="token punctuation">)</span> <span class="token operator">+</span>
+  theme_void<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  theme<span class="token punctuation">(</span>
+    plot.background <span class="token operator">=</span> element_rect<span class="token punctuation">(</span>fill <span class="token operator">=</span> <span class="token string">"#282828"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    panel.background <span class="token operator">=</span> element_rect<span class="token punctuation">(</span>fill <span class="token operator">=</span> <span class="token string">"#282828"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    plot.margin <span class="token operator">=</span> unit<span class="token punctuation">(</span>c<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"mm"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span>
+
+map_gold <span class="token operator">&lt;-</span> plot_gold <span class="token operator">+</span>
+  geom_rect<span class="token punctuation">(</span>
+    aes<span class="token punctuation">(</span>
+      xmax <span class="token operator">=</span> right <span class="token operator">-</span> <span class="token number">.005</span><span class="token punctuation">,</span>
+      xmin <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token number">.005</span><span class="token punctuation">,</span>
+      ymin <span class="token operator">=</span> bottom <span class="token operator">+</span> <span class="token number">.005</span><span class="token punctuation">,</span>
+      ymax <span class="token operator">=</span> top <span class="token operator">-</span> <span class="token number">.005</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    alpha <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    color <span class="token operator">=</span> <span class="token string">"white"</span><span class="token punctuation">,</span>
+    size <span class="token operator">=</span> <span class="token number">1</span>
+  <span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_rect<span class="token punctuation">(</span>
+    aes<span class="token punctuation">(</span>
+      xmax <span class="token operator">=</span> right <span class="token operator">-</span> <span class="token number">.01</span><span class="token punctuation">,</span>
+      xmin <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token number">.01</span><span class="token punctuation">,</span>
+      ymin <span class="token operator">=</span> bot_rect<span class="token punctuation">,</span>
+      ymax <span class="token operator">=</span> top_rect
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    alpha <span class="token operator">=</span> <span class="token number">.5</span><span class="token punctuation">,</span>
+    color <span class="token operator">=</span> <span class="token string">"#ffbe7f"</span><span class="token punctuation">,</span>
+    fill <span class="token operator">=</span> <span class="token string">"#282828"</span><span class="token punctuation">,</span>
+    size <span class="token operator">=</span> <span class="token number">.5</span>
+  <span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_text<span class="token punctuation">(</span>
+    aes<span class="token punctuation">(</span>x <span class="token operator">=</span> mid_box<span class="token punctuation">,</span> y <span class="token operator">=</span> box_height <span class="token operator">+</span> <span class="token number">.002</span><span class="token punctuation">,</span>
+        label <span class="token operator">=</span> <span class="token string">"SPRINGFIELD\n"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    color <span class="token operator">=</span> <span class="token string">"white"</span><span class="token punctuation">,</span>
+    family <span class="token operator">=</span> <span class="token string">"Lato"</span><span class="token punctuation">,</span>
+    fontface <span class="token operator">=</span> <span class="token string">"bold"</span><span class="token punctuation">,</span>
+    size <span class="token operator">=</span> <span class="token number">9</span>
+  <span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_segment<span class="token punctuation">(</span>aes<span class="token punctuation">(</span>
+    x <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token number">.03</span><span class="token punctuation">,</span>
+    y <span class="token operator">=</span> <span class="token punctuation">(</span>top_rect <span class="token operator">+</span> bottom<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    xend <span class="token operator">=</span> right <span class="token operator">-</span> <span class="token number">.03</span><span class="token punctuation">,</span>
+    yend <span class="token operator">=</span> <span class="token punctuation">(</span>top_rect <span class="token operator">+</span> bottom<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span>
+  <span class="token punctuation">)</span><span class="token punctuation">,</span>
+  color <span class="token operator">=</span> <span class="token string">"#ffbe7f"</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_label<span class="token punctuation">(</span>
+    aes<span class="token punctuation">(</span>x <span class="token operator">=</span> mid_box<span class="token punctuation">,</span> y <span class="token operator">=</span> box_height <span class="token operator">-</span> <span class="token number">.005</span><span class="token punctuation">,</span>
+        label <span class="token operator">=</span> <span class="token string">"MISSOURI"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    color <span class="token operator">=</span> <span class="token string">"white"</span><span class="token punctuation">,</span>
+    fill <span class="token operator">=</span> <span class="token string">"#282828"</span><span class="token punctuation">,</span>
+    <span class="token comment"># alpha = .9,</span>
+    label.size <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    family <span class="token operator">=</span> <span class="token string">"Lato"</span><span class="token punctuation">,</span>
+    <span class="token comment"># fontface = "thin",</span>
+    size <span class="token operator">=</span> <span class="token number">7</span>
+  <span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_text<span class="token punctuation">(</span>
+    aes<span class="token punctuation">(</span>x <span class="token operator">=</span> mid_box<span class="token punctuation">,</span> y <span class="token operator">=</span> box_height <span class="token operator">-</span> <span class="token number">.02</span><span class="token punctuation">,</span>
+        label <span class="token operator">=</span> <span class="token string">"37.2090° N / 93.2923° W"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    color <span class="token operator">=</span> <span class="token string">"white"</span><span class="token punctuation">,</span>
+    family <span class="token operator">=</span> <span class="token string">"Lato"</span><span class="token punctuation">,</span>
+    size <span class="token operator">=</span> <span class="token number">4</span>
+  <span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_label<span class="token punctuation">(</span>
+    aes<span class="token punctuation">(</span>
+      x <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token number">.035</span><span class="token punctuation">,</span>
+      y <span class="token operator">=</span> top_rect <span class="token operator">+</span> <span class="token number">.005</span><span class="token punctuation">,</span>
+      label <span class="token operator">=</span> <span class="token string">"Design: Connor Rothschild"</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    size <span class="token operator">=</span> <span class="token number">1.5</span><span class="token punctuation">,</span>
+    color <span class="token operator">=</span> <span class="token string">"white"</span><span class="token punctuation">,</span>
+    fill <span class="token operator">=</span> <span class="token string">"#282828"</span><span class="token punctuation">,</span>
+    label.size <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    family <span class="token operator">=</span> <span class="token string">"Lato"</span>
+  <span class="token punctuation">)</span>
+
+map_gold
+</code></pre></div>
+<div class="img" style="display:inline-block;width:100%" data-v-bbcfffec><img src="/_nuxt/img/af4320d.png" alt="A gold map of Springfield, Missouri." data-v-bbcfffec></div>
+<div class="nuxt-content-highlight"><pre class="language-r line-numbers"><code>ggsave<span class="token punctuation">(</span>map_gold<span class="token punctuation">,</span>
+       filename <span class="token operator">=</span> <span class="token string">"gold_springfield_map.png"</span><span class="token punctuation">,</span>
+       width <span class="token operator">=</span> <span class="token number">3.234</span><span class="token punctuation">,</span>
+       height <span class="token operator">=</span> <span class="token number">5.016</span><span class="token punctuation">)</span>
+</code></pre></div></div> <hr> <div class="my-4"><a href="/post" class="subtitle has-text-weight-bolder is-size-5 link heading is-inline-block nuxt-link-active">👈 Back to all posts</a></div> <div class="columns"><div class="column"><div style="height:100%;transition:1s transform ease;transform:translateX(0) translateY(0)"><a href="/post/tidy-tuesday-replication"><article class="card card-fullheight has-background-semitransparent"><div class="card-image"><figure class="image is-2by1"><img src="//:0" alt="Blog header image" class="v-lazy-image object-fit-cover" data-v-14ae8593></figure></div> <div class="card-content"><div class="content is-flex is-justify-content-space-evenly"><div class="has-text-centered"><p class="heading title is-size-6">Next post</p> <p class="has-text-weight-light title is-size-6">
+                Using Shiny to Replicate a Bloomberg Graphics
+              </p></div></div></div></article></a> <!----></div></div> <div class="column"><div style="height:100%;transition:1s transform ease;transform:translateX(0) translateY(0)"><a href="/post/tidy-tuesday-powerlifting"><article class="card card-fullheight has-background-semitransparent"><div class="card-image"><figure class="image is-2by1"><img src="//:0" alt="Blog header image" class="v-lazy-image object-fit-cover" data-v-14ae8593></figure></div> <div class="card-content"><div class="content is-flex is-justify-content-space-evenly"><div class="has-text-centered"><p class="heading title is-size-6">Previous post</p> <p class="has-text-weight-light title is-size-6">
+                How to Combine Animated Plots in R
+              </p></div></div></div></article></a> <!----></div></div></div></article> <footer class="site-footer" data-v-37cbb2b5><div class="content has-text-centered site-footer-content" data-v-37cbb2b5><p data-v-37cbb2b5>
+      Built with 💚 and Nuxt.js by
+      <a href="https://twitter.com/CL_Rothschild" target="_blank" rel="noopener noreferrer" class="link" data-v-37cbb2b5>Connor Rothschild</a>. The source code is available on
+      <a href="https://github.com/connorrothschild/v3" target="_blank" rel="noopener noreferrer" class="link" data-v-37cbb2b5>GitHub</a>.
+    </p></div></footer></div></div></div></div><script defer src="/_nuxt/static/1639691221/post/map-springfield/state.js"></script><script src="/_nuxt/64b5898.js" defer></script><script src="/_nuxt/c4401d5.js" defer></script><script src="/_nuxt/2c17e43.js" defer></script><script src="/_nuxt/e8925e5.js" defer></script><script src="/_nuxt/ea1b2ed.js" defer></script><script src="/_nuxt/cbfb02f.js" defer></script><script src="/_nuxt/7e4b2d1.js" defer></script><script src="/_nuxt/2bd4311.js" defer></script>
+  </body>
+</html>

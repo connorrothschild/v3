@@ -1,0 +1,295 @@
+<!doctype html>
+<html data-n-head-ssr lang="en" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Animating Your Hugo Academic Site | Connor Rothschild</title><meta data-n-head="ssr" charset="utf-8"><meta data-n-head="ssr" name="viewport" content="width=device-width,initial-scale=1"><meta data-n-head="ssr" data-hid="charset" charset="utf-8"><meta data-n-head="ssr" data-hid="mobile-web-app-capable" name="mobile-web-app-capable" content="yes"><meta data-n-head="ssr" data-hid="apple-mobile-web-app-title" name="apple-mobile-web-app-title" content="site"><meta data-n-head="ssr" data-hid="og:site_name" name="og:site_name" property="og:site_name" content="site"><meta data-n-head="ssr" data-hid="description" name="description" content="Make your Hugo Academic homepage more engaging with a few lines of code"><meta data-n-head="ssr" data-hid="og:type" property="og:type" content="article"><meta data-n-head="ssr" data-hid="og:url" property="og:url" content="https://v3.connorrothschild.com/post/animate-hugo-academic"><meta data-n-head="ssr" data-hid="og:title" property="og:title" content="Animating Your Hugo Academic Site"><meta data-n-head="ssr" data-hid="og:description" property="og:description" content="Make your Hugo Academic homepage more engaging with a few lines of code"><meta data-n-head="ssr" data-hid="og:image" property="og:image" content="https://v3.connorrothschild.com/post/animate-hugo-academic/header.png"><meta data-n-head="ssr" data-hid="twitter:url" name="twitter:url" content="https://v3.connorrothschild.com/post/animate-hugo-academic"><meta data-n-head="ssr" data-hid="twitter:title" name="twitter:title" content="Animating Your Hugo Academic Site"><meta data-n-head="ssr" data-hid="twitter:description" name="twitter:description" content="Make your Hugo Academic homepage more engaging with a few lines of code"><meta data-n-head="ssr" data-hid="twitter:image" name="twitter:image" content="https://v3.connorrothschild.com/post/animate-hugo-academic/header.png"><meta data-n-head="ssr" data-hid="twitter:site" name="twitter:site" content="@CL_Rothschild"><meta data-n-head="ssr" data-hid="twitter:card" name="twitter:card" content="summary_large_image"><meta data-n-head="ssr" property="article:published_time" content="2021-12-16T21:41:20.717Z"><meta data-n-head="ssr" property="article:modified_time" content="2021-12-16T21:41:20.718Z"><meta data-n-head="ssr" name="twitter:label1" content="Written by"><meta data-n-head="ssr" name="twitter:data1" content="Connor Rothschild"><base href="/"><link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.png"><link data-n-head="ssr" data-hid="shortcut-icon" rel="shortcut icon" href="/_nuxt/icons/icon_64x64.ecd1ba.png"><link data-n-head="ssr" data-hid="apple-touch-icon" rel="apple-touch-icon" href="/_nuxt/icons/icon_512x512.ecd1ba.png" sizes="512x512"><link data-n-head="ssr" rel="manifest" href="/_nuxt/manifest.d23946e6.json" data-hid="manifest"><link data-n-head="ssr" data-hid="canonical" rel="canonical" href="https://v3.connorrothschild.com/post/animate-hugo-academic"><link rel="preload" href="/_nuxt/64b5898.js" as="script"><link rel="preload" href="/_nuxt/cbfb02f.js" as="script"><link rel="preload" href="/_nuxt/css/0e51f67.css" as="style"><link rel="preload" href="/_nuxt/7e4b2d1.js" as="script"><link rel="preload" href="/_nuxt/css/2510a47.css" as="style"><link rel="preload" href="/_nuxt/2bd4311.js" as="script"><link rel="preload" href="/_nuxt/css/2d74e3a.css" as="style"><link rel="preload" href="/_nuxt/c4401d5.js" as="script"><link rel="preload" href="/_nuxt/2c17e43.js" as="script"><link rel="preload" href="/_nuxt/css/ff4f90e.css" as="style"><link rel="preload" href="/_nuxt/e8925e5.js" as="script"><link rel="preload" href="/_nuxt/css/2cc613b.css" as="style"><link rel="preload" href="/_nuxt/ea1b2ed.js" as="script"><link rel="preload" href="/_nuxt/css/71314a7.css" as="style"><link rel="preload" href="/_nuxt/0dd4b09.js" as="script"><link rel="stylesheet" href="/_nuxt/css/0e51f67.css"><link rel="stylesheet" href="/_nuxt/css/2510a47.css"><link rel="stylesheet" href="/_nuxt/css/2d74e3a.css"><link rel="stylesheet" href="/_nuxt/css/ff4f90e.css"><link rel="stylesheet" href="/_nuxt/css/2cc613b.css"><link rel="stylesheet" href="/_nuxt/css/71314a7.css"><link rel="preload" href="/_nuxt/static/1639691221/post/animate-hugo-academic/state.js" as="script"><link rel="preload" href="/_nuxt/static/1639691221/post/animate-hugo-academic/payload.js" as="script"><link rel="preload" href="/_nuxt/static/1639691221/manifest.js" as="script">
+  </head>
+  <body>
+    <div data-server-rendered="true" id="__nuxt"><!----><div id="__layout"><div><div class="theme-primary-off"><nav role="navigation" aria-label="main navigation" class="navbar theme-primary" data-v-577d5465><div class="navbar-brand" data-v-577d5465><a href="/" class="navbar-item has-text-weight-boldest nuxt-link-active" data-v-577d5465>Connor Rothschild
+    </a> <a role="button" aria-label="menu" aria-expanded="false" data-target="navbarID" class="navbar-burger" data-v-577d5465><span aria-hidden="true" data-v-577d5465></span> <span aria-hidden="true" data-v-577d5465></span> <span aria-hidden="true" data-v-577d5465></span></a></div> <div id="navbarID" class="navbar-menu" data-v-577d5465><div class="navbar-end" data-v-577d5465><div class="navbar-item" data-v-577d5465><div class="themepicker__btn" data-v-15133967 data-v-577d5465><span class="themepicker__palette" data-v-15133967><span class="themepicker__swatch themepicker__swatch--primary" data-v-15133967></span> <span class="themepicker__swatch themepicker__swatch--secondary" data-v-15133967></span> <span class="themepicker__swatch themepicker__swatch--text" data-v-15133967></span></span></div></div> <a href="/#projects" class="navbar-item" data-v-577d5465>
+        Projects
+      </a> <a href="/#awards" class="navbar-item" data-v-577d5465>
+        Awards
+      </a> <a href="/#blog" class="navbar-item" data-v-577d5465>
+        Blog
+      </a> <a href="mailto:connor@connorrothschild.com" class="navbar-item" data-v-577d5465>
+        Email
+      </a> <a href="https://docs.google.com/document/d/1qBH-wNMe2nv9Xa4uzHZ5wBevohwKuB3h2i9M2yk4POk/edit?usp=sharing" target="_blank" rel="noopener" class="navbar-item" data-v-577d5465>
+        Resume
+      </a></div></div></nav> <article class="section container is-max-tablet"><h1 class="my-3 has-text-weight-boldest content-title is-size-3-mobile">
+      Animating Your Hugo Academic Site
+    </h1> <p class="my-3 content-description is-size-5-mobile">
+      Make your Hugo Academic homepage more engaging with a few lines of code
+    </p> <p class="heading is-size-6 has-text-weight-light">
+      July 2020 •
+      <span>16 minute read
+  <!----></span></p> <hr> <div class="nuxt-content"><div class="img" style="display:inline-block;width:100%" data-v-bbcfffec><img src="/_nuxt/img/3c85da8.gif" alt="A GIF showcasing the final version of my animated homepage." data-v-bbcfffec></div>
+<p>The R package <code>blogdown</code> is an incredibly powerful tool—it allows R users with little to no familiarity in web development to build a fully functional, content-oriented, beautiful website using a language they’re already familiar with. It's built on top of <a href="https://gohugo.io/" rel="nofollow noopener noreferrer" target="_blank">Hugo</a>, the world’s (self-proclaimed) ‘fastest framework for building websites,’ which comes with a <a href="https://themes.gohugo.io/" rel="nofollow noopener noreferrer" target="_blank">variety of themes</a> suitable for a variety of different uses.</p>
+<p>Within the R community, perhaps one of the most popular themes is <a href="https://themes.gohugo.io/academic/" rel="nofollow noopener noreferrer" target="_blank">Hugo Academic</a>. As the name implies, the theme is geared toward those working academia—more generally, it provides a great starter kit for those interested in showcasing blog posts, projects, and other media on a minimalist site.</p>
+<p>Given its popularity, the Hugo Academic landing page is far-too-familiar. Although not unattractive, no one is particularly surprised or engaged by the standard Academic homepage.</p>
+<p>One way to spice up Hugo Academic is to use animations on our home pages. In this post, I outline three simple steps and a few lines of code to create a fully functional, beautifully-animated landing page. By leveraging the flexibility of Hugo's framework, and introducing a little bit of HTML and CSS, we can take our Hugo Academic home pages from zero to hero (at least, in terms of animation!).</p>
+<div class="p-4 my-3 info-box" data-v-66ffdc8b><div data-v-66ffdc8b>
+<p data-v-66ffdc8b>This tutorial assumes you are starting a Hugo Academic site from scratch. If you already have a Hugo Academic website up and running, you should be able to <a href="#step-1-create-abouthtml" data-v-66ffdc8b>skip step 0</a> and modify the remaining steps slightly.</p>
+<p data-v-66ffdc8b>It also assumes that you have little to no knowledge about HTML and CSS (which is fine!). If that’s <em data-v-66ffdc8b>not</em> the case, you can likely go ahead and skip to <a href="#step-3-add-css" data-v-66ffdc8b>step 3</a>.</p>
+<p data-v-66ffdc8b>If you’d like to skip this tutorial and just start a Hugo Academic site that’s animated, feel free to <a href="https://github.com/connorrothschild/animate-hugo-academic" rel="nofollow noopener noreferrer" target="_blank" data-v-66ffdc8b>fork my repository</a> which includes all the code you need for an animated homepage. The repo includes my <a href="https://github.com/connorrothschild/animate-hugo-academic/blob/master/layouts/partials/widgets/about.html" rel="nofollow noopener noreferrer" target="_blank" data-v-66ffdc8b><code data-v-66ffdc8b>about.html</code> page</a> and a <a href="https://github.com/connorrothschild/animate-hugo-academic/blob/master/assets/scss/custom.scss" rel="nofollow noopener noreferrer" target="_blank" data-v-66ffdc8b>custom SCSS file</a>!</p>
+  </div></div>
+<h2 id="step-0-make-your-about-page-your-actual-homepage"><a href="#step-0-make-your-about-page-your-actual-homepage" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>Step 0) Make your ‘about’ page your actual homepage</h2>
+<p>By default, the Hugo Academic theme’s first section is a grandiose self-introduction (I guess the creators of the theme do deserve such credit). Before we incorporate any of our animations, lets go ahead and make our ‘about’ page the landing page users first see when they visit our site. This requires us to find the files <code>hero.md</code> and <code>demo.md</code>, and in each of those files, set <code>active</code> equal to <code>false</code>. That takes our home page from this:</p>
+<div class="img" style="display:inline-block;width:100%" data-v-bbcfffec><img src="/_nuxt/img/5bb6734.png" alt="A GIF showcasing the initial version of my homepage, before any edits." data-v-bbcfffec></div>
+<p>to this:</p>
+<div class="img" style="display:inline-block;width:100%" data-v-bbcfffec><img src="/_nuxt/img/b1676f1.png" alt="A GIF showcasing a version of my homepage where I replace ‘hero' with ‘about’." data-v-bbcfffec></div>
+<p>(As you progress, you might have to make additional small changes, such as removing ‘Demo’ from the navbar menu.)</p>
+<h2 id="step-1-create-abouthtml"><a href="#step-1-create-abouthtml" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>Step 1) Create about.html</h2>
+<p>The first <em>real</em> step in our process is modifying the default layout of our about page. More specifically, our animations will rely on CSS selectors which our about page currently doesn’t have. In order to animate certain elements, we will need unique identifiers, such as CSS classes and IDs, to target.</p>
+<p>To play around with our about page, we take advantage of Hugo’s flexibility toward structural changes. As they <a href="https://bwaycer.github.io/hugo_tutorial.hugo/themes/customizing/" rel="nofollow noopener noreferrer" target="_blank">say</a> on their website:</p>
+<blockquote>
+<p>Hugo permits you to <strong>supplement or override</strong> any theme template or static file, with files in your working directory.</p>
+</blockquote>
+<p>In order to override Hugo Academic’s about page, we need to copy their existing structure into our own folder and modify it there. To do so, navigate to <code>themes/hugo-academic/layouts/partials/widgets/</code> and copy the file titled <code>about.html</code>.</p>
+<p>Now, create <em>a new file path</em> in your root directory titled <code>layouts/partials/widgets/</code>. Copy your <code>about.html</code> file here. (Look familiar? All we’re doing is recreating <code>about.html</code> in a <em>personal</em> version of our project, thus overriding the <code>about.html</code> that Hugo Academic provides.)</p>
+<div class="p-4 my-3 info-box" data-v-66ffdc8b><div data-v-66ffdc8b>
+<p data-v-66ffdc8b>Alternatively, you can copy the about.html file that I used for this project and paste it into <code data-v-66ffdc8b>layouts/partials/widgets/</code>. <a href="https://github.com/connorrothschild/animate-hugo-academic/blob/master/layouts/partials/widgets/about.html" rel="nofollow noopener noreferrer" target="_blank" data-v-66ffdc8b>You can find my file here</a>. This will also allow you to skip step 2 and move on to <a href="#step-3-add-css" data-v-66ffdc8b>step 3</a>!</p>
+  </div></div>
+<h2 id="step-2-customize-your-file"><a href="#step-2-customize-your-file" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>Step 2) Customize your file</h2>
+<p>With that newly created <code>about.html</code> living in <code>layouts/partials/widgets/</code>, you may notice that your homepage looks the exact same. This is correct! In this step, we’ll customize that html file so that it can be animated.</p>
+<p>Within <code>about.html</code>, you’ll notice all of your page’s elements in order of appearance, despite a lot of extra characters that don’t make much sense. It should look like this:</p>
+<div class="img" style="display:inline-block;width:100%" data-v-bbcfffec><img src="/_nuxt/img/aa99e3a.png" alt="A screenshot of complicated code that is initially used to render the homepage." data-v-bbcfffec></div>
+<p>Throughout step 3, we’ll use each element’s ‘class’ to target it for animations. In the above screenshot (and in your <code>about.html</code> page!), you’ll see classes scattered throughout. Although learning everything about CSS and CSS selectors is beyond the scope of this tutorial, I would recommend reading a brief primer on classes and selectors in CSS, which can be found <a href="https://www.w3schools.com/cssref/sel_class.asp" rel="nofollow noopener noreferrer" target="_blank">here</a>.</p>
+<p>In this step, we’ll add classes to the elements we want to animate. (Again, if this seems to be overwhelming, feel free to copy <a href="https://github.com/connorrothschild/animate-hugo-academic/blob/master/layouts/partials/widgets/about.html" rel="nofollow noopener noreferrer" target="_blank">my HTML file.</a>) Specifically, we’ll make three changes.</p>
+<p>First, we’ll add a class of <code>biography-title</code> to our h1 (header 1) element. Here, we will change</p>
+<div class="nuxt-content-highlight"><pre class="line-numbers language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>{{ $page.Title | markdownify | emojify }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+{{ end }}
+</code></pre></div>
+<p>to</p>
+<div class="nuxt-content-highlight"><pre class="line-numbers language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>biography-title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>{{ $page.Title | markdownify | emojify }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+{{ end }}
+</code></pre></div>
+<p>Next, we need to wrap the main content, aka the big text blocks in the middle of the page, in their own class too. Here, we take</p>
+<div class="nuxt-content-highlight"><pre class="line-numbers language-html"><code>{{ $person_page.Content }}
+</code></pre></div>
+<p>and wrap it in a <code>div</code>, so it looks like this:</p>
+<div class="nuxt-content-highlight"><pre class="line-numbers language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>main-content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>{{ $person_page.Content }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre></div>
+<p>Finally, we’ll add a class to our interests and and education blocks. We can take this row:</p>
+<div class="nuxt-content-highlight"><pre class="line-numbers language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  {{ with $person.interests }}
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col-md-5<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span>{{ i18n "interests" | markdownify }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ul-interests<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      {{ range . }}
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>{{ . | markdownify | emojify }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+      {{ end }}
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  {{ end }} {{ with $person.education }}
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col-md-7<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span>{{ i18n "education" | markdownify }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ul-edu fa-ul<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      {{ range .courses }}
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fa-li fas fa-graduation-cap<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>description<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>course<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>{{ .course }}{{ with .year }}, {{ . }}{{ end }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>institution<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>{{ .institution }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+      {{ end }}
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  {{ end }}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre></div>
+<p>and replace it with this:</p>
+<div class="nuxt-content-highlight"><pre class="line-numbers language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  {{ with $person.interests }}
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>interests-div col-md-5<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span>{{ i18n "interests" | markdownify }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ul-interests<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      {{ range . }}
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>{{ . | markdownify | emojify }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+      {{ end }}
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  {{ end }} {{ with $person.education }}
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>education-div col-md-7<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span>{{ i18n "education" | markdownify }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ul-edu fa-ul<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      {{ range .courses }}
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fa-li fas fa-graduation-cap<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>description<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>course<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>{{ .course }}{{ with .year }}, {{ . }}{{ end }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>institution<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>{{ .institution }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+      {{ end }}
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  {{ end }}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre></div>
+<div class="p-4 my-3 info-box" data-v-66ffdc8b><div data-v-66ffdc8b>
+<p data-v-66ffdc8b>A quick tip to identify the classes and IDs of individual elements is to use the browser’s <strong data-v-66ffdc8b>inspect element</strong> tool. To do so, right click on the element you’re interested in and click inspect element; what you’ll see is a highlighted box that tells you that object’s class and/or ID. For more on inspect element and your browser, <a href="https://blog.devmountain.com/how-to-use-inspect-element-jump-into-what-makes-a-web-page-tick/" rel="nofollow noopener noreferrer" target="_blank" data-v-66ffdc8b>see this page</a>.</p>
+  </div></div>
+<p>Now, we can reference the existing CSS classes, and our new ones, in our pretty animation in Step 3!</p>
+<h2 id="step-3-add-css"><a href="#step-3-add-css" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>Step 3) Add CSS</h2>
+<p>Now that we’ve created our classes, we can target them in a CSS file and tell them exactly <em>how</em> to animate.</p>
+<p>But first, you’ll need to create a custom CSS file in your root directly. In your <code>assets/</code> folder, create a <em>new</em> folder called <code>scss/</code> and within this folder, create a <em>new</em> file called <code>custom.scss</code>.</p>
+<div class="p-4 my-3 info-box" data-v-66ffdc8b><div data-v-66ffdc8b>
+<p data-v-66ffdc8b>An SCSS file is essentially a CSS file but extended with Sass, which describes <a href="https://sass-lang.com/" rel="nofollow noopener noreferrer" target="_blank" data-v-66ffdc8b>itself</a> as ‘CSS with superpowers.’ For an overview of the intricacies of Sass, like nesting selectors, visit <a href="https://sass-lang.com/guide" rel="nofollow noopener noreferrer" target="_blank" data-v-66ffdc8b>their guide</a>.</p>
+  </div></div>
+<p>Within <code>custom.scss</code>, we’re going to target everything <em>within our about section</em>. In order to do so, we create a selector that targets everything within the ID of <code>about</code>.</p>
+<div class="nuxt-content-highlight"><pre class="line-numbers language-scss"><code><span class="token selector">#about </span><span class="token punctuation">{</span>
+  <span class="token comment">/* Some CSS will go here soon! :) */</span>
+  <span class="token comment">/* This is a comment, by the way. */</span>
+<span class="token punctuation">}</span>
+</code></pre></div>
+<p>To ensure that we’ve targeted the right section, we can go ahead and add the property <code>background-color: red</code> to that element. As the name implies, this will make the section ✨ red. ✨</p>
+<div class="nuxt-content-highlight"><pre class="line-numbers language-scss"><code><span class="token selector">#about </span><span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token color">red</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div>
+<p>As we expected, our section background is now an (unbelievably ugly shade of) red.</p>
+<div class="img" style="display:inline-block;width:100%" data-v-bbcfffec><img src="/_nuxt/img/0276104.png" alt="An example of turning the background color of the page red." data-v-bbcfffec></div>
+<p>(Now remove that property immediately! This is not quite the welcome we want for our visitors.) We can also target elements <em>within</em> the section by nesting new selectors inside of <code>#about</code>. For example, if we wanted to change the color of our ‘biography’ title text, we could do so with the following code. (This is because we created a class named <code>biography-title</code> in step 1):</p>
+<div class="nuxt-content-highlight"><pre class="line-numbers language-scss"><code><span class="token selector">#about </span><span class="token punctuation">{</span>
+  <span class="token selector">.biography-title </span><span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> <span class="token color">red</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div>
+<div class="img" style="display:inline-block;width:100%" data-v-bbcfffec><img src="/_nuxt/img/9dbdecc.png" alt="An example of turning the font color  red." data-v-bbcfffec></div>
+<div class="p-4 my-3 info-box" data-v-66ffdc8b><div data-v-66ffdc8b>
+<p data-v-66ffdc8b>You may notice that <code data-v-66ffdc8b>about</code> is targeted with a pound (#) and <code data-v-66ffdc8b>biography-title</code> is targeted with a period (.). This is the difference between CSS <em data-v-66ffdc8b>IDs</em> and <em data-v-66ffdc8b>classes</em>. If you’re curious about the distinction, here’s a <a href="https://www.htmldog.com/guides/css/intermediate/classid/" rel="nofollow noopener noreferrer" target="_blank" data-v-66ffdc8b>helpful guide</a>.</p>
+  </div></div>
+<p>Now that we know how to target specific objects within our <code>about</code> section, we can animate our first element!</p>
+<h3 id="step-3a-your-first-animation"><a href="#step-3a-your-first-animation" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>Step 3A) Your first animation!</h3>
+<p>Creating your first animation is as simple as a few lines of code. To illustrate, we’ll test out an animation which changes our text from red and invisible to black and visible. In the code, we'll have to do two things:</p>
+<ol>
+<li>Create an animation with <code>@keyframes</code></li>
+</ol>
+<div class="nuxt-content-highlight"><pre class="line-numbers language-scss"><code><span class="token atrule"><span class="token rule">@keyframes</span> yourfirstanimation</span> <span class="token punctuation">{</span>
+  <span class="token keyword">from</span> <span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> <span class="token color">red</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">to </span><span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> <span class="token color">black</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div>
+<ol start="2">
+<li>Bind the animation to an element</li>
+</ol>
+<div class="nuxt-content-highlight"><pre class="line-numbers language-scss"><code><span class="token selector">.biography-title </span><span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> yourfirstanimation <span class="token number">5</span><span class="token unit">s</span> forwards<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div>
+<p>To break down the above code, we create an animation that has a <em>start point</em> (<code>0%</code>) and an <em>end point</em> (<code>100%</code>). At both of these points, we define CSS properties, such as color and opacity, seen above. When we bind the animation to an element, which is as simple as <code>animation: &lt;animation_name> &lt;duration> &lt;fill_mode></code>, CSS deals with all the inbetween and automatically creates a smooth transition! (Fill mode is the most complicated of these three properties, but for our purposes we will always be using <code>forwards</code>. For more information, visit <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode" rel="nofollow noopener noreferrer" target="_blank">this page</a>.)</p>
+<p>Altogether, this code creates this output:</p>
+<div class="nuxt-content-highlight"><pre class="line-numbers language-scss"><code><span class="token selector">#about </span><span class="token punctuation">{</span>
+  <span class="token atrule"><span class="token rule">@keyframes</span> yourfirstanimation</span> <span class="token punctuation">{</span>
+    <span class="token selector">0% </span><span class="token punctuation">{</span>
+      <span class="token property">opacity</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token property">color</span><span class="token punctuation">:</span> <span class="token color">red</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">100% </span><span class="token punctuation">{</span>
+      <span class="token property">opacity</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">;</span>
+      <span class="token property">color</span><span class="token punctuation">:</span> <span class="token color">black</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.biography-title </span><span class="token punctuation">{</span>
+    <span class="token property">animation</span><span class="token punctuation">:</span> yourfirstanimation <span class="token number">5</span><span class="token unit">s</span> forwards<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div>
+<div class="img" style="display:inline-block;width:100%" data-v-bbcfffec><img src="/_nuxt/img/7c00916.gif" alt="An example transition, turning the font color to red over a 5 second duration." data-v-bbcfffec></div>
+<p>Of course, we don’t want a 5 second animation, nor do we want our text to start off as red. A cleaner animation might leverage the power of CSS to modify an element’s <em>position</em>. In our case, we want an element to <strong>slide in from the right side of the screen</strong>, and so we make a few tweaks to the code above. Let’s make a new animation called <code>slide-from-right</code> which starts (at keyframe 0%) with our element 150% to the right of its original position (therefore off the screen) and ends (at keyframe 100%) with it at its original position. This involves the use of <code>translateX</code>, which you can read about <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateX" rel="nofollow noopener noreferrer" target="_blank">here</a>.</p>
+<div class="nuxt-content-highlight"><pre class="line-numbers language-scss"><code><span class="token atrule"><span class="token rule">@keyframes</span> slide-from-right</span> <span class="token punctuation">{</span>
+  <span class="token selector">0% </span><span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span><span class="token number">150</span><span class="token unit">%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">100% </span><span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token unit">%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.biography-title </span><span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> slide-from-right <span class="token number">1</span><span class="token unit">s</span> forwards<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div>
+<div class="img" style="display:inline-block;width:100%" data-v-bbcfffec><img src="/_nuxt/img/5b49de6.gif" alt="A gif of the content sliding in from the right side of the page" data-v-bbcfffec></div>
+<p>There is one slight improvement we can make on the above transition. Specifically, we can call an <em>easing function</em> on our animation. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function" rel="nofollow noopener noreferrer" target="_blank">Easing functions</a> give a more natural feel to a transition’s flow—rather than our object flying in at a perfectly linear rate, we can add some personality by specifying its speed at different points in the transition. To find an easing function, visit <a href="https://easings.net/en#" rel="nofollow noopener noreferrer" target="_blank">easings.net</a>, which allows you to visualize all of the different ways to modify your transition’s ease. (For this tutorial, I chose a clean-looking “<em>easeInOutQuint</em>“ function, which looks like this: <code>cubic-bezier(0.83, 0, 0.17, 1)</code>.)</p>
+<hr>
+<h3 id="step-3b-dont-wait-to-delay"><a href="#step-3b-dont-wait-to-delay" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>Step 3B) Don’t Wait to Delay</h3>
+<p>We want our homepage to have more than just one title animation. We might also want to <strong>animate the paragraphs below it</strong>, with the same ’slide from right’ transition we defined earlier. While doing this, we can add one property to our element to make the overall transition seem more fluid: <code>animation-delay</code>. As the name suggests, this property defines how long the browser should wait before it <em>begins</em> the transition you’ve specified. Animating our <code>main-content</code> div is as simple as copying the above code and adding a 100 millisecond animation delay.</p>
+<div class="nuxt-content-highlight"><pre class="line-numbers language-scss"><code><span class="token selector">.main-content </span><span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> slide-from-right <span class="token number">1</span><span class="token unit">s</span> <span class="token function">cubic-bezier</span><span class="token punctuation">(</span><span class="token number">0.87</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.13</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span> forwards<span class="token punctuation">;</span>
+  <span class="token property">animation-delay</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token unit">ms</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div>
+<p>In combination with above, this creates a transition that looks like this:</p>
+<div class="img" style="display:inline-block;width:100%" data-v-bbcfffec><img src="/_nuxt/img/31686c3.gif" alt="A gif of two pieces of content sliding in, one after another (with a 100ms delay)" data-v-bbcfffec></div>
+<p>Nice! That looks clean. It looks like those two text blocks are racing to greet your new site visitor :)</p>
+<hr>
+<h3 id="step-3c-to-the-left"><a href="#step-3c-to-the-left" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>Step 3C) To the Left!</h3>
+<p>Let’s go ahead and replicate that ’slide in’ transition for our profile on the left side of our webpage. As you could probably gather, this is as simple as copying the above code and changing the value in <code>translateX</code> from 150% to -150% (from just outside the right side of our webpage <a href="https://www.youtube.com/watch?v=2EwViQxSJJQ&feature=youtu.be&t=25" rel="nofollow noopener noreferrer" target="_blank">to the left!</a>). As above, we’ll define this transition in a <code>@keyframes</code> rule and apply it to our CSS transition afterward.</p>
+<div class="nuxt-content-highlight"><pre class="line-numbers language-scss"><code><span class="token atrule"><span class="token rule">@keyframes</span> slide-from-left</span> <span class="token punctuation">{</span>
+  <span class="token selector">0% </span><span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span><span class="token number">-150</span><span class="token unit">%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">100% </span><span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token unit">%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">#profile </span><span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> slide-from-left <span class="token number">1</span><span class="token unit">s</span> <span class="token function">cubic-bezier</span><span class="token punctuation">(</span><span class="token number">0.87</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.13</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span> forwards<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div>
+<div class="img" style="display:inline-block;width:100%" data-v-bbcfffec><img src="/_nuxt/img/92140ad.gif" alt="Two paragraphs of content sliding in from opposite directions." data-v-bbcfffec></div>
+<h3 id="step-3d-finally-the-fade"><a href="#step-3d-finally-the-fade" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>Step 3D) Finally, the Fade</h3>
+<p>The only thing not yet animated on our page are the ‘interests’ and ‘education’ content blocks. Of course, you might not want these on your homepage (my educational journey isn’t yet formidable enough to warrant its own section on my homepage!). But for the sake of animating the homepage <em>as its configured by default</em>, let’s go ahead and have those content blocks fade in <em>once the sliding transitions complete</em>.</p>
+<p>If you’ve been paying attention to the prior <code>@keyframes</code> rules, you might have guessed that the code would look like this:</p>
+<div class="nuxt-content-highlight"><pre class="line-numbers language-scss"><code><span class="token atrule"><span class="token rule">@keyframes</span> fade-in</span> <span class="token punctuation">{</span>
+  <span class="token selector">0% </span><span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">100% </span><span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div>
+<p>... and you would be correct!</p>
+<p>Now, we apply this <code>fade-in</code> rule to both our <code>interests-div</code> and our <code>education-div</code>, which we created in step 1. But notably, we want to wait to fade in each of these divs until <em>after our content has slid in from either side of the webpage.</em> And so, we’ll once again use the <code>animation-delay</code> property. Because our slide-in animations take one second to complete, we can begin our fade-in animations after a one-second delay. To make the transition a little more visually appealling, we can also stagger them, so the <code>education-div</code> fades in half a second <em>after</em> <code>interests-div</code>.</p>
+<div class="nuxt-content-highlight"><pre class="line-numbers language-scss"><code><span class="token selector">.interests-div </span><span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> fade-in <span class="token number">1</span><span class="token unit">s</span> forwards<span class="token punctuation">;</span>
+  <span class="token property">animation-delay</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token unit">s</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.education-div </span><span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> fade-in <span class="token number">1</span><span class="token unit">s</span> forwards<span class="token punctuation">;</span>
+  <span class="token property">animation-delay</span><span class="token punctuation">:</span> <span class="token number">1.5</span><span class="token unit">s</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div>
+<p>Now, we have a final homepage that looks like this:</p>
+<div class="img" style="display:inline-block;width:100%" data-v-bbcfffec><img src="/_nuxt/img/3c85da8.gif" alt="A GIF showing the final iteration of a homepage, with animations." data-v-bbcfffec></div>
+<p>To make our SCSS file more robust across different browsers, we can take our completed file and put it into the <a href="https://autoprefixer.github.io/" rel="nofollow noopener noreferrer" target="_blank">CSS Autoprefixer</a>. This adds additional lines of code to our CSS file so that all browsers render the same animations upon page load. Your completed SCSS file should look like <a href="https://github.com/connorrothschild/animate-hugo-academic/blob/master/assets/scss/custom.scss" rel="nofollow noopener noreferrer" target="_blank">this</a>.</p>
+<h2 id="extending-animations"><a href="#extending-animations" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>Extending Animations</h2>
+<p>This tutorial is meant to teach you the essentials of <em>how</em> to animate your homepage (for any Hugo site, not just Academic). Specifically, you should be able to 1) create and identify CSS elements via their classes and IDs, 2) target them using CSS, and 3) animate them using <code>@keyframes</code> rules. Although easier said then done, applying these three rules will go a long way in making your homepage much more appealling to new visitors.</p>
+<p>The complete power of CSS animations is not covered in this tutorial. Further applications of animations could do <strong>much</strong> more than just animate an object’s position. I leave that to you!</p>
+<p>For those that are interested, <a href="https://connorrothschild.github.io/v2/" rel="nofollow noopener noreferrer" target="_blank">my old homepage</a> is chock-full of CSS properties which make it unique from most; some visitors are surprised to hear that my site is Hugo Academic at all!</p>
+<p>For those interested, the code for my Hugo Academic personal site (now archived) can be found <a href="https://github.com/connorrothschild/v2" rel="nofollow noopener noreferrer" target="_blank">here</a>. I look forward to seeing your animated homepages!</p></div> <hr> <div class="my-4"><a href="/post" class="subtitle has-text-weight-bolder is-size-5 link heading is-inline-block nuxt-link-active">👈 Back to all posts</a></div> <div class="columns"><div class="column"><div style="height:100%;transition:1s transform ease;transform:translateX(0) translateY(0)"><a href="/post/covid-gun-spikes"><article class="card card-fullheight has-background-semitransparent"><div class="card-image"><figure class="image is-2by1"><img src="//:0" alt="Blog header image" class="v-lazy-image object-fit-cover" data-v-14ae8593></figure></div> <div class="card-content"><div class="content is-flex is-justify-content-space-evenly"><div class="has-text-centered"><p class="heading title is-size-6">Next post</p> <p class="has-text-weight-light title is-size-6">
+                Firearm Background Checks Are Spiking
+              </p></div></div></div></article></a> <!----></div></div> <div class="column"><div style="height:100%;transition:1s transform ease;transform:translateX(0) translateY(0)"><a href="/post/adding-a-chart-to-your-d3-tooltip"><article class="card card-fullheight has-background-semitransparent"><div class="card-image"><figure class="image is-2by1"><img src="//:0" alt="Blog post header image" class="v-lazy-image object-fit-cover" data-v-14ae8593></figure></div> <div class="card-content"><div class="content is-flex is-justify-content-space-evenly"><div class="has-text-centered"><p class="heading title is-size-6">Previous post</p> <p class="has-text-weight-light title is-size-6">
+                How (and Why) to Add a Chart to Your D3.js Tooltip
+              </p></div></div></div></article></a> <!----></div></div></div></article> <footer class="site-footer" data-v-37cbb2b5><div class="content has-text-centered site-footer-content" data-v-37cbb2b5><p data-v-37cbb2b5>
+      Built with 💚 and Nuxt.js by
+      <a href="https://twitter.com/CL_Rothschild" target="_blank" rel="noopener noreferrer" class="link" data-v-37cbb2b5>Connor Rothschild</a>. The source code is available on
+      <a href="https://github.com/connorrothschild/v3" target="_blank" rel="noopener noreferrer" class="link" data-v-37cbb2b5>GitHub</a>.
+    </p></div></footer></div></div></div></div><script defer src="/_nuxt/static/1639691221/post/animate-hugo-academic/state.js"></script><script src="/_nuxt/64b5898.js" defer></script><script src="/_nuxt/c4401d5.js" defer></script><script src="/_nuxt/2c17e43.js" defer></script><script src="/_nuxt/e8925e5.js" defer></script><script src="/_nuxt/ea1b2ed.js" defer></script><script src="/_nuxt/0dd4b09.js" defer></script><script src="/_nuxt/cbfb02f.js" defer></script><script src="/_nuxt/7e4b2d1.js" defer></script><script src="/_nuxt/2bd4311.js" defer></script>
+  </body>
+</html>

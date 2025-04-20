@@ -1,0 +1,264 @@
+<!doctype html>
+<html data-n-head-ssr lang="en" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>How to Combine Animated Plots in R | Connor Rothschild</title><meta data-n-head="ssr" charset="utf-8"><meta data-n-head="ssr" name="viewport" content="width=device-width,initial-scale=1"><meta data-n-head="ssr" data-hid="charset" charset="utf-8"><meta data-n-head="ssr" data-hid="mobile-web-app-capable" name="mobile-web-app-capable" content="yes"><meta data-n-head="ssr" data-hid="apple-mobile-web-app-title" name="apple-mobile-web-app-title" content="site"><meta data-n-head="ssr" data-hid="og:site_name" name="og:site_name" property="og:site_name" content="site"><meta data-n-head="ssr" data-hid="description" name="description" content="Leveraging the power of {gganimate} and {magick} to combine animated plots for your viewers."><meta data-n-head="ssr" data-hid="og:type" property="og:type" content="article"><meta data-n-head="ssr" data-hid="og:url" property="og:url" content="https://v3.connorrothschild.com/post/tidy-tuesday-powerlifting"><meta data-n-head="ssr" data-hid="og:title" property="og:title" content="How to Combine Animated Plots in R"><meta data-n-head="ssr" data-hid="og:description" property="og:description" content="Leveraging the power of {gganimate} and {magick} to combine animated plots for your viewers."><meta data-n-head="ssr" data-hid="og:image" property="og:image" content="https://v3.connorrothschild.com/post/tidy-tuesday-powerlifting/header.png"><meta data-n-head="ssr" data-hid="twitter:url" name="twitter:url" content="https://v3.connorrothschild.com/post/tidy-tuesday-powerlifting"><meta data-n-head="ssr" data-hid="twitter:title" name="twitter:title" content="How to Combine Animated Plots in R"><meta data-n-head="ssr" data-hid="twitter:description" name="twitter:description" content="Leveraging the power of {gganimate} and {magick} to combine animated plots for your viewers."><meta data-n-head="ssr" data-hid="twitter:image" name="twitter:image" content="https://v3.connorrothschild.com/post/tidy-tuesday-powerlifting/header.png"><meta data-n-head="ssr" data-hid="twitter:site" name="twitter:site" content="@CL_Rothschild"><meta data-n-head="ssr" data-hid="twitter:card" name="twitter:card" content="summary_large_image"><meta data-n-head="ssr" property="article:published_time" content="2021-12-16T21:41:20.941Z"><meta data-n-head="ssr" property="article:modified_time" content="2021-12-16T21:41:20.941Z"><meta data-n-head="ssr" name="twitter:label1" content="Written by"><meta data-n-head="ssr" name="twitter:data1" content="Connor Rothschild"><base href="/"><link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.png"><link data-n-head="ssr" data-hid="shortcut-icon" rel="shortcut icon" href="/_nuxt/icons/icon_64x64.ecd1ba.png"><link data-n-head="ssr" data-hid="apple-touch-icon" rel="apple-touch-icon" href="/_nuxt/icons/icon_512x512.ecd1ba.png" sizes="512x512"><link data-n-head="ssr" rel="manifest" href="/_nuxt/manifest.d23946e6.json" data-hid="manifest"><link data-n-head="ssr" data-hid="canonical" rel="canonical" href="https://v3.connorrothschild.com/post/tidy-tuesday-powerlifting"><link rel="preload" href="/_nuxt/64b5898.js" as="script"><link rel="preload" href="/_nuxt/cbfb02f.js" as="script"><link rel="preload" href="/_nuxt/css/0e51f67.css" as="style"><link rel="preload" href="/_nuxt/7e4b2d1.js" as="script"><link rel="preload" href="/_nuxt/css/2510a47.css" as="style"><link rel="preload" href="/_nuxt/2bd4311.js" as="script"><link rel="preload" href="/_nuxt/css/2d74e3a.css" as="style"><link rel="preload" href="/_nuxt/c4401d5.js" as="script"><link rel="preload" href="/_nuxt/2c17e43.js" as="script"><link rel="preload" href="/_nuxt/css/ff4f90e.css" as="style"><link rel="preload" href="/_nuxt/e8925e5.js" as="script"><link rel="preload" href="/_nuxt/css/2cc613b.css" as="style"><link rel="preload" href="/_nuxt/ea1b2ed.js" as="script"><link rel="stylesheet" href="/_nuxt/css/0e51f67.css"><link rel="stylesheet" href="/_nuxt/css/2510a47.css"><link rel="stylesheet" href="/_nuxt/css/2d74e3a.css"><link rel="stylesheet" href="/_nuxt/css/ff4f90e.css"><link rel="stylesheet" href="/_nuxt/css/2cc613b.css"><link rel="preload" href="/_nuxt/static/1639691221/post/tidy-tuesday-powerlifting/state.js" as="script"><link rel="preload" href="/_nuxt/static/1639691221/post/tidy-tuesday-powerlifting/payload.js" as="script"><link rel="preload" href="/_nuxt/static/1639691221/manifest.js" as="script">
+  </head>
+  <body>
+    <div data-server-rendered="true" id="__nuxt"><!----><div id="__layout"><div><div class="theme-primary-off"><nav role="navigation" aria-label="main navigation" class="navbar theme-primary" data-v-577d5465><div class="navbar-brand" data-v-577d5465><a href="/" class="navbar-item has-text-weight-boldest nuxt-link-active" data-v-577d5465>Connor Rothschild
+    </a> <a role="button" aria-label="menu" aria-expanded="false" data-target="navbarID" class="navbar-burger" data-v-577d5465><span aria-hidden="true" data-v-577d5465></span> <span aria-hidden="true" data-v-577d5465></span> <span aria-hidden="true" data-v-577d5465></span></a></div> <div id="navbarID" class="navbar-menu" data-v-577d5465><div class="navbar-end" data-v-577d5465><div class="navbar-item" data-v-577d5465><div class="themepicker__btn" data-v-15133967 data-v-577d5465><span class="themepicker__palette" data-v-15133967><span class="themepicker__swatch themepicker__swatch--primary" data-v-15133967></span> <span class="themepicker__swatch themepicker__swatch--secondary" data-v-15133967></span> <span class="themepicker__swatch themepicker__swatch--text" data-v-15133967></span></span></div></div> <a href="/#projects" class="navbar-item" data-v-577d5465>
+        Projects
+      </a> <a href="/#awards" class="navbar-item" data-v-577d5465>
+        Awards
+      </a> <a href="/#blog" class="navbar-item" data-v-577d5465>
+        Blog
+      </a> <a href="mailto:connor@connorrothschild.com" class="navbar-item" data-v-577d5465>
+        Email
+      </a> <a href="https://docs.google.com/document/d/1qBH-wNMe2nv9Xa4uzHZ5wBevohwKuB3h2i9M2yk4POk/edit?usp=sharing" target="_blank" rel="noopener" class="navbar-item" data-v-577d5465>
+        Resume
+      </a></div></div></nav> <article class="section container is-max-tablet"><h1 class="my-3 has-text-weight-boldest content-title is-size-3-mobile">
+      How to Combine Animated Plots in R
+    </h1> <p class="my-3 content-description is-size-5-mobile">
+      Leveraging the power of {gganimate} and {magick} to combine animated plots for your viewers.
+    </p> <p class="heading is-size-6 has-text-weight-light">
+      October 2019 •
+      <span>9 minute read
+  <!----></span></p> <hr> <div class="nuxt-content"><p>In this tutorial, I'm going to outline the steps necessary to create an animated, faceted plot in R. Although rare, combining animated plots can be a powerful way to showcase different elements of the same data (as you'll see below).</p>
+<p>In this example, I'm using weightlifting data from the International Powerlifting Federation. For the purposes of this tutorial, we'll look at <em>differences in top lifts by sex</em>. A faceted, animated plot is a great option because we'd like to observe <strong>the magnitude of these differences</strong> and <strong>how these differences have evolved over time</strong>.</p>
+<p>We'll be creating this GIF:</p>
+<div class="img" style="display:inline-block;width:100%" data-v-bbcfffec><img src="/_nuxt/img/c159b4d.gif" alt="A combination of the two aforementioned plots. The top plot is the animated dumbbell plot, and the bottom is a line chart. In combination, they allow the user to see the magnitude of differences between men and women, as well as how these differences have evolved over time." data-v-bbcfffec></div>
+<h2 id="environment-setup"><a href="#environment-setup" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>Environment Setup</h2>
+<p>These are the packages we'll need to get started. In my case, I use a <a href="https://github.com/connorrothschild/cr" rel="nofollow noopener noreferrer" target="_blank">custom theme</a> I've developed for stylistic purposes. Feel free to instead run <code>theme_set(theme_minimal())</code> rather than use my theme!</p>
+<div class="nuxt-content-highlight"><pre class="language-r line-numbers"><code>library<span class="token punctuation">(</span>ggplot2<span class="token punctuation">)</span>
+library<span class="token punctuation">(</span>tidyverse<span class="token punctuation">)</span>
+library<span class="token punctuation">(</span>ggtext<span class="token punctuation">)</span>
+library<span class="token punctuation">(</span>gifski<span class="token punctuation">)</span>
+library<span class="token punctuation">(</span>gganimate<span class="token punctuation">)</span>
+library<span class="token punctuation">(</span>cr<span class="token punctuation">)</span>
+
+set_cr_theme<span class="token punctuation">(</span>font <span class="token operator">=</span> <span class="token string">"Proxima Nova"</span><span class="token punctuation">)</span>
+<span class="token comment"># theme_set(theme_minimal())</span>
+</code></pre></div>
+<h2 id="load-and-clean-data"><a href="#load-and-clean-data" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>Load and Clean Data</h2>
+<p>I've already done a lot of the data cleaning for you. If you'd like to follow along, here's the process (or, skip ahead!).</p>
+<p>Here, we'll do some minor cleaning and then reshape the three lifts into one column:</p>
+<div class="nuxt-content-highlight"><pre class="language-r line-numbers"><code>ipf_lifts <span class="token operator">&lt;-</span> readr<span class="token operator">::</span>read_csv<span class="token punctuation">(</span><span class="token string">"data/ipf_lifts.csv"</span><span class="token punctuation">)</span> <span class="token percent-operator operator">%>%</span>
+  mutate<span class="token punctuation">(</span>year <span class="token operator">=</span> lubridate<span class="token operator">::</span>year<span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+ipf_lifts_reshape <span class="token operator">&lt;-</span> ipf_lifts <span class="token percent-operator operator">%>%</span>
+  tidyr<span class="token operator">::</span>pivot_longer<span class="token punctuation">(</span>cols <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token string">"best3squat_kg"</span><span class="token punctuation">,</span> <span class="token string">"best3bench_kg"</span><span class="token punctuation">,</span> <span class="token string">"best3deadlift_kg"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> names_to <span class="token operator">=</span> <span class="token string">"lift"</span><span class="token punctuation">)</span> <span class="token percent-operator operator">%>%</span>
+  select<span class="token punctuation">(</span>name<span class="token punctuation">,</span> sex<span class="token punctuation">,</span> year<span class="token punctuation">,</span> lift<span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+</code></pre></div>
+<p>For my visualization, I’m only concerned with the <em>heaviest</em> lifts from
+each year:</p>
+<div class="nuxt-content-highlight"><pre class="language-r line-numbers"><code>ipf_lifts_maxes <span class="token operator">&lt;-</span> ipf_lifts_reshape <span class="token percent-operator operator">%>%</span>
+  group_by<span class="token punctuation">(</span>year<span class="token punctuation">,</span> sex<span class="token punctuation">,</span> lift<span class="token punctuation">)</span> <span class="token percent-operator operator">%>%</span>
+  top_n<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> value<span class="token punctuation">)</span> <span class="token percent-operator operator">%>%</span>
+  ungroup <span class="token percent-operator operator">%>%</span>
+  distinct<span class="token punctuation">(</span>year<span class="token punctuation">,</span> lift<span class="token punctuation">,</span> value<span class="token punctuation">,</span> .keep_all <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">)</span>
+</code></pre></div>
+<p>The first visualization we'll create for the final output is a <strong>dumbbell plot</strong>. Curious what that is, or how to make it in R? <a href="https://www.connorrothschild.com/post/dumbbell-plots/" rel="nofollow noopener noreferrer" target="_blank">Check out my other post on the topic</a>.</p>
+<p>In order to construct a dumbbell plot, we need both male and female
+observations in the same row. For this, we use the <code>spread</code> function.</p>
+<div class="nuxt-content-highlight"><pre class="language-r line-numbers"><code>max_pivot <span class="token operator">&lt;-</span> ipf_lifts_maxes <span class="token percent-operator operator">%>%</span>
+  spread<span class="token punctuation">(</span>sex<span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+</code></pre></div>
+<p>Now, let’s construct a dataframe for each sex:</p>
+<div class="nuxt-content-highlight"><pre class="language-r line-numbers"><code>male_lifts <span class="token operator">&lt;-</span> max_pivot <span class="token percent-operator operator">%>%</span>
+  select<span class="token punctuation">(</span><span class="token operator">-</span>name<span class="token punctuation">)</span> <span class="token percent-operator operator">%>%</span>
+  filter<span class="token punctuation">(</span><span class="token operator">!</span>is.na<span class="token punctuation">(</span>M<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token percent-operator operator">%>%</span>
+  group_by<span class="token punctuation">(</span>year<span class="token punctuation">,</span> lift<span class="token punctuation">)</span> <span class="token percent-operator operator">%>%</span>
+  summarise<span class="token punctuation">(</span>male <span class="token operator">=</span> mean<span class="token punctuation">(</span>M<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+female_lifts <span class="token operator">&lt;-</span> max_pivot <span class="token percent-operator operator">%>%</span>
+  select<span class="token punctuation">(</span><span class="token operator">-</span>name<span class="token punctuation">)</span> <span class="token percent-operator operator">%>%</span>
+  filter<span class="token punctuation">(</span><span class="token operator">!</span>is.na<span class="token punctuation">(</span>F<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token percent-operator operator">%>%</span>
+  group_by<span class="token punctuation">(</span>year<span class="token punctuation">,</span> lift<span class="token punctuation">)</span> <span class="token percent-operator operator">%>%</span>
+  summarise<span class="token punctuation">(</span>female <span class="token operator">=</span> mean<span class="token punctuation">(</span>F<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div>
+<p>And join them:</p>
+<div class="nuxt-content-highlight"><pre class="language-r line-numbers"><code>max_lifts <span class="token operator">&lt;-</span> merge<span class="token punctuation">(</span>male_lifts<span class="token punctuation">,</span> female_lifts<span class="token punctuation">)</span>
+
+max_lifts_final <span class="token operator">&lt;-</span> max_lifts <span class="token percent-operator operator">%>%</span>
+  group_by<span class="token punctuation">(</span>year<span class="token punctuation">,</span> lift<span class="token punctuation">)</span> <span class="token percent-operator operator">%>%</span>
+  mutate<span class="token punctuation">(</span>diff <span class="token operator">=</span> male <span class="token operator">-</span> female<span class="token punctuation">)</span>
+</code></pre></div>
+<p>Not following along, or want to check your progress? Here's what our data looks like in its final form:</p>
+<div class="table-container">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">year</th><th align="left">lift</th><th align="left">male</th><th align="left">female</th><th align="left">diff</th></tr></thead><tbody><tr><td align="left">1980</td><td align="left">best3bench_kg</td><td align="left">262.5</td><td align="left">120</td><td align="left">142.5</td></tr><tr><td align="left">1980</td><td align="left">best3deadlift_kg</td><td align="left">395</td><td align="left">205</td><td align="left">190</td></tr><tr><td align="left">1980</td><td align="left">best3squat_kg</td><td align="left">417.5</td><td align="left">230</td><td align="left">187.5</td></tr><tr><td align="left">1981</td><td align="left">best3bench_kg</td><td align="left">245</td><td align="left">150</td><td align="left">95</td></tr><tr><td align="left">1981</td><td align="left">best3deadlift_kg</td><td align="left">367.5</td><td align="left">230</td><td align="left">137.5</td></tr><tr><td align="left">1981</td><td align="left">best3squat_kg</td><td align="left">427.5</td><td align="left">215</td><td align="left">212.5</td></tr></tbody></table>
+</div>
+<h2 id="visualize"><a href="#visualize" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>Visualize!</h2>
+<p>Finally, we can construct the visualization.</p>
+<p>First, we can create a static visualization using <code>ggalt</code> (again, my <a href="https://www.connorrothschild.com/post/dumbbell-plots/" rel="nofollow noopener noreferrer" target="_blank">blog post</a> covers the details of this step).</p>
+<p>You can fast forward the creation of individual plots if you're only interested in the <strong>combination</strong> of the two. You'll find that at the end of this post!</p>
+<div class="nuxt-content-highlight"><pre class="language-r line-numbers"><code>max_lifts_final <span class="token percent-operator operator">%>%</span>
+  filter<span class="token punctuation">(</span>year <span class="token operator">==</span> <span class="token number">2019</span><span class="token punctuation">)</span> <span class="token percent-operator operator">%>%</span>
+  ggplot<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  ggalt<span class="token operator">::</span>geom_dumbbell<span class="token punctuation">(</span>aes<span class="token punctuation">(</span>y <span class="token operator">=</span> lift<span class="token punctuation">,</span>
+                    x <span class="token operator">=</span> female<span class="token punctuation">,</span> xend <span class="token operator">=</span> male<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                colour <span class="token operator">=</span> <span class="token string">"grey"</span><span class="token punctuation">,</span> size <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">,</span>
+                colour_x <span class="token operator">=</span> <span class="token string">"#D6604C"</span><span class="token punctuation">,</span> colour_xend <span class="token operator">=</span> <span class="token string">"#395B74"</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  labs<span class="token punctuation">(</span>y <span class="token operator">=</span> element_blank<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       x <span class="token operator">=</span> <span class="token string">"Top Lift Recorded (kg)"</span><span class="token punctuation">,</span>
+       title <span class="token operator">=</span>  <span class="token string">"How &lt;span style='color:#D6604C'>Women&lt;/span> and &lt;span style='color:#395B74'>Men&lt;/span> Differ in Top Lifts"</span><span class="token punctuation">,</span>
+                       subtitle <span class="token operator">=</span> <span class="token string">"In 2019"</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  theme<span class="token punctuation">(</span>plot.title <span class="token operator">=</span> element_markdown<span class="token punctuation">(</span>lineheight <span class="token operator">=</span> <span class="token number">1.1</span><span class="token punctuation">,</span> size <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        plot.subtitle <span class="token operator">=</span> element_text<span class="token punctuation">(</span>size <span class="token operator">=</span> <span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  scale_y_discrete<span class="token punctuation">(</span>labels <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token string">"Bench"</span><span class="token punctuation">,</span> <span class="token string">"Deadlift"</span><span class="token punctuation">,</span> <span class="token string">"Squat"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  drop_axis<span class="token punctuation">(</span>axis <span class="token operator">=</span> <span class="token string">"y"</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_text<span class="token punctuation">(</span>aes<span class="token punctuation">(</span>x <span class="token operator">=</span> female<span class="token punctuation">,</span> y <span class="token operator">=</span> lift<span class="token punctuation">,</span> label <span class="token operator">=</span> paste<span class="token punctuation">(</span>female<span class="token punctuation">,</span> <span class="token string">"kg"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            color <span class="token operator">=</span> <span class="token string">"#D6604C"</span><span class="token punctuation">,</span> size <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">,</span> vjust <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_text<span class="token punctuation">(</span>aes<span class="token punctuation">(</span>x <span class="token operator">=</span> male<span class="token punctuation">,</span> y <span class="token operator">=</span> lift<span class="token punctuation">,</span> label <span class="token operator">=</span> paste<span class="token punctuation">(</span>male<span class="token punctuation">,</span> <span class="token string">"kg"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            color <span class="token operator">=</span> <span class="token string">"#395B74"</span><span class="token punctuation">,</span> size <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">,</span> vjust <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_rect<span class="token punctuation">(</span>aes<span class="token punctuation">(</span>xmin<span class="token operator">=</span><span class="token number">430</span><span class="token punctuation">,</span> xmax<span class="token operator">=</span><span class="token number">470</span><span class="token punctuation">,</span> ymin<span class="token operator">=</span><span class="token operator">-</span><span class="token number">Inf</span><span class="token punctuation">,</span> ymax<span class="token operator">=</span><span class="token number">Inf</span><span class="token punctuation">)</span><span class="token punctuation">,</span> fill<span class="token operator">=</span><span class="token string">"grey80"</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_text<span class="token punctuation">(</span>aes<span class="token punctuation">(</span>label<span class="token operator">=</span>diff<span class="token punctuation">,</span> y<span class="token operator">=</span>lift<span class="token punctuation">,</span> x<span class="token operator">=</span><span class="token number">450</span><span class="token punctuation">)</span><span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_text<span class="token punctuation">(</span>aes<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token number">450</span><span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"Difference"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            color<span class="token operator">=</span><span class="token string">"grey20"</span><span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">,</span> vjust<span class="token operator">=</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">)</span>
+</code></pre></div>
+<div class="img" style="display:inline-block;width:100%" data-v-bbcfffec><img src="/_nuxt/img/ccb6fc1.png" alt="A static dumbbell plot which represents male and female ‘top lifts' in 2019." data-v-bbcfffec></div>
+<p>Finally, we animate, using Thomas Pedersen’s wonderful <a href="https://github.com/thomasp85/gganimate" rel="nofollow noopener noreferrer" target="_blank">gganimate
+package</a>. This is a relatively easy step, because <code>gganimate</code> only requires two extra lines of code: <code>transition_states</code> and <code>ease_aes</code>. Then, we pass it into the <code>animate</code> function!</p>
+<div class="nuxt-content-highlight"><pre class="language-r line-numbers"><code>animation <span class="token operator">&lt;-</span> max_lifts_final <span class="token percent-operator operator">%>%</span>
+  ggplot<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  ggalt<span class="token operator">::</span>geom_dumbbell<span class="token punctuation">(</span>aes<span class="token punctuation">(</span>y <span class="token operator">=</span> lift<span class="token punctuation">,</span>
+                    x <span class="token operator">=</span> female<span class="token punctuation">,</span> xend <span class="token operator">=</span> male<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                colour <span class="token operator">=</span> <span class="token string">"grey"</span><span class="token punctuation">,</span> size <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">,</span>
+                colour_x <span class="token operator">=</span> <span class="token string">"#D6604C"</span><span class="token punctuation">,</span> colour_xend <span class="token operator">=</span> <span class="token string">"#395B74"</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  labs<span class="token punctuation">(</span>y <span class="token operator">=</span> element_blank<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       x <span class="token operator">=</span> <span class="token string">"Top Lift Recorded (kg)"</span><span class="token punctuation">,</span>
+       title <span class="token operator">=</span>  <span class="token string">"How &lt;span style='color:#D6604C'>Women&lt;/span> and &lt;span style='color:#395B74'>Men&lt;/span> Differ in Top Lifts"</span><span class="token punctuation">,</span>
+  subtitle<span class="token operator">=</span><span class="token string">'\nThis plot depicts the difference between the heaviest lifts for each sex at International Powerlifting Federation\nevents over time. \n \n{closest_state}'</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  theme<span class="token punctuation">(</span>plot.title <span class="token operator">=</span> element_markdown<span class="token punctuation">(</span>lineheight <span class="token operator">=</span> <span class="token number">1.1</span><span class="token punctuation">,</span> size <span class="token operator">=</span> <span class="token number">25</span><span class="token punctuation">,</span> margin<span class="token operator">=</span>margin<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        plot.subtitle <span class="token operator">=</span> element_text<span class="token punctuation">(</span>size <span class="token operator">=</span> <span class="token number">15</span><span class="token punctuation">,</span> margin<span class="token operator">=</span>margin<span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  scale_y_discrete<span class="token punctuation">(</span>labels <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token string">"Bench"</span><span class="token punctuation">,</span> <span class="token string">"Deadlift"</span><span class="token punctuation">,</span> <span class="token string">"Squat"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  drop_axis<span class="token punctuation">(</span>axis <span class="token operator">=</span> <span class="token string">"y"</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_text<span class="token punctuation">(</span>aes<span class="token punctuation">(</span>x <span class="token operator">=</span> female<span class="token punctuation">,</span> y <span class="token operator">=</span> lift<span class="token punctuation">,</span> label <span class="token operator">=</span> paste<span class="token punctuation">(</span>female<span class="token punctuation">,</span> <span class="token string">"kg"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            color <span class="token operator">=</span> <span class="token string">"#D6604C"</span><span class="token punctuation">,</span> size <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">,</span> vjust <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_text<span class="token punctuation">(</span>aes<span class="token punctuation">(</span>x <span class="token operator">=</span> male<span class="token punctuation">,</span> y <span class="token operator">=</span> lift<span class="token punctuation">,</span> label <span class="token operator">=</span> paste<span class="token punctuation">(</span>male<span class="token punctuation">,</span> <span class="token string">"kg"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            color <span class="token operator">=</span> <span class="token string">"#395B74"</span><span class="token punctuation">,</span> size <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">,</span> vjust <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  transition_states<span class="token punctuation">(</span>year<span class="token punctuation">,</span> transition_length <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">,</span> state_length <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  ease_aes<span class="token punctuation">(</span><span class="token string">'cubic-in-out'</span><span class="token punctuation">)</span>
+
+a_gif <span class="token operator">&lt;-</span> animate<span class="token punctuation">(</span>animation<span class="token punctuation">,</span>
+                 fps <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span>
+                 duration <span class="token operator">=</span> <span class="token number">25</span><span class="token punctuation">,</span>
+                 width <span class="token operator">=</span> <span class="token number">800</span><span class="token punctuation">,</span> height <span class="token operator">=</span> <span class="token number">400</span><span class="token punctuation">,</span>
+                 renderer <span class="token operator">=</span> gifski_renderer<span class="token punctuation">(</span><span class="token string">"outputs/animation.gif"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+a_gif
+</code></pre></div>
+<div class="img" style="display:inline-block;width:100%" data-v-bbcfffec><img src="/_nuxt/img/36e092b.gif" alt="An animated dumbbell plot which represents male and female ‘top lifts' over time. Each tick of the animation represents a new year." data-v-bbcfffec></div>
+<p>But in our case, we'd like to include another GIF: a line chart of differences over time.</p>
+<div class="nuxt-content-highlight"><pre class="language-r line-numbers"><code>animation2 <span class="token operator">&lt;-</span> max_lifts_final <span class="token percent-operator operator">%>%</span>
+  ungroup <span class="token percent-operator operator">%>%</span>
+  mutate<span class="token punctuation">(</span>lift <span class="token operator">=</span> case_when<span class="token punctuation">(</span>lift <span class="token operator">==</span> <span class="token string">"best3bench_kg"</span> <span class="token operator">~</span> <span class="token string">"Bench"</span><span class="token punctuation">,</span>
+                          lift <span class="token operator">==</span> <span class="token string">"best3squat_kg"</span> <span class="token operator">~</span> <span class="token string">"Squat"</span><span class="token punctuation">,</span>
+                          lift <span class="token operator">==</span> <span class="token string">"best3deadlift_kg"</span> <span class="token operator">~</span> <span class="token string">"Deadlift"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token percent-operator operator">%>%</span>
+  ggplot<span class="token punctuation">(</span>aes<span class="token punctuation">(</span>year<span class="token punctuation">,</span> diff<span class="token punctuation">,</span> group <span class="token operator">=</span> lift<span class="token punctuation">,</span> color <span class="token operator">=</span> lift<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_line<span class="token punctuation">(</span>show.legend <span class="token operator">=</span> <span class="token boolean">FALSE</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_segment<span class="token punctuation">(</span>aes<span class="token punctuation">(</span>xend <span class="token operator">=</span> <span class="token number">2019.1</span><span class="token punctuation">,</span> yend <span class="token operator">=</span> diff<span class="token punctuation">)</span><span class="token punctuation">,</span> linetype <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span> colour <span class="token operator">=</span> <span class="token string">'grey'</span><span class="token punctuation">,</span> show.legend <span class="token operator">=</span> <span class="token boolean">FALSE</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_point<span class="token punctuation">(</span>size <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span> show.legend <span class="token operator">=</span> <span class="token boolean">FALSE</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_text<span class="token punctuation">(</span>aes<span class="token punctuation">(</span>x <span class="token operator">=</span> <span class="token number">2019.1</span><span class="token punctuation">,</span> label <span class="token operator">=</span> lift<span class="token punctuation">,</span> color <span class="token operator">=</span> <span class="token string">"#000000"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> hjust <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> show.legend <span class="token operator">=</span> <span class="token boolean">FALSE</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  drop_axis<span class="token punctuation">(</span>axis <span class="token operator">=</span> <span class="token string">"y"</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  transition_reveal<span class="token punctuation">(</span>year<span class="token punctuation">)</span> <span class="token operator">+</span>
+  coord_cartesian<span class="token punctuation">(</span>clip <span class="token operator">=</span> <span class="token string">'off'</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  theme<span class="token punctuation">(</span>plot.title <span class="token operator">=</span> element_text<span class="token punctuation">(</span>size <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  labs<span class="token punctuation">(</span>title <span class="token operator">=</span> <span class="token string">'Difference over time'</span><span class="token punctuation">,</span>
+       y <span class="token operator">=</span> <span class="token string">'Difference (kg)'</span><span class="token punctuation">,</span>
+       x <span class="token operator">=</span> element_blank<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  theme<span class="token punctuation">(</span>plot.margin <span class="token operator">=</span> margin<span class="token punctuation">(</span><span class="token number">5.5</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">5.5</span><span class="token punctuation">,</span> <span class="token number">5.5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+b_gif <span class="token operator">&lt;-</span> animate<span class="token punctuation">(</span>animation2<span class="token punctuation">,</span>
+                 fps <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span>
+                 duration <span class="token operator">=</span> <span class="token number">25</span><span class="token punctuation">,</span>
+        width <span class="token operator">=</span> <span class="token number">800</span><span class="token punctuation">,</span> height <span class="token operator">=</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        renderer <span class="token operator">=</span> gifski_renderer<span class="token punctuation">(</span><span class="token string">"outputs/animation2.gif"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+b_gif
+</code></pre></div>
+<div class="img" style="display:inline-block;width:100%" data-v-bbcfffec><img src="/_nuxt/img/e5d89db.gif" alt="An animated line chart that shows, year by year, the difference in male and female top lifts on the Y axis. Each tick of the chart shows a new year." data-v-bbcfffec></div>
+<p>Finally, we'll combine them using <code>magick</code> (thanks to <a href="https://github.com/thomasp85/gganimate/wiki/Animation-Composition" rel="nofollow noopener noreferrer" target="_blank">this
+post</a>):</p>
+<div class="nuxt-content-highlight"><pre class="language-r line-numbers"><code>library<span class="token punctuation">(</span>magick<span class="token punctuation">)</span>
+a_mgif <span class="token operator">&lt;-</span> image_read<span class="token punctuation">(</span>a_gif<span class="token punctuation">)</span>
+b_mgif <span class="token operator">&lt;-</span> image_read<span class="token punctuation">(</span>b_gif<span class="token punctuation">)</span>
+
+new_gif <span class="token operator">&lt;-</span> image_append<span class="token punctuation">(</span>c<span class="token punctuation">(</span>a_mgif<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> b_mgif<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> stack <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span>i <span class="token keyword">in</span> <span class="token number">2</span><span class="token operator">:</span><span class="token number">250</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  combined <span class="token operator">&lt;-</span> image_append<span class="token punctuation">(</span>c<span class="token punctuation">(</span>a_mgif<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> b_mgif<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> stack <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">)</span>
+  new_gif <span class="token operator">&lt;-</span> c<span class="token punctuation">(</span>new_gif<span class="token punctuation">,</span> combined<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div>
+<p>What’s happening here? Essentially, we’re using the power of <code>magick</code> to:</p>
+<ol>
+<li>Read in all of the <em>individual images</em> (<code>image_read</code>) from each GIF (after all, a GIF is just a series of images!).</li>
+<li>For the first frame, stack the two images on top of each other (<code>image_append</code>), so plot 1 is above plot 2.</li>
+<li>For the rest of the frames (in my case, the next 249, because my GIF had 250 frames), replicate this and combine it with the first frame (this is the <code>for</code> loop).</li>
+</ol>
+<p>Here, we specify <code>stack = TRUE</code> so that one plot is <strong>above</strong> the other. If you'd like to place them side-by-side, specify <code>stack = FALSE</code>.</p>
+<p>In combination, the process results in our final output:</p>
+<div class="img" style="display:inline-block;width:100%" data-v-bbcfffec><img src="/_nuxt/img/c159b4d.gif" alt="A combination of the two aforementioned plots. The top plot is the animated dumbbell plot, and the bottom is a line chart. In combination, they allow the user to see the magnitude of differences between men and women, as well as how these differences have evolved over time." data-v-bbcfffec></div>
+<p>In this view, we can see the magnitude of the differences both relatively and absolutely (top chart), <em>and</em> we can see how these differences change over time (bottom chart). The power of an animated, combined chart!</p></div> <hr> <div class="my-4"><a href="/post" class="subtitle has-text-weight-bolder is-size-5 link heading is-inline-block nuxt-link-active">👈 Back to all posts</a></div> <div class="columns"><div class="column"><div style="height:100%;transition:1s transform ease;transform:translateX(0) translateY(0)"><a href="/post/map-springfield"><article class="card card-fullheight has-background-semitransparent"><div class="card-image"><figure class="image is-2by1"><img src="//:0" alt="Blog header image" class="v-lazy-image object-fit-cover" data-v-14ae8593></figure></div> <div class="card-content"><div class="content is-flex is-justify-content-space-evenly"><div class="has-text-centered"><p class="heading title is-size-6">Next post</p> <p class="has-text-weight-light title is-size-6">
+                Create a Streetmap of Any City in R
+              </p></div></div></div></article></a> <!----></div></div> <div class="column"><div style="height:100%;transition:1s transform ease;transform:translateX(0) translateY(0)"><a href="/post/automation-scrollytell"><article class="card card-fullheight has-background-semitransparent"><div class="card-image"><figure class="image is-2by1"><img src="//:0" alt="Blog post header image" class="v-lazy-image object-fit-cover" data-v-14ae8593></figure></div> <div class="card-content"><div class="content is-flex is-justify-content-space-evenly"><div class="has-text-centered"><p class="heading title is-size-6">Previous post</p> <p class="has-text-weight-light title is-size-6">
+                How to Scrollytell in R: Automation and Its Impact on Jobs
+              </p></div></div></div></article></a> <!----></div></div></div></article> <footer class="site-footer" data-v-37cbb2b5><div class="content has-text-centered site-footer-content" data-v-37cbb2b5><p data-v-37cbb2b5>
+      Built with 💚 and Nuxt.js by
+      <a href="https://twitter.com/CL_Rothschild" target="_blank" rel="noopener noreferrer" class="link" data-v-37cbb2b5>Connor Rothschild</a>. The source code is available on
+      <a href="https://github.com/connorrothschild/v3" target="_blank" rel="noopener noreferrer" class="link" data-v-37cbb2b5>GitHub</a>.
+    </p></div></footer></div></div></div></div><script defer src="/_nuxt/static/1639691221/post/tidy-tuesday-powerlifting/state.js"></script><script src="/_nuxt/64b5898.js" defer></script><script src="/_nuxt/c4401d5.js" defer></script><script src="/_nuxt/2c17e43.js" defer></script><script src="/_nuxt/e8925e5.js" defer></script><script src="/_nuxt/ea1b2ed.js" defer></script><script src="/_nuxt/cbfb02f.js" defer></script><script src="/_nuxt/7e4b2d1.js" defer></script><script src="/_nuxt/2bd4311.js" defer></script>
+  </body>
+</html>

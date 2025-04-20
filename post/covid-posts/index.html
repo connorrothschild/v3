@@ -1,0 +1,193 @@
+<!doctype html>
+<html data-n-head-ssr lang="en" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>COVID-19 Posts: A Novel Dataset | Connor Rothschild</title><meta data-n-head="ssr" charset="utf-8"><meta data-n-head="ssr" name="viewport" content="width=device-width,initial-scale=1"><meta data-n-head="ssr" data-hid="charset" charset="utf-8"><meta data-n-head="ssr" data-hid="mobile-web-app-capable" name="mobile-web-app-capable" content="yes"><meta data-n-head="ssr" data-hid="apple-mobile-web-app-title" name="apple-mobile-web-app-title" content="site"><meta data-n-head="ssr" data-hid="og:site_name" name="og:site_name" property="og:site_name" content="site"><meta data-n-head="ssr" data-hid="description" name="description" content="Making hundreds of COVID-19 blog posts from the R community available for public use"><meta data-n-head="ssr" data-hid="og:type" property="og:type" content="article"><meta data-n-head="ssr" data-hid="og:url" property="og:url" content="https://v3.connorrothschild.com/post/covid-posts"><meta data-n-head="ssr" data-hid="og:title" property="og:title" content="COVID-19 Posts: A Novel Dataset"><meta data-n-head="ssr" data-hid="og:description" property="og:description" content="Making hundreds of COVID-19 blog posts from the R community available for public use"><meta data-n-head="ssr" data-hid="og:image" property="og:image" content="https://v3.connorrothschild.com/post/covid-posts/header.png"><meta data-n-head="ssr" data-hid="twitter:url" name="twitter:url" content="https://v3.connorrothschild.com/post/covid-posts"><meta data-n-head="ssr" data-hid="twitter:title" name="twitter:title" content="COVID-19 Posts: A Novel Dataset"><meta data-n-head="ssr" data-hid="twitter:description" name="twitter:description" content="Making hundreds of COVID-19 blog posts from the R community available for public use"><meta data-n-head="ssr" data-hid="twitter:image" name="twitter:image" content="https://v3.connorrothschild.com/post/covid-posts/header.png"><meta data-n-head="ssr" data-hid="twitter:site" name="twitter:site" content="@CL_Rothschild"><meta data-n-head="ssr" data-hid="twitter:card" name="twitter:card" content="summary_large_image"><meta data-n-head="ssr" property="article:published_time" content="2021-12-16T21:41:20.781Z"><meta data-n-head="ssr" property="article:modified_time" content="2021-12-16T21:41:20.781Z"><meta data-n-head="ssr" name="twitter:label1" content="Written by"><meta data-n-head="ssr" name="twitter:data1" content="Connor Rothschild"><base href="/"><link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.png"><link data-n-head="ssr" data-hid="shortcut-icon" rel="shortcut icon" href="/_nuxt/icons/icon_64x64.ecd1ba.png"><link data-n-head="ssr" data-hid="apple-touch-icon" rel="apple-touch-icon" href="/_nuxt/icons/icon_512x512.ecd1ba.png" sizes="512x512"><link data-n-head="ssr" rel="manifest" href="/_nuxt/manifest.d23946e6.json" data-hid="manifest"><link data-n-head="ssr" data-hid="canonical" rel="canonical" href="https://v3.connorrothschild.com/post/covid-posts"><link rel="preload" href="/_nuxt/64b5898.js" as="script"><link rel="preload" href="/_nuxt/cbfb02f.js" as="script"><link rel="preload" href="/_nuxt/css/0e51f67.css" as="style"><link rel="preload" href="/_nuxt/7e4b2d1.js" as="script"><link rel="preload" href="/_nuxt/css/2510a47.css" as="style"><link rel="preload" href="/_nuxt/2bd4311.js" as="script"><link rel="preload" href="/_nuxt/css/2d74e3a.css" as="style"><link rel="preload" href="/_nuxt/c4401d5.js" as="script"><link rel="preload" href="/_nuxt/2c17e43.js" as="script"><link rel="preload" href="/_nuxt/css/ff4f90e.css" as="style"><link rel="preload" href="/_nuxt/e8925e5.js" as="script"><link rel="preload" href="/_nuxt/css/2cc613b.css" as="style"><link rel="preload" href="/_nuxt/ea1b2ed.js" as="script"><link rel="stylesheet" href="/_nuxt/css/0e51f67.css"><link rel="stylesheet" href="/_nuxt/css/2510a47.css"><link rel="stylesheet" href="/_nuxt/css/2d74e3a.css"><link rel="stylesheet" href="/_nuxt/css/ff4f90e.css"><link rel="stylesheet" href="/_nuxt/css/2cc613b.css"><link rel="preload" href="/_nuxt/static/1639691221/post/covid-posts/state.js" as="script"><link rel="preload" href="/_nuxt/static/1639691221/post/covid-posts/payload.js" as="script"><link rel="preload" href="/_nuxt/static/1639691221/manifest.js" as="script">
+  </head>
+  <body>
+    <div data-server-rendered="true" id="__nuxt"><!----><div id="__layout"><div><div class="theme-primary-off"><nav role="navigation" aria-label="main navigation" class="navbar theme-primary" data-v-577d5465><div class="navbar-brand" data-v-577d5465><a href="/" class="navbar-item has-text-weight-boldest nuxt-link-active" data-v-577d5465>Connor Rothschild
+    </a> <a role="button" aria-label="menu" aria-expanded="false" data-target="navbarID" class="navbar-burger" data-v-577d5465><span aria-hidden="true" data-v-577d5465></span> <span aria-hidden="true" data-v-577d5465></span> <span aria-hidden="true" data-v-577d5465></span></a></div> <div id="navbarID" class="navbar-menu" data-v-577d5465><div class="navbar-end" data-v-577d5465><div class="navbar-item" data-v-577d5465><div class="themepicker__btn" data-v-15133967 data-v-577d5465><span class="themepicker__palette" data-v-15133967><span class="themepicker__swatch themepicker__swatch--primary" data-v-15133967></span> <span class="themepicker__swatch themepicker__swatch--secondary" data-v-15133967></span> <span class="themepicker__swatch themepicker__swatch--text" data-v-15133967></span></span></div></div> <a href="/#projects" class="navbar-item" data-v-577d5465>
+        Projects
+      </a> <a href="/#awards" class="navbar-item" data-v-577d5465>
+        Awards
+      </a> <a href="/#blog" class="navbar-item" data-v-577d5465>
+        Blog
+      </a> <a href="mailto:connor@connorrothschild.com" class="navbar-item" data-v-577d5465>
+        Email
+      </a> <a href="https://docs.google.com/document/d/1qBH-wNMe2nv9Xa4uzHZ5wBevohwKuB3h2i9M2yk4POk/edit?usp=sharing" target="_blank" rel="noopener" class="navbar-item" data-v-577d5465>
+        Resume
+      </a></div></div></nav> <article class="section container is-max-tablet"><h1 class="my-3 has-text-weight-boldest content-title is-size-3-mobile">
+      COVID-19 Posts: A Novel Dataset
+    </h1> <p class="my-3 content-description is-size-5-mobile">
+      Making hundreds of COVID-19 blog posts from the R community available for public use
+    </p> <p class="heading is-size-6 has-text-weight-light">
+      October 2020 •
+      <span>5 minute read
+  <!----></span></p> <hr> <div class="nuxt-content"><p>Over the last few months, we’ve been collecting hundreds of COVID-19
+blog posts from the R community. Today, we are excited to share this
+dataset publicly, to help bloggers who want to analyze COVID-19 data by
+unleashing R and the resources of its community by being able to
+research such posts.</p>
+<p>So far, we have found and recorded 423 COVID posts in English. In an
+effort to encourage others to explore such posts, we’ve published a
+<a href="https://connorrothschild.shinyapps.io/covid-posts/" target="_blank">Shiny web app</a>
+which allow users to find the names of the 231 bloggers who wrote those
+posts, their roles, and their country of focus. The app also lets users
+interactively search the collection of posts by primary topic, post
+title, date, and whether the post uses a particular mathematical
+technique or data source. To learn more about the evolution of this
+dataset, one of the authors (Rees) has published nine articles on
+Medium, which you can find
+<a href="https://medium.com/@rees_32356" target="_blank">here</a>.</p>
+<p>We encourage users to submit their own posts–or others’ posts–for
+inclusion, which can be done on this
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScfob3uBoumXIRcSW83T0GhXCfi-KI_psGxIqtl_rQ5VHu9ZQ/viewform?usp=sf_link" target="_blank">Google Form</a>.
+Our dataset, as well as the code for the Shiny app, is available on
+<a href="https://github.com/connorrothschild/covid-posts" target="_blank">GitHub</a>.
+If anyone has corrections to the dataset, please write Rees (at)
+ReesMorrison (dot) com.</p>
+<p>The remainder of this post highlights some of the findings from the
+dataset of COVID-19 posts. As will be made evident by the plots that
+follow, this is by no means a comprehensive review of <em>every</em> COVID-19 R
+blog post, but rather an overview of the data <em>that we have found</em>.</p>
+<h1 id="analysis"><a aria-hidden="true" href="#analysis" tabindex="-1"><span class="icon icon-link"></span></a>Analysis</h1>
+<h3 id="posts-over-time"><a aria-hidden="true" href="#posts-over-time" tabindex="-1"><span class="icon icon-link"></span></a>Posts Over Time</h3>
+<p>As the pandemic has progressed, fewer bloggers have engaged with
+COVID-related data, as we notice that blog posts peaked in March of 2020.</p>
+<div class="img" style="display:inline-block;width:100%" data-v-bbcfffec><img src="/_nuxt/img/204d540.png" alt="COVID-19 blog posts by week. There is a peak in mid March (40 posts)." data-v-bbcfffec></div>
+<p>Some bloggers have been prolific; many more have been one and done. The
+plot below shows the names and posts of the 23 bloggers who have so far
+published at least four posts. For an example of how to read the plot,
+Tim Churches, at the bottom of the y-axis, has published a total of nine
+posts, but none after early April.</p>
+<p>The color of the points corresponds to the work role of the blogger as
+explained in the legend at the bottom. It is immediately apparent that
+professors and academic researchers predominate in this group of
+bloggers. If you include the postgraduate students, universities writ
+large account for nearly all of the prolific bloggers.</p>
+<div class="img" style="display:inline-block;width:100%" data-v-bbcfffec><img src="/_nuxt/img/b5217cb.png" alt="A dumbbell chart showcasing the timing of posts among 'prolific authors' (4 or more total posts). It shows temporally when these individuals post. " data-v-bbcfffec></div>
+<h3 id="roles-of-authors"><a aria-hidden="true" href="#roles-of-authors" tabindex="-1"><span class="icon icon-link"></span></a>Roles of Authors</h3>
+<p>The bloggers in our dataset describe their work-day roles in a variety
+of ways. One of the authors (Rees) standardized these job roles by
+categorizing the multitude of terms and descriptions, but it is quite
+possible that this effort misrepresented what some of these bloggers do
+for a living. We welcome corrections.</p>
+<p>We’ve further categorized roles into a broad typology where professions
+fall into one of five categories: <em>university</em>, <em>corporate</em>,
+<em>professional</em>, <em>government</em>, and <em>nonprofit</em>. Those broader categories
+are represented as columns in the following chart.</p>
+<div class="img" style="display:inline-block;width:100%" data-v-bbcfffec><img src="/_nuxt/img/534d90a.png" alt="A barchart showcasing the roles of authors in our dataset. The most common is university (205) followed by corporate (140)." data-v-bbcfffec></div>
+<h3 id="data-sources"><a aria-hidden="true" href="#data-sources" tabindex="-1"><span class="icon icon-link"></span></a>Data Sources</h3>
+<p>A greater number of data sources related to COVID-19 will yield richer
+insights. Combining different datasets can shed new light on an issue,
+yield improvements, and allow authors to contruct better indices and
+measures. For that reason, one of the authors (Rees) extracted <em>dataset
+information</em> from our collection of blog posts.</p>
+<p>For the most part, bloggers identified the data source they drew on for
+their analysis. On occasion, we had to apply some effort to standardize
+the 140 data sources.</p>
+<p>By far the most prevalent data source is Johns Hopkins University, who
+early, comprehensively and consistently has set the standard for
+COVID-19 data collection and dissemination to the public.</p>
+<div class="img" style="display:inline-block;width:100%" data-v-bbcfffec><img src="/_nuxt/img/b4b988d.png" alt="A barchart showcasing the most common data sources in our dataset. John Hopkins leads the pack at 51." data-v-bbcfffec></div>
+<p>Below, you can look at <em>all</em> data sources and how often they were
+referenced in COVID-19 blog posts.</p>
+<div class="table-container">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">Data Source</th><th align="right">Count</th></tr></thead><tbody><tr><td align="left">Johns Hopkins University</td><td align="right">51</td></tr><tr><td align="left">New York Times</td><td align="right">14</td></tr><tr><td align="left">Wikipedia</td><td align="right">13</td></tr><tr><td align="left">Apple Mobility</td><td align="right">8</td></tr><tr><td align="left">COVID Tracking Project</td><td align="right">8</td></tr><tr><td align="left">World Bank</td><td align="right">7</td></tr><tr><td align="left">European Centre for Disease Control (ECDC)</td><td align="right">6</td></tr><tr><td align="left">U.S. Census Bureau</td><td align="right">6</td></tr><tr><td align="left">Our World in Data</td><td align="right">5</td></tr><tr><td align="left">Twitter</td><td align="right">5</td></tr><tr><td align="left">Assessment Capacities Project (ACAPS)</td><td align="right">4</td></tr><tr><td align="left">COVID19 package</td><td align="right">4</td></tr></tbody></table>
+</div>
+<h3 id="blog-post-topics"><a aria-hidden="true" href="#blog-post-topics" tabindex="-1"><span class="icon icon-link"></span></a>Blog Post Topics</h3>
+<p>It may also be the case that readers want a summary of blogs, or to only
+look at posts that pertain to a certain topic. Assigning each blog post
+a primary topic introduces a fair amount of subjectivity, to be sure,
+but the hope is that these broad topics will help researchers find
+content and colleagues who share similar interests.</p>
+<p>Here, a balloon plot shows various categories that the 423 posts address
+as their primary topic. Topics fall on the y axis and the blogger’s
+category of employment is on the x axis. The size (and opacity) of each
+bubble represents the count of posts that match that combination.
+Epidemiology leads the way, as might be expected, but quite a few posts
+seem to use COVID data to showcase something else, or apply R in novel
+ways.</p>
+<div class="img" style="display:inline-block;width:100%" data-v-bbcfffec><img src="/_nuxt/img/bd77471.png" alt="A balloon plot shows the number of posts by topic and employment category. The most common is university/epidemiology (107 posts)." data-v-bbcfffec></div>
+<h1 id="concluding-thoughts"><a aria-hidden="true" href="#concluding-thoughts" tabindex="-1"><span class="icon icon-link"></span></a>Concluding Thoughts</h1>
+<p>We encourage you to use our
+<a href="https://connorrothschild.shinyapps.io/covid-posts/" target="_blank">Shiny application</a>
+to explore the data for yourself. If you’d like to submit your post to
+be included, fill out this
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScfob3uBoumXIRcSW83T0GhXCfi-KI_psGxIqtl_rQ5VHu9ZQ/viewform?usp=sf_link" target="_blank">Google Form</a>.</p>
+<p>As we note in the footer of the application, the R community is
+intelligent and produces interesting content, but not all of us are
+experts when it comes to COVID-19. Engaging with these posts will allow
+you to better understand the application of R to our current moment, and
+perhaps provide feedback to post authors. We do not endorse the findings
+of any particular author and encourage you to find accurate, relevant,
+and recent information from reputable sources such as the
+<a href="https://www.cdc.gov/" target="_blank">CDC</a> and the
+<a href="https://www.who.int/" target="_blank">WHO</a>.</p>
+<p>As always, thanks for reading.</p></div> <hr> <div class="my-4"><a href="/post" class="subtitle has-text-weight-bolder is-size-5 link heading is-inline-block nuxt-link-active">👈 Back to all posts</a></div> <div class="columns"><div class="column"><div style="height:100%;transition:1s transform ease;transform:translateX(0) translateY(0)"><a href="/post/nuxt-blog-starter"><article class="card card-fullheight has-background-semitransparent"><div class="card-image"><figure class="image is-2by1"><img src="//:0" alt="Blog post header image" class="v-lazy-image object-fit-cover" data-v-14ae8593></figure></div> <div class="card-content"><div class="content is-flex is-justify-content-space-evenly"><div class="has-text-centered"><p class="heading title is-size-6">Next post</p> <p class="has-text-weight-light title is-size-6">
+                Announcing the Nuxt Blog Starter
+              </p></div></div></div></article></a> <!----></div></div> <div class="column"><div style="height:100%;transition:1s transform ease;transform:translateX(0) translateY(0)"><a href="/post/covid-on-campus"><article class="card card-fullheight has-background-semitransparent"><div class="card-image"><figure class="image is-2by1"><img src="//:0" alt="Blog post header image" class="v-lazy-image object-fit-cover" data-v-14ae8593></figure></div> <div class="card-content"><div class="content is-flex is-justify-content-space-evenly"><div class="has-text-centered"><p class="heading title is-size-6">Previous post</p> <p class="has-text-weight-light title is-size-6">
+                COVID on Campus
+              </p></div></div></div></article></a> <!----></div></div></div></article> <footer class="site-footer" data-v-37cbb2b5><div class="content has-text-centered site-footer-content" data-v-37cbb2b5><p data-v-37cbb2b5>
+      Built with 💚 and Nuxt.js by
+      <a href="https://twitter.com/CL_Rothschild" target="_blank" rel="noopener noreferrer" class="link" data-v-37cbb2b5>Connor Rothschild</a>. The source code is available on
+      <a href="https://github.com/connorrothschild/v3" target="_blank" rel="noopener noreferrer" class="link" data-v-37cbb2b5>GitHub</a>.
+    </p></div></footer></div></div></div></div><script defer src="/_nuxt/static/1639691221/post/covid-posts/state.js"></script><script src="/_nuxt/64b5898.js" defer></script><script src="/_nuxt/c4401d5.js" defer></script><script src="/_nuxt/2c17e43.js" defer></script><script src="/_nuxt/e8925e5.js" defer></script><script src="/_nuxt/ea1b2ed.js" defer></script><script src="/_nuxt/cbfb02f.js" defer></script><script src="/_nuxt/7e4b2d1.js" defer></script><script src="/_nuxt/2bd4311.js" defer></script>
+  </body>
+</html>
