@@ -76,8 +76,8 @@ export default {
         type: "article",
         title: this.post.title,
         description: this.post.description,
-        url: `https://connorrothschild.github.io/v3/post/${this.$route.params.slug}`,
-        mainImage: `https://connorrothschild.github.io/v3/post/${this.post.img}`,
+        url: `https://v3.connorrothschild.com/post/${this.$route.params.slug}`,
+        mainImage: `https://v3.connorrothschild.com/post/${this.post.img}`,
       };
       return getSiteMeta(metaData);
     },
@@ -102,7 +102,7 @@ export default {
         {
           hid: "canonical",
           rel: "canonical",
-          href: `https://connorrothschild.github.io/v3/post/${this.$route.params.slug}`,
+          href: `https://v3.connorrothschild.com/post/${this.$route.params.slug}`,
         },
       ],
     };

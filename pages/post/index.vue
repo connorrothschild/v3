@@ -41,7 +41,7 @@ export default {
         {
           hid: "canonical",
           rel: "canonical",
-          href: `https://connorrothschild.github.io/v3/post/`,
+          href: `https://v3.connorrothschild.com/post/`,
         },
       ],
     };

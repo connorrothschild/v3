@@ -90,7 +90,7 @@ export default {
       const metaData = {
         // For award pages, only redefine URL for og:url and twitter:url (because they don't have images)
         type: "article",
-        url: `https://connorrothschild.github.io/v3/award/${this.$route.params.slug}`,
+        url: `https://v3.connorrothschild.com/award/${this.$route.params.slug}`,
       };
       return getSiteMeta(metaData);
     },
@@ -115,7 +115,7 @@ export default {
         {
           hid: "canonical",
           rel: "canonical",
-          href: `https://connorrothschild.github.io/v3/award/${this.$route.params.slug}`,
+          href: `https://v3.connorrothschild.com/award/${this.$route.params.slug}`,
         },
       ],
     };

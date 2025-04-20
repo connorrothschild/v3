@@ -16,17 +16,17 @@ The site was also designed with accessibility in mind. It **passes all [pa11y](h
 
 ```bash
 npm install -g pa11y
-pa11y https://www.connorrothschild.github.io/v3/
+pa11y https://v3.connorrothschild.com/
 ```
 
 It passes all [Lighthouse](https://developers.google.com/web/tools/lighthouse/) accessibility tests as well and receives a **100/100** on accessibility marks there.
 
 ```bash
 npm install -g lighthouse
-lighthouse https://www.connorrothschild.github.io/v3/
+lighthouse https://v3.connorrothschild.com/
 ```
 
-The [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) reveals **0 errors, 0 contrast errors, and 14 features** on my homepage ([see the audit](https://wave.webaim.org/report#/https://www.connorrothschild.github.io/v3/)).
+The [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) reveals **0 errors, 0 contrast errors, and 14 features** on my homepage ([see the audit](https://wave.webaim.org/report#/https://v3.connorrothschild.com/)).
 
 ## Interact With My Site
 

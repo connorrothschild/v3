@@ -7,7 +7,7 @@ img: nuxt-blog-starter/header.png
 img_alt: Blog post header image
 ---
 
-I'm happy to share a [new starter template](https://github.com/connorrothschild/nuxt-blog-starter) for minimal, content-focused blogs using NuxtJS and Bulma for styling. The site is a more simplified version of [my own site](https://www.connorrothschild.github.io/v3/).
+I'm happy to share a [new starter template](https://github.com/connorrothschild/nuxt-blog-starter) for minimal, content-focused blogs using NuxtJS and Bulma for styling. The site is a more simplified version of [my own site](https://v3.connorrothschild.com/).
 
 ## Why Nuxt?
 
