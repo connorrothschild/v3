@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install)",
+      "Bash(rm:*)",
+      "Bash(npm install:*)",
+      "Bash(npx push-dir:*)",
+      "Bash(npm run generate:*)",
+      "Bash(git subtree push:*)",
+      "Bash(yarn install)",
+      "Bash(yarn deploy)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(ls:*)",
+      "Bash(git reset:*)",
+      "Bash(find:*)",
+      "Bash(npx nuxt:*)",
+      "Bash(git checkout:*)",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)",
+      "Bash(git ls-tree:*)",
+      "WebFetch(domain:v3.connorrothschild.com)",
+      "Bash(yarn install:*)",
+      "Bash(yarn generate)",
+      "Bash(yarn add sharp)",
+      "WebFetch(domain:connorrothschild.github.io)",
+      "Bash(git push:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(git init:*)",
+      "Bash(git branch:*)",
+      "Bash(git remote add:*)"
+    ],
+    "deny": []
+  }
+}

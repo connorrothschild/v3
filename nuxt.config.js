@@ -1,9 +1,6 @@
 export default {
 	// Target (https://go.nuxtjs.dev/config-target)
 	target          : 'static',
-	// router: {
-   	//  	base: '/v3/'
-  	// },
 
 	// Global page headers (https://go.nuxtjs.dev/config-head)
 	head            : {
@@ -27,7 +24,7 @@ export default {
 			{
 				hid      : 'og:url',
 				property : 'og:url',
-				content  : 'https://www.connorrothschild.github.io/v3'
+				content  : 'https://v3.connorrothschild.com'
 			},
 			{
 				hid      : 'og:title',
@@ -48,7 +45,7 @@ export default {
 			{
 				hid     : 'twitter:url',
 				name    : 'twitter:url',
-				content : 'https://www.connorrothschild.github.io/v3'
+				content : 'https://v3.connorrothschild.com'
 			},
 			{
 				hid     : 'twitter:title',
@@ -90,6 +87,23 @@ export default {
 
 	// Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
 	buildModules    : [ '@aceforth/nuxt-optimized-images', '@nuxtjs/pwa', ],
+
+	pwa: {
+		workbox: {
+			runtimeCaching: [
+				{
+					urlPattern: '/_nuxt/',
+					handler: 'CacheFirst',
+					method: 'GET'
+				},
+				{
+					urlPattern: '/',
+					handler: 'NetworkFirst',
+					method: 'GET'
+				}
+			]
+		}
+	},
 	  
 	purgeCSS: {
 		enabled: true, // True means it's always on in dev/build/generate mode
@@ -117,7 +131,7 @@ export default {
 	},
 
 	// Modules (https://go.nuxtjs.dev/config-modules)
-	modules         : [ '@nuxtjs/bulma', '@nuxt/content', '@nuxt/image', '@nuxtjs/style-resources' ],
+	modules         : [ '@nuxtjs/bulma', '@nuxt/content', /*'@nuxt/image',*/ '@nuxtjs/style-resources' ],
 
 	content         : {
 		markdown : {
